@@ -28,7 +28,7 @@
                 </li>
                 <li><a href="register">Registar</a>
                 </li>
-                <li><a href="getList">Listar</a>
+                <li><a href="getList">Visualizar </a>
                 </li>
                 <li><a href="#">About</a>
                 </li>

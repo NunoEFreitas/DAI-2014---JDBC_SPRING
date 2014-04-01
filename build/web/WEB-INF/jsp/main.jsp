@@ -25,7 +25,7 @@
 				<ul>
 					
                                         <li>
-						<a href="#">Pesquisar</a>
+						<a href="verifica">Verifica</a>
 					</li>
 					<li>
 						<a href="getList">listar</a>

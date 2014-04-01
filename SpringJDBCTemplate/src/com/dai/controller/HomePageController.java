@@ -40,6 +40,9 @@ public class HomePageController {
                
 		return new ModelAndView("main");
 	}
+        
+       
+        
 
 	@RequestMapping("/insert")
 	public String inserData(@ModelAttribute User user) {
@@ -93,6 +96,12 @@ public class HomePageController {
 	public ModelAndView login() {
 		return new ModelAndView("login");
 	}
+        
+         @RequestMapping("/verifica")
+	public ModelAndView verifica() {
+		return new ModelAndView("administrador");
+	}
+        
         
         @RequestMapping(value="/login", method = RequestMethod.POST)
         public ModelAndView login (@RequestParam("username") String user,@RequestParam("password") String password,  ModelMap model){

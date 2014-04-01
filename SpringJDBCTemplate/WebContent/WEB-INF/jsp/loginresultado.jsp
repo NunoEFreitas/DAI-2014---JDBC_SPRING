@@ -36,7 +36,7 @@
                 </li>
                 <li><a href="#">Opções</a>
                 </li>
-                <li><a href="login">Logaut</a>
+                <li><a href="login">Logout</a>
                 </li>
             </ul>
         </div>
