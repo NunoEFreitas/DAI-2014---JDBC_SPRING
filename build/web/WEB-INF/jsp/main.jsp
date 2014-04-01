@@ -9,6 +9,7 @@
 	<meta charset="UTF-8">
         <Meta  http-equiv = "X-UA-Compatible"  content = "IE = borda" >
 	<title>Sistema de Informação - SCB</title>
+        <title>Sistema de Informação - SCB</title>
         <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet"  type="text/css" />	
 </head>
 <body>
