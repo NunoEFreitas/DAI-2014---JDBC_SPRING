@@ -86,7 +86,11 @@
                                         <td>${ut.tipo_de_utilizador}</td>
 					<td><a href="edit?id=${ut.idUtilizador}">Edit</a></td>
 					<td><a href="delete?id=${ut.idUtilizador}">Delete</a></td>
-				</tr>
+                                        <td> <select>
+                                    <option value="ativo">Ativo</option>
+                                    <option value="desativo">Desativo</option>                                
+                                            </select></td>
+                        </tr>
 			</c:forEach>
 		</table>
                     
