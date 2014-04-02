@@ -119,7 +119,7 @@ public class HomePageController {
             } else {
                 resultado = "Login Invalido";
             }
-        return new ModelAndView("loginresultado","resultado",resultado );
+        return new ModelAndView("administrador","resultado",resultado );
     
     
 }
