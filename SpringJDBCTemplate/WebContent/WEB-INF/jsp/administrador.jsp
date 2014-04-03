@@ -24,9 +24,16 @@
             <ul class="sidebar-nav">
                 <li class="sidebar-brand"><a href="#">SCB</a>
                 </li>
-                <li><a href="register">Registar Atleta</a>
+                <li><a href="register">Registar Atletas</a>
                 </li>
-                <li><a href="getList">Visualizar Atleta</a>
+                <li><a href="register">Modifiar Atletas</a>
+                </li>
+                <li>Visualizar Atleta
+                    <ul>
+                        <li><a href="getList">Visualizar historico de atleta</a></li>
+                         <li><a href="getList">Visualizar dados atleta</a>
+                </li> 
+                    </ul>
                 </li>
                 <li><a href="login">Logout</a>
                 </li>

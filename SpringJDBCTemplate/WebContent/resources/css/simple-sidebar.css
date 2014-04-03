@@ -31,9 +31,16 @@
 .sidebar-nav li {
   line-height: 40px;
   text-indent: 20px;
+  color: #999999;
 }
 
 .sidebar-nav li a {
+  color: #999999;
+  display: block;
+  text-decoration: none;
+}
+
+.sidebar-nav li ul li {
   color: #999999;
   display: block;
   text-decoration: none;
