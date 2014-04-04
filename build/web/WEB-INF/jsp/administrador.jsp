@@ -22,11 +22,18 @@
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li class="sidebar-brand"><a href="#">SCB</a>
+                <li class="sidebar-brand"><a href="#"><img src="<c:url value="/resources/images/logotipo.jpg" />" /></a>
+                </li> 
+                <li><a href="register">Registar Atletas</a>
                 </li>
-                <li><a href="register">Registar Atleta</a>
+                <li><a href="register">Modifiar Atletas</a>
                 </li>
-                <li><a href="getList">Visualizar Atleta</a>
+                <li>Visualizar Atleta
+                    <ul>
+                        <li><a href="getList">Visualizar historico de atleta</a></li>
+                         <li><a href="getList">Visualizar dados atleta</a>
+                </li> 
+                    </ul>
                 </li>
                 <li><a href="login">Logout</a>
                 </li>
@@ -41,7 +48,7 @@
                     ${resultado} 
                     <br>
                     <% String nome = request.getParameter("username");
-                        out.print("ola " + nome);
+                        out.print("Bem Vindo " + nome);
                     %>
                     
                 </h1>

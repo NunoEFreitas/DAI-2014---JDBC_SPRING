@@ -57,7 +57,7 @@
             <div class="page-content inset">
                 <div class="row">
                 
-                     <table border="1">
+                     <table class="table">
 			<tr>
 				<td class="heading">ID de Utilizador</td>
 				<td class="heading">Nome</td>

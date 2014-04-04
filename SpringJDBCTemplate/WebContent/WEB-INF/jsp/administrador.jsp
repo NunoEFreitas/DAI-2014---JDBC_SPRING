@@ -22,8 +22,8 @@
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li class="sidebar-brand"><a href="#">SCB</a>
-                </li>
+                <li class="sidebar-brand"><a href="#"><img src="<c:url value="/resources/images/logotipo.jpg" />" /></a>
+                </li> 
                 <li><a href="register">Registar Atletas</a>
                 </li>
                 <li><a href="register">Modifiar Atletas</a>
@@ -48,7 +48,7 @@
                     ${resultado} 
                     <br>
                     <% String nome = request.getParameter("username");
-                        out.print("ola " + nome);
+                        out.print("Bem Vindo " + nome);
                     %>
                     
                 </h1>
