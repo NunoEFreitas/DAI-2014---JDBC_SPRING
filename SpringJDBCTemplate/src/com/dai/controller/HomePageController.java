@@ -12,6 +12,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import com.dai.domain.User;
 import com.dai.services.UserService;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -99,18 +103,21 @@ public class HomePageController {
         
          @RequestMapping("/verifica")
 	public ModelAndView verifica() {
-		return new ModelAndView("administrador");
+		return new ModelAndView("analistas");
 	}
         
         
         @RequestMapping(value="/login", method = RequestMethod.POST)
-        public ModelAndView login (@RequestParam("username") String user,@RequestParam("password") String password,  ModelMap model){
+        public ModelAndView login (@RequestParam("username") String user,@RequestParam("password") String password,  ModelMap model,HttpServletRequest request, HttpServletResponse response){
             String resultado;
             boolean existe = userService.verificaUser(user);
             if(existe==true){
             User user1 = userService.getUser(user);
             if(user1.getPassword().equals(password)){
                resultado = "Login efectuado com sucesso";
+              
+              HttpSession  session = request.getSession();
+              session.setAttribute("user", user);
                 } else {
                     resultado = "Password Errada";
             }
@@ -119,6 +126,7 @@ public class HomePageController {
             } else {
                 resultado = "Login Invalido";
             }
+          
         return new ModelAndView("administrador","resultado",resultado );
     
     

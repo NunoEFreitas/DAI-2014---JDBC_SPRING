@@ -17,6 +17,7 @@
        
 </head>
 <body>
+  
 	 <div id="wrapper">
 
         <!-- Sidebar -->
@@ -47,10 +48,11 @@
                     <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
                     ${resultado} 
                     <br>
-                    <% String nome = request.getParameter("username");
-                        out.print("Bem Vindo " + nome);
+                    <%
+                        out.print("<h4> welcome" + session.getAttribute("user"));
+
+
                     %>
-                    
                 </h1>
             </div>
             <!-- Keep all page content within the page-content inset div! -->

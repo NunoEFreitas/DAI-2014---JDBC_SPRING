@@ -18,25 +18,19 @@
 </head>
 <body>
   
-	 <div id="wrapper">
+    <div id="wrapper">
 
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand"><a href="#"><img src="<c:url value="/resources/images/logotipo.jpg" />" /></a>
-                </li> 
-                <li><a href="register">Registar Atletas</a>
-                </li>
-                <li><a href="register">Modifiar Atletas</a>
-                </li>
-                <li>Visualizar Atleta
+
+                <li>Analisar em tempo real
                     <ul>
-                        <li><a href="getList">Visualizar historico de atleta</a></li>
-                         <li><a href="getList">Visualizar dados atleta</a>
-                </li> 
+                        <li><a href="getList">Inserir dados de jogo</a></li>
                     </ul>
                 </li>
-                <li><a href="login">Logout</a>
+                <li><a href="login">Sair</a>
                 </li>
             </ul>
         </div>
