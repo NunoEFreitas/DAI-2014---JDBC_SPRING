@@ -17,30 +17,14 @@
        
 </head>
 <body>
-  
-	 <div id="wrapper">
+  <%@jsp:include page = "resources/include/templateAdministrador.jsp" %>
+   
 
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand"><a href="#"><img src="<c:url value="/resources/images/logotipo.jpg" />" /></a>
-                </li> 
-                <li><a href="register">Registar Atletas</a>
-                </li>
-                <li><a href="register">Modifiar Atletas</a>
-                </li>
-                <li>Visualizar Atleta
-                    <ul>
-                        <li><a href="getList">Visualizar historico de atleta</a></li>
-                         <li><a href="getList">Visualizar dados atleta</a>
-                </li> 
-                    </ul>
-                </li>
-                <li><a href="login">Logout</a>
-                </li>
-            </ul>
-        </div>
-
+        
+        
+        
+        
+        
         <!-- Page content -->
         <div id="page-content-wrapper">
             <div class="content-header">
