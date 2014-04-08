@@ -19,22 +19,8 @@
 <body>
   
     <div id="wrapper">
-
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand"><a href="#"><img src="<c:url value="/resources/images/logotipo.jpg" />" /></a>
-
-                <li>Inserir dados em tempo real
-                    <ul>
-                        <li><a href="getList">eee</a></li>
-                    </ul>
-                </li>
-                <li><a href="login">Sair</a>
-                </li>
-            </ul>
-        </div>
-
+         <%@include file="/resources/include/templateOlheiros.jsp" %>
+      
         <!-- Page content -->
         <div id="page-content-wrapper">
             <div class="content-header">

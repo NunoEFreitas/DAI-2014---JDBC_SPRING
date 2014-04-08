@@ -5,44 +5,34 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-          <!-- Bootstrap core CSS -->
+        
+              
+        <!-- Bootstrap core CSS -->
         <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
 
         <!-- Add custom CSS here -->
         <link href="<c:url value= "resources/css/simple-sidebar.css"/>" rel="stylesheet" type="text/css">
 
-
+        
     </head>
     <body>
+      
         
-       
 
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand"><a href="#"><img src="<c:url value="/resources/images/logotipo.jpg" />" /></a>
-                </li> 
-                <li><a href="register">Registar Atletas</a>
-                </li>
-                <li><a href="register">Modifiar Atletas</a>
-                </li>
-                <li>Visualizar Atleta
+
+                <li>Analisar em tempo real
                     <ul>
-                        <li><a href="getList">Visualizar historico de atleta</a></li>
-                         <li><a href="getList">Visualizar dados atleta</a>
-                </li> 
+                        <li><a href="getList">Inserir dados de jogo</a></li>
                     </ul>
                 </li>
-                <li><a href="login">Logout</a>
+                <li><a href="login">Sair</a>
                 </li>
             </ul>
         </div>
-
-       
-       
-
-   
 
         
         

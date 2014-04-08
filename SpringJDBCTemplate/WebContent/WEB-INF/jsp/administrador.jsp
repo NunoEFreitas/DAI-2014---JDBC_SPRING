@@ -17,14 +17,10 @@
        
 </head>
 <body>
-  <%@jsp:include page = "resources/include/templateAdministrador.jsp" %>
+     <div id="wrapper">
    
-
-        
-        
-        
-        
-        
+    <%@include file="/resources/include/templateAdministrador.jsp" %>
+          
         <!-- Page content -->
         <div id="page-content-wrapper">
             <div class="content-header">
@@ -35,19 +31,19 @@
                     <%
                         out.print("<h4> welcome" + session.getAttribute("user"));
 
-
                     %>
                 </h1>
             </div>
+                
+                
             <!-- Keep all page content within the page-content inset div! -->
             <div class="page-content inset">
                 <div class="row">
                    
+
                     
                     
-                    
-                    
-                    
+                
                     
                     
                     

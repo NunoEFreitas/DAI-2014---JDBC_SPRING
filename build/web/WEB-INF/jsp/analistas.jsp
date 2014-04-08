@@ -17,23 +17,10 @@
        
 </head>
 <body>
-  
-    <div id="wrapper">
-
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand"><a href="#"><img src="<c:url value="/resources/images/logotipo.jpg" />" /></a>
-
-                <li>Analisar em tempo real
-                    <ul>
-                        <li><a href="getList">Inserir dados de jogo</a></li>
-                    </ul>
-                </li>
-                <li><a href="login">Sair</a>
-                </li>
-            </ul>
-        </div>
+    
+     <div id="wrapper">
+  <%@include file="/resources/include/templateOlheiros.jsp" %>
+    
 
         <!-- Page content -->
         <div id="page-content-wrapper">
