@@ -20,28 +20,8 @@
 <body>
 	 <div id="wrapper">
 
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand"><a href="#">SCB</a>
-                </li>
-                <li><a href="#">Perfil</a>
-                </li>
-                <li><a href="#">Contacto</a>
-                </li>
-                <li><a href="#">Registar</a>
-                </li>
-                <li><a href="getList">Listar</a>
-                </li>
-                <li><a href="#">About</a>
-                </li>
-                <li><a href="#">Opções</a>
-                </li>
-                <li><a href="login">Logaut</a>
-                </li>
-            </ul>
-        </div>
-
+        <%@include file="/resources/include/templateAdministrador.jsp" %>
+             
         <!-- Page content -->
         <div id="page-content-wrapper">
             <div class="content-header">
