@@ -1,0 +1,134 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<html>
+<head>
+	<meta charset="UTF-8">
+        <Meta  http-equiv = "X-UA-Compatible"  content = "IE = borda" >
+	<title>Login - Sistema de Informação - SCB</title>
+	
+
+      
+        <!-- Bootstrap core CSS -->
+        <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
+
+        <!-- Add custom CSS here -->
+        <link href="<c:url value= "resources/css/simple-sidebar.css"/>" rel="stylesheet" type="text/css">
+
+
+       
+</head>
+<body>
+	 <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+         <ul>
+<li><a href="#">Modificar</a>
+ <ul>
+        <li><a href="#">Atletas</a></li>
+        <li><a href="#">Treino</a></li>
+ </ul>
+</li>
+<li>
+    <a href="#">Criar</a>
+    <ul>
+        <li><a href="#">Treino</a></li>
+        <li><a href="#">Equipa</a></li>
+        <li><a href="#">TáticaInicial</a></li>
+        <li><a href="#">EquipaSuplentes</a></li>
+    </ul>
+</li>
+<li><a href="#">Alterar Dados</a></li>
+<li>
+    <a href="#">Definir</a>
+    <ul>
+        <li><a href="#">Equipa</a></li>
+        <li><a href="#">PlanoTreino</a></li>
+        <li><a href="#">DadosGeraisTreino</a></li>
+    </ul>
+</li>
+<li><a href="#">ControlarPresenças</a></li>
+<li>
+    <a href="#">Visualizar</a>
+    <ul>
+        <li><a href="#">Atletas</a></li>
+        <li><a href="#">HistóricoAtletas</a></li>
+        <li><a href="#">Dados Atletas</a></li>
+        <li><a href="#">Treino</a></li>
+        <li><a href="#">Histórico Treino</a></li>
+        <li><a href="#">Vídeo</a></li>
+    </ul>
+</li>
+<li>
+    <a href="#">AnalisarCompetição</a>
+    <ul>
+         <li><a href="#">EmTempoReal</a></li>
+        <li><a href="#">Á Posteriori</a></li>
+    </ul>
+</li>
+<li>
+    <li>
+    <a href="#">AnalisarAdversário</a>
+    <ul>
+        <li><a href="#">Á Posteriori</a></li>
+        <li><a href="#">DadosEmTabela</a></li>
+        <li><a href="#">DadosEmGráfico</a></li>
+        <li><a href="#">Tendências</a></li>
+        <li><a href="#">PiorRecetora</a></li>
+        <li><a href="#">VídeoJogo</a></li>
+    </ul>
+</li>
+<li>
+    <a href="#">Gerar</a>
+    <ul>
+         <li><a href="#">DadosTabela</a></li>
+        <li><a href="#">DadosGráfico</a></li>
+    </ul>
+</li>
+<li>
+    <a href="#">Inserir</a>
+    <ul>
+        <li><a href="#">DadosTempoReal</a></li>
+        <li><a href="#">TendênciaAtaque</a></li>
+        <li><a href="#">TendênciaPasse</a></li>
+        <li><a href="#">TendênciaServiço</a></li>
+        <li><a href="#">FalhaReceção</a></li>
+        <li><a href="#">Vídeo</a></li>
+    </ul>
+</li>
+<li><a href="#">CancelarTreino</a></li>
+<li><a href="#">AlterarDadosTreino</a></li>
+<li><a href="#">EditarVídeo</a></li>
+<li><a href="#">ManusearVídeo</a></li>
+<li><a href="#">ApagarVídeo</a></li>
+
+</ul>
+            
+
+
+        </div>
+
+        <!-- Page content -->
+        <div id="page-content-wrapper">
+            <div class="content-header">
+                <h1>
+                    <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
+                    ${resultado} 
+                    <br>
+                    <% String nome = request.getParameter("username");
+                        out.print("ola Treinador " );
+                    %>
+                    
+                </h1>
+            </div>
+            <!-- Keep all page content within the page-content inset div! -->
+            <div class="page-content inset">
+                <div class="row">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+        </body>
+
+</html>
