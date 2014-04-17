@@ -103,7 +103,7 @@ public class HomePageController {
         
          @RequestMapping("/verifica")
 	public ModelAndView verifica() {
-		return new ModelAndView("olheiros");
+		return new ModelAndView("register");
 	}
         
         

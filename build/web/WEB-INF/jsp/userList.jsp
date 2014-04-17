@@ -10,35 +10,20 @@
 	<title>Listar Jogadores - Sistema de Informação - SCB</title>
 	
 
-        <!-- Bootstrap core CSS -->
-        <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
-
-        <!-- Add custom CSS here -->
-        <link href="<c:url value= "resources/css/simple-sidebar.css"/>" rel="stylesheet" type="text/css">
-
-
-
-
 </head>
 <body>
-	 <div id="wrapper">
 
-         <%@include file="/resources/include/templateAdministrador.jsp" %>
-             
-
-        <!-- Page content -->
-        <div id="page-content-wrapper">
-            <div class="content-header">
-                <h1>
-                    <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
-                    Listar Jogadores
-                </h1>
-            </div>
-            <!-- Keep all page content within the page-content inset div! -->
-            <div class="page-content inset">
-                <div class="row">
-                
-                     <table class="table">
+    <% 
+if(session.getAttribute("user").equals("5")){%>  
+    <%@include file="/resources/include/templateAdministracao.jsp"%>
+    <% 
+  }else{
+  
+  }%>
+                 
+                        <h1>Visualizar dados de atleta</h1>
+                   
+                        <table border="1">
 			<tr>
 				<td class="heading">ID de Utilizador</td>
 				<td class="heading">Nome</td>
@@ -80,7 +65,6 @@
             </div>
         </div>
 
-    </div>
 
         </body>
 

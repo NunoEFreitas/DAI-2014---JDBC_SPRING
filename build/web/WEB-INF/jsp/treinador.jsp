@@ -7,13 +7,10 @@
 
     </head>
     <body>
- 
-    <%@include file="/resources/include/templateAdministracao.jsp"%>
 
-      
-          <!-- Page content -->
-          <h1> ${resultado} </h1>
-       
+        <%@include file="/resources/include/templateTreinador.jsp" %>
+
+
         <%
             out.print("<h4> welcome" + session.getAttribute("user"));
         %>
@@ -25,5 +22,4 @@
 </body>
 
 </html>
-
 
