@@ -18,6 +18,8 @@
 			<div class="logo">
                             
                             <a href="login" >Login</a>
+                            <br>
+                            
 				<span> <a href="main"><img src="<c:url value="/resources/images/logotipo.jpg" />" /></a> </span>
 			</div>
 			<div class="sidebar">

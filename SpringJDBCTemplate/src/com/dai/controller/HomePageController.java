@@ -1,5 +1,10 @@
 package com.dai.controller;
 
+import com.dai.domain.Escalao;
+import com.dai.domain.Perfil;
+import com.dai.domain.Utilizador;
+import com.dai.services.EscalaoService;
+import com.dai.services.PerfilService;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -10,8 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import com.dai.domain.User;
-import com.dai.services.UserService;
+import com.dai.services.UtilizadorService;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -19,8 +23,87 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class HomePageController {
 
 	@Autowired
-	UserService userService;
-
+	UtilizadorService utilizadorService;
+        
+        @Autowired
+        PerfilService perfilService;
+        
+        @Autowired
+        EscalaoService escalaoService;
+        
+        @RequestMapping("/main")
+	public ModelAndView main() {
+               
+		return new ModelAndView("testemain");
+	}
+        
+         @RequestMapping("/testenovoperfil")
+	public ModelAndView perfil(@ModelAttribute Perfil perfil) {
+               
+		return new ModelAndView("testenovoperfil");
+	}
+        
+        // futuramente alterar o redirect para uma pagina de confirmacao no caso de ter sido
+        // inserido com sucesso ou no caso de insucesso com o erro correspondente
+        @RequestMapping("/novoperfil")
+	public String inserePerfil(@ModelAttribute Perfil perfil) {
+		if (perfil != null)
+			perfilService.inserirPerfil(perfil);
+		return "redirect:/testelistaperfil";
+	}
+        
+        @RequestMapping("/testelistaperfil")
+	public ModelAndView listaPerfil() {
+		List<Perfil> lperfil = perfilService.listarPerfil();
+		return new ModelAndView("testelistaperfil", "perfilList", lperfil);
+	}
+        
+        @RequestMapping("/testenovoescalao")
+	public ModelAndView escalao(@ModelAttribute Escalao escalao) {
+               
+		return new ModelAndView("testenovoescalao");
+	}
+        
+        @RequestMapping("/novoescalao")
+	public String insereEscalao(@ModelAttribute Escalao escalao) {
+		if (escalao != null)
+			escalaoService.inserirEscalao(escalao);
+		return "redirect:/testelistaescalao";
+	}
+        
+        @RequestMapping("/testelistaescalao")
+	public ModelAndView listaEscalao() {
+		List<Escalao> lescalao = escalaoService.listarEscalao();
+		return new ModelAndView("testelistaescalao", "escalaoList", lescalao);
+	}
+        
+        @RequestMapping("/testenovoutilizador")
+	public ModelAndView registaUtilizador(@ModelAttribute Utilizador utilizador) {
+                
+                List<Perfil> lp = perfilService.listarPerfil();
+                List<Escalao> li = escalaoService.listarEscalao();
+                
+            
+                
+                Map<String, List> map = new HashMap<String, List>();
+                map.put("lp",lp);
+                map.put("li",li);
+		return new ModelAndView("testenovoutilizador", "map", map);
+	}
+        
+        @RequestMapping("/insereutilizador")
+	public String inserData(@ModelAttribute Utilizador utilizador) {
+		if (utilizador != null)
+			utilizadorService.inserirUtilizador(utilizador);
+		return "redirect:/testelistautilizador";
+	}
+        
+        @RequestMapping("/testelistautilizador")
+	public ModelAndView listaUtilizador() {
+		List<Utilizador> lutilizador = utilizadorService.listarUtilizador();
+		return new ModelAndView("testelistautilizador", "utilizadorList", lutilizador);
+	}
+/*
 	@RequestMapping("/register")
 	public ModelAndView registerUser(@ModelAttribute User user) {
                 
@@ -35,11 +118,7 @@ public class HomePageController {
 		return new ModelAndView("register", "map", map);
 	}
         
-        @RequestMapping("/main")
-	public ModelAndView main() {
-               
-		return new ModelAndView("main");
-	}
+        
 
 	@RequestMapping("/insert")
 	public String inserData(@ModelAttribute User user) {
@@ -114,4 +193,5 @@ public class HomePageController {
     
     
 }
+        */
 }
