@@ -1,3 +1,4 @@
+
 package com.dai.controller;
 
 import com.dai.domain.Escalao;
@@ -103,6 +104,8 @@ public class HomePageController {
 		List<Utilizador> lutilizador = utilizadorService.listarUtilizador();
 		return new ModelAndView("testelistautilizador", "utilizadorList", lutilizador);
 	}
+        
+}
 /*
 	@RequestMapping("/register")
 	public ModelAndView registerUser(@ModelAttribute User user) {
@@ -194,4 +197,3 @@ public class HomePageController {
     
 }
         */
-}
