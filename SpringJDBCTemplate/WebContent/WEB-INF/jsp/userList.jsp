@@ -16,52 +16,56 @@
 </head>
 <body>
 
-    <% 
-if(session.getAttribute("user").equals("5")){%>  
+
     <%@include file="/resources/include/templateAdministracao.jsp"%>
-    <% 
-  }else{
   
-  }%>
+ 
                  
                         <h1>Visualizar dados de atleta</h1>
                    
                         <table border="1">
 			<tr>
-				<td class="heading">ID de Utilizador</td>
+				<td class="heading">ID Utilizador</td>
 				<td class="heading">Nome</td>
-				<td class="heading">Morada</td>
-				<td class="heading">Telefone</td>
-				<td class="heading">Telemovel</td>
+                                <td class="heading">Password</td>
+                                <td class="heading">Data de Nascimento</td>
+                                <td class="heading">Morada</td>
+                                <td class="heading">Sexo</td>
+                                <td class="heading">Telefone</td>
+                                <td class="heading">Email</td>
                                 <td class="heading">Altura</td>
                                 <td class="heading">Peso</td>
-                                <td class="heading">Email</td>
-                                <td class="heading">Password</td>
-                                <td class="heading">Tipo de Utilizador</td>
-				<td class="heading">Edit</td>
-				<td class="heading">Delete</td>
+                                <td class="heading">Salto Vertical</td>
+                                <td class="heading">Velocidade de Deslocamento</td>
+                                <td class="heading">Alcance Ataque</td>
+                                <td class="heading">Alcance Bloco</td>
+                                <td class="heading">Exames Clinicos</td>
+                                <td class="heading">Perfil</td>
+                                <td class="heading">Escalao</td>            
 			</tr>
-			<c:forEach var="ut" items="${userList}">
+			<c:forEach var="ul" items="${utilizadorList}">
 				<tr>
-					<td>${ut.idUtilizador}</td>
-					<td>${ut.nome}</td>
-					<td>${ut.morada}</td>
-					<td>${ut.telefone}</td>
-					<td>${ut.telemovel}</td>
-                                        <td>${ut.altura}</td>
-                                        <td>${ut.peso}</td>
-                                        <td>${ut.email}</td>
-                                        <td>${ut.password}</td>
-                                        <td>${ut.tipo_de_utilizador}</td>
-					<td><a href="edit?id=${ut.idUtilizador}">Edit</a></td>
-					<td><a href="delete?id=${ut.idUtilizador}">Delete</a></td>
-                                        <td> <select>
-                                    <option value="ativo">Ativo</option>
-                                    <option value="desativo">Desativo</option>                                
-                                            </select></td>
-                        </tr>
+					<td>${ul.getIdUtilizador()}</td>
+                                        <td>${ul.getNome()}</td>
+					<td>${ul.getPassword()}</td>
+                                        <td>${ul.getDataNascimento()}</td>
+                                        <td>${ul.getMorada()}</td>
+                                        <td>${ul.getSexo()}</td>
+                                        <td>${ul.getTelefone()}</td>
+                                        <td>${ul.getEmail()}</td>
+                                        <td>${ul.getAltura()}</td>
+                                        <td>${ul.getPeso()}</td>
+                                        <td>${ul.getSaltoVertical()}</td>
+                                        <td>${ul.getVelocidadeDeslocamento()}</td>
+                                        <td>${ul.getAlcanceAtaque()}</td>
+                                        <td>${ul.getAlcanceBloco()}</td>
+                                        <td>${ul.getExamesClinicos()}</td>
+                                        <td>${ul.getIdPerfil()}</td>
+                                        <td>${ul.getIdEscalao()}</td>
+				</tr>
 			</c:forEach>
 		</table>
+        
                     
                     
                 </div>

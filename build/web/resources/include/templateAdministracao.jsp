@@ -25,7 +25,7 @@
                         <li class='has-sub'><a href='#'><span>Visualizar Atleta</span></a>
                             <ul>
                                 <li><a href='#'><span>VisualizarHistóricoAtleta</span></a></li>
-                                <li class="last"><a href="getList"><span>VisualizarDadosAtleta</span></a></li>
+                                <li class="last"><a href="userList"><span>VisualizarDadosAtleta</span></a></li>
                             </ul>
                         </li>  
                     </ul>

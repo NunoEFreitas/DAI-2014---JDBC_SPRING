@@ -78,7 +78,7 @@ public class HomePageController {
 		return new ModelAndView("testelistaescalao", "escalaoList", lescalao);
 	}
         
-        @RequestMapping("/testenovoutilizador")
+        @RequestMapping("/register")
 	public ModelAndView registaUtilizador(@ModelAttribute Utilizador utilizador) {
                 
                 List<Perfil> lp = perfilService.listarPerfil();
@@ -89,7 +89,7 @@ public class HomePageController {
                 Map<String, List> map = new HashMap<String, List>();
                 map.put("lp",lp);
                 map.put("li",li);
-		return new ModelAndView("testenovoutilizador", "map", map);
+		return new ModelAndView("register", "map", map);
 	}
         
         @RequestMapping("/insereutilizador")
@@ -99,10 +99,10 @@ public class HomePageController {
 		return "redirect:/testelistautilizador";
 	}
         
-        @RequestMapping("/testelistautilizador")
+        @RequestMapping("/userList")
 	public ModelAndView listaUtilizador() {
 		List<Utilizador> lutilizador = utilizadorService.listarUtilizador();
-		return new ModelAndView("testelistautilizador", "utilizadorList", lutilizador);
+		return new ModelAndView("userList", "utilizadorList", lutilizador);
 	}
         
 

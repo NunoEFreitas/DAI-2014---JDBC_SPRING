@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <Meta  http-equiv = "X-UA-Compatible"  content = "IE = borda" >
         <title>Login - Sistema de Informação - SCB</title>
+         <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
 
     </head>
     <body>
