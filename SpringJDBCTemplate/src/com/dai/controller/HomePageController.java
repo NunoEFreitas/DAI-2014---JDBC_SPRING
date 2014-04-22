@@ -35,7 +35,7 @@ public class HomePageController {
         @RequestMapping("/main")
 	public ModelAndView main() {
                
-		return new ModelAndView("testemain");
+		return new ModelAndView("main");
 	}
         
          @RequestMapping("/testenovoperfil")
@@ -105,7 +105,7 @@ public class HomePageController {
 		return new ModelAndView("testelistautilizador", "utilizadorList", lutilizador);
 	}
         
-}
+
 /*
 	@RequestMapping("/register")
 	public ModelAndView registerUser(@ModelAttribute User user) {
@@ -170,30 +170,25 @@ public class HomePageController {
 		userService.deleteData(id);
 		return "redirect:/getList";
 	}
-        
+        */
         @RequestMapping("/login")
 	public ModelAndView login() {
 		return new ModelAndView("login");
 	}
         
         @RequestMapping(value="/login", method = RequestMethod.POST)
-        public ModelAndView login (@RequestParam("username") String user,@RequestParam("password") String password,  ModelMap model){
+        public ModelAndView login (@RequestParam("username") Integer user,@RequestParam("password") String password,  ModelMap model){
             String resultado;
-            boolean existe = userService.verificaUser(user);
-            if(existe==true){
-            User user1 = userService.getUser(user);
-            if(user1.getPassword().equals(password)){
+            Utilizador ut = utilizadorService.getUtilizador(user);
+            if(ut.getPassword().equals(password)){
                resultado = "Login efectuado com sucesso";
                 } else {
                     resultado = "Password Errada";
             }
                     
                    
-            } else {
-                resultado = "Login Invalido";
-            }
-        return new ModelAndView("loginresultado","resultado",resultado );
+        return new ModelAndView("administrador","resultado",resultado );
     
     
-}
-        */
+}}
+       
