@@ -18,7 +18,7 @@
              
         <!-- Page content -->
        
-                <h1> Registar  </h1>
+             <h1> Registar  </h1>
                 
           
                    

@@ -9,6 +9,9 @@
         <Meta  http-equiv = "X-UA-Compatible"  content = "IE = borda" >
 	<title>Listar Jogadores - Sistema de Informação - SCB</title>
 	
+                
+        <!-- Bootstrap core CSS -->
+        <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
 
 </head>
 <body>
