@@ -28,8 +28,7 @@
                                 <li class="last"><a href="userList"><span>VisualizarDadosAtleta</span></a></li>
                             </ul>
                         </li>  
-                    </ul>
-            
+                    </ul>            
                     <br>
                     <br>
     </body>

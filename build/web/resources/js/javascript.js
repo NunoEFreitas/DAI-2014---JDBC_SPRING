@@ -1,6 +1,7 @@
   function  oculta(valor) {
-
+alert(valor);
            if (valor == 1) {
+             alert(valor);
               
                
                     document.getElementById('1').style.display = 'block';
@@ -24,6 +25,7 @@
                 }
 
                 else if (valor == 2) {
+                     
                 
                     document.getElementById('1').style.display = 'block';
                     document.getElementById('2').style.display = 'block';

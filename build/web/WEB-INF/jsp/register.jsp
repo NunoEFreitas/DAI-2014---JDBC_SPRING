@@ -35,8 +35,8 @@
 
 
         </script>
-        <style>
-     </style>
+      
+        
 </head>
 <body onload="oculta(1);" >
 	
@@ -44,99 +44,96 @@
         <%@include file="/resources/include/templateAdministracao.jsp" %>
              
         <!-- Page content -->
-       
+      
              <h1> Registar  </h1>
                 
-          
+       
                    
-             <form:form  class="form-inline" id ="registar" method="post" action="/insereutilizador" modelAttribute="utilizador"  >
-                 <table>
-                     <tr>
-                         <td>Perfil :</td>
+             <form:form  role="form"  id ="registar" method="post" action="/insereutilizador" modelAttribute="utilizador"  >
+                 <div>
+                 <label>Perfil : </label>
                          
-                            <td> <form:select  path = "idPerfil" name="idPerfil" onload="oculta(this.value);" onchange="oculta(this.value)">
+                            <form:select class="form-control" path = "idPerfil" name="idPerfil" onchange="oculta(this.value)">
                                  <c:forEach items='${map.lp}' var='lp'>
                                      <form:option value ="${lp.idPerfil}">${lp.designacao}</form:option>
                                  </c:forEach>
                              </form:select>
-                            </td>
-                   
-                     </tr >
-                     <tr id="1" >
-                         <td>Nome :</td>
-                         <td><form:input name="nome" path="nome" /></td>
-                     </tr>
-                     <tr id="2">
-                         <td>Password :</td>
-                         <td><form:input name="pass" path="password" /></td>
-                     </tr>
-                     <tr id="3">
+                   </div>
+                 <div id="1">
+                      <label>Nome :</label>
+                      <form:input class="form-control" name="nome" path="nome" />
+                 </div>                   
+                     <div  id="2">
+                         <label>Password :</label>
+                         <form:input class="form-control" name="pass" path="password" />
+                     </div>
+                     <div  id="3">
 
-                         <td>Data de Nascimento :</td>
-                         <td><form:input path="dataNascimento" /></td>
-                     </tr>
-                     <tr id="4">
-                         <td>Morada :</td>
-                         <td><form:input path="morada" /></td>
-                     </tr>
-                     <tr id="5">
-                         <td>Sexo :</td>
-                         <td><form:input path="sexo" /></td>
-                     </tr>
-                     <tr id="6">
-                         <td>Telefone :</td>
-                         <td><form:input path="telefone" /></td>
-                     </tr>
-                     <tr id="7">
-                         <td>Email :</td>
-                         <td><form:input path="email" /></td>
-                     </tr>
-                     <tr id="8">
-                         <td>Altura :</td>
-                         <td><form:input path="altura" /></td>
-                     </tr>
-                     <tr id="9">
-                         <td>Peso :</td>
-                         <td><form:input path="peso" /></td>
-                     </tr>
-                     <tr id="10">
-                         <td>Salto Vertical :</td>
-                         <td><form:input path="saltoVertical" /></td>
-                     </tr>
-                     <tr id="11">
-                         <td>Velocidade Deslocamento :</td>
-                         <td><form:input path="velocidadeDeslocamento" /></td>
-                     </tr>
-                     <tr id="12">
-                         <td>Alcance Ataque :</td>
-                         <td><form:input path="alcanceAtaque" /></td>
-                     </tr>
-                     <tr id="13">
-                         <td>Alcance Bloco :</td>
-                         <td><form:input path="alcanceBloco" /></td>
-                     </tr>
-                     <tr id="14">
-                         <td>Exames Clinicos :</td>
-                         <td><form:input path="examesClinicos" /></td>
-                     </tr>
+                         <label>Data de Nascimento :</label>
+                         <form:input type="date"  class="form-control" path="dataNascimento" />
+                     </div>
+                     <div id="4">
+                         <label>Morada :</label>
+                         <form:input    class="form-control" path="morada" />
+                     </div>
+                     <div id="5">
+                         <label>Sexo :</label>
+                         <form:input   class="form-control" path="sexo" />
+                     </div>
+                     <div id="6">
+                         <label>Telefone :</label>
+                         <form:input   class="form-control" path="telefone" />
+                     </div>
+                     <div id="7">
+                         <label>Email :</label>
+                         <form:input class="form-control" path="email" />
+                     </div>
+                     <div id="8">
+                         <label>Altura :</label>
+                         <form:input   class="form-control" path="altura" />
+                     </div>
+                     <div id="9">
+                         <label>Peso :</label>
+                         <form:input   class="form-control" path="peso" />
+                     </div>
+                     <div id="10">
+                         <label>Salto Vertical :</label>
+                         <form:input   class="form-control" path="saltoVertical" />
+                     </div>
+                     <div id="11">
+                         <label>Velocidade Deslocamento :</label>
+                         <form:input   class="form-control" path="velocidadeDeslocamento" />
+                     </div>
+                     <div id="12">
+                         <label>Alcance Ataque :</label>
+                         <form:input   class="form-control" path="alcanceAtaque" />
+                     </div>
+                     <div id="13">
+                         <label>Alcance Bloco :</label>
+                         <form:input   class="form-control" path="alcanceBloco" />
+                     </div>
+                     <div id="14">
+                         <label>Exames Clinicos :</label>
+                         <form:input   class="form-control" path="examesClinicos" />
+                     </div>
 
-                     <tr id="15">
-                         <td>Escalao :</td>
-                         <td>
-                             <form:select path = "idEscalao" name="idEscalao">
+                     <div id="15">
+                         <label>Escalao :</label>
+                         
+                             <form:select   class="form-control" path = "idEscalao" name="idEscalao">
                                  <c:forEach items='${map.li}' var='li'>
                                      <form:option value ="${li.idEscalao}">${li.designacao}</form:option>
                                  </c:forEach>
                              </form:select>
-                         </td>
-                     </tr>
+                         
+                     </div>
 
-                     <tr id="16">
-                         <td>&nbsp;</td>
-                         <td><input type="submit" value="Guardar" /></td>
-                     </tr>
+                     <div id="16">
+                         <label>&nbsp;</label>
+                         <input type="submit" value="Guardar" />
+                     </div>
 
-                 </table>
+                
              </form:form>
 
 
