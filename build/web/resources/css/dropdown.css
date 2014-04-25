@@ -20,10 +20,11 @@ body {
  height: 600px;
  width: 165px;
  float: left;
+ text-align: center;
 }
 #rightcolumn { 
  float: right;
- color: #333;
+ color: black;
  border: 1px solid #ccc;
  background:#CCC8B3;
  margin: 10px 0px 10px 0px;

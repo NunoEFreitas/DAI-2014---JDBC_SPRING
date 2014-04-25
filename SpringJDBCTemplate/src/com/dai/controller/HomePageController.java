@@ -171,6 +171,13 @@ public class HomePageController {
 		return "redirect:/getList";
 	}
         */
+        
+        @RequestMapping("/verifica")
+	public ModelAndView verifica() {
+		return new ModelAndView("apresenta");
+	}
+        
+        
         @RequestMapping("/login")
 	public ModelAndView login() {
 		return new ModelAndView("login");
