@@ -19,7 +19,7 @@
                         <li class='has-sub'><a href='#'><span>Modificar Atleta</span></a>
                             <ul>
                                 <li><a href='#'><span>Ativar/Desativar</span></a></li>
-                                <li class="last"><a href="#"><span>AlterarDados</span></a></li>
+                                <li class="last"><a href="alterarDados"><span>AlterarDados</span></a></li>
                             </ul>
                         </li>  
                         <li class='has-sub'><a href='#'><span>Visualizar Atleta</span></a>

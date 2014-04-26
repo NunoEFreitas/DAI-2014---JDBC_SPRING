@@ -104,6 +104,11 @@ public class HomePageController {
 		List<Utilizador> lutilizador = utilizadorService.listarUtilizador();
 		return new ModelAndView("userList", "utilizadorList", lutilizador);
 	}
+         @RequestMapping("/alterarDados")
+	public ModelAndView lista() {
+		List<Utilizador> lutilizador = utilizadorService.listarUtilizador();
+		return new ModelAndView("alterarDados", "utilizadorList", lutilizador);
+	}
         
 
 /*
@@ -139,11 +144,27 @@ public class HomePageController {
        
         
 
-	@RequestMapping("/edit")
-	public ModelAndView editUser(@RequestParam String id,
-			@ModelAttribute User user) {
+	
 
-		user = userService.getUser(id);
+	
+
+	@RequestMapping("/delete")
+	public String deleteUser(@RequestParam String id) {
+		userService.deleteData(id);
+		return "redirect:/getList";
+	}
+        */
+        @RequestMapping("/update")
+	public String updateUser(@ModelAttribute Utilizador user) {
+		utilizadorService.updateUtilizador(user);
+		return "redirect:/alterarDados";
+
+	}
+        @RequestMapping("/edit")
+	public ModelAndView editUtilizador(@RequestParam Integer id,
+			@ModelAttribute Utilizador user) {
+
+		user = utilizadorService.getUtilizador(id);
 
 		List<String> Tipo_de_utilizador = new ArrayList<String>();
 		Tipo_de_utilizador.add("Treinador");
@@ -157,20 +178,6 @@ public class HomePageController {
 		return new ModelAndView("edit", "map", map);
 
 	}
-
-	@RequestMapping("/update")
-	public String updateUser(@ModelAttribute User user) {
-		userService.updateData(user);
-		return "redirect:/getList";
-
-	}
-
-	@RequestMapping("/delete")
-	public String deleteUser(@RequestParam String id) {
-		userService.deleteData(id);
-		return "redirect:/getList";
-	}
-        */
         
         @RequestMapping("/verifica")
 	public ModelAndView verifica() {
