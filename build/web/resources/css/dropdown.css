@@ -9,15 +9,15 @@ body {
 }
 #wrapper { 
  margin: 0 auto;
- width: 1350px;
+ width: 100%;
 }
 #leftcolumn { 
- color: #333;
+ color: black;
  border: 1px solid #ccc;
  background: #b81c40;
  margin: 10px 0px 0px 0px;
  padding: 10px;
- height: 600px;
+ height: 900px;
  width: 165px;
  float: left;
  text-align: center;
@@ -29,7 +29,7 @@ body {
  background:#CCC8B3;
  margin: 10px 0px 10px 0px;
  padding: 10px;
- height: 600px;
+ height: 900px;
  width: 1140px;
  display: inline;
  position: relative;
@@ -42,7 +42,7 @@ body {
   font-family: verdana, geneva, arial, helvetica, sans-serif;
   font-size: 14px;
   font-weight: bold;
-  color: #8e8e8e;
+  color: black;
   width: auto;
 }
 #cssmenu > ul {

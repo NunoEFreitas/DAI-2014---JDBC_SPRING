@@ -204,12 +204,37 @@ public class HomePageController {
             String resultado;
             Utilizador ut = utilizadorService.getUtilizador(user);
             if(ut.getPassword().equals(password)){
-                resultado = "Login efectuado com sucesso";
+                 if(ut.getIdPerfil()==1){
+                 resultado = "Login efectuado com sucesso";
                 return new ModelAndView("administrador","resultado",resultado );
+                 
+                 }if(ut.getIdPerfil()==2){
+                  resultado = "Login efectuado com sucesso";
+                return new ModelAndView("treinador","resultado",resultado );
+                 }if(ut.getIdPerfil()==3){
+                  resultado = "Login efectuado com sucesso";
+                return new ModelAndView("treinadorAdjunto","resultado",resultado );
+                 
+                 }if(ut.getIdPerfil()==4){
+                  resultado = "Login efectuado com sucesso";
+                return new ModelAndView("atleta","resultado",resultado );
+                 
+                 }if(ut.getIdPerfil()==5){
+                  resultado = "Login efectuado com sucesso";
+                return new ModelAndView("olheiros","resultado",resultado );
+                 }
+                 if(ut.getIdPerfil()==6){
+                  resultado = "Login efectuado com sucesso";
+                return new ModelAndView("analistas","resultado",resultado );
+                 
+                 }
+               
+               
             } else{ 
                 resultado = "Password Errada";
                 return new ModelAndView("login");
             }
+            return null;
                     
                 
       

@@ -1,7 +1,7 @@
   function  oculta(valor) {
-alert(valor);
+ 
            if (valor == 1) {
-             alert(valor);
+        
               
                
                     document.getElementById('1').style.display = 'block';

@@ -28,10 +28,7 @@
             });
             
 
-                   window.onload = function(){
-    onload= oculta(this.value);
-};
-     
+   
 
 
         </script>
@@ -49,7 +46,7 @@
                 
        
                    
-             <form:form  role="form"  id ="registar" method="post" action="/insereutilizador" modelAttribute="utilizador"  >
+             <form:form  role="form" name="registar" id ="registar" method="post" action="/insereutilizador" modelAttribute="utilizador"  >
                  <div>
                  <label>Perfil : </label>
                          
@@ -130,7 +127,7 @@
 
                      <div id="16">
                          <label>&nbsp;</label>
-                         <input type="submit" value="Guardar" />
+                         <input  class="btn btn-default" type="submit" value="Guardar" />
                      </div>
 
                 
