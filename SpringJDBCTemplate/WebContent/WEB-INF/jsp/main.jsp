@@ -29,6 +29,12 @@
 						<a href="verifica">Pesquisar</a>
 					</li>
 					<li>
+						<a href="equipa">Criar Equipa</a>
+					</li>
+                                        <li>
+						<a href="treino">Criar Treino</a>
+					</li>
+                                        <li>
 						<a href="getList">listar</a>
 					</li>
 				</ul>

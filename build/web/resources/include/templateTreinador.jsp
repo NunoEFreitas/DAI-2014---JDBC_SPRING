@@ -18,12 +18,12 @@
                             <ul>
                                 <li class='has-sub'><a href='#'><span>ModificarAtletas</span></a>
                                     <ul>
-                                        <li><a href='#'><span>AlterarDadosAtleta</span></a></li>
+                                        <li><a href='alterarDados'><span>AlterarDadosAtleta</span></a></li>
                                     </ul>
                                 </li>
                                 <li class='has-sub'><a href='#'><span>VisualizarAtletas</span></a>
                                     <ul>
-                                        <li><a href='#'><span>VisualizarDadosAtleta</span></a></li>
+                                        <li><a href='userList'><span>VisualizarDadosAtleta</span></a></li>
                                         <li class='last'><a href='#'><span>VisualizarHistóricoAtleta</span></a></li>
                                     </ul>
                                 </li>
@@ -31,7 +31,7 @@
                         </li>
                         <li class='has-sub'><a href='#'><span>Gerir Treinos</span></a>
                             <ul>
-                                <li class='has-sub'><a href='#'><span>CriarTreino</span></a>
+                                <li class='has-sub'><a href='criarTreino'><span>CriarTreino</span></a>
                                     <ul>
                                         <li><a href='#'><span>DefinirEquipa</span></a></li>
                                         <li class="last"><a href="#"><span>DefinirPlanoTreino</span></a></li>

@@ -13,7 +13,40 @@
         <!-- Add custom CSS here -->
         <link href="<c:url value="resources/css/landing-page.css"/>" rel="stylesheet" type="text/css">
 
-         
+      <script>
+function valida(form) {
+    
+    function IsNum(v){
+   var ValidChars = "0123456789";
+   var IsNumber=true;
+   var Char;
+
+ 
+   for (i = 0; i < v.length && IsNumber == true; i++) 
+      { 
+      Char = v.charAt(i); 
+      if (ValidChars.indexOf(Char) == -1) 
+         {
+         IsNumber = false;
+         }
+      }
+   return IsNumber;
+   
+}
+    
+    if (form.username.value==""|| !IsNum(form.username.value)) {
+alert("Peencha o campo username com valor numérico.");
+form.username.focus();
+return false;
+}
+if (form.password.value=="") {
+alert("O campo password não pode estar vazio.");
+form.password.focus();
+return false;
+}
+
+}
+</script>   
        
 </head>
 <body>
@@ -26,7 +59,7 @@
                     <div class="intro-message">
                         <h1>SCB</h1>
 
-                        <form autocomplete="on" method="post" action="login">
+                        <form onsubmit="return valida(this);" autocomplete="on" method="post" action="login">
                             <center>
                                 <div  class= "input-group input-group-lg" >  
                                     <input  type= "text" name="username" class= "form-control"  placeholder= "Username" > 

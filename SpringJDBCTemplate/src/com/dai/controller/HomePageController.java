@@ -179,6 +179,15 @@ public class HomePageController {
 
 	}
         
+        @RequestMapping("/treino")
+	public ModelAndView criarTreino() {
+		return new ModelAndView("definirEquipa");
+	}
+        @RequestMapping("/equipa")
+	public ModelAndView criarEquipa() {
+		return new ModelAndView("criarEquipa");
+	}
+        
         @RequestMapping("/verifica")
 	public ModelAndView verifica() {
 		return new ModelAndView("apresenta");
@@ -195,13 +204,15 @@ public class HomePageController {
             String resultado;
             Utilizador ut = utilizadorService.getUtilizador(user);
             if(ut.getPassword().equals(password)){
-               resultado = "Login efectuado com sucesso";
-                } else {
-                    resultado = "Password Errada";
+                resultado = "Login efectuado com sucesso";
+                return new ModelAndView("administrador","resultado",resultado );
+            } else{ 
+                resultado = "Password Errada";
+                return new ModelAndView("login");
             }
                     
-                   
-        return new ModelAndView("administrador","resultado",resultado );
+                
+      
     
     
 }}
