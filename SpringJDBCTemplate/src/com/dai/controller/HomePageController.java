@@ -96,7 +96,7 @@ public class HomePageController {
 	public String inserData(@ModelAttribute Utilizador utilizador) {
 		if (utilizador != null)
 			utilizadorService.inserirUtilizador(utilizador);
-		return "redirect:/testelistautilizador";
+		return "redirect:/userList";
 	}
         
         @RequestMapping("/userList")
@@ -235,6 +235,7 @@ public class HomePageController {
                 return new ModelAndView("login");
             }
             return null;
+          
                     
                 
       
