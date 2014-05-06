@@ -15,7 +15,7 @@
                 <div id='cssmenu'>
                     <ul>
                         <li class='active'><a href='#'><span>Administração</span></a></li>
-                        <li class='has-sub'><a href='register'><span>Registar Atleta</span></a>
+                        <li class='has-sub'><a href='register'><span>Registar Utilizador</span></a>
                         <li class='has-sub'><a href='#'><span>Modificar Atleta</span></a>
                             <ul>
                                 <li><a href='#'><span>Ativar/Desativar</span></a></li>

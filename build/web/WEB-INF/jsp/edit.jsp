@@ -21,8 +21,7 @@
 				<table>
 					<tr>
 						<td>Nome :</td>
-						<td><form:input path="Nome"
-								value="${map.user.nome}" />
+						<td><form:input path="Nome" value="${map.user.nome}" />
 						</td>
 					</tr>
 					<tr>
