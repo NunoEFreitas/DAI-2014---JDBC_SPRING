@@ -17,6 +17,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import com.dai.services.UtilizadorService;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -36,6 +39,11 @@ public class HomePageController {
 	public ModelAndView main() {
                
 		return new ModelAndView("main");
+	}
+         @RequestMapping("/administrador")
+	public ModelAndView administrador() {
+               
+		return new ModelAndView("administrador");
 	}
         
          @RequestMapping("/testenovoperfil")
@@ -200,11 +208,16 @@ public class HomePageController {
 	}
         
         @RequestMapping(value="/login", method = RequestMethod.POST)
-        public ModelAndView login (@RequestParam("username") Integer user,@RequestParam("password") String password,  ModelMap model){
+        public ModelAndView login (@RequestParam("username") Integer user,@RequestParam("password") String password,  ModelMap model,HttpServletRequest request, HttpServletResponse response){
             String resultado;
             Utilizador ut = utilizadorService.getUtilizador(user);
+              HttpSession  session = request.getSession();
+              session.setAttribute("user", user);
+              session.setAttribute("perfil", ut.getIdPerfil());
+            
             if(ut.getPassword().equals(password)){
-                 if(ut.getIdPerfil()==1){
+                 if(ut.getIdPerfil()==1){   
+             
                  resultado = "Login efectuado com sucesso";
                 return new ModelAndView("administrador","resultado",resultado );
                  
@@ -234,6 +247,7 @@ public class HomePageController {
                 resultado = "Password Errada";
                 return new ModelAndView("login");
             }
+           
             return null;
           
                     
@@ -241,5 +255,6 @@ public class HomePageController {
       
     
     
-}}
+}
+}
        

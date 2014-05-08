@@ -73,6 +73,12 @@ body {
 #cssmenu ul ul ul {
   left: 100%;
   top: 0;
+  width: 300px;
+}
+#cssmenu ul ul ul ul {
+  left: 100%;
+  top: 0;
+  width: 300px;
 }
 #cssmenu li {
   float: left;
@@ -121,7 +127,7 @@ body {
   float: none;
   padding: 0px;
   position: relative;
-  width: 225px;
+  width: auto;
 }
 #cssmenu li ul a {
   display: block;

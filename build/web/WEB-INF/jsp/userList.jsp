@@ -17,11 +17,19 @@
 <body>
 
 
+    <% 
+if(session.getAttribute("perfil").equals("1")){%>  
     <%@include file="/resources/include/templateAdministracao.jsp"%>
+    <% 
+  }else{%>
+  <%@include file="/resources/include/templateAtleta.jsp" %>
+ <% }%>
   
- 
-                 
-                        <h1>Visualizar dados de atleta</h1>
+
+  
+           <Div  class = "cabeçalho da página" > 
+            <h1> Visualizar Atleta <small> Visualizar dados Atleta</small>  </h1> 
+        </div>
                    
                         <table border="1">
 			<tr>

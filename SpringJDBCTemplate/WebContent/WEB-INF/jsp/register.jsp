@@ -6,13 +6,12 @@
 	<meta charset="UTF-8">
         <Meta  http-equiv = "X-UA-Compatible"  content = "IE = borda" >
 	<title>Login - Sistema de Informação - SCB</title>
-	      
-        
+
         <!-- Bootstrap core CSS -->
         <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
-       <script src="<c:url value="/resources/js/jquery.validate.js" />"></script>
+        <script src="<c:url value="/resources/js/jquery.validate.js" />"></script>
         <script src="<c:url value="/resources/js/jquery.min.js" />"></script>
-         <script src="<c:url value="/resources/js/javascript.js" />"></script>
+        <script src="<c:url value="/resources/js/javascript.js" />"></script>
           
 <style TYPE="text/css" > 
     <!--
@@ -64,10 +63,6 @@
 	background-color:#E7E8E7;	
 	}
 	
-	
-	.hint{
-	display:none;
-	}
 	
 	.field:hover .hint {  
 	position: absolute;
@@ -127,82 +122,82 @@
         <%@include file="/resources/include/templateAdministracao.jsp" %>
              
         <!-- Page content -->
-      
-        <h3>Registar Utilizador</h3>
-                
-     
-
+        <Div  class = "cabeçalho da página" > 
+            <h1> Recursos humanos<small> Registar Utilizadores </small>  </h1> 
+        </div>
+    
+ 
         <form:form  id="contactform" class="rounded"  name="registar"  method="post" action="/insereutilizador" modelAttribute="utilizador"  >
-            <div class="field">
+            <div>
                 <label>Perfil : </label>
                 <form:select  path = "idPerfil" name="idPerfil" onchange="oculta(this.value)">
                     <c:forEach items='${map.lp}' var='lp'>
                         <form:option value ="${lp.idPerfil}">${lp.designacao}</form:option>
                     </c:forEach>
                 </form:select>
-            </div>
+            </div><br>
             <div class="field" id="1">
                 <label>Nome:</label>
-                <form:input class="input" id="name"  path="nome" />
+                <form:input class="input" path="nome" />
             </div>                   
             <div  class="field" id="2">
                 <label>Password :</label>
-                <form:input class="input" id="name"  path="password" />
+                <form:input class="input"  path="password" />
             </div>
 
             <div class="field" id="3">
                 <label>Data de Nascimento :</label>
-                <form:input class="input" id="name" type="date" path="dataNascimento" />
+                <form:input class="input" type="date" path="dataNascimento" />
             </div>
             <div  class="field" id="4">
                 <label>Morada :</label>
-                <form:input class="input" id="name" path="morada" />
+                <form:input class="input" path="morada" />
             </div>
             <div  class="field" id="5">
                 <label>Sexo :</label>
-                <form:input class="input" id="name" path="sexo" />
+                <form:input class="input" path="sexo" />
             </div>
             <div class="field" id="6">
                 <label>Telefone :</label>
-                <form:input  class="input" id="name" path="telefone" />
+                <form:input  class="input" path="telefone" />
             </div>
             <div class="field" id="7">
                 <label>Email :</label>
-                <form:input class="input" id="name" path="email" />
+                <form:input class="input" path="email" />
             </div>
             <div class="field" id="8">
                 <label>Altura :</label>
-                <form:input class="input" id="name" path="altura" />
+                <form:input class="input" path="altura" />
             </div>
             <div class="field" id="9">
                 <label>Peso :</label>
-                <form:input class="input" id="name" path="peso" />
+                <form:input class="input" path="peso" />
             </div>
             <div class="field" id="10">
                 <label>Salto Vertical :</label>
-                <form:input class="input" id="name" path="saltoVertical" />
+                <form:input class="input" path="saltoVertical" />
             </div>
             <div class="field" id="11">
                 <label>Velocidade Deslocamento:</label>
-                <form:input class="input" id="name" path="velocidadeDeslocamento" />
+                <form:input class="input" path="velocidadeDeslocamento" />
             </div>
             <div class="field" id="12">
                 <label>Alcance Ataque:</label>
-                <form:input class="input" id="name" path="alcanceAtaque" />
+                <form:input class="input"  path="alcanceAtaque" />
             </div>
             <div class="field" id="13">
                 <label>Alcance Bloco:</label>
-                <form:input class="input" id="name" path="alcanceBloco" />
+                <form:input class="input" path="alcanceBloco" />
             </div>
             <div class="field" id="14">
                 <label>Exames Clinicos:</label>
-                <form:input  class="input" id="name" path="examesClinicos" />
+                <form:input  class="input" path="examesClinicos" />
             </div>
             <div class="field" id="15">
                 <label>Escalao :</label>
                 <form:select   path = "idEscalao" name="idEscalao">
                     <c:forEach items='${map.li}' var='li'>
-                        <form:option class="input" id="name" value ="${li.idEscalao}">${li.designacao}</form:option>
+                        <form:option class="input" value ="${li.idEscalao}">${li.designacao}</form:option>
                     </c:forEach>
                 </form:select>
             </div>
@@ -219,11 +214,7 @@
                 </div>
             </div>
         </div>
-
-        
-        
-
-      
+     
 
         </body>
 

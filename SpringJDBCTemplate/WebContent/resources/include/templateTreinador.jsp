@@ -16,11 +16,7 @@
                         <li class='active'><a href='#'><span>Treinador</span></a></li>
                         <li class='has-sub'><a href='#'><span>Gerir Atletas</span></a>
                             <ul>
-                                <li class='has-sub'><a href='#'><span>ModificarAtletas</span></a>
-                                    <ul>
-                                        <li><a href='alterarDados'><span>AlterarDadosAtleta</span></a></li>
-                                    </ul>
-                                </li>
+                               
                                 <li class='has-sub'><a href='#'><span>VisualizarAtletas</span></a>
                                     <ul>
                                         <li><a href='userList'><span>VisualizarDadosAtleta</span></a></li>
