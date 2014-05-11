@@ -37,7 +37,7 @@ public class UtilizadorDaoImpl implements UtilizadorDao {
 	public List<Utilizador> listarUtilizador() {
 		List<Utilizador> utList = new ArrayList();
 
-		String sql = "select * from utilizador where idPerfil=4";
+		String sql = "select * from utilizador";
 
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		utList = jdbcTemplate.query(sql, new UtilizadorRowMapper());
