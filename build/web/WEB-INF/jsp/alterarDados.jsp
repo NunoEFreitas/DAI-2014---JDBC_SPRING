@@ -25,14 +25,18 @@
      
  %>
                  
-                        <h1>Alterar Dados Atleta</h1>
+        <Div  class = "cabecalho da pagina" > 
+            <h1> Recursos humanos<small> Editar Apagar Utilizadores </small>  </h1> 
+        </div>
+
                    
-                       <table border="0">
+                       <table border="1">
 			<tr>
 				<td class="heading">ID de Utilizador</td>
 				<td class="heading">Nome</td>
 				
 				<td class="heading">Edit</td>
+                                <td class="heading">Apagar</td
 				
 			</tr>
 			<c:forEach var="ul" items="${utilizadorList}">
@@ -41,6 +45,7 @@
 					<td>${ul.nome}</td>
 					
 					<td><a href="edit?id=${ul.idUtilizador}">Edit</a></td>
+                                         <td><a href="edit?id=${ul.idUtilizador}">Apagar</a></td>
                         </tr>
 			</c:forEach>
 		</table>

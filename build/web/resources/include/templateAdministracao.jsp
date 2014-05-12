@@ -15,19 +15,28 @@
                 <div id='cssmenu'>
                     <ul>
                         <li class='active'><a href='#'><span>Administração</span></a></li>
-                        <li class='has-sub'><a href='register'><span>Registar Utilizador</span></a>
-                        <li class='has-sub'><a href='#'><span>Modificar Atleta</span></a>
+                        <li class='has-sub'><a href='#'><span>Gerir Atletas</span></a>
                             <ul>
-                                <li><a href='#'><span>Ativar/Desativar</span></a></li>
-                                <li class="last"><a href="alterarDados"><span>AlterarDados</span></a></li>
+                                <li><a href='#'><span>Recursos humanos</span></a>
+                                <ul>
+                                <li><a href='register'><span>Registar Atletas</span></a></li>
+                               <li class='has-sub'><a href='alterarDados'><span>Editar/Apagar Utilizadores</span></a></li>
+                               <li class='has-sub'><a href='#'><span>Gerir Pagamentos/Recebimentos</span></a>
+                               <ul>
+                                <li><a href='#'><span>Registar Pagamento</span></a></li>
+                                <li class="last"><a href="#"><span> Registar Recebimento</span></a></li>
+                                <li class="last"><a href="#"><span>  Analisar Dividas</span></a></li>
                             </ul>
-                        </li>  
-                        <li class='has-sub'><a href='#'><span>Visualizar Atleta</span></a>
-                            <ul>
-                                <li><a href='#'><span>VisualizarHistóricoAtleta</span></a></li>
-                                <li class="last"><a href="userList"><span>VisualizarDadosAtleta</span></a></li>
+                               
+                               
+                               </li>
                             </ul>
+                                </li>
+                          
+                            </ul>
+                        
                         </li>  
+                        
                     </ul>            
                     <br>
                     <br>

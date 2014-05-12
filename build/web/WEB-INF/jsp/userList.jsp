@@ -12,119 +12,125 @@
                 
         <!-- Bootstrap core CSS -->
         <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
-        <script>
-            (function(document) {
-	'use strict';
-
-	var LightTableFilter = (function(Arr) {
-
-		var _input;
-
-		function _onInputEvent(e) {
-			_input = e.target;
-			var tables = document.getElementsByClassName(_input.getAttribute('data-table'));
-			Arr.forEach.call(tables, function(table) {
-				Arr.forEach.call(table.tBodies, function(tbody) {
-					Arr.forEach.call(tbody.rows, _filter);
-				});
-			});
-		}
-
-		function _filter(row) {
-			var text = row.textContent.toLowerCase(), val = _input.value.toLowerCase();
-			row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
-		}
-
-		return {
-			init: function() {
-				var inputs = document.getElementsByClassName('light-table-filter');
-				Arr.forEach.call(inputs, function(input) {
-					input.oninput = _onInputEvent;
+        <!-- Bootstrap core CSS -->
+ 	        <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
+	        <script>
+	            (function(document) {
+		'use strict';
+ 	
+		var LightTableFilter = (function(Arr) {
+	
+			var _input;
+	
+			function _onInputEvent(e) {
+				_input = e.target;
+				var tables = document.getElementsByClassName(_input.getAttribute('data-table'));
+				Arr.forEach.call(tables, function(table) {
+					Arr.forEach.call(table.tBodies, function(tbody) {
+						Arr.forEach.call(tbody.rows, _filter);
+					});
 				});
 			}
-		};
-	})(Array.prototype);
+	
+			function _filter(row) {
+				var text = row.textContent.toLowerCase(), val = _input.value.toLowerCase();
+				row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
+			}
+	
+			return {
+				init: function() {
+					var inputs = document.getElementsByClassName('light-table-filter');
+					Arr.forEach.call(inputs, function(input) {
+						input.oninput = _onInputEvent;
+					});
+				}
+			};
+		})(Array.prototype);
+	
+		document.addEventListener('readystatechange', function() {
+			if (document.readyState === 'complete') {
+				LightTableFilter.init();
+			}
+		});
+	
+	})(document);
+	        </script>
+ 	</head>
+ 	<body>
+ 	    <% 
+	if(session.getAttribute("perfil").equals(1)){ %>  
+ 	    <%@include file="/resources/include/templateAdministracao.jsp"%>
+	    <% 
+	  }else{ %>
+	  <%@include file="/resources/include/templateAtleta.jsp" %>         
+	 <% 
+        }
+         %>
 
-	document.addEventListener('readystatechange', function() {
-		if (document.readyState === 'complete') {
-			LightTableFilter.init();
-		}
-	});
+ 	                 
 
-})(document);
-        </script>
-</head>
-<body>
-
-
-   <% 
-if(session.getAttribute("perfil").equals("1")){%>  
-    <%@include file="/resources/include/templateAdministracao.jsp"%>
-    <% 
-  }else{%>
-  <%@include file="/resources/include/templateAtleta.jsp" %>
- <% }%>
-  
-<<<<<<< HEAD
- 
-                 
-    <section class="container">
-
-	<h2>Ver Dados de Atleta</h2>
-
-	<input type="search" class="light-table-filter" data-table="order-table" placeholder="Filtrar Dados Atleta">
-
-	<table class="order-table table">
-		<thead>
-
-
-  
-           <Div  class = "cabeçalho da página" > 
-            <h1> Visualizar Atleta <small> Visualizar dados Atleta</small>  </h1> 
-        </div>
-                   
-                        <table border="1">
-
-			<tr>
-				
-				<th>Nome</th>
-                                <td>DataNascimento</td>                              
-                                <th>Telefone</th>
-                                <th>Altura</th>
-                                <th>Peso</th>
-                                <th>SaltoVertical</th>
-                                <th>V.Deslocamento</th>
-                                <th>AlcanceAtaque</th>
-                                <th>AlcanceBloco</th>
-                                <th>Escalão</th>            
-			</tr>
-                </thead>
-			<c:forEach var="ul" items="${utilizadorList}">
-				<tbody>
-                            <tr>
+	    <section class="container">
+	
+		<h2>Ver Dados de Atleta</h2>
+	
+		<input type="search" class="light-table-filter" data-table="order-table" placeholder="Filtrar Dados Atleta">
+	
+		<table class="order-table table">
+			<thead>
+ 				<tr>
+            
 					
-                                        <td>${ul.getNome()}</td>
-					
-                                        <td>${ul.getDataNascimento()}</td>
-                                       
-                                        <td>${ul.getTelefone()}</td>
-                                        <td>${ul.getAltura()}</td>
-                                        <td>${ul.getPeso()}</td>
-                                        <td>${ul.getSaltoVertical()}</td>
-                                        <td>${ul.getVelocidadeDeslocamento()}</td>
-                                        <td>${ul.getAlcanceAtaque()}</td>
-                                        <td>${ul.getAlcanceBloco()}</td>
-                                       
-                                        
-                                        <td>${ul.getIdEscalao()}</td>
-				</tr>
-                                </tbody>
-			</c:forEach>
-		</table>
-        
+					<th>Nome</th>
+	                                <td>DataNascimento</td>                              
+	                                <th>Telefone</th>
+	                                <th>Altura</th>
+	                                <th>Peso</th>
+	                                <th>SaltoVertical</th>
+	                                <th>V.Deslocamento</th>
+	                                <th>AlcanceAtaque</th>
+	                                <th>AlcanceBloco</th>
+	                                <th>Escalão</th>            
+ 				</tr>
+	                </thead>
+ 				<c:forEach var="ul" items="${utilizadorList}">
+
+					<tbody>
+	                            <tr>
+						
+ 	                                        <td>${ul.getNome()}</td>
+
+						
+ 	                                        <td>${ul.getDataNascimento()}</td>
+
+
+	                                       
+ 	                                        <td>${ul.getTelefone()}</td>
+
+ 	                                        <td>${ul.getAltura()}</td>
+ 	                                        <td>${ul.getPeso()}</td>
+ 	                                        <td>${ul.getSaltoVertical()}</td>
+ 	                                        <td>${ul.getVelocidadeDeslocamento()}</td>
+ 	                                        <td>${ul.getAlcanceAtaque()}</td>
+ 	                                        <td>${ul.getAlcanceBloco()}</td>
+
+	                                        
+ 	                                        <td>${ul.getIdEscalao()}</td>
+ 					</tr>
+	                                </tbody>
+ 				</c:forEach>
+ 			</table>
+ 	        
+ 	                    
+ 	                    
+
+	                
+ 	
+ 	        
+
                     
                     
                 
+
 
         </body>
 

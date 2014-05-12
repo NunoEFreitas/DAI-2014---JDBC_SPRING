@@ -17,7 +17,7 @@
         <h1> ${resultado}</h1> 
                     
                    <% 
-           out.print("<h4> welcome"+ session.getAttribute("user"));
+          out.print("<h4> Id:" + session.getAttribute("user") + " Perfil: " + session.getAttribute("perfil"));
           
        
        %>

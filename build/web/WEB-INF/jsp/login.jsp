@@ -14,6 +14,7 @@
         <link href="<c:url value="resources/css/landing-page.css"/>" rel="stylesheet" type="text/css">
 
       <script>
+     /*     
 function valida(form) {
     
     function IsNum(v){
@@ -46,7 +47,8 @@ return false;
 }
 
 }
-</script>   
+*/
+      </script>   
        
 </head>
 <body>

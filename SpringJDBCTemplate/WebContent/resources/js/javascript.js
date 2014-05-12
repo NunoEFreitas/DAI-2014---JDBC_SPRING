@@ -1,5 +1,5 @@
   function  oculta(valor) {
- alert(valor)
+
            if (valor == 1) {
         
               
