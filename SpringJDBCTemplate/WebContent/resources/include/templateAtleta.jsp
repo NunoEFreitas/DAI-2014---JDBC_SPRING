@@ -15,13 +15,17 @@
                     <ul>
                         <li class='active'><a href='#'><span>Atleta</span></a></li>
 
-                        <li class='has-sub'><a href='#'><span>Visualizar Atleta</span></a>
+                         <li class='has-sub'><a href='#'><span>Gerir Atletas</span></a>
                             <ul>
-                                <li class="last"><a href="userList"><span>VisualizarDadosAtleta</span></a></li>
-                                <li><a href='#'><span>VisualizarHistóricoAtleta</span></a></li>
-                                
+                                <li class='has-sub'><a href='#'><span>Visualizar Atleta</span></a>
+                                    <ul>
+                                        <li><a href='userList'><span>Visualizar dados atleta</span></a></li>
+                                        <li><a href='#'><span>Visualizar historico da atleta</span></a></li>
+                                    </ul>
+                                </li>
                             </ul>
-                        </li>  
+                        </li>
+                        
                         <li class='has-sub'><a href='#'><span>Analisar Posteriori</span></a>
                             <ul>
                                 <li><a href='#'><span>GerarDadosTabela</span></a></li>

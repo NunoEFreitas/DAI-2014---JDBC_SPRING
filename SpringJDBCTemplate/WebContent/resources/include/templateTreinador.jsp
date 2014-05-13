@@ -16,19 +16,15 @@
                         <li class='active'><a href='#'><span>Treinador</span></a></li>
                         <li class='has-sub'><a href='#'><span>Gerir Atletas</span></a>
                             <ul>
-                                <li class='has-sub'><a href='#'><span>ModificarAtletas</span></a>
+                                <li class='has-sub'><a href='#'><span>Visualizar Atleta</span></a>
                                     <ul>
-                                        <li><a href='alterarDados'><span>AlterarDadosAtleta</span></a></li>
-                                    </ul>
-                                </li>
-                                <li class='has-sub'><a href='#'><span>VisualizarAtletas</span></a>
-                                    <ul>
-                                        <li><a href='userList'><span>VisualizarDadosAtleta</span></a></li>
-                                        <li class='last'><a href='#'><span>VisualizarHistóricoAtleta</span></a></li>
+                                        <li><a href='userList'><span>Visualizar dados atleta</span></a></li>
+                                        <li><a href='#'><span>Visualizar historico da atleta</span></a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </li>
+                        
                         <li class='has-sub'><a href='#'><span>Gerir Treinos</span></a>
                             <ul>
                                 <li class='has-sub'><a href='criarTreino'><span>CriarTreino</span></a>

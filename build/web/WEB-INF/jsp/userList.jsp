@@ -61,7 +61,10 @@
 	if(session.getAttribute("perfil").equals(1)){ %>  
  	    <%@include file="/resources/include/templateAdministracao.jsp"%>
 	    <% 
-	  }else{ %>
+	  }else if(session.getAttribute("perfil").equals(2)){ %>
+          <%@include file="/resources/include/templateTreinador.jsp" %>
+          <% }else{ %>
+          
 	  <%@include file="/resources/include/templateAtleta.jsp" %>         
 	 <% 
         }
