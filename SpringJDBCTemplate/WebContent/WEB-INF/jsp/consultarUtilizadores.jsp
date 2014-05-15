@@ -9,16 +9,10 @@
     </head>
     <body>
  
-    <%@include file="/resources/include/templateAdministracao.jsp"%>
+    <%@include file="/resources/include/templateSeccionista.jsp"%>
 
       
-          <!-- Page content -->
-          <h1> ${resultado} </h1>
-       
-        <%
-           out.print("<h4> Id:" + session.getAttribute("user") + " Perfil: " + session.getAttribute("perfil"));
-
-        %>
+  
 
     </div>
 </div>      

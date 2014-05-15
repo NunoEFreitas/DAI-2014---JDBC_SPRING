@@ -19,7 +19,7 @@
 <body>
 
 
-    <%@include file="/resources/include/templateAdministracao.jsp"%>
+    <%@include file="/resources/include/templateSeccionista.jsp"%>
   
  <%
      
@@ -45,7 +45,7 @@
 					<td>${ul.nome}</td>
 					
 					<td><a href="edit?id=${ul.idUtilizador}">Edit</a></td>
-                                         <td><a href="edit?id=${ul.idUtilizador}">Apagar</a></td>
+                                         <td><a href="delete?id=${ul.idUtilizador}">Apagar</a></td>
                         </tr>
 			</c:forEach>
 		</table>

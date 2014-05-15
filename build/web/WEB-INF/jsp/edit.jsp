@@ -15,9 +15,9 @@
        <%@include file="/resources/include/templateAdministracao.jsp" %>
 
         <!-- Page content -->
-        <h1> Editar dados do Utilizador   </h1>
+        <h1> Editar dados do Utilizador ${map.user.nome}  </h1>
           
-                    <form:form method="post" action="/update" modelAttribute="user">
+                    <form:form method="post" action="/update" modelAttribute="utilizador">
 				<table>
 					<tr>
 						<td>Nome :</td>
@@ -31,17 +31,11 @@
 					</tr>
 					<tr>
 						<td>Telefone :</td>
-						<td><form:input path="Telefone"
-								value="${map.user.telefone}" />
+						<td><form:input path="Telefone" value="${map.user.telefone}" />
 						</td>
 					</tr>
-                                        	<tr>
-						<td>Telemovel :</td>
-						<td><form:input path="Telemovel"
-								value="${map.user.telemovel}" />
-						</td>
-					</tr>
-                                        	<tr>
+                                        
+                                        <tr>
 						<td>Altura :</td>
 						<td><form:input path="Altura"
 								value="${map.user.altura}" />
@@ -67,7 +61,8 @@
 					</tr>
                                         	
                                
-					<tr>
+			<%--		<tr>
+                                           
 
 						<td>Tipo de Utilizador :</td>
 						<td><spring:bind path="tipo_de_utilizador">
@@ -85,7 +80,8 @@
 								</select>
 							</spring:bind></td>
 					</tr>
-					<tr>
+					<tr> 
+   --%>
 						<td>&nbsp;</td>
 						<td><input type="submit" value="Save" />
 						</td>

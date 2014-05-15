@@ -59,7 +59,7 @@
  	<body>
  	    <% 
 	if(session.getAttribute("perfil").equals(1)){ %>  
- 	    <%@include file="/resources/include/templateAdministracao.jsp"%>
+ 	    <%@include file="/resources/include/templateSeccionista.jsp"%>
 	    <% 
 	  }else if(session.getAttribute("perfil").equals(2)){ %>
           <%@include file="/resources/include/templateTreinador.jsp" %>

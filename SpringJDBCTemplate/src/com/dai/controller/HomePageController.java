@@ -150,13 +150,13 @@ public class HomePageController {
 	
 
 	
-
+*/
 	@RequestMapping("/delete")
-	public String deleteUser(@RequestParam String id) {
-		userService.deleteData(id);
-		return "redirect:/getList";
+	public String deleteUser(@RequestParam Integer id) {
+		utilizadorService.apagarUtilizador(id);
+		return "redirect:/alterarDados";
 	}
-        */
+        
         @RequestMapping("/update")
 	public String updateUser(@ModelAttribute Utilizador user) {
 		utilizadorService.updateUtilizador(user);
@@ -202,51 +202,86 @@ public class HomePageController {
 		return new ModelAndView("login");
 	}
         
-                @RequestMapping(value="/login", method = RequestMethod.POST)
-                public ModelAndView login (@RequestParam("username") Integer user,@RequestParam("password") String password,  ModelMap model,HttpServletRequest request, HttpServletResponse response){
-            String resultado;
-            Utilizador ut = utilizadorService.getUtilizador(user);
-              HttpSession  session = request.getSession();
-              session.setAttribute("user", user);
-              session.setAttribute("perfil", ut.getIdPerfil());
+               @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public ModelAndView login(@RequestParam("username") Integer user, @RequestParam("password") String password, ModelMap model, HttpServletRequest request, HttpServletResponse response) {
+        String resultado;
+        Utilizador ut = utilizadorService.getUtilizador(user);
+        HttpSession session = request.getSession();
+        session.setAttribute("user", user);
+        session.setAttribute("perfil", ut.getIdPerfil());
 
-            if(ut.getPassword().equals(password)){
-                 if(ut.getIdPerfil()==1){
-                 resultado = "Login efectuado com sucesso";
-                return new ModelAndView("administrador","resultado",resultado );
-                 
-                 }if(ut.getIdPerfil()==2){
-                  resultado = "Login efectuado com sucesso";
-                return new ModelAndView("treinador","resultado",resultado );
-                 }if(ut.getIdPerfil()==3){
-                  resultado = "Login efectuado com sucesso";
-                return new ModelAndView("treinadorAdjunto","resultado",resultado );
-                 
-                 }if(ut.getIdPerfil()==4){
-                  resultado = "Login efectuado com sucesso";
-                return new ModelAndView("atleta","resultado",resultado );
-                 
-                 }if(ut.getIdPerfil()==5){
-                  resultado = "Login efectuado com sucesso";
-                return new ModelAndView("olheiros","resultado",resultado );
-                 }
-                 if(ut.getIdPerfil()==6){
-                  resultado = "Login efectuado com sucesso";
-                return new ModelAndView("analistas","resultado",resultado );
-                 
-                 }
-               
-               
-            } else{ 
-                resultado = "Password Errada";
-                return new ModelAndView("login");
+        if (ut.getPassword().equals(password)) {
+            if (ut.getIdPerfil() == 1) {
+                resultado = "Login efectuado com sucesso";
+                return new ModelAndView("seccionista", "resultado", resultado);
+
             }
-            return null;
-          
-                    
+            if (ut.getIdPerfil() == 2) {
+                resultado = "Login efectuado com sucesso";
+                return new ModelAndView("treinador", "resultado", resultado);
+            }
+            if (ut.getIdPerfil() == 3) {
+                resultado = "Login efectuado com sucesso";
+                return new ModelAndView("treinadorAdjunto", "resultado", resultado);
+
+            }
+            if (ut.getIdPerfil() == 4) {
+                resultado = "Login efectuado com sucesso";
+                return new ModelAndView("atleta", "resultado", resultado);
+
+            }
+            if (ut.getIdPerfil() == 5) {
+                resultado = "Login efectuado com sucesso";
+                return new ModelAndView("olheiros", "resultado", resultado);
+            }
+            if (ut.getIdPerfil() == 6) {
+                resultado = "Login efectuado com sucesso";
+                return new ModelAndView("analistas", "resultado", resultado);
+
+            }
+
+
+        } else {
+            resultado = "Password Errada";
+            return new ModelAndView("login");
+        }
+        return null;
+
+
+
+
+
+
+    }
+               
+               
+        @RequestMapping("/registarPagamentos")
+	public ModelAndView registarPagamentos() {
+		return new ModelAndView("registarPagamentos");
                 
-      
-    
-    
-}}
-       
+                
+        }
+                
+                
+         @RequestMapping("/estadoAtletas")
+	public ModelAndView estadoAtletas() {
+		return new ModelAndView("estadoAtletas"); 
+                
+                
+	}    
+         
+          @RequestMapping("/consultarUtilizadores")
+	public ModelAndView consultarUtilizadores() {
+		return new ModelAndView("consultarUtilizadores"); 
+                
+                
+	}   
+          
+             @RequestMapping("/desativarUtilizadores")
+	public ModelAndView desativarUtilizadores() {
+		return new ModelAndView("desativarUtilizadores"); 
+                
+                
+	}   
+          
+}

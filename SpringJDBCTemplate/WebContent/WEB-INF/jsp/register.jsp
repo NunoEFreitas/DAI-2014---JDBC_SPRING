@@ -118,7 +118,7 @@
 <body onload="oculta(1);" >
 	
 
-        <%@include file="/resources/include/templateAdministracao.jsp" %>
+        <%@include file="/resources/include/templateSeccionista.jsp" %>
              
         <!-- Page content -->
       
@@ -137,27 +137,29 @@
                     </c:forEach>
                 </form:select>
             </div><br>
-            <div class="field" id="1">
+            <div  class="field" id="1">
+                <label>Sexo :</label>
+             <form:radiobutton path="sexo" value="M"/>Masculino 
+            <form:radiobutton path="sexo" value="F"/>Femenino
+            </div><br>
+            <div class="field" id="2">
                 <label>Nome:</label>
                 <form:input class="input" path="nome" />
             </div>                   
-            <div  class="field" id="2">
+            <div  class="field" id="3">
                 <label>Password :</label>
-                <form:input class="input" path="password" />
+                <form:input type="password" class="input" path="password" />
             </div>
 
-                                 <div class="field" id="3">
+            <div class="field" id="4">
                 <label>Data de Nascimento :</label>
                 <form:input class="input" type="date" path="dataNascimento" />
             </div>
-            <div  class="field" id="4">
+            <div  class="field" id="5">
                 <label>Morada :</label>
                 <form:input class="input" path="morada" />
             </div>
-            <div  class="field" id="5">
-                <label>Sexo :</label>
-                <form:input class="input" path="sexo" />
-            </div>
+            
             <div class="field" id="6">
                 <label>Telefone :</label>
                 <form:input  class="input" path="telefone" />

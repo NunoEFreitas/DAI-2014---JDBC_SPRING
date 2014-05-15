@@ -1,4 +1,7 @@
   function  oculta(valor) {
+      
+//$('input[class*="input"]').each(function (){
+//    $(this).val(""); });
 
            if (valor == 1) {
         
