@@ -1,0 +1,532 @@
+
+
+.elementServiceLeft{
+    width: 50px;
+    height: 195px;
+    border: 1px solid #000000;
+    margin:0 10px 0 0;
+    position:absolute;
+    top: 195px;
+    right:28%; 
+    margin-right:670px;
+    margin-top: 18%;
+    background-color:darkred;
+    -moz-box-shadow:5px 5px 2px #000000;
+    -webkit-box-shadow:5px 5px 2px #000000;
+    box-shadow:5px 5px 2px #000000;
+
+}
+
+.elementServiceLeft:hover { background-color: red; }
+
+.elementServiceRight{
+    width: 50px;
+    height: 195px;
+    border: 1px solid #000000;
+    margin:0 10px 0 0;
+    position:absolute;
+    top: 0px;
+    right:28%; 
+    margin-right: -70px;
+    margin-top: 18%;
+    background-color:darkred;
+    -moz-box-shadow:5px 5px 2px #000000;
+    -webkit-box-shadow:5px 5px 2px #000000;
+    box-shadow:5px 5px 2px #000000;
+
+}
+
+.elementServiceRight:hover { background-color: red; }
+
+.elementTopLeft{
+    width: 255px;
+    height: 40px;
+    border: 1px solid #000000;
+    margin:0 10px 0 0;
+    position:absolute;
+    top: 0px;
+    right:28%; 
+    margin-right:350px;
+    margin-top: 18%;
+    background-color:darkblue;
+    -moz-box-shadow:5px 5px 2px #000000;
+    -webkit-box-shadow:5px 5px 2px #000000;
+    box-shadow:5px 5px 2px #000000;
+
+
+}
+.elementTopLeft:hover { background-color: blue; }
+
+.elementTopRight{
+    width: 255px;
+    height: 40px;
+    border: 1px solid #000000;
+    margin:0 10px 0 0;
+    position:absolute;
+    top: 0px;
+    right:28%; 
+    margin-right:45px;
+    margin-top: 18%;
+    background-color:darkblue;
+    -moz-box-shadow:5px 5px 2px #000000;
+    -webkit-box-shadow:5px 5px 2px #000000;
+    box-shadow:5px 5px 2px #000000;
+}
+
+.elementTopRight:hover { background-color: blue; }
+
+.elementBotLeft{
+    width: 255px;
+    height: 40px;
+    border: 1px solid #000000;
+    margin:0 10px 0 0;
+    position:absolute;
+    top: 350px;
+    right:28%; 
+    margin-right:350px;
+    margin-top: 18%;
+    background-color:darkblue;
+    -moz-box-shadow:5px 5px 2px #000000;
+    -webkit-box-shadow:5px 5px 2px #000000;
+    box-shadow:5px 5px 2px #000000;
+}
+
+.elementBotLeft:hover { background-color: blue; }
+
+.elementBotRight{
+    width: 255px;
+    height: 40px;
+    border: 1px solid #000000;
+    margin:0 10px 0 0;
+    position:absolute;
+    top: 350px;
+    right:28%; 
+    margin-right:45px;
+    margin-top: 18%;
+    background-color:darkblue;
+    -moz-box-shadow:5px 5px 2px #000000;
+    -webkit-box-shadow:5px 5px 2px #000000;
+    box-shadow:5px 5px 2px #000000;
+}
+
+.elementBotRight:hover { background-color: blue; }
+
+.elementOutLeft{
+    width: 50px;
+    height: 390px;
+    border: 1px solid #000000;
+    margin:0 10px 0 0;
+    position:absolute;
+    top: 0px;
+    right:28%; 
+    margin-right:610px;
+    margin-top: 18%;
+    background-color:darkblue;
+    -moz-box-shadow:5px 5px 2px #000000;
+    -webkit-box-shadow:5px 5px 2px #000000;
+    box-shadow:5px 5px 2px #000000;
+}
+
+.elementOutLeft:hover { background-color: blue; }
+
+.elementOutRight{
+    width: 50px;
+    height: 390px;
+    border: 1px solid #000000;
+    margin:0 10px 0 0;
+    position:absolute;
+    top: 0px;
+    right:28%; 
+    margin-right: -10px;
+    margin-top: 18%;
+    background-color:darkblue;
+    -moz-box-shadow:5px 5px 2px #000000;
+    -webkit-box-shadow:5px 5px 2px #000000;
+    box-shadow:5px 5px 2px #000000;
+}
+
+.elementOutRight:hover { background-color: blue; }
+
+
+.element1 {
+    width: 125px;
+    height: 90px;
+    border: 1px solid #000000;
+    margin:0 10px 0 0;
+    position:absolute;
+    top:250px;
+    right:28%; 
+    margin-right:480px;
+    margin-top: 18%;
+    background-color:orangered;
+    -moz-box-shadow:5px 5px 2px #000000;
+    -webkit-box-shadow:5px 5px 2px #000000;
+    box-shadow:5px 5px 2px #000000;
+
+
+}
+
+.element1:hover { background-color: orange; }
+
+.element2 {
+    width: 125px;
+    height: 90px;
+    border: 1px solid #000000;
+    margin:0 10px 0 0;
+    position:absolute;
+    top:250px;
+    right:28%; 
+    margin-right:350px;
+    margin-top: 18%;
+    background-color:orangered;
+    -moz-box-shadow:5px 5px 2px #000000;
+    -webkit-box-shadow:5px 5px 2px #000000;
+    box-shadow:5px 5px 2px #000000;
+
+
+}
+.element2:hover { background-color: orange; }
+
+.element3 {
+    width: 125px;
+    height: 90px;
+    border: 1px solid #000000;
+    margin:0 10px 0 0;
+    position:absolute;
+    top:150px;
+    right:28%; 
+    margin-right:350px;
+    margin-top: 18%;
+    background-color:orangered;
+    -moz-box-shadow:5px 5px 2px #000000;
+    -webkit-box-shadow:5px 5px 2px #000000;
+    box-shadow:5px 5px 2px #000000;
+
+
+}
+.element3:hover { background-color: orange; }
+
+.element6 {
+    width: 125px;
+    height: 90px;
+    border: 1px solid #000000;
+    margin:0 10px 0 0;
+    position:absolute;
+    top:150px;
+    right:28%; 
+    margin-right:480px;
+    margin-top: 18%;
+    background-color:orangered;
+    -moz-box-shadow:5px 5px 2px #000000;
+    -webkit-box-shadow:5px 5px 2px #000000;
+    box-shadow:5px 5px 2px #000000;
+
+
+}
+.element4:hover { background-color: orange; }
+
+
+.element4 {
+    width: 125px;
+    height: 90px;
+    border: 1px solid #000000;
+    margin:0 10px 0 0;
+    position:absolute;
+    top:50px;
+    right:28%; 
+    margin-right:350px;
+    margin-top: 18%;
+    background-color:orangered;
+    -moz-box-shadow:5px 5px 2px #000000;
+    -webkit-box-shadow:5px 5px 2px #000000;
+    box-shadow:5px 5px 2px #000000;
+
+
+}
+
+.element5 {
+    width: 125px;
+    height: 90px;
+    border: 1px solid #000000;
+    margin:0 10px 0 0;
+    position:absolute;
+    top:50px;
+    right:28%; 
+    margin-right:480px;
+    margin-top: 18%;
+    background-color:orangered;
+    -moz-box-shadow:5px 5px 2px #000000;
+    -webkit-box-shadow:5px 5px 2px #000000;
+    box-shadow:5px 5px 2px #000000;
+
+
+}
+
+.element5:hover { background-color: orange; }	
+
+
+.elementLinha{
+    width: 20px;
+    height: 390px;
+    border: 1px solid #000000;
+    margin:0 10px 0 0;
+    position:absolute;
+    top:0px;
+    right:28%; 
+    margin-right:315px;
+    margin-top: 18%;
+    background-color:darkred;
+    -moz-box-shadow:5px 5px 2px #000000;
+    -webkit-box-shadow:5px 5px 2px #000000;
+    box-shadow:5px 5px 2px #000000;
+
+
+}
+
+.elementLinha:hover { background-color: red; }
+
+.element7 {
+    width: 125px;
+    height: 90px;
+    border: 1px solid #000000;
+    margin:0 10px 0 0;
+    position:absolute;
+    top:50px;
+    right:28%; 
+    margin-right:45px;
+    margin-top: 18%;
+    background-color:orangered;
+    -moz-box-shadow:5px 5px 2px #000000;
+    -webkit-box-shadow:5px 5px 2px #000000;
+    box-shadow:5px 5px 2px #000000;
+
+}
+.element7:hover { background-color: orange; }	
+
+.element12 {
+    width: 125px;
+    height: 90px;
+    border: 1px solid #000000;
+    margin:0 10px 0 0;
+    position:absolute;
+    top:150px;
+    right:28%; 
+    margin-right:45px;
+    margin-top: 18%;
+    background-color:orangered;
+    -moz-box-shadow:5px 5px 2px #000000;
+    -webkit-box-shadow:5px 5px 2px #000000;
+    box-shadow:5px 5px 2px #000000;
+
+}
+
+.element12:hover { background-color: orange; }
+
+.element11 {
+    width: 125px;
+    height: 90px;
+    border: 1px solid #000000;
+    margin:0 10px 0 0;
+    position:absolute;
+    top:250px;
+    right:28%; 
+    margin-right:45px;
+    margin-top: 18%;
+    background-color:orangered;
+    -moz-box-shadow:5px 5px 2px #000000;
+    -webkit-box-shadow:5px 5px 2px #000000;
+    box-shadow:5px 5px 2px #000000;
+
+}
+
+.element11:hover { background-color: orange; }
+
+.element10 {
+    width: 125px;
+    height: 90px;
+    border: 1px solid #000000;
+    margin:0 10px 0 0;
+    position:absolute;
+    top:250px;
+    right:28%; 
+    margin-right:175px;
+    margin-top: 18%;
+    background-color:orangered;
+    -moz-box-shadow:5px 5px 2px #000000;
+    -webkit-box-shadow:5px 5px 2px #000000;
+    box-shadow:5px 5px 2px #000000;
+
+}
+
+.element10:hover { background-color: orange; }
+
+.element9 {
+    width: 125px;
+    height: 90px;
+    border: 1px solid #000000;
+    margin:0 10px 0 0;
+    position:absolute;
+    top:150px;
+    right:28%; 
+    margin-right:175px;
+    margin-top: 18%;
+    background-color:orangered;
+    -moz-box-shadow:5px 5px 2px #000000;
+    -webkit-box-shadow:5px 5px 2px #000000;
+    box-shadow:5px 5px 2px #000000;
+
+}
+
+.element9:hover { background-color: orange; }
+
+.element8 {
+    width: 125px;
+    height: 90px;
+    border: 1px solid #000000;
+    margin:0 10px 0 0;
+    position:absolute;
+    top:50px;
+    right:28%; 
+    margin-right:175px;
+    margin-top: 18%;
+    background-color:orangered;
+    -moz-box-shadow:5px 5px 2px #000000;
+    -webkit-box-shadow:5px 5px 2px #000000;
+    box-shadow:5px 5px 2px #000000;
+
+}
+
+.element8:hover { background-color: orange; }
+
+#formacao{
+    width:200px;
+    heigth:100px;
+    border:2px solid black;
+    float:left;
+    margin-left: 20%;
+    margin-top:11%;
+}
+
+#scoreboard{
+    height:200px;
+    width:300px;
+    border: 1px solid red;
+    margin-left: 38%;
+
+}
+
+#classificacao{
+
+    border: 2px solid red;
+    height:200px;
+    width: 400px;
+    float:right;
+}
+
+
+
+#atribui{
+    border: 1px solid blue;
+    height: 400px;
+    width: 400px;
+    float:right;
+}
+
+
+#casa{
+    height:100px;
+    width:100px;
+    float:left;
+    border: 1px solid black;
+}
+
+#fora{
+    height:100px;
+    width:100px;
+    float:right;
+    border: 1px solid black;
+}
+
+#textboxes{
+    border: 2px solid yellow;
+    height:400px;
+    width:280px;
+    float:right;
+    margin-top:10px;
+    margin-right:-400px;
+
+
+}
+
+#campo{
+    border: 2px solid blue;
+    height: 500px; 
+    width: 800px;
+    margin-left: 18%;
+
+}
+
+#tabela{
+    border:2px solid green;
+    height:500px;
+    width: 500px;
+    float:right;
+}
+
+//drag and drop
+
+#dragj1 { 
+  width: 100px; 
+  height: 100px; 
+  padding: 0.5em; 
+  float: left; 
+  margin: 10px 10px 10px 0; 
+  background-image: url(jogador1.jpg); }
+  #dragj2 { 
+  width: 100px; 
+  height: 100px; 
+  padding: 0.5em; 
+  float: left; 
+  margin: 10px 10px 10px 0; 
+  background-image: url(jogador2.jpg); }
+  #dragj3 { 
+  width: 100px; 
+  height: 100px; 
+  padding: 0.5em; 
+  float: left; 
+  margin: 10px 10px 10px 0; 
+  background-image: url(jogador3.jpg); }
+  #dragj4 { 
+  width: 100px; 
+  height: 100px; 
+  padding: 0.5em; 
+  float: left; 
+  margin: 10px 10px 10px 0; 
+  background-image: url(jogador4.jpg); }
+  #dragj5 { 
+  width: 100px; 
+  height: 100px; 
+  padding: 0.5em; 
+  float: left; 
+  margin: 10px 10px 10px 0; 
+  background-image: url(jogador5.jpg); }
+  #dragj6 { 
+  width: 100px; 
+  height: 100px; 
+  padding: 0.5em; 
+  float: left; 
+  margin: 10px 10px 10px 0; 
+  background-image: url(jogador6.jpg); }
+  #dropP1 { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
+  #dropP2 { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
+  #dropP3 { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
+  #dropP4 { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
+  #dropP5 { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
+  #dropP6 { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
+  
+  #dragAndDrop{
+      border: 2px solid red;
+      width:100%;
+      height: 500px;
+      float:left;
+  }

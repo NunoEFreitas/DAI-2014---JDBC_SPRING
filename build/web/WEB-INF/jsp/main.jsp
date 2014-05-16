@@ -37,6 +37,9 @@
                                         <li>
 						<a href="getList">listar</a>
 					</li>
+                                        <li>
+						<a href="novoJogo">Novo Jogo</a>
+					</li>
 				</ul>
 				<div class="connect">
 					*

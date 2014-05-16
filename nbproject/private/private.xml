@@ -3,13 +3,37 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/novoJogo.jsp</file>
+            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/services/UtilizadorService.java</file>
+            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/domain/Set.java</file>
+            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/services/JogoService.java</file>
+            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/controller/HomePageController.java</file>
+            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/domain/Jogo.java</file>
+            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/alterarDados.jsp</file>
+            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/jdbc/UtilizadorExtractor.java</file>
+            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/treinador.jsp</file>
+            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/dao/JogoDaoImpl.java</file>
+            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/login.jsp</file>
+            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/dao/JogoDao.java</file>
+            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/edit.jsp</file>
+            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/main.jsp</file>
+            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/services/UtilizadorServiceImpl.java</file>
+            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/services/JogoServiceImpl.java</file>
             <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/spring-servlet.xml</file>
             <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/userList.jsp</file>
-            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/nbproject/build-impl.xml</file>
-            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/edit.jsp</file>
-            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/controller/HomePageController.java</file>
-            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/main.jsp</file>
+            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/domain/Ponto.java</file>
+            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/jdbc/JogoExtractor.java</file>
+            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/jogo.jsp</file>
+            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/jdbc/JogoRowMapper.java</file>
+            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/jdbc/UtilizadorRowMapper.java</file>
+            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/domain/Perfil.java</file>
+            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/dao/UtilizadorDao.java</file>
+            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/controller/JogoController.java</file>
+            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/domain/Ataque.java</file>
+            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/dao/PerfilDaoImpl.java</file>
+            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/dao/UtilizadorDaoImpl.java</file>
             <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/register.jsp</file>
         </group>
     </open-files>
