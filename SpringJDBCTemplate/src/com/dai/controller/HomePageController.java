@@ -41,10 +41,10 @@ public class HomePageController {
 		return new ModelAndView("main");
 	}
         
-         @RequestMapping("/testenovoperfil")
-	public ModelAndView perfil(@ModelAttribute Perfil perfil) {
+         @RequestMapping("/criarPerfil")
+	public ModelAndView criarPerfil(@ModelAttribute Perfil perfil) {
                
-		return new ModelAndView("testenovoperfil");
+		return new ModelAndView("criarPerfil");
 	}
         
         // futuramente alterar o redirect para uma pagina de confirmacao no caso de ter sido
@@ -53,13 +53,19 @@ public class HomePageController {
 	public String inserePerfil(@ModelAttribute Perfil perfil) {
 		if (perfil != null)
 			perfilService.inserirPerfil(perfil);
-		return "redirect:/testelistaperfil";
+		return "redirect:/listaPerfil";
 	}
-        
-        @RequestMapping("/testelistaperfil")
+         
+         @RequestMapping("/apagarPerfil")
+	public String apagarPerfil(@RequestParam Integer id) {
+               perfilService.apagarPerfil(id);
+		return "redirect:/listaPerfil";
+	}
+         
+        @RequestMapping("/listaPerfil")
 	public ModelAndView listaPerfil() {
 		List<Perfil> lperfil = perfilService.listarPerfil();
-		return new ModelAndView("testelistaperfil", "perfilList", lperfil);
+		return new ModelAndView("listaPerfil", "perfilList", lperfil);
 	}
         
         @RequestMapping("/testenovoescalao")

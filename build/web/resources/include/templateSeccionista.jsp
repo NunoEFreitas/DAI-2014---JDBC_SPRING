@@ -39,10 +39,10 @@
                                 
                                 <li><a href='#'><span>Gerir Perfis</span></a>
                                     <ul>
-                                        <li><a href='#'><span>Criar Perfis</span></a></li>
+                                        <li><a href='criarPerfil'><span>Criar Perfis</span></a></li>
                                         <li class='has-sub'><a href='#'><span>Editar Perfis</span></a></li>
-                                        <li class='has-sub'><a href='#'><span>Visualizar Perfis</span></a>
-                                        <li class='has-sub'><a href='#'><span>Apagar Perfil</span></a>
+                                        <li class='has-sub'><a href='listaPerfil'><span>Visualizar Perfis</span></a>
+                                        <li class='has-sub'><a href='apagarPerfil'><span>Apagar Perfil</span></a>
                                          
                                     </ul>
                                 </li> 
