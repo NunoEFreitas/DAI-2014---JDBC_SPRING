@@ -17,12 +17,18 @@
 
                         <li class='has-sub'><a href='#'><span>Inserir Dados em Tempo Real</span></a>
                             <ul>
-                                <li><a href='#'><span>InserirTendênciasAtaque</span></a></li>
-                                <li class="last"><a href="#"><span>InserirTendênciasPasse</span></a></li>
-                                <li class="last"><a href="#"><span>InserirTendênciasServiço</span></a></li>
-                                <li class="last"><a href="#"><span>InserirPiorRecetora</span></a></li>
+                                <li class='has-sub'><a href='#'><span>CriarJogo</span></a></li>
+                                <li class='has-sub'><a href='#'><span>InserirDadosJogo</span></a>
+                                    <ul>
+                                        <li><a href='#'><span>InserirTendênciaPasse</span></a></li>
+                                        <li><a href='#'><span>InserirTendênciaServiço</span></a></li>
+                                        <li><a href='#'><span>InserirTendênciaAtaque</span></a></li>
+                                        <li><a href='#'><span>InserirFalhasReceção</span></a></li>
+                                        
+                                    </ul>
+                                </li>
                             </ul>
-                        </li>  
+                        </li>
                     </ul>
            <br>
            <br>
