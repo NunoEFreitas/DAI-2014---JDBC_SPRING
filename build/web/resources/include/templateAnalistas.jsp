@@ -14,12 +14,27 @@
                 <div id='cssmenu'>
                     <ul>
                         <li class='active'><a href='#'><span>Analista</span></a></li>
-
                         <li class='has-sub'><a href='#'><span>Analisar em Tempo Real</span></a>
                             <ul>
-                                <li><a href='#'><span>InserirDadosJogo</span></a></li>
+                                <li class='has-sub'><a href='#'><span>InserirDadosJogo</span></a>
+                                    <ul>
+                                        <li><a href='userList'><span>InserirDadosReceção</span></a></li>
+                                        <li><a href='#'><span>InserirDadosAtaque</span></a></li>
+                                         <li><a href='#'><span>InserirDadosDefesa</span></a></li>
+                                          <li><a href='#'><span>InserirDadosBloco</span></a></li>
+                                           <li><a href='#'><span>InserirDadoserviço</span></a></li>
+                                    </ul>
+                                </li>
+                                
                             </ul>
-                        </li>  
+                        </li>
+                         <li class='has-sub'><a href='#'><span>Analisar À Posteriori</span></a>
+                            <ul>
+                                <li class='has-sub'><a href='#'><span>GerarDadosGráfico</span></a></li>
+                            
+                            </ul>
+                        </li>
+                       
                     </ul>
                     <br>
                     <br>
