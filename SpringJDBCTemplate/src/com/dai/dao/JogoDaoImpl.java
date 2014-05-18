@@ -24,7 +24,7 @@ public class JogoDaoImpl implements JogoDao{
 	public void novoJogo(Jogo jogo) {
 
 		String sql = "INSERT INTO jogo "
-				+ "( localJogo, dataJogo,resultadoJogo, horaJogo) VALUES (?, ?, ?, ?)";
+				+ "( localJogo, dataJogo,resultadoJogo, horaJogo,competicao) VALUES (?, ?, ?, ?, ?)";
 
 		JdbcTemplate template = new JdbcTemplate(dataSource);
                 
@@ -32,7 +32,7 @@ public class JogoDaoImpl implements JogoDao{
                 
 		template.update(
 				sql,
-				new Object[] { jogo.getLocal(), jogo.getData(), jogo.getResultado(), jogo.getHora()});
+				new Object[] { jogo.getLocal(), jogo.getData(), jogo.getResultado(), jogo.getHora(), jogo.getCompeticao()});
 
 	}
 }
