@@ -19,19 +19,23 @@
                             <ul>
                                 <li class='has-sub'><a href='#'><span>Visualizar Atleta</span></a>
                                     <ul>
-                                        <li><a href='userList'><span>Visualizar dados atleta</span></a></li>
-                                        <li><a href='#'><span>Visualizar historico da atleta</span></a></li>
+                                        <li><a href='userList'><span>VisualizarDadosAtleta</span></a></li>
+                                        <li><a href='#'><span>VisualizarHistoricoAtleta</span></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                         <li class='has-sub'><a href='#'><span>Gerir Competições</span></a>
+                            <ul>
+                                <li class='has-sub'><a href='#'><span>Analisar À Posteriori</span></a>
+                                    <ul>
+                                        <li><a href='userList'><span>GerarDadosTabela</span></a></li>
+                                        <li><a href='#'><span>GerarDadosGráfico</span></a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </li>
                         
-                        <li class='has-sub'><a href='#'><span>Analisar Posteriori</span></a>
-                            <ul>
-                                <li><a href='#'><span>GerarDadosTabela</span></a></li>
-                                <li class="last"><a href="#"><span>GerarDadosGrafico</span></a></li>
-                            </ul>
-                        </li>  
                     </ul>
                     <br>
                     <br>
