@@ -18,13 +18,12 @@
                             <ul>
                                 <li class='has-sub'><a href='#'><span>Visualizar Atleta</span></a>
                                     <ul>
-                                        <li><a href='userList'><span>Visualizar dados atleta</span></a></li>
-                                        <li><a href='#'><span>Visualizar historico da atleta</span></a></li>
+                                        <li><a href='userList'><span>VisualizarDadosAtleta</span></a></li>
+                                        <li><a href='#'><span>VisualizarHistoricoAtleta</span></a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </li>
-                        
                         <li class='has-sub'><a href='#'><span>Gerir Treinos</span></a>
                             <ul>
                                 <li class='has-sub'><a href='criarTreino'><span>CriarTreino</span></a>
@@ -43,16 +42,13 @@
                                 </li>
                                 <li class='has-sub'><a href='#'><span>ControlarPresenças</span></a></li>
                                 <li class='has-sub'><a href='#'><span>VisualizarHistoricoTreino</span></a></li>
-
                             </ul>
                         </li>
                         <li class='has-sub'><a href='#'><span>Gerir Competições</span></a>
                             <ul>
                                 <li class='has-sub'><a href='#'><span>AnalisarTempoReal</span></a>
                                     <ul>
-                                        <li><a href='#'><span>CriarEquipa</span></a></li>
-                                        <li class="last"><a href="#"><span>CriarTáticaInicial</span></a></li>
-                                        <li class="last"><a href="#"><span>CriarEquipaSuplentes</span></a></li>
+                                        <li><a href='criaJogo'><span>CriarJogo</span></a></li>
                                     </ul>
                                 </li>
                                 <li class='has-sub'><a href='#'><span>AnalisarPosteriori</span></a>
@@ -61,27 +57,35 @@
                                         <li class='last'><a href='#'><span>GerarDadosGráfico</span></a></li>
                                     </ul>
                                 </li>
+                                <li class='has-sub'><a href='#'><span>ManusearVídeo</span></a>
+                                    <ul>
+                                        <li><a href='#'><span>InserirVídeo</span></a></li>
+                                        <li class='last'><a href='#'><span>ApagarVídeo</span></a></li>
+                                        <li class='last'><a href='#'><span>VisualizarVídeo</span></a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </li>
-                        <li class='has-sub'><a href='#'><span>Gerir Adversários</span></a>
+                        <li class='has-sub'><a href='#'><span>Analisar Adversários</span></a>
                             <ul>
                                 <li class='has-sub'><a href='#'><span>InserirDadosTempoReal</span></a>
                                     <ul>
+                                        <li><a href='#'><span>CriarJogo</span></a></li>
+                                        <li><a href='#'><span>InserirDadosJogo</span></a></li>
+                                    </ul>
                                 </li>
-                                <li class='has-sub'><a href='#'><span>InserirTendênciaAtaque</span></a>
-                                <li class='last'><a href='#'><span>InserirTendênciaPasse</span></a></li>
-                                <li class='last'><a href='#'><span>InserirTendênciaServiço</span></a></li>
-                                <li class='last'><a href='#'><span>InserirPiorRecetora</span></a></li>
-
+                                <li class='has-sub'><a href='#'><span>AnalisarPosteriori</span></a>
+                                    <ul>
+                                        <li><a href='dadosTabela'><span>AnalisarDadosTabela</span></a></li>
+                                    </ul>
+                                </li> 
                             </ul>
+                        </li>
+                        
 
-                    </ul>
-                    </li>
-                    </ul>
-                    <br>
-                    <br>
+                </ul>
 
-
-
-</body>
+                   
+                  
+    </body>
 </html>                                		

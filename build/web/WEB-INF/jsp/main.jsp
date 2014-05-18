@@ -29,7 +29,7 @@
 						<a href="verifica">Pesquisar</a>
 					</li>
 					<li>
-						<a href="equipa">Criar Equipa</a>
+						<a href="criaJogo">Criar Jogo</a>
 					</li>
                                         <li>
 						<a href="treino">Criar Treino</a>
