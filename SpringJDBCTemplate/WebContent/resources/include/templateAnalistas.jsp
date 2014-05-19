@@ -18,7 +18,7 @@
                             <ul>
                                 <li class='has-sub'><a href='#'><span>InserirDadosJogo</span></a>
                                     <ul>
-                                        <li><a href='userList'><span>InserirDadosReceção</span></a></li>
+                                        <li><a href='#'><span>InserirDadosReceção</span></a></li>
                                         <li><a href='#'><span>InserirDadosAtaque</span></a></li>
                                          <li><a href='#'><span>InserirDadosDefesa</span></a></li>
                                           <li><a href='#'><span>InserirDadosBloco</span></a></li>

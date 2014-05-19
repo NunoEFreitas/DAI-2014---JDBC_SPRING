@@ -122,13 +122,13 @@
              
         <!-- Page content -->
       
-                           <Div  class = "cabecalho da pagina" > 
+        <Div  class = "cabecalho da pagina" > 
             <h1> Recursos humanos<small> Registar Utilizadores </small>  </h1> 
         </div>
 
                 
        
-                     <form:form  id="contactform" class="rounded"  name="registar"  method="post" action="/insereutilizador" modelAttribute="utilizador"  >
+                     <form:form  id="contactform" class="rounded"   method="post" action="/insereutilizador" modelAttribute="utilizador"  >
             <div class="field">
                 <label>Perfil : </label>
                 <form:select  path = "idPerfil" name="idPerfil" onchange="oculta(this.value)">
@@ -144,7 +144,7 @@
             </div><br>
             <div class="field" id="2">
                 <label>Nome:</label>
-                <form:input class="input" path="nome" />
+                <form:input class="input" path="nome"  />
             </div>                   
             <div  class="field" id="3">
                 <label>Password :</label>
@@ -166,7 +166,7 @@
             </div>
             <div class="field" id="7">
                 <label>Email :</label>
-                <form:input class="input" path="email" />
+                <form:input type="email" class="input" path="email" />
             </div>
             <div class="field" id="8">
                 <label>Altura :</label>
@@ -213,11 +213,7 @@
             
        
  
-                </div>
-            </div>
-        </div>
-
-        
+ 
         
 
       

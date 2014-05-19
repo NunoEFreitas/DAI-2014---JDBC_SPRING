@@ -202,14 +202,8 @@ public class HomePageController {
 		return new ModelAndView("apresenta");
 	}
         
-        @RequestMapping("/criaJogo")
-	public ModelAndView criarJogo() {
-		return new ModelAndView("criarJogoCompeticoes");
-	}
-         @RequestMapping("/criarJogo")
-	public ModelAndView criarJogoAT() {
-		return new ModelAndView("criarJogoCompeticoesTA");
-	}
+        
+        
          @RequestMapping("/dadosTabela")
 	public ModelAndView dadosTabela() {
 		return new ModelAndView("dadosTabela");
