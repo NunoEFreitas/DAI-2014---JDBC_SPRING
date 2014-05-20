@@ -64,8 +64,8 @@ return false;
                         <form onsubmit="return valida(this);" autocomplete="on" method="post" action="login">
                             <center>
                                 <div  class= "input-group input-group-lg" >  
-                                    <input  type= "text" name="username" class= "form-control"  placeholder= "Username" > 
-                                    <input  type ="password" name="password" class= "form-control"  placeholder= "Password" > 
+                                    <input  type= "text" name="username" class= "form-control"  placeholder= "Username" required="required" > 
+                                    <input  type ="password" name="password" class= "form-control"  placeholder= "Password" required="required" > 
                                 </div>
                             </center>
 
