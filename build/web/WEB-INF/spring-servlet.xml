@@ -44,6 +44,8 @@ class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMa
         <bean id="jogoDao" class="com.dai.dao.JogoDaoImpl" />
 	<bean id="jogoService" class="com.dai.services.JogoServiceImpl" />
         
+        <bean id="selecaoJogoDao" class="com.dai.dao.SelecaoJogoDaoImpl" />
+	<bean id="selecaoJogoService" class="com.dai.services.SelecaoJogoServiceImpl" />
 	<!-- declare datasource bean -->
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">

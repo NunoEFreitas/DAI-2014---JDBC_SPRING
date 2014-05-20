@@ -7,6 +7,9 @@
 package com.dai.dao;
 
 import com.dai.domain.Jogo;
+import com.dai.jdbc.JogoRowMapper;
+import java.util.ArrayList;
+import java.util.List;
 import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -34,5 +37,16 @@ public class JogoDaoImpl implements JogoDao{
 				sql,
 				new Object[] { jogo.getLocal(), jogo.getData(), jogo.getResultado(), jogo.getHora(), jogo.getCompeticao()});
 
+	}
+        
+        @Override
+	public List<Jogo> listaJogos() {
+		List<Jogo> utList = new ArrayList();
+
+		String sql = "select * from jogo where resultadoJogo is null";
+
+		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		utList = jdbcTemplate.query(sql, new JogoRowMapper());
+		return utList;
 	}
 }

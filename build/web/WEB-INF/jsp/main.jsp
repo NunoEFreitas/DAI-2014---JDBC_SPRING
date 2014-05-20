@@ -40,6 +40,14 @@
                                         <li>
 						<a href="novoJogo">Novo Jogo</a>
 					</li>
+                                        
+                                        <li>
+						<a href="listaJogos">Lista Jogos</a>
+					</li>
+                                        
+                                        <li>
+						<a href="jogo">Campo</a>
+					</li>
 				</ul>
 				<div class="connect">
 					*

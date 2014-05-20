@@ -7,6 +7,7 @@
 package com.dai.dao;
 
 import com.dai.domain.Jogo;
+import java.util.List;
 
 /**
  *
@@ -15,5 +16,7 @@ import com.dai.domain.Jogo;
 public interface JogoDao {
     
     public void novoJogo(Jogo jogo);
+    
+    public List<Jogo> listaJogos();
     
 }

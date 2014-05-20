@@ -7,6 +7,7 @@
 package com.dai.services;
 
 import com.dai.domain.Jogo;
+import java.util.List;
 
 /**
  *
@@ -15,4 +16,6 @@ import com.dai.domain.Jogo;
 public interface JogoService {
     
     public void novoJogo(Jogo jogo);
+    
+    public List<Jogo> listaJogos();
 }

@@ -4,12 +4,16 @@
  * and open the template in the editor.
  */
 
-package com.dai.domain;
+package com.dai.services;
+
+import com.dai.domain.SelecaoJogo;
 
 /**
  *
  * @author Nuno
  */
-public class Set {
+public interface SelecaoJogoService {
+    
+    public void adicionaSL(SelecaoJogo sl);
     
 }

@@ -1,4 +1,148 @@
+html{
+  background:url(../images/volley.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: contain;
+  background-color: black;
+  text-align: center;
 
+}
+
+h3{
+    font-size: large;
+    border: 2px solid blue;
+    background: gray;
+}
+
+#textboxes label{
+    font-size: large;
+    border: 2px solid blue;
+    background: gray;
+}
+
+body{
+    margin-left:8%;
+    margin-right:8%;
+    font-weight: bold;
+}
+
+#top{
+    height:220px;
+    width:100%;
+    border: 2px solid pink;
+}
+#mid{
+    height:500px;
+    width:100%;
+    border: 2px solid pink;
+}
+
+#rotacaoCampo1{
+    width:200px;
+    height:50px;
+    border:2px solid black;
+    float:left;
+    margin-top: 160px;
+}
+
+#rotacaoCampo1 label{
+    color:blue;
+    background: black;
+}
+
+#rotacaoCampo2{
+    width:200px;
+    height:50px;
+    border:2px solid black;
+    float:left;
+    margin-top: 160px;
+    margin-left: 80px;
+}
+
+#rotacaoCampo2 label{
+    color:blue;
+    background: black;
+}
+
+#scoreboard{
+    height:200px;
+    width:220px;
+    border: 5px solid black;
+    float:left;
+    margin-left:108px;
+
+}
+
+#scoreboard p{
+    font-size: large;
+    border: 2px solid blue;
+    background: gray;
+}
+
+#scoreboard input{
+    background: black;
+    height: 30px;
+    width: 40px;
+    font-size: x-large;
+    color:blue;
+}
+
+#classificacao{
+
+    border: 2px solid red;
+    height:200px;
+    width: 300px;
+    float:right;
+    
+}
+
+
+
+#atribui{
+    border: 1px solid blue;
+    height: 400px;
+    width: 400px;
+    float:right;
+}
+
+
+#casa{
+    height:200px;
+    width:100px;
+    float:left;
+    border: 1px solid black;
+}
+
+#fora{
+    height:200px;
+    width:100px;
+    float:right;
+    border: 1px solid black;
+}
+
+#textboxes{
+    border: 2px solid yellow;
+    height:400px;
+    width:270px;
+    float:left;
+}
+
+#campo{
+    border: 2px solid blue;
+    height: 500px; 
+    width: 850px;
+    float:left;
+}
+
+#tabela{
+    border:2px solid green;
+    height:500px;
+    width: 500px;
+    float:right;
+}
+
+/* -------------------------- campo ------------------------------*/
 
 .elementServiceLeft{
     width: 50px;
@@ -7,7 +151,7 @@
     margin:0 10px 0 0;
     position:absolute;
     top: 195px;
-    right:28%; 
+    right:36%; 
     margin-right:670px;
     margin-top: 18%;
     background-color:darkred;
@@ -26,7 +170,7 @@
     margin:0 10px 0 0;
     position:absolute;
     top: 0px;
-    right:28%; 
+    right:36%; 
     margin-right: -70px;
     margin-top: 18%;
     background-color:darkred;
@@ -45,7 +189,7 @@
     margin:0 10px 0 0;
     position:absolute;
     top: 0px;
-    right:28%; 
+    right:36%; 
     margin-right:350px;
     margin-top: 18%;
     background-color:darkblue;
@@ -64,7 +208,7 @@
     margin:0 10px 0 0;
     position:absolute;
     top: 0px;
-    right:28%; 
+    right:36%; 
     margin-right:45px;
     margin-top: 18%;
     background-color:darkblue;
@@ -82,7 +226,7 @@
     margin:0 10px 0 0;
     position:absolute;
     top: 350px;
-    right:28%; 
+    right:36%; 
     margin-right:350px;
     margin-top: 18%;
     background-color:darkblue;
@@ -100,7 +244,7 @@
     margin:0 10px 0 0;
     position:absolute;
     top: 350px;
-    right:28%; 
+    right:36%; 
     margin-right:45px;
     margin-top: 18%;
     background-color:darkblue;
@@ -118,7 +262,7 @@
     margin:0 10px 0 0;
     position:absolute;
     top: 0px;
-    right:28%; 
+    right:36%; 
     margin-right:610px;
     margin-top: 18%;
     background-color:darkblue;
@@ -136,7 +280,7 @@
     margin:0 10px 0 0;
     position:absolute;
     top: 0px;
-    right:28%; 
+    right:36%; 
     margin-right: -10px;
     margin-top: 18%;
     background-color:darkblue;
@@ -155,7 +299,7 @@
     margin:0 10px 0 0;
     position:absolute;
     top:250px;
-    right:28%; 
+    right:36%; 
     margin-right:480px;
     margin-top: 18%;
     background-color:orangered;
@@ -175,7 +319,7 @@
     margin:0 10px 0 0;
     position:absolute;
     top:250px;
-    right:28%; 
+    right:36%; 
     margin-right:350px;
     margin-top: 18%;
     background-color:orangered;
@@ -194,7 +338,7 @@
     margin:0 10px 0 0;
     position:absolute;
     top:150px;
-    right:28%; 
+    right:36%; 
     margin-right:350px;
     margin-top: 18%;
     background-color:orangered;
@@ -213,7 +357,7 @@
     margin:0 10px 0 0;
     position:absolute;
     top:150px;
-    right:28%; 
+    right:36%; 
     margin-right:480px;
     margin-top: 18%;
     background-color:orangered;
@@ -233,7 +377,7 @@
     margin:0 10px 0 0;
     position:absolute;
     top:50px;
-    right:28%; 
+    right:36%; 
     margin-right:350px;
     margin-top: 18%;
     background-color:orangered;
@@ -251,7 +395,7 @@
     margin:0 10px 0 0;
     position:absolute;
     top:50px;
-    right:28%; 
+    right:36%; 
     margin-right:480px;
     margin-top: 18%;
     background-color:orangered;
@@ -272,7 +416,7 @@
     margin:0 10px 0 0;
     position:absolute;
     top:0px;
-    right:28%; 
+    right:36%; 
     margin-right:315px;
     margin-top: 18%;
     background-color:darkred;
@@ -292,7 +436,7 @@
     margin:0 10px 0 0;
     position:absolute;
     top:50px;
-    right:28%; 
+    right:36%; 
     margin-right:45px;
     margin-top: 18%;
     background-color:orangered;
@@ -310,7 +454,7 @@
     margin:0 10px 0 0;
     position:absolute;
     top:150px;
-    right:28%; 
+    right:36%; 
     margin-right:45px;
     margin-top: 18%;
     background-color:orangered;
@@ -329,7 +473,7 @@
     margin:0 10px 0 0;
     position:absolute;
     top:250px;
-    right:28%; 
+    right:36%; 
     margin-right:45px;
     margin-top: 18%;
     background-color:orangered;
@@ -348,7 +492,7 @@
     margin:0 10px 0 0;
     position:absolute;
     top:250px;
-    right:28%; 
+    right:36%; 
     margin-right:175px;
     margin-top: 18%;
     background-color:orangered;
@@ -367,7 +511,7 @@
     margin:0 10px 0 0;
     position:absolute;
     top:150px;
-    right:28%; 
+    right:36%; 
     margin-right:175px;
     margin-top: 18%;
     background-color:orangered;
@@ -386,7 +530,7 @@
     margin:0 10px 0 0;
     position:absolute;
     top:50px;
-    right:28%; 
+    right:36%; 
     margin-right:175px;
     margin-top: 18%;
     background-color:orangered;
@@ -398,83 +542,9 @@
 
 .element8:hover { background-color: orange; }
 
-#formacao{
-    width:200px;
-    heigth:100px;
-    border:2px solid black;
-    float:left;
-    margin-left: 20%;
-    margin-top:11%;
-}
+/* --------------------------- drag and drop ------------------------------------ */
 
-#scoreboard{
-    height:200px;
-    width:300px;
-    border: 1px solid red;
-    margin-left: 38%;
-
-}
-
-#classificacao{
-
-    border: 2px solid red;
-    height:200px;
-    width: 400px;
-    float:right;
-}
-
-
-
-#atribui{
-    border: 1px solid blue;
-    height: 400px;
-    width: 400px;
-    float:right;
-}
-
-
-#casa{
-    height:100px;
-    width:100px;
-    float:left;
-    border: 1px solid black;
-}
-
-#fora{
-    height:100px;
-    width:100px;
-    float:right;
-    border: 1px solid black;
-}
-
-#textboxes{
-    border: 2px solid yellow;
-    height:400px;
-    width:280px;
-    float:right;
-    margin-top:10px;
-    margin-right:-400px;
-
-
-}
-
-#campo{
-    border: 2px solid blue;
-    height: 500px; 
-    width: 800px;
-    margin-left: 18%;
-
-}
-
-#tabela{
-    border:2px solid green;
-    height:500px;
-    width: 500px;
-    float:right;
-}
-
-//drag and drop
-
+/*
 #dragj1 { 
   width: 100px; 
   height: 100px; 
@@ -527,6 +597,8 @@
   #dragAndDrop{
       border: 2px solid red;
       width:100%;
-      height: 500px;
+      height:500px;
       float:left;
   }
+
+  */

@@ -4,6 +4,8 @@
     Author     : Nuno
 --%>
 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,6 +14,30 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <table border="1"> 
+        <tr>
+            <td Class="heading"> ID Jogo </td>
+            <td Class="heading"> Local </td>
+            <td Class="heading"> Data </td>
+            <td Class="heading"> Hora </td>
+            <td Class="heading"> Competição </td>
+            <td Class="heading"> Resultado </td>
+            <td Class="heading"> Escolher Equipa </td>
+            <td Class="heading"> Comecar Jogo </td>
+        </tr>
+        <c:forEach var="lj" items="${ljogos}">
+            <tr>
+                <td> ${lj.getIdJogo()} </td>
+                <td> ${lj.getLocal()} </td>
+                <td> ${lj.getData()} </td>
+                <td> ${lj.getHora()} </td>
+                <td> ${lj.getCompeticao()} </td>
+                <td> ${lj.getResultado()} </td>
+                <td><a href="jogadoresSelecionados/${lj.getIdJogo()}">Selecionar</a></td>
+                <td><a href="/jogo/${lj.getIdJogo()}">Selecionar</a></td>
+                
+            </tr>
+        </c:forEach>
+    </table>
     </body>
 </html>

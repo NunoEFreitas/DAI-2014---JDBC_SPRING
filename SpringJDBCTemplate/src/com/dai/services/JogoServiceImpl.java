@@ -8,6 +8,7 @@ package com.dai.services;
 
 import com.dai.dao.JogoDao;
 import com.dai.domain.Jogo;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -23,4 +24,10 @@ public class JogoServiceImpl implements JogoService {
 	public void novoJogo(Jogo jogo) {
 		jogodao.novoJogo(jogo);
 	}
+        
+        @Override
+	public List<Jogo> listaJogos() {
+		return jogodao.listaJogos();
+	}
+
 }

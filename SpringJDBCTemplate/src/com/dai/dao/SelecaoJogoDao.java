@@ -4,12 +4,18 @@
  * and open the template in the editor.
  */
 
-package com.dai.domain;
+package com.dai.dao;
+
+import com.dai.domain.SelecaoJogo;
 
 /**
  *
  * @author Nuno
  */
-public class Ponto {
+public interface SelecaoJogoDao {
+    
+    public void adicionaSL(SelecaoJogo sl);
+    
+   
     
 }

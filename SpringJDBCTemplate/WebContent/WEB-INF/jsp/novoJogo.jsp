@@ -21,6 +21,8 @@
             <form:input class="input" path="hora" />
             <label>Local: </label>
             <form:input class="input" path="local" />
+            <label>Competição: </label>
+            <form:input class="input" path="competicao" />
             <input class="button" type="submit" value="Guardar" />
         </form:form>
     </body>

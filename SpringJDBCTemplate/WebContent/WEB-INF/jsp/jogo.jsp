@@ -1,27 +1,54 @@
-<%-- 
-    Document   : jogo
-    Created on : 16/Mai/2014, 19:03:21
-    Author     : Nuno
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<!-- Website template by freewebsitetemplates.com -->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html>
     <link rel="stylesheet" href="style.css" type="text/css" media="screen, projection" />
     <head>
         <meta charset="UTF-8">
         <Meta  http-equiv = "X-UA-Compatible"  content = "IE = borda" >
-        <title>Sistema de InformaÃ§Ã£o - SCB</title>
-
-    </head>
-  <script src="<c:url value="/resources/js/jquery-1.11.1.js" />"></script>
+        <title>Sistema de Informação - SCB</title>
+   <script src="<c:url value="/resources/js/jquery-1.11.1.js" />"></script>
   <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-  <link href="<c:url value="/resources/css/styleCampo.css" />" rel="stylesheet"  type="text/css" />
+  <link href="<c:url value ="/resources/css/styleCampo.css"/>" rel="stylesheet" type="text/css">
+    </head>
+  <!--
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css"> !-->
+ 
     <body>
-        <h1 id="formacao"> RotaÃ§Ã£o P<label id="r">1<label> </h1>
+        <div id="top">
+            <div id="rotacaoCampo1">
+        <h3> Rotação Campo1: <label id="r">1<label> </h3>            
+                    </div>
+
+                    <div id="scoreboard">
+
+                        <span id="casa">
+                            <p>Casa</p>
+                            <input type="button" class="button" id="btncasa" value="0" />
+                            <br>
+                            <p>Set:</p>            
+                            <input type="button" class="button" id="btnsetcasa" value="0" />
+                        </span>
+                        <span id="fora">
+                            <p>Fora</p>
+                            <input type="button" class="button" id="btnfora" value="0"/>
+                            <br>
+                            <p>Set:</p>
+                            <input type="button" class="button" id="btnsetfora" value="0" />
+                        </span>
+                    </div>
+            
+                    <div id="rotacaoCampo2">         
+                        <h3> Rotação Campo2: <label id="r2">1<label> </h3>
+                                    </div>
+            
                     <div id ="classificacao">	
-                        <div id="rbd" style="display:none">
-                            <h3>ClassificaÃ§Ã£o de Defesa</h3>
+                        <div id="rbd" style="">
+                            <h3>Classificação de Defesa</h3>
                             <input type="radio" name="cld" value="3" onclick="defesa()" />3<br>
                             <input type="radio" name="cld" value="2" onclick="defesa()" />2<br>
                             <input type="radio" name="cld" value="1" onclick="defesa()" />1<br>
@@ -30,7 +57,7 @@
                         </div>
 
                         <div id="rba" style="display:none">
-                            <h3>ClassificaÃ§Ã£o de Ataque</h3>
+                            <h3>Classificação de Ataque</h3>
                             <input type="radio" name="cla" value="3" onclick="ataque()" />3<br>
                             <input type="radio" name="cla" value="2" onclick="ataque()" />2<br>
                             <input type="radio" name="cla" value="1" onclick="ataque()"/>1<br>
@@ -38,40 +65,13 @@
                             <input type="radio" name="cla" value="-1" onclick="ataque()"/>Erro<br>
 
                         </div>
+                        
                     </div>
-                    <div id="scoreboard">
-                        <h2>Score</h2>
-                        <span id="casa">
-                            Casa <br>
-                            <input type="button" id="btncasa" value="0" />
-                            <br>
-                            Set:            
-                            <input type="button" id="btnsetcasa" value="0" />
-                        </span>
-                        <span id="fora">
-                            Fora <br>
-                            <input type="button" id="btnfora" value="0"/>
-                            <br>
-                            Set:
-                            <input type="button" id="btnsetfora" value="0" />
-                        </span>
+                    
                     </div>
-
-
-                    <div id="textboxes">
-                        <label class="labelR"> Jogadas </label>
-                        <textarea class="relato"id="jogadasTxt"rows = "5" cols ="30"></textarea>
-
-                        <label class="labelA"> Ataques </label>
-                        <textarea class="ataques"id="ataquesTxt"rows = "5" cols ="30"></textarea>
-
-                        <label class="labelD"> Defesas </label>
-                        <textarea class="defesas"id="defesasTxt"rows = "5" cols ="30"></textarea>
-
-                    </div>
-
-
-                    <div id="campo">
+        <div id="mid">
+        
+                            <div id="campo">
                         <div class="elementServiceLeft" id="pos19" name="pos19" > 19 </div>
                         <div class="elementOutLeft" id="pos13" name="pos13" > 13 </div>    
                         <div class="elementTopLeft" id="pos14" name="pos14" > 14 </div>    
@@ -98,6 +98,22 @@
 
 
                     </div>
+        
+
+                    <div id="textboxes">
+                        <label class="labelR"> Jogadas </label>
+                        <textarea class="relato"id="jogadasTxt"rows = "5" cols ="30"></textarea>
+
+                        <label class="labelA"> Ataques </label>
+                        <textarea class="ataques"id="ataquesTxt"rows = "5" cols ="30"></textarea>
+
+                        <label class="labelD"> Defesas </label>
+                        <textarea class="defesas"id="defesasTxt"rows = "5" cols ="30"></textarea>
+
+                    </div>
+
+</div>
+
 
                     <div id=tabela>
                         <input name="generate" type="button" value="Create Table!" onclick='createTable();'/>
@@ -107,11 +123,12 @@
 
 
                     <div id="atribui">            
-                        <input type="submit" name = "calcula" onclick="calc()">
-                        <input type="submit" name = "ataques" value = "Ataques" onclick = "mostraAtaques()" >
-                        <input type="submit" name = "ataques" value ="Defesas" onclick = "mostraDefesas()" >
-                        <input type="submit" name = "jogadores" value = "Jogadores" onclick="jog()">
-                        <input type="submit" name = "rotacao2" value = "rotacao2" onclick="rotacaoCampo2()">
+                        <input type="submit" class="button" name = "calcula" onclick="calc()">
+                        <input type="submit" class="button" name = "ataques" value = "Ataques" onclick = "mostraAtaques()" >
+                        <input type="submit" class="button" name = "ataques" value ="Defesas" onclick = "mostraDefesas()" >
+                        <input type="submit" class="button" name = "jogadores" value = "Jogadores" onclick="jog()">
+                        <input type="submit" class="button" name = "rotacao1" value = "rotacao1" onclick="rotacaoCampo1()">
+                        <input type="submit" class="button" name = "rotacao2" value = "rotacao2" onclick="rotacaoCampo2()">
                         <br>
                         <br>
                         <label> Zona 1 </label>
@@ -134,7 +151,7 @@
                         <br>
                     </div>
 
-
+<!--
                     <div id="dragAndDrop">
                         <div id="dragj1" class="ui-widget-content" >Jogador 1</div>
 
@@ -162,7 +179,7 @@
                         <div id="dropP6" class="ui-widget-header"><p>Posicao 6</p></div>
                     </div>
 
-
+!-->
                     <script>
 
                         var campo1 = [1, 2, 3, 4, 5, 6, 19];
@@ -353,10 +370,7 @@
                         function servico() {
                             var x = ar.length;
                             var ul = parseInt(ar[x - 1][2]);
-
-                            switch (x) {
-
-                                case 1:
+                            if(x == 1){
                                     // servico tem de comecar por area de servico
                                     if ($.inArray(ul, servico1) >= 0 || $.inArray(ul, servico2) >= 0) {
                                         $('#jogadasTxt').html('servico');
@@ -364,9 +378,6 @@
                                         $('#jogadasTxt').html('erro todas as jogadas tem de comecar com um servico');
                                         ar.length = 0;
                                     }
-                                    break;
-
-
                             }
                         }
 
@@ -705,3 +716,4 @@
 
                     </body>
                     </html>
+
