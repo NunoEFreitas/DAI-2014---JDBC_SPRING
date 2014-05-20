@@ -24,7 +24,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class HomePageController {
+public class UtilizadorController {
 
 	@Autowired
 	UtilizadorService utilizadorService;

@@ -91,7 +91,8 @@
 					</tr>
 				</table>
 				<form:hidden path="idUtilizador" value="${map.user.idUtilizador}" />
-
+                                <form:hidden path="idPerfil" value="${map.user.idPerfil}" />
+                                <form:hidden path="idEscalao" value="${map.user.idEscalao}" />
 			</form:form>
                 </div>
             </div>

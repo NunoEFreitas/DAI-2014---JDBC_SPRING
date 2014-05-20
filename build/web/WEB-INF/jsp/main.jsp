@@ -28,15 +28,7 @@
                                         <li>
 						<a href="verifica">Pesquisar</a>
 					</li>
-					<li>
-						<a href="criaJogo">Criar Jogo</a>
-					</li>
-                                        <li>
-						<a href="jogo">jogo</a>
-					</li>
-                                        <li>
-						<a href="getList">listar</a>
-					</li>
+
                                         <li>
 						<a href="novoJogo">Novo Jogo</a>
 					</li>
