@@ -26,7 +26,7 @@
                         </li>
                         <li class='has-sub'><a href='#'><span>Gerir Treinos</span></a>
                             <ul>
-                                <li class='has-sub'><a href='criarTreino'><span>CriarTreino</span></a>
+                                <li class='has-sub'><a href='#'><span>CriarTreino</span></a>
                                     <ul>
                                         <li><a href='#'><span>DefinirEquipa</span></a></li>
                                         <li class="last"><a href="#"><span>DefinirPlanoTreino</span></a></li>
@@ -44,11 +44,12 @@
                                 <li class='has-sub'><a href='#'><span>VisualizarHistoricoTreino</span></a></li>
                             </ul>
                         </li>
+                        
                         <li class='has-sub'><a href='#'><span>Gerir Competições</span></a>
                             <ul>
                                 <li class='has-sub'><a href='#'><span>AnalisarTempoReal</span></a>
                                     <ul>
-                                        <li><a href='criaJogo'><span>CriarJogo</span></a></li>
+                                        <li><a href='novoJogo'><span>CriarJogo</span></a></li>
                                     </ul>
                                 </li>
                                 <li class='has-sub'><a href='#'><span>AnalisarPosteriori</span></a>

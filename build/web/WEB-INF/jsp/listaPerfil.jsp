@@ -12,8 +12,11 @@
  
     <%@include file="/resources/include/templateSeccionista.jsp"%>
 
-      
-    <table border="1"> 
+       <Div  class = "cabecalho da pagina" > 
+            <h1> Gerir Perfis<small> Visualizar Perfil </small>  </h1> 
+        </div>
+
+    <table class="table"> 
         <tr>
             <td Class="heading"> ID Perfil </td>
             <td Class="heading"> Designação </td>

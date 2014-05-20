@@ -29,7 +29,7 @@
                             <ul>
                                 <li class='has-sub'><a href='#'><span>Analisar À Posteriori</span></a>
                                     <ul>
-                                        <li><a href='userList'><span>GerarDadosTabela</span></a></li>
+                                        <li><a href='#'><span>GerarDadosTabela</span></a></li>
                                         <li><a href='#'><span>GerarDadosGráfico</span></a></li>
                                     </ul>
                                 </li>

@@ -32,7 +32,7 @@
 						<a href="criaJogo">Criar Jogo</a>
 					</li>
                                         <li>
-						<a href="treino">Criar Treino</a>
+						<a href="jogo">jogo</a>
 					</li>
                                         <li>
 						<a href="getList">listar</a>

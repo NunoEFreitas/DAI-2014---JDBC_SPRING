@@ -16,7 +16,7 @@
                         <li class='active'><a href='#'><span>TreinadorAdjunto</span></a></li>
                          <li class='has-sub'><a href='#'><span>Gerir Treinos</span></a>
                             <ul>
-                                <li class='has-sub'><a href='criarTreino'><span>CriarTreino</span></a>
+                                <li class='has-sub'><a href='#'><span>CriarTreino</span></a>
                                     <ul>
                                         <li><a href='#'><span>DefinirEquipa</span></a></li>
                                         <li class="last"><a href="#"><span>DefinirPlanoTreino</span></a></li>
@@ -31,7 +31,7 @@
                             <ul>
                                 <li class='has-sub'><a href='#'><span>AnalisarTempoReal</span></a>
                                     <ul>
-                                        <li><a href='criarJogo'><span>CriarJogo</span></a></li>
+                                        <li><a href='#'><span>CriarJogo</span></a></li>
                                         <li><a href='#'><span>InserirDadosJogo</span></a></li>
                                     </ul>
                                 </li>
@@ -60,8 +60,8 @@
                                 </li>
                                 <li class='has-sub'><a href='#'><span>AnalisarPosteriori</span></a>
                                     <ul>
-                                        <li><a href='dadosTabela'><span>AnalisarDadosTabela</span></a></li>
-                                        <li><a href='dadosGrafico'><span>AnalisarDadosGrafico</span></a></li>
+                                        <li><a href='#'><span>AnalisarDadosTabela</span></a></li>
+                                        <li><a href='#'><span>AnalisarDadosGrafico</span></a></li>
                                     </ul>
                                 </li> 
                                 <li class='has-sub'><a href='#'><span>ManusearVídeo</span></a>

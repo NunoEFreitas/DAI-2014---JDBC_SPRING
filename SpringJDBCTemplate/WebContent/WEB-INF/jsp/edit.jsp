@@ -6,16 +6,19 @@
 	<meta charset="UTF-8">
         <Meta  http-equiv = "X-UA-Compatible"  content = "IE = borda" >
 	<title>Login - Sistema de Informação - SCB</title>
-
+        <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
         
  
 </head>
 <body>
 
-       <%@include file="/resources/include/templateAdministracao.jsp" %>
+       <%@include file="/resources/include/templateSeccionista.jsp" %>
 
         <!-- Page content -->
-        <h1> Editar dados do Utilizador ${map.user.nome}  </h1>
+        <Div  class = "cabecalho da pagina" > 
+            <h1> Gerir Recursos Humanos<small>  Editar dados do Utilizador ${map.user.nome} </small>  </h1> 
+        </div>
+       
           
                     <form:form method="post" action="/update" modelAttribute="utilizador">
 				<table>
