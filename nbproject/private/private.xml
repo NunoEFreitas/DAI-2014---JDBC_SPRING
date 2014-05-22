@@ -3,13 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Albano/Documents/GitHub/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/resources/include/templateAtleta.jsp</file>
-            <file>file:/C:/Users/Albano/Documents/GitHub/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/resources/include/templateTreinador.jsp</file>
-            <file>file:/C:/Users/Albano/Documents/GitHub/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/main.jsp</file>
-            <file>file:/C:/Users/Albano/Documents/GitHub/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/seccionista.jsp</file>
+            <file>file:/C:/Users/Albano/Documents/GitHub/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/controller/JogoController.java</file>
+            <file>file:/C:/Users/Albano/Documents/GitHub/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/resources/include/templateOlheiros.jsp</file>
+            <file>file:/C:/Users/Albano/Documents/GitHub/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/resources/include/templateSeccionista.jsp</file>
             <file>file:/C:/Users/Albano/Documents/GitHub/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/userList.jsp</file>
-            <file>file:/C:/Users/Albano/Documents/GitHub/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/controller/HomePageController.java</file>
-            <file>file:/C:/Users/Albano/Documents/GitHub/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/criarJogo.jsp</file>
+            <file>file:/C:/Users/Albano/Documents/GitHub/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/register.jsp</file>
+            <file>file:/C:/Users/Albano/Documents/GitHub/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/novoJogo.jsp</file>
+            <file>file:/C:/Users/Albano/Documents/GitHub/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/desativarUtilizadores.jsp</file>
+            <file>file:/C:/Users/Albano/Documents/GitHub/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/criarJogoCompeticoesTA.jsp</file>
+            <file>file:/C:/Users/Albano/Documents/GitHub/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/resources/include/templateTreinador.jsp</file>
+            <file>file:/C:/Users/Albano/Documents/GitHub/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/dadosGrafico.jsp</file>
+            <file>file:/C:/Users/Albano/Documents/GitHub/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/domain/Jogo.java</file>
+            <file>file:/C:/Users/Albano/Documents/GitHub/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/main.jsp</file>
+            <file>file:/C:/Users/Albano/Documents/GitHub/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/dadosTabela.jsp</file>
+            <file>file:/C:/Users/Albano/Documents/GitHub/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/resources/include/templateTreinadorAdjunto.jsp</file>
+            <file>file:/C:/Users/Albano/Documents/GitHub/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/alterarDados.jsp</file>
         </group>
     </open-files>
 </project-private>
