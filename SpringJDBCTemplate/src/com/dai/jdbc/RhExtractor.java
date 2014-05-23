@@ -4,7 +4,7 @@
  */
 package com.dai.jdbc;
 
-import com.dai.domain.Pagamento;
+import com.dai.domain.Rh;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import org.springframework.dao.DataAccessException;
@@ -14,12 +14,12 @@ import org.springframework.jdbc.core.ResultSetExtractor;
  *
  * @author Samuel Costa
  */
-public class PagamentoExtractor implements ResultSetExtractor<Pagamento> {
+public class RhExtractor implements ResultSetExtractor<Rh> {
 
-    public Pagamento extractData(ResultSet resultSet) throws SQLException,
+    public Rh extractData(ResultSet resultSet) throws SQLException,
             DataAccessException {
 
-        Pagamento pagamento = new Pagamento();
+        Rh pagamento = new Rh();
         pagamento.setIdpagamento(resultSet.getInt("idpagamento"));
         pagamento.setIdrecebimento(resultSet.getInt("idrecebimento"));
         pagamento.setIdutilizador(resultSet.getInt("idutilizador"));

@@ -1,9 +1,9 @@
 
 package com.dai.services;
 
-import com.dai.dao.PagamentoDao;
+import com.dai.dao.RhDao;
 import com.dai.dao.PerfilDao;
-import com.dai.domain.Pagamento;
+import com.dai.domain.Rh;
 import com.dai.domain.Perfil;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,11 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
  *
  * @author Samuel Costa
  */
-public interface PagamentoService {
+public interface RhService {
    
      
-    public List<Pagamento> listarPagamento();
+    public List<Rh> listarPagamento();
     
-     public void inserirPagamento(Pagamento pag);
+     public void inserirPagamento(Rh pag);
     
 }

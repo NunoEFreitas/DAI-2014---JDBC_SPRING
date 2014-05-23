@@ -4,9 +4,9 @@
  */
 package com.dai.dao;
 
-import com.dai.domain.Pagamento;
+import com.dai.domain.Rh;
 import com.dai.domain.Utilizador;
-import com.dai.jdbc.PagamentoRowMapper;
+import com.dai.jdbc.RhRowMapper;
 import com.dai.jdbc.UtilizadorRowMapper;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,23 +18,23 @@ import org.springframework.jdbc.core.JdbcTemplate;
  *
  * @author Samuel Costa
  */
-public class PagamentoDaoImpl implements PagamentoDao{
+public class RhDaoImpl implements RhDao{
       @Autowired
 	DataSource dataSource;
     
       @Override
-	public List<Pagamento> listarPagamento() {
-		List<Pagamento> utList = new ArrayList();
+	public List<Rh> listarPagamento() {
+		List<Rh> utList = new ArrayList();
 
 		String sql = "select * from pagamento";
 
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-		utList = jdbcTemplate.query(sql, new PagamentoRowMapper());
+		utList = jdbcTemplate.query(sql, new RhRowMapper());
 		return utList;
 	}
       
       @Override
-	public void inserirPagamento(Pagamento pag) {
+	public void inserirPagamento(Rh pag) {
 
 		String sql = "INSERT INTO pagamento "
 				+ "(idpagamento, idrecebiento, idutilizador, valorReceber, valorPagar, nomeutilizador, idescalao, data) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";

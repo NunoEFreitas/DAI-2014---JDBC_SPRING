@@ -8,7 +8,7 @@ package com.dai.domain;
  *
  * @author Samuel Costa
  */
-public class Pagamento {
+public class Rh {
     
     private int idpagamento;
     private int idrecebimento;

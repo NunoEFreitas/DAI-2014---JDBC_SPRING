@@ -4,11 +4,11 @@
  */
 package com.dai.controller;
 
-import com.dai.domain.Pagamento;
+import com.dai.domain.Rh;
 import com.dai.domain.Perfil;
 import com.dai.domain.Utilizador;
 import com.dai.services.EscalaoService;
-import com.dai.services.PagamentoService;
+import com.dai.services.RhService;
 import com.dai.services.PerfilService;
 import com.dai.services.UtilizadorService;
 import java.util.List;
@@ -24,7 +24,7 @@ import org.springframework.web.servlet.ModelAndView;
  */
 
 @Controller
-public class PagamentoController {
+public class RhController {
     
 	@Autowired
 	UtilizadorService utilizadorService;
@@ -36,7 +36,7 @@ public class PagamentoController {
         EscalaoService escalaoService;
          
         @Autowired
-        PagamentoService pagamentoService;
+        RhService pagamentoService;
         
         
         
@@ -45,7 +45,7 @@ public class PagamentoController {
         
         @RequestMapping("/pagamento")
 	public ModelAndView listaPagamento() {
-		List<Pagamento> lperfil = pagamentoService.listarPagamento();
+		List<Rh> lperfil = pagamentoService.listarPagamento();
 		return new ModelAndView("pagamento", "perfilList", lperfil);
 	}
         
@@ -56,7 +56,7 @@ public class PagamentoController {
 	}
         
          @RequestMapping("/registarpagamento")
-	public String inserePagamento(@ModelAttribute Pagamento pagamento) {
+	public String inserePagamento(@ModelAttribute Rh pagamento) {
 		if (pagamento != null)
 			pagamentoService.inserirPagamento(pagamento);
 		return "redirect:/listaPerfil";

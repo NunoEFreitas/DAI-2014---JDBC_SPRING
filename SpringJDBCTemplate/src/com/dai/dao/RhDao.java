@@ -4,7 +4,7 @@
  */
 package com.dai.dao;
 
-import com.dai.domain.Pagamento;
+import com.dai.domain.Rh;
 import com.dai.domain.Perfil;
 import com.dai.domain.Utilizador;
 import java.util.List;
@@ -13,9 +13,9 @@ import java.util.List;
  *
  * @author Samuel Costa
  */
-public interface PagamentoDao {
-    public List<Pagamento> listarPagamento();
+public interface RhDao {
+    public List<Rh> listarPagamento();
     
-    public void inserirPagamento(Pagamento pag);
+    public void inserirPagamento(Rh pag);
 }
 

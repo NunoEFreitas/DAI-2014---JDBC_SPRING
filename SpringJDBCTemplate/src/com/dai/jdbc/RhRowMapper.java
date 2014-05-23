@@ -4,7 +4,7 @@
  */
 package com.dai.jdbc;
 
-import com.dai.domain.Pagamento;
+import com.dai.domain.Rh;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,11 +14,11 @@ import org.springframework.jdbc.core.RowMapper;
  *
  * @author Samuel Costa
  */
-public class PagamentoRowMapper implements RowMapper<Pagamento> {
+public class RhRowMapper implements RowMapper<Rh> {
 
 	@Override
-	public Pagamento mapRow(ResultSet resultSet, int line) throws SQLException {
-		PagamentoExtractor pagamentoExtractor = new PagamentoExtractor();
+	public Rh mapRow(ResultSet resultSet, int line) throws SQLException {
+		RhExtractor pagamentoExtractor = new RhExtractor();
 		return pagamentoExtractor.extractData(resultSet);
 	}
 

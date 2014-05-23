@@ -4,9 +4,9 @@
  */
 package com.dai.services;
 
-import com.dai.dao.PagamentoDao;
+import com.dai.dao.RhDao;
 import com.dai.domain.Jogo;
-import com.dai.domain.Pagamento;
+import com.dai.domain.Rh;
 import com.dai.domain.Perfil;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,19 +15,19 @@ import org.springframework.beans.factory.annotation.Autowired;
  *
  * @author Samuel Costa
  */
-public class PagamentoServiceImpl implements PagamentoService{
+public class RhServiceImpl implements RhService{
       @Autowired
-	PagamentoDao pagamentodao;
+	RhDao pagamentodao;
     
     
     
     @Override
-	public List<Pagamento> listarPagamento() {
+	public List<Rh> listarPagamento() {
 		return pagamentodao.listarPagamento();
 	}
     
     @Override
-	public void inserirPagamento(Pagamento pagamento) {
+	public void inserirPagamento(Rh pagamento) {
                 pagamentodao.inserirPagamento(pagamento);
 	}
 
