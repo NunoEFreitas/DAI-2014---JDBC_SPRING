@@ -30,7 +30,7 @@
 					</li>
 
                                         <li>
-						<a href="novoJogo">Novo Jogo</a>
+						<a href="pagamento">pagamento</a>
 					</li>
                                         
                                         <li>
