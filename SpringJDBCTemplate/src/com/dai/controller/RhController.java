@@ -11,11 +11,15 @@ import com.dai.services.EscalaoService;
 import com.dai.services.RhService;
 import com.dai.services.PerfilService;
 import com.dai.services.UtilizadorService;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -43,13 +47,13 @@ public class RhController {
       
 	
         
-        @RequestMapping("/pagamento")
-	public ModelAndView listaPagamento() {
-		List<Rh> lperfil = pagamentoService.listarPagamento();
-		return new ModelAndView("pagamento", "perfilList", lperfil);
-	}
+//        @RequestMapping("/pagamento")
+//	public ModelAndView listaPagamento() {
+//		List<Rh> lperfil = pagamentoService.listarPagamento();
+//		return new ModelAndView("pagamento", "perfilList", lperfil);
+//	}
         
-          @RequestMapping("/listaPagamento")
+          @RequestMapping("/listaUtilizadorRh")
 	public ModelAndView listaPagemnto() {
 		List<Utilizador> lutilizador = utilizadorService.listarUtilizador();
 		return new ModelAndView("listaPagamento", "utilizadorList", lutilizador);
@@ -61,4 +65,22 @@ public class RhController {
 			pagamentoService.inserirPagamento(pagamento);
 		return "redirect:/listaPerfil";
 	}
+         
+         
+         
+          @RequestMapping("/pagamento")
+	public ModelAndView editRh(@RequestParam Integer id, @ModelAttribute Rh rh) {
+              
+		rh = pagamentoService.getUtilizadorRh(id);
+                
+               Map<String, Object> map = new HashMap<String, Object>();
+               
+                map.put("user", rh);
+		return new ModelAndView("pagamento", "map", map);
+
+	}
+         
+         
+         
 }
+

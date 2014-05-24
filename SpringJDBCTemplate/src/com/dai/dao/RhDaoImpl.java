@@ -50,6 +50,18 @@ public class RhDaoImpl implements RhDao{
                                                pag.getData(),});
 
 	}
+      
+      
+      @Override
+	public Rh getUtilizadorRh(Integer id) {
+		List<Rh> utList = new ArrayList<Rh>();
+		String sql = "select * from pagamento where idutilizador= " + id;
+		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		utList = jdbcTemplate.query(sql, new RhRowMapper());
+                
+		return utList.get(0);
+	}
+        
 
 
 }

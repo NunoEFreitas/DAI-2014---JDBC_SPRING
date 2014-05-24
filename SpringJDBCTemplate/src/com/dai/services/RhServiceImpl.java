@@ -5,9 +5,8 @@
 package com.dai.services;
 
 import com.dai.dao.RhDao;
-import com.dai.domain.Jogo;
 import com.dai.domain.Rh;
-import com.dai.domain.Perfil;
+import com.dai.domain.Utilizador;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -31,4 +30,8 @@ public class RhServiceImpl implements RhService{
                 pagamentodao.inserirPagamento(pagamento);
 	}
 
+    @Override
+	public Rh getUtilizadorRh(Integer id) {
+		return pagamentodao.getUtilizadorRh(id);
+	}
 }

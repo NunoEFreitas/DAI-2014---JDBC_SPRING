@@ -14,7 +14,7 @@ public class UtilizadorExtractor implements ResultSetExtractor<Utilizador> {
 		Utilizador utilizador = new Utilizador();
 		
                 utilizador.setIdUtilizador(resultSet.getInt("idUtilizador"));
-                utilizador.setNome(resultSet.getString("nomeUtilizador"));
+                utilizador.setNome(resultSet.getString("nome"));
                 utilizador.setPassword(resultSet.getString("password"));
                 utilizador.setDataNascimento(resultSet.getString("dataNascimento"));
                 utilizador.setMorada(resultSet.getString("morada"));
@@ -30,7 +30,10 @@ public class UtilizadorExtractor implements ResultSetExtractor<Utilizador> {
                 utilizador.setExamesClinicos(resultSet.getString("examesClinicos"));
                 utilizador.setIdPerfil(resultSet.getInt("idPerfil"));
                 utilizador.setIdEscalao(resultSet.getInt("idEscalao"));
-                
+                 utilizador.setEstado(resultSet.getInt("estado"));
+             
+                 utilizador.setEstatura(resultSet.getString("estatura"));
+                   utilizador.setEnvergadura(resultSet.getInt("envergadura"));
 		return utilizador;
 	}
 

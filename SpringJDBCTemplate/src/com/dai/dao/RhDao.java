@@ -17,5 +17,7 @@ public interface RhDao {
     public List<Rh> listarPagamento();
     
     public void inserirPagamento(Rh pag);
+    
+    public Rh getUtilizadorRh(Integer id);
 }
 

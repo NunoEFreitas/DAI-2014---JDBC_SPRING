@@ -40,6 +40,9 @@
                                         <li>
 						<a href="jogo">Campo</a>
 					</li>
+                                        <li>
+						<a href="listaUtilizadorRh">registar Pagamento</a>
+					</li>
 				</ul>
 				<div class="connect">
 					*
