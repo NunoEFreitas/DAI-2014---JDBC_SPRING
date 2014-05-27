@@ -30,7 +30,7 @@
 					</li>
 
                                         <li>
-						<a href="novoJogo">Novo Jogo</a>
+						<a href="pagamento">pagamento</a>
 					</li>
                                         
                                         <li>
@@ -39,6 +39,9 @@
                                         
                                         <li>
 						<a href="jogo">Campo</a>
+					</li>
+                                        <li>
+						<a href="listaUtilizadorRh">registar Pagamento</a>
 					</li>
 				</ul>
 				<div class="connect">

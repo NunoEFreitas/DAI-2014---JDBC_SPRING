@@ -147,6 +147,32 @@ public class Utilizador {
     public void setIdEscalao(int idEscalao) {
         this.idEscalao = idEscalao;
     }
+  
+
+    public int getEnvergadura() {
+        return envergadura;
+    }
+
+    public int getEstado() {
+        return estado;
+    }
+
+   
+
+    public void setEnvergadura(int avergadura) {
+        this.envergadura = avergadura;
+    }
+
+    public void setEstado(int estado) {
+        this.estado = estado;
+    }
+     public String getEstatura() {
+        return estatura;
+    }
+
+    public void setEstatura(String estatura) {
+        this.estatura = estatura;
+    }
     
     private int idUtilizador;
     private String nome;
@@ -158,11 +184,14 @@ public class Utilizador {
     private String email;
     private int altura;
     private int peso;
+    private String estatura;
+    private int envergadura;
     private int saltoVertical;
     private int velocidadeDeslocamento;
     private int alcanceAtaque;
     private int alcanceBloco;
     private String examesClinicos;
+    private int estado;
     private int idPerfil;
     private int idEscalao;
     
