@@ -154,14 +154,14 @@ body{
     right:36%; 
     margin-right:670px;
     margin-top: 18%;
-    background-color:darkred;
+    background-color:red;
     -moz-box-shadow:5px 5px 2px #000000;
     -webkit-box-shadow:5px 5px 2px #000000;
     box-shadow:5px 5px 2px #000000;
 
 }
 
-.elementServiceLeft:hover { background-color: red; }
+.elementServiceLeft:hover { background-color: #FFC4CB; }
 
 .elementServiceRight{
     width: 50px;
@@ -173,14 +173,14 @@ body{
     right:36%; 
     margin-right: -70px;
     margin-top: 18%;
-    background-color:darkred;
+    background-color:red;
     -moz-box-shadow:5px 5px 2px #000000;
     -webkit-box-shadow:5px 5px 2px #000000;
     box-shadow:5px 5px 2px #000000;
 
 }
 
-.elementServiceRight:hover { background-color: red; }
+.elementServiceRight:hover { background-color: #FFC4CB; }
 
 .elementTopLeft{
     width: 255px;
@@ -192,14 +192,14 @@ body{
     right:36%; 
     margin-right:350px;
     margin-top: 18%;
-    background-color:darkblue;
+    background-color:blue;
     -moz-box-shadow:5px 5px 2px #000000;
     -webkit-box-shadow:5px 5px 2px #000000;
     box-shadow:5px 5px 2px #000000;
 
 
 }
-.elementTopLeft:hover { background-color: blue; }
+.elementTopLeft:hover { background-color: #ADAFFF; }
 
 .elementTopRight{
     width: 255px;
@@ -211,13 +211,13 @@ body{
     right:36%; 
     margin-right:45px;
     margin-top: 18%;
-    background-color:darkblue;
+    background-color:blue;
     -moz-box-shadow:5px 5px 2px #000000;
     -webkit-box-shadow:5px 5px 2px #000000;
     box-shadow:5px 5px 2px #000000;
 }
 
-.elementTopRight:hover { background-color: blue; }
+.elementTopRight:hover { background-color: #ADAFFF; }
 
 .elementBotLeft{
     width: 255px;
@@ -229,13 +229,13 @@ body{
     right:36%; 
     margin-right:350px;
     margin-top: 18%;
-    background-color:darkblue;
+    background-color:blue;
     -moz-box-shadow:5px 5px 2px #000000;
     -webkit-box-shadow:5px 5px 2px #000000;
     box-shadow:5px 5px 2px #000000;
 }
 
-.elementBotLeft:hover { background-color: blue; }
+.elementBotLeft:hover { background-color: #ADAFFF; }
 
 .elementBotRight{
     width: 255px;
@@ -247,13 +247,13 @@ body{
     right:36%; 
     margin-right:45px;
     margin-top: 18%;
-    background-color:darkblue;
+    background-color:blue;
     -moz-box-shadow:5px 5px 2px #000000;
     -webkit-box-shadow:5px 5px 2px #000000;
     box-shadow:5px 5px 2px #000000;
 }
 
-.elementBotRight:hover { background-color: blue; }
+.elementBotRight:hover { background-color: #ADAFFF; }
 
 .elementOutLeft{
     width: 50px;
@@ -265,13 +265,13 @@ body{
     right:36%; 
     margin-right:610px;
     margin-top: 18%;
-    background-color:darkblue;
+    background-color:blue;
     -moz-box-shadow:5px 5px 2px #000000;
     -webkit-box-shadow:5px 5px 2px #000000;
     box-shadow:5px 5px 2px #000000;
 }
 
-.elementOutLeft:hover { background-color: blue; }
+.elementOutLeft:hover { background-color: #ADAFFF; }
 
 .elementOutRight{
     width: 50px;
@@ -283,13 +283,13 @@ body{
     right:36%; 
     margin-right: -10px;
     margin-top: 18%;
-    background-color:darkblue;
+    background-color:blue;
     -moz-box-shadow:5px 5px 2px #000000;
     -webkit-box-shadow:5px 5px 2px #000000;
     box-shadow:5px 5px 2px #000000;
 }
 
-.elementOutRight:hover { background-color: blue; }
+.elementOutRight:hover { background-color: #ADAFFF; }
 
 
 .element1 {
@@ -302,7 +302,7 @@ body{
     right:36%; 
     margin-right:480px;
     margin-top: 18%;
-    background-color:orangered;
+    background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
     -webkit-box-shadow:5px 5px 2px #000000;
     box-shadow:5px 5px 2px #000000;
@@ -310,7 +310,7 @@ body{
 
 }
 
-.element1:hover { background-color: orange; }
+.element1:hover { background-color: #F7C87C; }
 
 .element2 {
     width: 125px;
@@ -322,14 +322,14 @@ body{
     right:36%; 
     margin-right:350px;
     margin-top: 18%;
-    background-color:orangered;
+    background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
     -webkit-box-shadow:5px 5px 2px #000000;
     box-shadow:5px 5px 2px #000000;
 
 
 }
-.element2:hover { background-color: orange; }
+.element2:hover { background-color: #F7C87C; }
 
 .element3 {
     width: 125px;
@@ -341,14 +341,14 @@ body{
     right:36%; 
     margin-right:350px;
     margin-top: 18%;
-    background-color:orangered;
+    background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
     -webkit-box-shadow:5px 5px 2px #000000;
     box-shadow:5px 5px 2px #000000;
 
 
 }
-.element3:hover { background-color: orange; }
+.element3:hover { background-color: #F7C87C; }
 
 .element6 {
     width: 125px;
@@ -360,15 +360,15 @@ body{
     right:36%; 
     margin-right:480px;
     margin-top: 18%;
-    background-color:orangered;
+    background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
     -webkit-box-shadow:5px 5px 2px #000000;
     box-shadow:5px 5px 2px #000000;
 
 
 }
-.element6:hover { background-color: orange; }
-.element4:hover { background-color: orange; }
+.element6:hover { background-color: #F7C87C; }
+.element4:hover { background-color: #F7C87C; }
 
 
 .element4 {
@@ -381,7 +381,7 @@ body{
     right:36%; 
     margin-right:350px;
     margin-top: 18%;
-    background-color:orangered;
+    background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
     -webkit-box-shadow:5px 5px 2px #000000;
     box-shadow:5px 5px 2px #000000;
@@ -399,7 +399,7 @@ body{
     right:36%; 
     margin-right:480px;
     margin-top: 18%;
-    background-color:orangered;
+    background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
     -webkit-box-shadow:5px 5px 2px #000000;
     box-shadow:5px 5px 2px #000000;
@@ -407,7 +407,7 @@ body{
 
 }
 
-.element5:hover { background-color: orange; }	
+.element5:hover { background-color: #F7C87C; }	
 
 
 .elementLinha{
@@ -420,7 +420,7 @@ body{
     right:36%; 
     margin-right:315px;
     margin-top: 18%;
-    background-color:darkred;
+    background-color:red;
     -moz-box-shadow:5px 5px 2px #000000;
     -webkit-box-shadow:5px 5px 2px #000000;
     box-shadow:5px 5px 2px #000000;
@@ -428,7 +428,7 @@ body{
 
 }
 
-.elementLinha:hover { background-color: red; }
+.elementLinha:hover { background-color: #FFC4CB; }
 
 .element7 {
     width: 125px;
@@ -440,13 +440,13 @@ body{
     right:36%; 
     margin-right:45px;
     margin-top: 18%;
-    background-color:orangered;
+    background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
     -webkit-box-shadow:5px 5px 2px #000000;
     box-shadow:5px 5px 2px #000000;
 
 }
-.element7:hover { background-color: orange; }	
+.element7:hover { background-color: #F7C87C; }	
 
 .element12 {
     width: 125px;
@@ -458,14 +458,14 @@ body{
     right:36%; 
     margin-right:45px;
     margin-top: 18%;
-    background-color:orangered;
+    background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
     -webkit-box-shadow:5px 5px 2px #000000;
     box-shadow:5px 5px 2px #000000;
 
 }
 
-.element12:hover { background-color: orange; }
+.element12:hover { background-color: #F7C87C; }
 
 .element11 {
     width: 125px;
@@ -477,14 +477,14 @@ body{
     right:36%; 
     margin-right:45px;
     margin-top: 18%;
-    background-color:orangered;
+    background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
     -webkit-box-shadow:5px 5px 2px #000000;
     box-shadow:5px 5px 2px #000000;
 
 }
 
-.element11:hover { background-color: orange; }
+.element11:hover { background-color: #F7C87C; }
 
 .element10 {
     width: 125px;
@@ -496,14 +496,14 @@ body{
     right:36%; 
     margin-right:175px;
     margin-top: 18%;
-    background-color:orangered;
+    background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
     -webkit-box-shadow:5px 5px 2px #000000;
     box-shadow:5px 5px 2px #000000;
 
 }
 
-.element10:hover { background-color: orange; }
+.element10:hover { background-color: #F7C87C; }
 
 .element9 {
     width: 125px;
@@ -515,14 +515,14 @@ body{
     right:36%; 
     margin-right:175px;
     margin-top: 18%;
-    background-color:orangered;
+    background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
     -webkit-box-shadow:5px 5px 2px #000000;
     box-shadow:5px 5px 2px #000000;
 
 }
 
-.element9:hover { background-color: orange; }
+.element9:hover { background-color: #F7C87C; }
 
 .element8 {
     width: 125px;
@@ -534,14 +534,14 @@ body{
     right:36%; 
     margin-right:175px;
     margin-top: 18%;
-    background-color:orangered;
+    background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
     -webkit-box-shadow:5px 5px 2px #000000;
     box-shadow:5px 5px 2px #000000;
 
 }
 
-.element8:hover { background-color: orange; }
+.element8:hover { background-color: #F7C87C; }
 
 /* --------------------------- drag and drop ------------------------------------ */
 
