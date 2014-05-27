@@ -22,9 +22,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -98,7 +100,7 @@ public class JogoController {
 		List<Jogo> lJogos = jogoService.listaJogos();
 		return new ModelAndView("listaJogos", "ljogos", lJogos);
 	}
-        
+        /*
         @RequestMapping(value="/insere", method= RequestMethod.GET)
         public void insere(@RequestParam(value = "idUtilizador", required = true) Integer idUtilizador, @RequestParam(value = "idJogo", required = true) Integer idJogo, HttpServletRequest request, HttpServletResponse response) throws Exception {  
 		SelecaoJogo sl = new SelecaoJogo();
@@ -107,5 +109,14 @@ public class JogoController {
                 slService.adicionaSL(sl);
                 
 	}
+        */
         
-}
+@RequestMapping(value = "/helloajax", method = RequestMethod.GET)  
+        public @ResponseBody  
+        String insere(@RequestParam("jogador") String jogador,
+        @RequestParam("clube") String clube)  {  
+            String mensagem=jogador;
+            return mensagem;
+    }  
+}  
+        

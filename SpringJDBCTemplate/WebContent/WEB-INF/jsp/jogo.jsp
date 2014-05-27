@@ -123,7 +123,7 @@
 
 
                                             <div id="atribui">            
-                                                <input type="submit" class="button" name = "calcula" onclick="calc()">
+                                                <input type="submit" class="button" name = "calcula" onclick="helloAjax()">
                                                 <input type="submit" class="button" name = "ataques" value = "Ataques" onclick = "mostraAtaques()" >
                                                 <input type="submit" class="button" name = "ataques" value ="Defesas" onclick = "mostraDefesas()" >
                                                 <input type="submit" class="button" name = "jogadores" value = "Jogadores" onclick="jog()">
@@ -208,7 +208,18 @@
                                                 adv.push('ADV5');
                                                 adv.push('ADV6');
 
-
+function helloAjax(){  
+        var jogador = 'nuno';
+        var clube = 'fcp';
+        $.ajax({  
+            url : '${pageContext.request.contextPath}/helloajax',  
+            data : {"jogador":jogador,"clube":clube},   
+            success : function(result) {  
+                alert(result);  
+            }  
+        });  
+  }                                                  
+                                                
 
                                                 function rotacaoCampo1() {
                                                     var fluxo = new Array();
