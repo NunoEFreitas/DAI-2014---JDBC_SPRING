@@ -17,7 +17,10 @@ public class UtilizadorDaoImpl implements UtilizadorDao {
 	public void inserirUtilizador(Utilizador ut) {
 
 		String sql = "INSERT INTO utilizador "
-				+ "(nomeUtilizador, password, dataNascimento, morada, sexo, telefone, email, altura, peso, saltoVertical, velocidadeDeslocamento, alcanceAtaque, alcanceBloco, examesClinicos, idPerfil, idEscalao) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+				+ "(nomeUtilizador, password, dataNascimento, morada, sexo, "
+                        + "telefone, email, altura, peso, estatura, envergadura, saltoVertical, "
+                        + "velocidadeDeslocamento, alcanceAtaque, alcanceBloco, examesClinicos, "
+                        + "estado, idPerfil, idEscalao) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 		JdbcTemplate template = new JdbcTemplate(dataSource);
                 
@@ -27,9 +30,10 @@ public class UtilizadorDaoImpl implements UtilizadorDao {
 				sql,
 				new Object[] { ut.getNome(), ut.getPassword(), ut.getDataNascimento(),
                                                ut.getMorada(), ut.getSexo(), ut.getTelefone(), ut.getEmail(),
-                                               ut.getAltura(), ut.getPeso(), ut.getSaltoVertical(), ut.getVelocidadeDeslocamento(),
+                                               ut.getAltura(), ut.getPeso(), ut.getEstatura(), ut.getEnvergadura(),
+                                               ut.getSaltoVertical(), ut.getVelocidadeDeslocamento(),
                                                ut.getAlcanceAtaque(), ut.getAlcanceBloco(), ut.getExamesClinicos(),
-                                               ut.getIdPerfil(), ut.getIdEscalao()});
+                                               ut.getEstado(), ut.getIdPerfil(), ut.getIdEscalao()});
 
 	}
 
@@ -55,16 +59,21 @@ public class UtilizadorDaoImpl implements UtilizadorDao {
 	@Override
 	public void updateUtilizador(Utilizador ut) {
                 
-                String sql = "UPDATE utilizador set nomeUtilizador = ?, password = ?, dataNascimento = ?, morada = ?, sexo = ?, telefone = ?, email = ?, altura = ?, peso = ?, saltoVertical = ?, velocidadeDeslocamento = ?, alcanceAtaque = ?, alcanceBloco = ?, examesClinicos = ?, idPerfil = ?, idEscalao = ? where idUtilizador = ?";
+                String sql = "UPDATE utilizador set nomeUtilizador = ?, password = ?, dataNascimento = ?, "
+                        + "morada = ?, sexo = ?, telefone = ?, email = ?, altura = ?, peso = ?, estatura = ? "
+                        + "envergadura = ?, saltoVertical = ?, velocidadeDeslocamento = ?, alcanceAtaque = ?, "
+                        + "alcanceBloco = ?, examesClinicos = ?,estado = ?, idPerfil = ?, idEscalao = ? "
+                        + "where idUtilizador = ?";
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 
 		jdbcTemplate.update(
 				sql,
 				new Object[] {  ut.getNome(), ut.getPassword(), ut.getDataNascimento(),
                                                ut.getMorada(), ut.getSexo(), ut.getTelefone(), ut.getEmail(),
-                                               ut.getAltura(), ut.getPeso(), ut.getSaltoVertical(), ut.getVelocidadeDeslocamento(),
+                                               ut.getAltura(), ut.getPeso(), ut.getEstatura(), ut.getEnvergadura(),
+                                               ut.getSaltoVertical(), ut.getVelocidadeDeslocamento(),
                                                ut.getAlcanceAtaque(), ut.getAlcanceBloco(), ut.getExamesClinicos(),
-                                               ut.getIdPerfil(), ut.getIdEscalao(), ut.getIdUtilizador()});
+                                               ut.getEstado(), ut.getIdPerfil(), ut.getIdEscalao(), ut.getIdUtilizador()});
 
 	}
 

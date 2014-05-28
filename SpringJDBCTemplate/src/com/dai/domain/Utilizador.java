@@ -6,11 +6,35 @@
 
 package com.dai.domain;
 
+import java.util.Date;
+
 /**
  *
  * @author Nuno
  */
 public class Utilizador {
+
+   
+    private int idUtilizador;
+    private String nome;
+    private String password;
+    private Date dataNascimento;
+    private String morada;
+    private String sexo;
+    private int telefone;
+    private String email;
+    private float altura;
+    private float peso;
+    private String estatura;
+    private float envergadura;
+    private float saltoVertical;
+    private float velocidadeDeslocamento;
+    private float alcanceAtaque;
+    private float alcanceBloco;
+    private boolean examesClinicos;
+    private boolean estado;
+    private int idPerfil;
+    private int idEscalao;
 
     public int getIdUtilizador() {
         return idUtilizador;
@@ -36,11 +60,11 @@ public class Utilizador {
         this.password = password;
     }
 
-    public String getDataNascimento() {
+    public Date getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(String dataNascimento) {
+    public void setDataNascimento(Date dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
@@ -76,60 +100,84 @@ public class Utilizador {
         this.email = email;
     }
 
-    public int getAltura() {
+    public float getAltura() {
         return altura;
     }
 
-    public void setAltura(int altura) {
+    public void setAltura(float altura) {
         this.altura = altura;
     }
 
-    public int getPeso() {
+    public float getPeso() {
         return peso;
     }
 
-    public void setPeso(int peso) {
+    public void setPeso(float peso) {
         this.peso = peso;
     }
 
-    public int getSaltoVertical() {
+    public String getEstatura() {
+        return estatura;
+    }
+
+    public void setEstatura(String estatura) {
+        this.estatura = estatura;
+    }
+
+    public float getEnvergadura() {
+        return envergadura;
+    }
+
+    public void setEnvergadura(float envergadura) {
+        this.envergadura = envergadura;
+    }
+
+    public float getSaltoVertical() {
         return saltoVertical;
     }
 
-    public void setSaltoVertical(int saltoVertical) {
+    public void setSaltoVertical(float saltoVertical) {
         this.saltoVertical = saltoVertical;
     }
 
-    public int getVelocidadeDeslocamento() {
+    public float getVelocidadeDeslocamento() {
         return velocidadeDeslocamento;
     }
 
-    public void setVelocidadeDeslocamento(int velocidadeDeslocamento) {
+    public void setVelocidadeDeslocamento(float velocidadeDeslocamento) {
         this.velocidadeDeslocamento = velocidadeDeslocamento;
     }
 
-    public int getAlcanceAtaque() {
+    public float getAlcanceAtaque() {
         return alcanceAtaque;
     }
 
-    public void setAlcanceAtaque(int alcanceAtaque) {
+    public void setAlcanceAtaque(float alcanceAtaque) {
         this.alcanceAtaque = alcanceAtaque;
     }
 
-    public int getAlcanceBloco() {
+    public float getAlcanceBloco() {
         return alcanceBloco;
     }
 
-    public void setAlcanceBloco(int alcanceBloco) {
+    public void setAlcanceBloco(float alcanceBloco) {
         this.alcanceBloco = alcanceBloco;
     }
 
-    public String getExamesClinicos() {
+    public boolean getExamesClinicos() {
         return examesClinicos;
     }
 
-    public void setExamesClinicos(String examesClinicos) {
+    public void setExamesClinicos(boolean examesClinicos) {
         this.examesClinicos = examesClinicos;
+    }
+
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
     }
 
     public int getIdPerfil() {
@@ -147,53 +195,6 @@ public class Utilizador {
     public void setIdEscalao(int idEscalao) {
         this.idEscalao = idEscalao;
     }
-  
-
-    public int getEnvergadura() {
-        return envergadura;
-    }
-
-    public int getEstado() {
-        return estado;
-    }
-
-   
-
-    public void setEnvergadura(int avergadura) {
-        this.envergadura = avergadura;
-    }
-
-    public void setEstado(int estado) {
-        this.estado = estado;
-    }
-     public String getEstatura() {
-        return estatura;
-    }
-
-    public void setEstatura(String estatura) {
-        this.estatura = estatura;
-    }
-    
-    private int idUtilizador;
-    private String nome;
-    private String password;
-    private String dataNascimento;
-    private String morada;
-    private String sexo;
-    private int telefone;
-    private String email;
-    private int altura;
-    private int peso;
-    private String estatura;
-    private int envergadura;
-    private int saltoVertical;
-    private int velocidadeDeslocamento;
-    private int alcanceAtaque;
-    private int alcanceBloco;
-    private String examesClinicos;
-    private int estado;
-    private int idPerfil;
-    private int idEscalao;
     
     
     
