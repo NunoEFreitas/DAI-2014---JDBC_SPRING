@@ -14,7 +14,7 @@ public class UtilizadorExtractor implements ResultSetExtractor<Utilizador> {
 		Utilizador utilizador = new Utilizador();
 		
                 utilizador.setIdUtilizador(resultSet.getInt("idUtilizador"));
-                utilizador.setNome(resultSet.getString("nome"));
+                utilizador.setNome(resultSet.getString("nomeUtilizador"));
                 utilizador.setPassword(resultSet.getString("password"));
                 utilizador.setDataNascimento(resultSet.getDate("dataNascimento"));
                 utilizador.setMorada(resultSet.getString("morada"));

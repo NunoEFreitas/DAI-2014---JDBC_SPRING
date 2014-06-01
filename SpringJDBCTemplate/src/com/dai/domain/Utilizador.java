@@ -172,7 +172,7 @@ public class Utilizador {
         this.examesClinicos = examesClinicos;
     }
 
-    public boolean isEstado() {
+    public boolean getEstado() {
         return estado;
     }
 
