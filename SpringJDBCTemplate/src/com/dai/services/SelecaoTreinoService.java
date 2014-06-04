@@ -4,23 +4,21 @@
  * and open the template in the editor.
  */
 
-package com.dai.dao;
+package com.dai.services;
 
-import com.dai.domain.SelecaoJogo;
+import com.dai.domain.SelecaoTreino;
 import java.util.List;
 
 /**
  *
  * @author Nuno
  */
-public interface SelecaoJogoDao {
+public interface SelecaoTreinoService {
     
-    public void adicionaSL(SelecaoJogo sl);
+    public void adicionaST(SelecaoTreino st);
     
-    public void apagaSL(int idUtilizador, int idJogo);
+    public void apagaST(int idUtilizador, int idTreino);
     
-    public List<SelecaoJogo> listaSL(int idJogo);
-    
-    
+    public List<SelecaoTreino> listaST(int idTreino);
     
 }

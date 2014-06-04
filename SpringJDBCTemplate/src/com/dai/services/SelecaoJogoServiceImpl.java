@@ -8,6 +8,7 @@ package com.dai.services;
 
 import com.dai.dao.SelecaoJogoDao;
 import com.dai.domain.SelecaoJogo;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -23,5 +24,15 @@ public class SelecaoJogoServiceImpl implements SelecaoJogoService {
 	public void adicionaSL(SelecaoJogo sl) {
 		sldao.adicionaSL(sl);
 	}
+        
+        @Override
+        public void apagaSL(int idUtilizador, int idJogo){
+            sldao.apagaSL(idUtilizador, idJogo);
+        }
+        
+        @Override
+        public List<SelecaoJogo> listaSL(int idJogo){
+            return sldao.listaSL(idJogo);
+        }
     
 }

@@ -7,6 +7,7 @@
 package com.dai.services;
 
 import com.dai.domain.SelecaoJogo;
+import java.util.List;
 
 /**
  *
@@ -15,5 +16,9 @@ import com.dai.domain.SelecaoJogo;
 public interface SelecaoJogoService {
     
     public void adicionaSL(SelecaoJogo sl);
+    
+    public void apagaSL(int idUtilizador, int idJogo);
+    
+    public List<SelecaoJogo> listaSL(int idJogo);
     
 }
