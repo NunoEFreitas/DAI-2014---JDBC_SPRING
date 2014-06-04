@@ -12,4 +12,24 @@ package com.dai.domain;
  */
 public class Competicao {
     
+    private int idCompeticao;
+    private String designacao;
+
+    public int getIdCompeticao() {
+        return idCompeticao;
+    }
+
+    public void setIdCompeticao(int idCompeticao) {
+        this.idCompeticao = idCompeticao;
+    }
+
+    public String getDesignacao() {
+        return designacao;
+    }
+
+    public void setDesignacao(String designacao) {
+        this.designacao = designacao;
+    }
+    
+    
 }

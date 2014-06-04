@@ -6,10 +6,19 @@
 
 package com.dai.dao;
 
+import com.dai.domain.Competicao;
+import java.util.List;
+
 /**
  *
  * @author Nuno
  */
-public class CompeticaoDao {
+public interface CompeticaoDao {
+    
+    public void adicionaCompeticao(Competicao competicao);
+    
+    public void apagaCompeticao(int idCompeticao);
+    
+    public List<Competicao> listaCompeticao();
     
 }

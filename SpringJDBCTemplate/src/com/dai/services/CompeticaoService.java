@@ -6,10 +6,19 @@
 
 package com.dai.services;
 
+import com.dai.domain.Competicao;
+import java.util.List;
+
 /**
  *
  * @author Nuno
  */
-public class CompeticaoService {
+public interface CompeticaoService {
+    
+    public void adicionaCompeticao(Competicao competicao);
+    
+    public void apagaCompeticao(int idCompeticao);
+    
+    public List<Competicao> listaCompeticao();
     
 }

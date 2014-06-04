@@ -12,4 +12,25 @@ package com.dai.domain;
  */
 public class EquipaAdversaria {
     
+    private int idEquipaAdversaria;
+    private String nome;
+
+    public int getIdEquipaAdversaria() {
+        return idEquipaAdversaria;
+    }
+
+    public void setIdEquipaAdversaria(int idEquipaAdversaria) {
+        this.idEquipaAdversaria = idEquipaAdversaria;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    
+    
+    
 }

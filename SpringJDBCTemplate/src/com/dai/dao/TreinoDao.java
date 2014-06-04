@@ -6,10 +6,21 @@
 
 package com.dai.dao;
 
+import com.dai.domain.Treino;
+import java.util.List;
+
 /**
  *
  * @author Nuno
  */
-public class TreinoDao {
+public interface TreinoDao {
     
+    public void inserirTreino(Treino treino);
+
+	public List<Treino> listarTreinos();
+
+	public void updateTreino(Treino treino);
+
+	public void apagarTreino(Integer idTreino);
+
 }

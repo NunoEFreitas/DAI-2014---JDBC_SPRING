@@ -58,5 +58,4 @@ public class SelecaoJogoDaoImpl implements SelecaoJogoDao{
 		slList = jdbcTemplate.query(sql, new SelecaoJogoRowMapper());
 		return slList;
         }
-        
 }
