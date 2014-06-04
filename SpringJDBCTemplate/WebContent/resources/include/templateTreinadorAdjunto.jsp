@@ -13,7 +13,7 @@
             <div id="rightcolumn">
                 <div id='cssmenu'>
                     <ul>
-                        <li class='active'><a href='#'><span>TreinadorAdjunto</span></a></li>
+                        <li class='active'><a href='treinadorAdjunto'><span>TreinadorAdjunto</span></a></li>
                          <li class='has-sub'><a href='#'><span>Gerir Treinos</span></a>
                             <ul>
                                 <li class='has-sub'><a href='#'><span>CriarTreino</span></a>

@@ -14,11 +14,12 @@
             <div id="rightcolumn">
                 <div id='cssmenu'>
                     <ul>
-                        <li class='active'><a href='#'><span>Seccionista</span></a></li>
+                        <li class='active'><a href='seccionista'><span>Seccionista</span></a></li>
                         <li class='has-sub'><a href='#'><span>Gerir Recursos Humanos</span></a>
                             <ul>
                                 <li><a href='register'><span>RegistarUtilizadores</span></a></li>
-                                <li><a href='alterarDados'><span>Editar/Apagar Utilizadores</span></a>
+                                <li><a href='alterarDados'><span>Editar Utilizadores</span></a>
+                                <li><a href='estadoUtilizadores'><span>Estado dos Utilizadores</span></a>
                                  <!--   <ul>
                                       <li><a href='alterarDados'><span>Editar/Apagar Atleta</span></a></li>
                                         <li class='has-sub'><a href='#'><span>Editar/Apagar Treinador<span></a></li>

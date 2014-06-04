@@ -92,9 +92,7 @@ public class UtilizadorController {
                 
                 List<Perfil> lp = perfilService.listarPerfil();
                 List<Escalao> li = escalaoService.listarEscalao();
-                
-            
-                
+     
                 Map<String, List> map = new HashMap<String, List>();
                 map.put("lp",lp);
                 map.put("li",li);
@@ -102,7 +100,7 @@ public class UtilizadorController {
 	}
         
         @RequestMapping("/insereutilizador")
-	public String inserData(@ModelAttribute Utilizador utilizador) {
+	public String inserUtilizador(@ModelAttribute Utilizador utilizador) {
 		if (utilizador != null)
 			utilizadorService.inserirUtilizador(utilizador);
 		return "redirect:/userList";
@@ -230,7 +228,7 @@ public class UtilizadorController {
         if (ut.getPassword().equals(password)) {
             if (ut.getIdPerfil() == 1) {
                 resultado = "Login efectuado com sucesso";
-                return new ModelAndView("seccionista", "resultado", resultado);
+                return new ModelAndView("atleta", "resultado", resultado);
 
             }
             if (ut.getIdPerfil() == 2) {
@@ -244,16 +242,16 @@ public class UtilizadorController {
             }
             if (ut.getIdPerfil() == 4) {
                 resultado = "Login efectuado com sucesso";
-                return new ModelAndView("atleta", "resultado", resultado);
+                return new ModelAndView("olheiro", "resultado", resultado);
 
             }
             if (ut.getIdPerfil() == 5) {
                 resultado = "Login efectuado com sucesso";
-                return new ModelAndView("olheiros", "resultado", resultado);
+                return new ModelAndView("analistas", "resultado", resultado);
             }
             if (ut.getIdPerfil() == 6) {
                 resultado = "Login efectuado com sucesso";
-                return new ModelAndView("analistas", "resultado", resultado);
+                return new ModelAndView("seccionista", "resultado", resultado);
 
             }
 
@@ -263,42 +261,46 @@ public class UtilizadorController {
             return new ModelAndView("login");
         }
         return null;
-
-
-
-
-
-
     }
-               
-               
-        @RequestMapping("/registarPagamentos")
-	public ModelAndView registarPagamentos() {
-		return new ModelAndView("registarPagamentos");
-                
-                
-        }
-                
-                
-         @RequestMapping("/estadoAtletas")
-	public ModelAndView estadoAtletas() {
-		return new ModelAndView("estadoAtletas"); 
-                
-                
-	}    
          
-          @RequestMapping("/consultarUtilizadores")
-	public ModelAndView consultarUtilizadores() {
-		return new ModelAndView("consultarUtilizadores"); 
+               
+         
+       @RequestMapping("/estadoUtilizadores")
+	public ModelAndView estadoUtilizadores() {
+		List<Utilizador> lutilizador = utilizadorService.listarUtilizador();
+		return new ModelAndView("estadoUtilizadores", "utilizadorList", lutilizador);
+	}
                 
                 
-	}   
+        
+         
+    
+       @RequestMapping("/seccionista")
+	public ModelAndView seccionista() {
+		return new ModelAndView("seccionista");
+	}  
+       
+        @RequestMapping("/treinador")
+	public ModelAndView treinador() {
+		return new ModelAndView("treinador");
+	}  
+         @RequestMapping("/treinadorAdjunto")
+	public ModelAndView treinadorAdjunto() {
+		return new ModelAndView("treinadorAdjunto");
+	}  
+         
+          @RequestMapping("/olheiros")
+	public ModelAndView olheiros() {
+		return new ModelAndView("olheiros");
+	}  
           
-             @RequestMapping("/desativarUtilizadores")
-	public ModelAndView desativarUtilizadores() {
-		return new ModelAndView("desativarUtilizadores"); 
-                
-                
-	}   
+            @RequestMapping("/atleta")
+	public ModelAndView atleta() {
+		return new ModelAndView("atleta");
+	}  
+               @RequestMapping("/analistas")
+	public ModelAndView analistas() {
+		return new ModelAndView("analistas");
+	} 
           
 }

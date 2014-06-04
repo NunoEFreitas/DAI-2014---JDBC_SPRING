@@ -13,7 +13,7 @@
             <div id="rightcolumn">
                 <div id='cssmenu'>
                     <ul>
-                        <li class='active'><a href='#'><span>Olheiro</span></a></li>
+                        <li class='active'><a href='olheiros'><span>Olheiro</span></a></li>
 
                         <li class='has-sub'><a href='#'><span>Inserir Dados em Tempo Real</span></a>
                             <ul>

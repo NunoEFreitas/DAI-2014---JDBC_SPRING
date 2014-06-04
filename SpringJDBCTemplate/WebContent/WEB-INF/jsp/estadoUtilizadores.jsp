@@ -18,13 +18,10 @@
 
 
     <%@include file="/resources/include/templateSeccionista.jsp"%>
-  
- <%
-     
- %>
+ 
                  
         <Div  class = "cabecalho da pagina" > 
-            <h1> Recursos humanos<small> Editar Apagar Utilizadores </small>  </h1> 
+            <h1> Recursos humanos<small> Estado Utilizadores </small>  </h1> 
         </div>
 
                    
@@ -33,17 +30,25 @@
 				<td class="heading">ID de Utilizador</td>
 				<td class="heading">Nome</td>
 				
-				<td class="heading">Edit</td>
-                                <td class="heading">Apagar</td
+				<td class="heading">Estado</td>
+                            
 				
 			</tr>
 			<c:forEach var="ul" items="${utilizadorList}">
 				<tr>
 					<td>${ul.idUtilizador}</td>
 					<td>${ul.nome}</td>
-					
-					<td><a href="edit?id=${ul.idUtilizador}">Edit</a></td>
-                                         <td><a href="delete?id=${ul.idUtilizador}">Apagar</a></td>
+					<td><select>
+                                                <option value="False">Activado</option>
+                                                <option value="True">Desactivado</option>
+                                              
+                                            </select></td>
+                                            
+                                                                          
+                                            
+                                            
+                                        <td><a href="edit?id=${ul.idUtilizador}">Gravar</a></td>
+                                       
                         </tr>
 			</c:forEach>
 		</table>

@@ -15,5 +15,9 @@ public interface UtilizadorDao {
 	public Utilizador getUtilizador(Integer id);
         
         public boolean verificaUtilizador(Integer id);
+        
+         public void activaUtilizador(Integer id);
+         
+         public void desactivaUtilizador(Integer id);
 
 }
