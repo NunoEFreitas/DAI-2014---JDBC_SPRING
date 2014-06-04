@@ -15,4 +15,8 @@ public interface UtilizadorService {
 	public void updateUtilizador(Utilizador ut);
         
         public boolean verificaUtilizador(Integer id);
+        
+        public void activaUtilizador(Integer id);
+        
+        public void desactivaUtilizador(Integer id);
 }

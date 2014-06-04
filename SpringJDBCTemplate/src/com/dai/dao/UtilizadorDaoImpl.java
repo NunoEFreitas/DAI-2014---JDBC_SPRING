@@ -103,5 +103,21 @@ public class UtilizadorDaoImpl implements UtilizadorDao {
             
             
         }
+        
+        @Override
+        public void activaUtilizador(Integer id){
+		String sql = "update utilizador set estado = true where idUtilizador = "+ id;
+		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+                jdbcTemplate.update(sql);
+            
+        }
+        
+        @Override
+        public void desactivaUtilizador(Integer id){
+		String sql = "update utilizador set estado = false where idUtilizador = "+ id;
+		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+                jdbcTemplate.update(sql);
+            
+        }
 
 }
