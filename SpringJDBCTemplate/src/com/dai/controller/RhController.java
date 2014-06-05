@@ -18,6 +18,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -68,16 +69,16 @@ public class RhController {
          
          
          
-          @RequestMapping("/pagamento")
-	public ModelAndView editRh(@RequestParam Integer id, @ModelAttribute Rh rh) {
-              
-		rh = pagamentoService.getUtilizadorRh(id);
-                
-               Map<String, Object> map = new HashMap<String, Object>();
-               
-                map.put("user", rh);
-		return new ModelAndView("pagamento", "map", map);
-
+        @RequestMapping("/pagamento/{idutilizador}")
+	public ModelAndView registarPagamento(@ModelAttribute Rh rh,@PathVariable("idutilizador") Integer utilizador) {
+         
+		List<Integer> lutilizador = new ArrayList();
+                lutilizador.add(utilizador);
+                Map<String,List> map = new HashMap();
+                map.put("utilizador", lutilizador);
+		return new ModelAndView("pagamento","map", map);
+		
+                        
 	}
          
          

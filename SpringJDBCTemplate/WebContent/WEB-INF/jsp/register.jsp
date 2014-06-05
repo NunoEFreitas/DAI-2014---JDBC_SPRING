@@ -12,7 +12,7 @@
         <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
         <link href="<c:url value ="/resources/css/register.css"/>" rel="stylesheet" type="text/css">
         <script src="<c:url value="/resources/js/javascript.js" />"></script>
-    
+
     </head>
     <body onload="oculta(1);" >
 
@@ -43,23 +43,22 @@
                 <label>Nome:</label>
                 <form:input class="input" name="nome" path="nome"/>
             </div>     
-            <div  class="field" id="3">
+            <div class="field" id="3">
                 <label>Password :</label>
                 <form:input type="password" class="input" name="password" path="password"  />
             </div>
-
             <div class="field" id="4">
                 <label>Data de Nascimento :</label>
                 <form:input class="input" type="date" path="dataNascimento" required="required"/>
             </div>
-            <div  class="field" id="5">
+            <div class="field" id="5">
                 <label>Morada :</label>
-                <form:input class="input" name="morada" path="morada" />
+                <form:input class="input" id="morada" name="morada" path="morada" />
             </div>
 
             <div class="field" id="6">
                 <label>Telefone :</label>
-                <form:input  class="input"  name="telefone" path="telefone"/>
+                <form:input class="input" onKeypress="return numeros();" name="telefone" path="telefone"/>
             </div>
             <div class="field" id="7">
                 <label>Email :</label>
@@ -67,60 +66,69 @@
             </div>
             <div class="field" id="8">
                 <label>Altura :</label>
-                <form:input class="input" path="altura" />
+                <form:input type="number" step="0.01" min="0" class="input" name="altura" path="altura" />
             </div>
             <div class="field" id="9">
                 <label>Peso :</label>
-                <form:input class="input"  path="peso" />
+                <form:input type="number" step="01.0" min="0" name="peso" class="input"  path="peso" />
             </div>
             <div class="field" id="10">
                 <label>Salto Vertical :</label>
-                <form:input class="input"  path="saltoVertical" />
+                <form:input type="number" step="0.01" min="0" name="saltoVertical" class="input"  path="saltoVertical" />
             </div>
             <div class="field" id="11">
                 <label>Velocidade Deslocamento:</label>
-                <form:input class="input" path="velocidadeDeslocamento" />
+                <form:input type="number" step="0.01" min="0" class="input" path="velocidadeDeslocamento" />
             </div>
             <div class="field" id="12">
                 <label>Alcance Ataque:</label>
-                <form:input class="input"  path="alcanceAtaque" />
+                <form:input type="number" step="0.01" min="0" class="input"  path="alcanceAtaque" />
             </div>
             <div class="field" id="13">
                 <label>Alcance Bloco:</label>
-                <form:input class="input"  path="alcanceBloco" />
-            </div>
+                <form:input type="number" step="0.01" min="0" class="input"  path="alcanceBloco" />
+            </div>          
             <div class="field" id="14">
-                <label>Exames Clinicos:</label>
-                <form:input  class="input" path="examesClinicos" />
-            </div>
-             <div class="field" id="15">
+                <label>Exames Clinicos: </label>
+                <form:select  class="input" path="examesClinicos" >
+                    <form:option value ="true">Concluido</form:option>
+                    <form:option value ="false">Nao concluido</form:option>
+                </form:select>
+            </div>  
+            <div class="field" id="15">
                 <label>Estatura:</label>
-                <form:input class="input" path="estatura" />
+                <form:select class="input" path="estatura"  >
+                    <form:option value ="media">media</form:option>
+                    <form:option value ="alta">alta</form:option>
+                    <form:option value ="baixa">baixa</form:option>
+                </form:select>
             </div>
-             <div class="field" id="16">
+            <div class="field" id="16">
                 <label>Envergadura:</label>
-                <form:input  class="input"  path="envergadura" />
+                <form:input type="number" step="0.01" min="0" class="input"  path="envergadura" />
             </div>
-              <div class="field" id="17">
+            <div class="field" id="17">
                 <label>Estado:</label>
-                <form:input  class="input"  path="estado" />
+                <form:select  class="input"  path="estado" >
+                    <form:option value ="true">Activo</form:option>
+                    <form:option value ="false">Desativo</form:option>
+                </form:select>
             </div>
             <div class="field" id="18">
                 <label>Escalao :</label>
-                <form:select   path = "idEscalao" name="idEscalao">
+                <form:select class="input" path = "idEscalao" name="idEscalao">
                     <c:forEach items='${map.li}' var='li'>
                         <form:option class="input" value ="${li.idEscalao}">${li.designacao}</form:option>
                     </c:forEach>
                 </form:select>
             </div>
-        
+
             <div id="19">
-                 <div class="field" id="texto" style="color:red"><h2></h2></div>
+                <div id="texto" style="color:red"><h2></h2></div>
                 <label>&nbsp;</label>
                 <input onClick="return validacao();" type="submit" value="Guardar" />  
             </div>
         </form:form>
-
 
     </body>
 

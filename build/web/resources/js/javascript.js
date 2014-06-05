@@ -55,9 +55,7 @@
 
   }
   
-  function IsNum(v)
-
-{
+  function IsNum(v){
    var ValidChars = "0123456789";
    var IsNumber=true;
    var Char;
@@ -74,10 +72,13 @@
    return IsNumber;
    
 }
+
+
 //para a pagina  register.
 
 function validacao() {
     var perfil= document.getElementById("perfil").value;
+
 //   validacao para o perfil atleta 
  if(perfil==1){
     
@@ -86,16 +87,34 @@ function validacao() {
         document.register.nome.focus();
         return false;
     }
-    if (document.register.password.value == "" || register.password.length < 4) {
+    if (document.register.password.value == "" || register.password.value.length < 4) {
         document.getElementById("texto").innerHTML = "Preencha a password correctamente";
         document.register.password.focus();
         return false;
     }
-    if (document.register.telefone.lenght < 9 || register.telefone.length > 10 || !IsNum(regiter.telefone.value)) {
-        document.getElementById("texto").innerHTML = "Preencha o telefone correctamente";
-        document.register.telefone.focus();
+//    if (document.register.telefone.value == "" || document.register.telefone.valeu.lenght < 9 || register.telefone.value.length > 10 ) {
+//        document.getElementById("texto").innerHTML = "Preencha o telefone correctamente";
+//        document.register.telefone.focus();
+//        return false;
+  //  } 
+    if (document.register.morada.value == "" || register.morada.value.length < 10) {
+        document.getElementById("texto").innerHTML = "Preencha a morada correctamente";
+        document.register.morada.focus();
         return false;
     }
+    if (document.register.altura.value == "" || register.altura.value.length < 4 ) {
+        document.getElementById("texto").innerHTML = "Preencha a altura correctamente. Ex: 1.75";
+        document.register.altura.focus();
+        return false;
+    } 
+    if (document.register.saltoVertical.value == "" || register.saltoVertical.value.length < 4 ) {
+        document.getElementById("texto").innerHTML = "Preencha o peso correctamente. Ex: 60";
+        document.register.saltoVertical.focus();
+        return false;
+    }
+    
+    
+    
     
     
     
@@ -107,28 +126,39 @@ function validacao() {
         return false;
 
     }
-    if (document.register.password.value == "" || register.password.length < 4) {
+    if (document.register.password.value == "" || register.password.value.length < 4) {
         document.getElementById("texto").innerHTML = "Preencha a password correctamente";
         document.register.password.focus();
         return false;
 
     }
-    if ( alert("qqqqqqqqqq")||document.register.telefone.lenght == ""||register.telefone.lenght < 9 || register.telefone.length > 10 || !IsNum(regiter.telefone.value)) {
+    if (document.register.telefone.value.lenght < 9 || register.telefone.value.length > 10 ) {
         document.getElementById("texto").innerHTML = "Preencha o telefone correctamente";
-        document.register.telefone.focus();
-       
+        document.register.telefone.focus();       
         return false;
     } 
-    if (document.register.morada.value == "" || register.morada.length < 10) {
-        document.getElementById("texto").innerHTML = "Preencha o telefone correctamente";
-        document.register.telefone.focus();
-                alert("qqqqqqqqqq");
+    if (document.register.morada.value == "" || register.morada.value.length < 10) {
+        document.getElementById("texto").innerHTML = "Preencha o morada correctamente";
+        document.register.morada.focus();
         return false;
     }
     
-    return true;
-}
+       
+}}
 
 
 
+
+
+function numeros()
+{
+    tecla = event.keyCode;
+    if (tecla >= 48 && tecla <= 57)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
