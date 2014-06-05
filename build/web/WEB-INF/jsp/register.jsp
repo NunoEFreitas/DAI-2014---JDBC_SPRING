@@ -28,12 +28,12 @@
         <form:form  id="myform" class="rounded" name="register" method="post" action="/insereutilizador" modelAttribute="utilizador"  >
             <div class="field">
                 <label>Perfil : </label>
-                <form:select  path = "idPerfil"  onchange="oculta(this.value)">
+                <form:select  id="perfil" path = "idPerfil"  onchange="oculta(this.value)">
                     <c:forEach items='${map.lp}' var='lp'>
                         <form:option value ="${lp.idPerfil}">${lp.designacao}</form:option>
                     </c:forEach>
                 </form:select>
-            </div><br>
+            </div><br> 
             <div  class="field" id="1">
                 <label>Sexo :</label>
                 <form:radiobutton path="sexo" value="M" required="required"/>Masculino 
@@ -54,12 +54,12 @@
             </div>
             <div  class="field" id="5">
                 <label>Morada :</label>
-                <form:input class="input" path="morada" required="required"/>
+                <form:input class="input" name="morada" path="morada" />
             </div>
 
             <div class="field" id="6">
                 <label>Telefone :</label>
-                <form:input  class="input" path="telefone" name="telefone"/>
+                <form:input  class="input"  name="telefone" path="telefone"/>
             </div>
             <div class="field" id="7">
                 <label>Email :</label>
@@ -113,10 +113,11 @@
                     </c:forEach>
                 </form:select>
             </div>
-              <div id="texto" style="color:red"><h2></h2></div> 
+        
             <div id="19">
+                 <div class="field" id="texto" style="color:red"><h2></h2></div>
                 <label>&nbsp;</label>
-                <input onsclick="validacao();" type="submit" value="Guardar" />
+                <input onClick="return validacao();" type="submit" value="Guardar" />  
             </div>
         </form:form>
 

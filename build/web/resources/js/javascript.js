@@ -76,9 +76,32 @@
 }
 //para a pagina  register.
 
-function validacao(s) {
-    alert(s);
+function validacao() {
+    var perfil= document.getElementById("perfil").value;
+//   validacao para o perfil atleta 
+ if(perfil==1){
+    
     if (document.register.nome.value == "" || register.nome.value.length < 9) {
+        document.getElementById("texto").innerHTML = "Preencha o nome correctamente";
+        document.register.nome.focus();
+        return false;
+    }
+    if (document.register.password.value == "" || register.password.length < 4) {
+        document.getElementById("texto").innerHTML = "Preencha a password correctamente";
+        document.register.password.focus();
+        return false;
+    }
+    if (document.register.telefone.lenght < 9 || register.telefone.length > 10 || !IsNum(regiter.telefone.value)) {
+        document.getElementById("texto").innerHTML = "Preencha o telefone correctamente";
+        document.register.telefone.focus();
+        return false;
+    }
+    
+    
+    
+//    validaçao para os restantes perfis
+ }else{ 
+      if (document.register.nome.value == "" || register.nome.value.length < 9) {
         document.getElementById("texto").innerHTML = "Preencha o nome correctamente";
         document.register.nome.focus();
         return false;
@@ -86,21 +109,26 @@ function validacao(s) {
     }
     if (document.register.password.value == "" || register.password.length < 4) {
         document.getElementById("texto").innerHTML = "Preencha a password correctamente";
-
         document.register.password.focus();
-
         return false;
 
     }
-    if (document.register.telefone.lenght < 9 || register.telefone.length > 10 || !IsNum(regiter.telefone.value)) {
+    if ( alert("qqqqqqqqqq")||document.register.telefone.lenght == ""||register.telefone.lenght < 9 || register.telefone.length > 10 || !IsNum(regiter.telefone.value)) {
         document.getElementById("texto").innerHTML = "Preencha o telefone correctamente";
-
         document.register.telefone.focus();
-
+       
+        return false;
+    } 
+    if (document.register.morada.value == "" || register.morada.length < 10) {
+        document.getElementById("texto").innerHTML = "Preencha o telefone correctamente";
+        document.register.telefone.focus();
+                alert("qqqqqqqqqq");
         return false;
     }
+    
+    return true;
+}
 
 
-    else
-        return true;
+
 }
