@@ -100,7 +100,7 @@ public class UtilizadorController {
 	}
         
         @RequestMapping("/insereutilizador")
-	public String inserUtilizador(@ModelAttribute Utilizador utilizador) {
+	public String insereUtilizador(@ModelAttribute Utilizador utilizador) {
 		if (utilizador != null)
 			utilizadorService.inserirUtilizador(utilizador);
 		return "redirect:/userList";

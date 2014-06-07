@@ -32,18 +32,18 @@
 			<tr>
 				<td class="heading">ID de Utilizador</td>
 				<td class="heading">Nome</td>
-				
+				<td class="heading">Estado</td>
 				<td class="heading">Edit</td>
-                                <td class="heading">Apagar</td
+                               
 				
 			</tr>
 			<c:forEach var="ul" items="${utilizadorList}">
 				<tr>
 					<td>${ul.idUtilizador}</td>
 					<td>${ul.nome}</td>
-					
+					<td>${ul.estado}</td>
 					<td><a href="edit?id=${ul.idUtilizador}">Edit</a></td>
-                                         <td><a href="delete?id=${ul.idUtilizador}">Apagar</a></td>
+                                       
                         </tr>
 			</c:forEach>
 		</table>

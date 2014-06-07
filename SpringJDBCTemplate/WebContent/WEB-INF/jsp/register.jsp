@@ -25,7 +25,8 @@
             <h1> Recursos humanos<small> Registar Utilizadores </small>  </h1> 
         </div>
 
-        <form:form  id="myform" class="rounded" name="register" method="post" action="/insereutilizador" modelAttribute="utilizador"  >
+        <form:form  id="contactform" class="rounded" name="register" method="post" action="/insereutilizador" modelAttribute="utilizador"  >
+          <img  class="foto" src="<c:url value="/resources/images/register.jpg" />" />
             <div class="field">
                 <label>Perfil : </label>
                 <form:select  id="perfil" path = "idPerfil"  onchange="oculta(this.value)">
@@ -58,7 +59,7 @@
 
             <div class="field" id="6">
                 <label>Telefone :</label>
-                <form:input class="input" onKeypress="return numeros();" name="telefone" path="telefone"/>
+                <form:input type="tel" class="input" name="telefone" path="telefone"/>
             </div>
             <div class="field" id="7">
                 <label>Email :</label>
@@ -70,7 +71,7 @@
             </div>
             <div class="field" id="9">
                 <label>Peso :</label>
-                <form:input type="number" step="01.0" min="0" name="peso" class="input"  path="peso" />
+                <form:input type="number" step="0.01" min="0" name="peso" class="input"  path="peso" />
             </div>
             <div class="field" id="10">
                 <label>Salto Vertical :</label>
@@ -91,8 +92,8 @@
             <div class="field" id="14">
                 <label>Exames Clinicos: </label>
                 <form:select  class="input" path="examesClinicos" >
+                    <form:option value ="false">Nao Concluido</form:option>
                     <form:option value ="true">Concluido</form:option>
-                    <form:option value ="false">Nao concluido</form:option>
                 </form:select>
             </div>  
             <div class="field" id="15">
@@ -110,8 +111,8 @@
             <div class="field" id="17">
                 <label>Estado:</label>
                 <form:select  class="input"  path="estado" >
-                    <form:option value ="true">Activo</form:option>
                     <form:option value ="false">Desativo</form:option>
+                    <form:option value ="true">Ativo</form:option>
                 </form:select>
             </div>
             <div class="field" id="18">

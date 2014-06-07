@@ -92,23 +92,28 @@ function validacao() {
         document.register.password.focus();
         return false;
     }
-//    if (document.register.telefone.value == "" || document.register.telefone.valeu.lenght < 9 || register.telefone.value.length > 10 ) {
-//        document.getElementById("texto").innerHTML = "Preencha o telefone correctamente";
-//        document.register.telefone.focus();
-//        return false;
-  //  } 
+    if (document.register.telefone.value == "" || register.telefone.value.length < 9||register.telefone.value.length > 10|| !IsNum(register.telefone.value) ) {
+        document.getElementById("texto").innerHTML = "Preencha o telefone correctamente";
+        document.register.telefone.focus();       
+        return false;
+    } 
     if (document.register.morada.value == "" || register.morada.value.length < 10) {
         document.getElementById("texto").innerHTML = "Preencha a morada correctamente";
         document.register.morada.focus();
         return false;
     }
     if (document.register.altura.value == "" || register.altura.value.length < 4 ) {
-        document.getElementById("texto").innerHTML = "Preencha a altura correctamente. Ex: 1.75";
+        document.getElementById("texto").innerHTML = "Preencha a altura correctamente. Ex: 1,75";
         document.register.altura.focus();
         return false;
-    } 
+    }  
+    if (document.register.peso.value == "" || register.peso.value.length < 4 ) {
+        document.getElementById("texto").innerHTML = "Preencha o peso correctamente. Ex: 60,00";
+        document.register.peso.focus();
+        return false;
+    }
     if (document.register.saltoVertical.value == "" || register.saltoVertical.value.length < 4 ) {
-        document.getElementById("texto").innerHTML = "Preencha o peso correctamente. Ex: 60";
+        document.getElementById("texto").innerHTML = "Preencha o Salto Vertical correctamente. Ex: 0,90";
         document.register.saltoVertical.focus();
         return false;
     }
@@ -132,7 +137,7 @@ function validacao() {
         return false;
 
     }
-    if (document.register.telefone.value.lenght < 9 || register.telefone.value.length > 10 ) {
+    if (document.register.telefone.value == "" || register.telefone.value.length < 9||register.telefone.value.length > 10|| !IsNum(register.telefone.value) ) {
         document.getElementById("texto").innerHTML = "Preencha o telefone correctamente";
         document.register.telefone.focus();       
         return false;
@@ -146,19 +151,3 @@ function validacao() {
        
 }}
 
-
-
-
-
-function numeros()
-{
-    tecla = event.keyCode;
-    if (tecla >= 48 && tecla <= 57)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
