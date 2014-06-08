@@ -19,7 +19,7 @@
                             <ul>
                                 <li><a href='register'><span>RegistarUtilizadores</span></a></li>
                                 <li><a href='alterarDados'><span>Editar Utilizadores</span></a>
-                                <li><a href='estadoUtilizadores'><span>Estado dos Utilizadores</span></a>
+                              
                                  <!--   <ul>
                                       <li><a href='alterarDados'><span>Editar/Apagar Atleta</span></a></li>
                                         <li class='has-sub'><a href='#'><span>Editar/Apagar Treinador<span></a></li>
@@ -39,7 +39,7 @@
                                         <li class='has-sub'><a href='#'><span>ConsultarRecebimento<span></a></li>                                         
                                     </ul>
                                 </li>
-                                <li><a href='#'><span>Atualizar Estado Utilizadores</span></a></li>
+                                
                                 <li><a href='userList'><span>Consultar Utilizadores</span></a></li>
                                 <li><a href='#'><span>Gerir Perfis</span></a>
                                     <ul>

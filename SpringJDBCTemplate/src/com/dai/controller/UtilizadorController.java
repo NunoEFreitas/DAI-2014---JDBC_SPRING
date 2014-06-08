@@ -61,7 +61,16 @@ public class UtilizadorController {
                perfilService.apagarPerfil(id);
 		return "redirect:/listaPerfil";
 	}
-         
+         @RequestMapping("/activaUtilizador")
+	public String activaUtilizador(@RequestParam Integer id) {
+               utilizadorService.activaUtilizador(id);
+		return "redirect:/alterarDados";
+	}
+        @RequestMapping("/desactivaUtilizador")
+	public String desactivaUtilizador(@RequestParam Integer id) {
+               utilizadorService.desactivaUtilizador(id);
+		return "redirect:/alterarDados";
+	}
         @RequestMapping("/listaPerfil")
 	public ModelAndView listaPerfil() {
 		List<Perfil> lperfil = perfilService.listarPerfil();

@@ -24,7 +24,7 @@
  %>
                  
         <Div  class = "cabecalho da pagina" > 
-            <h1> Recursos humanos<small> Editar Apagar Utilizadores </small>  </h1> 
+            <h1> Recursos humanos<small> Editar Utilizadores </small>  </h1> 
         </div>
 
                    
@@ -33,7 +33,9 @@
 				<td class="heading">ID de Utilizador</td>
 				<td class="heading">Nome</td>
 				<td class="heading">Estado</td>
-				<td class="heading">Edit</td>
+                                <td class="heading">Bloquear</td>
+                                <td class="heading">Ativar</td>
+				<td class="heading">Editar</td>
                                
 				
 			</tr>
@@ -42,6 +44,8 @@
 					<td>${ul.idUtilizador}</td>
 					<td>${ul.nome}</td>
 					<td>${ul.estado}</td>
+                                       <td><a href="desactivaUtilizador?id=${ul.idUtilizador}">Bloquear</a></td>
+                                        <td><a href="activaUtilizador?id=${ul.idUtilizador}">Ativar</a></td>
 					<td><a href="edit?id=${ul.idUtilizador}">Edit</a></td>
                                        
                         </tr>
