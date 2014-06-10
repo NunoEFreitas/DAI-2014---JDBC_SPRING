@@ -16,24 +16,24 @@ public class UtilizadorExtractor implements ResultSetExtractor<Utilizador> {
                 utilizador.setIdUtilizador(resultSet.getInt("idUtilizador"));
                 utilizador.setNome(resultSet.getString("nomeUtilizador"));
                 utilizador.setPassword(resultSet.getString("password"));
-                utilizador.setDataNascimento(resultSet.getDate("dataNascimento"));
+                utilizador.setDataNascimento(resultSet.getString("dataNascimento"));
                 utilizador.setMorada(resultSet.getString("morada"));
                 utilizador.setSexo(resultSet.getString("sexo"));
                 utilizador.setTelefone(resultSet.getInt("telefone"));
                 utilizador.setEmail(resultSet.getString("email"));
                 utilizador.setAltura(resultSet.getFloat("altura"));
                 utilizador.setPeso(resultSet.getFloat("peso"));
-                utilizador.setSaltoVertical(resultSet.getFloat("saltoVertical"));
-                utilizador.setVelocidadeDeslocamento(resultSet.getFloat("velocidadeDeslocamento"));
-                utilizador.setAlcanceAtaque(resultSet.getFloat("alcanceAtaque"));
-                utilizador.setAlcanceBloco(resultSet.getFloat("alcanceBloco"));
+                utilizador.setSaltoVertical(resultSet.getInt("saltoVertical"));
+                utilizador.setVelocidadeDeslocamento(resultSet.getInt("velocidadeDeslocamento"));
+                utilizador.setAlcanceAtaque(resultSet.getInt("alcanceAtaque"));
+                utilizador.setAlcanceBloco(resultSet.getInt("alcanceBloco"));
                 utilizador.setExamesClinicos(resultSet.getBoolean("examesClinicos"));
                 utilizador.setIdPerfil(resultSet.getInt("idPerfil"));
                 utilizador.setIdEscalao(resultSet.getInt("idEscalao"));
                  utilizador.setEstado(resultSet.getBoolean("estado"));
              
                  utilizador.setEstatura(resultSet.getString("estatura"));
-                   utilizador.setEnvergadura(resultSet.getFloat("envergadura"));
+                   utilizador.setEnvergadura(resultSet.getInt("envergadura"));
 		return utilizador;
 	}
 

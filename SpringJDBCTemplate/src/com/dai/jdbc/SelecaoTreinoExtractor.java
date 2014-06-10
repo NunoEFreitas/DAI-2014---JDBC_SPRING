@@ -24,6 +24,7 @@ public class SelecaoTreinoExtractor implements ResultSetExtractor<SelecaoTreino>
         st.setIdUtilizador(resultSet.getInt("utilizador_idutilizador_st"));
         st.setIdTreino(resultSet.getInt("treino_idtreino"));
         st.setPresenca(resultSet.getBoolean("presenca"));
+        st.setNome(resultSet.getString("nomeUtilizador_t"));
 
 
 

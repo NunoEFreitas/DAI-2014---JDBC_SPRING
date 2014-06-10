@@ -21,5 +21,7 @@ public interface TreinoService {
     
     public void apagaTreino(int idTreino);
     
-    public void updateTreino(int idTreino);
+    public void updateTreino(Treino idTreino);
+    
+    public List<Treino> listaTreinosEscalao(int idEscalao);
 }

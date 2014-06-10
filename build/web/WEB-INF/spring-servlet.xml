@@ -59,6 +59,8 @@ class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMa
         <bean id="treinoDao" class="com.dai.dao.TreinoDaoImpl" />
 	<bean id="treinoService" class="com.dai.services.TreinoServiceImpl" />
         
+        <bean id="equipaAdversariaDao" class="com.dai.dao.EquipaAdversariaDaoImpl" />
+	<bean id="equipaAdversariaService" class="com.dai.services.EquipaAdversariaServiceImpl" />
 
 	<!-- declare datasource bean -->
 	<bean id="dataSource"

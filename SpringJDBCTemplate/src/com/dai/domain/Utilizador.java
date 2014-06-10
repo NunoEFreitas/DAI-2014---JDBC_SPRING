@@ -18,7 +18,7 @@ public class Utilizador {
     private int idUtilizador;
     private String nome;
     private String password;
-    private Date dataNascimento;
+    private String dataNascimento;
     private String morada;
     private String sexo;
     private int telefone;
@@ -26,11 +26,11 @@ public class Utilizador {
     private float altura;
     private float peso;
     private String estatura;
-    private float envergadura;
-    private float saltoVertical;
-    private float velocidadeDeslocamento;
-    private float alcanceAtaque;
-    private float alcanceBloco;
+    private int envergadura;
+    private int saltoVertical;
+    private int velocidadeDeslocamento;
+    private int alcanceAtaque;
+    private int alcanceBloco;
     private boolean examesClinicos;
     private boolean estado;
     private int idPerfil;
@@ -60,11 +60,11 @@ public class Utilizador {
         this.password = password;
     }
 
-    public Date getDataNascimento() {
+    public String getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
@@ -128,23 +128,23 @@ public class Utilizador {
         return envergadura;
     }
 
-    public void setEnvergadura(float envergadura) {
+    public void setEnvergadura(int envergadura) {
         this.envergadura = envergadura;
     }
 
-    public float getSaltoVertical() {
+    public int getSaltoVertical() {
         return saltoVertical;
     }
 
-    public void setSaltoVertical(float saltoVertical) {
+    public void setSaltoVertical(int saltoVertical) {
         this.saltoVertical = saltoVertical;
     }
 
-    public float getVelocidadeDeslocamento() {
+    public int getVelocidadeDeslocamento() {
         return velocidadeDeslocamento;
     }
 
-    public void setVelocidadeDeslocamento(float velocidadeDeslocamento) {
+    public void setVelocidadeDeslocamento(int velocidadeDeslocamento) {
         this.velocidadeDeslocamento = velocidadeDeslocamento;
     }
 
@@ -152,15 +152,15 @@ public class Utilizador {
         return alcanceAtaque;
     }
 
-    public void setAlcanceAtaque(float alcanceAtaque) {
+    public void setAlcanceAtaque(int alcanceAtaque) {
         this.alcanceAtaque = alcanceAtaque;
     }
 
-    public float getAlcanceBloco() {
+    public int getAlcanceBloco() {
         return alcanceBloco;
     }
 
-    public void setAlcanceBloco(float alcanceBloco) {
+    public void setAlcanceBloco(int alcanceBloco) {
         this.alcanceBloco = alcanceBloco;
     }
 

@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 
-package com.dai.controller;
+package com.dai.services;
 
 /**
  *
  * @author Nuno
  */
-public class CompeticaoController {
+public class JogadorEquipaAdversariaServiceImpl {
     
 }

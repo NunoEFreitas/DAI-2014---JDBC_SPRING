@@ -14,6 +14,17 @@ public class Competicao {
     
     private int idCompeticao;
     private String designacao;
+    private int idEscalao;
+
+    public int getIdEscalao() {
+        return idEscalao;
+    }
+
+    public void setIdEscalao(int idEscalao) {
+        this.idEscalao = idEscalao;
+    }
+    
+    
 
     public int getIdCompeticao() {
         return idCompeticao;

@@ -27,7 +27,7 @@ public class JogoServiceImpl implements JogoService {
         
         @Override
 	public List<Jogo> listaJogos() {
-		return jogodao.listaJogos();
+		return jogodao.listaJogosPendentes();
 	}
 
 }

@@ -17,6 +17,6 @@ public interface JogoDao {
     
     public void novoJogo(Jogo jogo);
     
-    public List<Jogo> listaJogos();
+    public List<Jogo> listaJogosPendentes();
     
 }

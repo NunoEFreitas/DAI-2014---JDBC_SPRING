@@ -16,6 +16,17 @@ public class SelecaoTreino {
     private int idUtilizador;
     private int idTreino;
     private boolean presenca;
+    private String nome;
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    
+    
 
     public int getIdUtilizador() {
         return idUtilizador;
@@ -33,7 +44,7 @@ public class SelecaoTreino {
         this.idTreino = idTreino;
     }
 
-    public boolean isPresenca() {
+    public boolean getPresenca() {
         return presenca;
     }
 

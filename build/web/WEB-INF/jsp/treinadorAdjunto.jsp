@@ -15,9 +15,6 @@
             out.print("<h4> welcome" + session.getAttribute("user"));
         %>
 
-    </div>
-</div>      
-</div>
 
 </body>
 

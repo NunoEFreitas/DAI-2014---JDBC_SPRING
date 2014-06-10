@@ -20,16 +20,34 @@ public class SelecaoTreinoServiceImpl implements SelecaoTreinoService{
     @Autowired
 	SelecaoTreinoDao stdao;
     
+    @Override
     public void adicionaST(SelecaoTreino st){
         stdao.adicionaST(st);
     }
     
+    @Override
     public void apagaST(int idUtilizador, int idTreino){
         stdao.apagaST(idUtilizador, idTreino);
     }
     
+    @Override
     public List<SelecaoTreino> listaST(int idTreino){
         return stdao.listaST(idTreino);
+    }
+    
+    @Override
+    public List<SelecaoTreino> listaSTparaPresencas(int idTreino){
+        return stdao.listaSTparaPresencas(idTreino);
+    }
+    
+    @Override
+    public void jogadorFaltou(int idTreino, int idUtilizador){
+        stdao.jogadorFaltou(idTreino, idUtilizador);
+    }
+    
+    @Override
+    public void jogadorPresente(int idTreino, int idUtilizador){
+        stdao.jogadorPresente(idTreino, idUtilizador);
     }
     
 }

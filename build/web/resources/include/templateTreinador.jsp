@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Sistema de Informação - SBC</title>
-        <link href="<c:url value="/resources/css/dropdown.css" />" rel="stylesheet"  type="text/css" />
+        <%--<link href="<c:url value="/resources/css/dropdown.css" />" rel="stylesheet"  type="text/css" />--%>
 
     </head>
     <body>
@@ -26,22 +26,9 @@
                         </li>
                         <li class='has-sub'><a href='#'><span>Gerir Treinos</span></a>
                             <ul>
-                                <li class='has-sub'><a href='#'><span>CriarTreino</span></a>
-                                    <ul>
-                                        <li><a href='#'><span>DefinirEquipa</span></a></li>
-                                        <li class="last"><a href="#"><span>DefinirPlanoTreino</span></a></li>
-                                        <li class="last"><a href="#"><span>DefinirDadosGeraisTreino</span></a></li>
-                                    </ul>
-                                </li>
-                                <li class='has-sub'><a href='#'><span>VisualizarTreino</span></a></li>
-                                <li class='has-sub'><a href='#'><span>ModificarTreino</span></a>
-                                    <ul>
-                                        <li><a href='#'><span>CancelarTreino</span></a></li>
-                                        <li class="last"><a href="#"><span>AlterarDadosTreino</span></a></li>
-                                    </ul>
-                                </li>
-                                <li class='has-sub'><a href='#'><span>ControlarPresenças</span></a></li>
-                                <li class='has-sub'><a href='#'><span>VisualizarHistoricoTreino</span></a></li>
+                                <li class='has-sub'><a href='criarTreino'><span>CriarTreino</span></a>
+
+                                <li><a href="listarTreinos"><span>Listar Treinos</span></a></li>
                             </ul>
                         </li>
                         
@@ -93,7 +80,9 @@
                         
 
                 </ul>
-
+                </div>
+            </div>
+        </div>
                    
                   
     </body>

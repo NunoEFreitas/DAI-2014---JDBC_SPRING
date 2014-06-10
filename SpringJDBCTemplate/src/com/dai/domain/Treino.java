@@ -6,6 +6,7 @@
 
 package com.dai.domain;
 
+import java.sql.Time;
 import java.util.Date;
 
 /**
@@ -17,8 +18,28 @@ public class Treino {
     private int idTreino;
     private int duracaoTreino;
     private String localTreino;
-    private Date dataTreino;
+    private String dataTreino;
     private String tipoTreino;
+    private String horaTreino;
+    private int idEscalao;
+
+    public int getIdEscalao() {
+        return idEscalao;
+    }
+
+    public void setIdEscalao(int idEscalao) {
+        this.idEscalao = idEscalao;
+    }
+    
+    
+
+    public String getHoraTreino() {
+        return horaTreino;
+    }
+
+    public void setHoraTreino(String horaTreino) {
+        this.horaTreino = horaTreino;
+    }
 
     public int getIdTreino() {
         return idTreino;
@@ -44,11 +65,11 @@ public class Treino {
         this.localTreino = localTreino;
     }
 
-    public Date getDataTreino() {
+    public String getDataTreino() {
         return dataTreino;
     }
 
-    public void setDataTreino(Date dataTreino) {
+    public void setDataTreino(String dataTreino) {
         this.dataTreino = dataTreino;
     }
 

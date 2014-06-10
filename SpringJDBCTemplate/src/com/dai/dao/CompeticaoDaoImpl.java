@@ -27,7 +27,7 @@ public class CompeticaoDaoImpl implements CompeticaoDao{
 	public void adicionaCompeticao(Competicao competicao) {
 
 		String sql = "INSERT INTO competicao "
-				+ "( designacaoCompeticao) VALUES (?)";
+				+ "( designacaoCompeticao, escalao_idEscalao_c) VALUES (?,?)";
 
 		JdbcTemplate template = new JdbcTemplate(dataSource);
                 
@@ -35,7 +35,7 @@ public class CompeticaoDaoImpl implements CompeticaoDao{
                 
 		template.update(
 				sql,
-				new Object[] {competicao.getDesignacao() });
+				new Object[] {competicao.getDesignacao(), competicao.getIdEscalao() });
 
 	}
         
@@ -48,6 +48,7 @@ public class CompeticaoDaoImpl implements CompeticaoDao{
             
         }
         
+        @Override
         public List<Competicao> listaCompeticao(){
             
             List<Competicao> slList = new ArrayList();

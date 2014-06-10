@@ -40,7 +40,7 @@ public class JogoDaoImpl implements JogoDao{
 	}
         
         @Override
-	public List<Jogo> listaJogos() {
+	public List<Jogo> listaJogosPendentes() {
 		List<Jogo> utList = new ArrayList();
 
 		String sql = "select * from jogo where resultadoJogo is null";

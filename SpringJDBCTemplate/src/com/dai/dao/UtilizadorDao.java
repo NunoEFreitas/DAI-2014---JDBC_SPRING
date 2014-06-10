@@ -7,6 +7,8 @@ public interface UtilizadorDao {
 	public void inserirUtilizador(Utilizador utilizador);
 
 	public List<Utilizador> listarUtilizador();
+        
+        public List<Utilizador> listarUtilizadorPorEscalao(int idEscalao);
 
 	public void updateUtilizador(Utilizador utilizador);
 

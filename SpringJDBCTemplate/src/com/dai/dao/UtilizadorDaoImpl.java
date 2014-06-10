@@ -20,7 +20,7 @@ public class UtilizadorDaoImpl implements UtilizadorDao {
 				+ "(nomeUtilizador, password, dataNascimento, morada, sexo, "
                         + "telefone, email, altura, peso, estatura, envergadura, saltoVertical, "
                         + "velocidadeDeslocamento, alcanceAtaque, alcanceBloco, examesClinicos, "
-                        + "estado, idPerfil, idEscalao) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                        + "estado, idPerfil, idEscalao) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
 
 		JdbcTemplate template = new JdbcTemplate(dataSource);
                 
@@ -42,6 +42,17 @@ public class UtilizadorDaoImpl implements UtilizadorDao {
 		List<Utilizador> utList = new ArrayList();
 
 		String sql = "select * from utilizador";
+
+		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		utList = jdbcTemplate.query(sql, new UtilizadorRowMapper());
+		return utList;
+	}
+        
+        @Override
+	public List<Utilizador> listarUtilizadorPorEscalao(int idEscalao) {
+		List<Utilizador> utList = new ArrayList();
+
+		String sql = "select * from utilizador where idEscalao = " + idEscalao + " and idPerfil = 1"  ;
 
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		utList = jdbcTemplate.query(sql, new UtilizadorRowMapper());

@@ -31,7 +31,7 @@ public class TreinoDaoImpl implements TreinoDao{
 	public void inserirTreino(Treino treino) {
 
 		String sql = "INSERT INTO treino "
-				+ "( duracaoTreino, localTreino, dataTreino, tipoTreino) VALUES (?, ?, ?, ?)";
+				+ "( duracaoTreino, localTreino, dataTreino, tipoTreino, horaTreino, escalao_idEscalao_t) VALUES (?, ?, ?, ?,?, ?)";
 
 		JdbcTemplate template = new JdbcTemplate(dataSource);
                 
@@ -39,7 +39,7 @@ public class TreinoDaoImpl implements TreinoDao{
                 
 		template.update(
 				sql,
-				new Object[] {treino.getDuracaoTreino(), treino.getLocalTreino(), treino.getDataTreino(), treino.getTipoTreino() });
+				new Object[] {treino.getDuracaoTreino(), treino.getLocalTreino(), treino.getDataTreino(), treino.getTipoTreino(), treino.getHoraTreino(), treino.getIdEscalao() });
 
 	}
         
@@ -47,7 +47,7 @@ public class TreinoDaoImpl implements TreinoDao{
         public List<Treino> listarTreinos(){
                 List<Treino> treinoList = new ArrayList();
 
-		String sql = "select * from jogo where resultadoJogo is null";
+		String sql = "select * from treino";
 
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		treinoList = jdbcTemplate.query(sql, new TreinoRowMapper());
@@ -62,8 +62,21 @@ public class TreinoDaoImpl implements TreinoDao{
         
         @Override        
         public void apagarTreino(Integer idTreino){
+            String sql = "delete from treino where idTreino=" + idTreino;
+		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		jdbcTemplate.update(sql);
             
-            
+        }
+        
+        @Override
+        public List<Treino> listarTreinosEscalao(int idEscalao){
+                List<Treino> treinoList = new ArrayList();
+
+		String sql = "select * from treino where escalao_idEscalao_t = " + idEscalao;
+
+		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		treinoList = jdbcTemplate.query(sql, new TreinoRowMapper());
+		return treinoList;
         }
         
     

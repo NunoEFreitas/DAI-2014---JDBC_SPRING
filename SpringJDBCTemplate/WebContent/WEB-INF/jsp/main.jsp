@@ -25,13 +25,6 @@
 			<div class="sidebar">
 				<ul>
 					
-                                        <li>
-						<a href="verifica">Pesquisar</a>
-					</li>
-
-                                        <li>
-						<a href="pagamento">pagamento</a>
-					</li>
                                         
                                         <li>
 						<a href="listaJogos">Lista Jogos</a>
@@ -40,9 +33,14 @@
                                         <li>
 						<a href="jogo">Campo</a>
 					</li>
+                                        
                                         <li>
-						<a href="listaUtilizadorRh">registar Pagamento</a>
+						<a href="gestaoDeTreinos">Gerir Treinos</a>
 					</li>
+                                        
+                                        <li> 
+                                            <a href="gestaoDeEquipasAdversarias"> Gerir Equipas Adversarias </a>
+                                        </li>    
 				</ul>
 				<div class="connect">
 					*

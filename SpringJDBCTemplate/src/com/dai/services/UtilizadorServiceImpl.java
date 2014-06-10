@@ -21,6 +21,11 @@ public class UtilizadorServiceImpl implements UtilizadorService {
 	public List<Utilizador> listarUtilizador() {
 		return utilizadordao.listarUtilizador();
 	}
+        
+        @Override
+	public List<Utilizador> listarUtilizadorPorEscalao(int idEscalao) {
+		return utilizadordao.listarUtilizadorPorEscalao(idEscalao);
+	}
 
 	@Override
 	public void apagarUtilizador(Integer id) {

@@ -59,7 +59,7 @@ public class JogoController {
 		return new ModelAndView("main" );
 	}
         
-        @RequestMapping("/jogadoresSelecionados/{idJogo}")
+        @RequestMapping("/jogoSelecionados/{idJogo}")
 	public ModelAndView selecionaJogadores(@PathVariable("idJogo") Integer jogo) {
                     List<Integer> idjogo = new ArrayList();
                     idjogo.add(jogo);
@@ -72,7 +72,7 @@ public class JogoController {
 		return new ModelAndView("jogadoresSelecionados","map",map );
 	}
        
-        @RequestMapping("/jogadoresSelecionados/jogadorSelecionado/{idJogo}/{idUtilizador}")
+        @RequestMapping("/jogoSelecionados/jogadorSelecionado/{idJogo}/{idUtilizador}")
 	public String selecionaJogador(@PathVariable("idJogo") Integer jogo, @PathVariable("idUtilizador") Integer ut) {
                    
                 SelecaoJogo sl = new SelecaoJogo();    

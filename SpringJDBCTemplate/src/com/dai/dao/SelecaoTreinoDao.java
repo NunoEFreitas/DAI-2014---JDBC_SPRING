@@ -20,4 +20,11 @@ public interface SelecaoTreinoDao {
     public void apagaST(int idUtilizador, int idTreino);
     
     public List<SelecaoTreino> listaST(int idTreino);
+    
+    public List<SelecaoTreino> listaSTparaPresencas(int idTreino);
+    
+    public void jogadorPresente(int idTreino, int idUtilizador);
+    
+    public void jogadorFaltou(int idTreino, int idUtilizador);
+   
 }

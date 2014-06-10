@@ -7,6 +7,8 @@ public interface UtilizadorService {
 	public void inserirUtilizador(Utilizador ut);
 
 	public List<Utilizador> listarUtilizador();
+        
+        public List<Utilizador> listarUtilizadorPorEscalao(int idEscalao);
 
 	public void apagarUtilizador(Integer id);
 

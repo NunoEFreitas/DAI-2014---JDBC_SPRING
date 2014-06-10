@@ -27,7 +27,7 @@ public class SelecaoTreinoDaoImpl implements SelecaoTreinoDao{
 	public void adicionaST(SelecaoTreino st) {
 
 		String sql = "INSERT INTO selecaoTreino "
-				+ "( utilizador_idutilizador_st, treino_idtreino) VALUES (?, ?)";
+				+ "( utilizador_idutilizador_st, treino_idtreino, nomeUtilizador_t) VALUES (?, ?, ?)";
 
 		JdbcTemplate template = new JdbcTemplate(dataSource);
                 
@@ -35,7 +35,7 @@ public class SelecaoTreinoDaoImpl implements SelecaoTreinoDao{
                 
 		template.update(
 				sql,
-				new Object[] {st.getIdUtilizador(),st.getIdUtilizador() });
+				new Object[] {st.getIdUtilizador(),st.getIdTreino(), st.getNome() });
 
 	}
         
@@ -57,6 +57,35 @@ public class SelecaoTreinoDaoImpl implements SelecaoTreinoDao{
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		stList = jdbcTemplate.query(sql, new SelecaoTreinoRowMapper());
 		return stList;
+        }
+        
+        public List<SelecaoTreino> listaSTparaPresencas(int idTreino){
+            
+            List<SelecaoTreino> stList = new ArrayList();
+                //String sql = "select t1.idUtilizador, t1.nomeUtilizador, t2.treino_idtreino, t2.presenca from utilizador t1 inner join selecaotreino t2 on t1.idutilizador = t2.utilizador_idutilizador_st where treino_idtreino = " + idTreino + " and presenca = null";
+		String sql = "select * from selecaotreino where presenca is null and treino_idTreino = " + idTreino;
+
+		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		stList = jdbcTemplate.query(sql, new SelecaoTreinoRowMapper());
+		return stList;
+        }
+        
+        @Override
+	public void jogadorPresente(int idUtilizador, int idTreino) {
+            
+            String sql = "update selecaoTreino set presenca = 1  where utilizador_idUtilizador_st =" + idUtilizador + " and treino_idtreino = " + idTreino;
+		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		jdbcTemplate.update(sql);
+            
+        }
+        
+        @Override
+	public void jogadorFaltou(int idUtilizador, int idTreino) {
+            
+            String sql = "update selecaoTreino set presenca = 0 where utilizador_idUtilizador_st =" + idUtilizador + " and treino_idtreino = " + idTreino;
+		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		jdbcTemplate.update(sql);
+            
         }
     
 }

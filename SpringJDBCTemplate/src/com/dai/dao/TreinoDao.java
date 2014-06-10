@@ -17,10 +17,12 @@ public interface TreinoDao {
     
     public void inserirTreino(Treino treino);
 
-	public List<Treino> listarTreinos();
+    public List<Treino> listarTreinos();
 
-	public void updateTreino(Treino treino);
+    public void updateTreino(Treino treino);
 
-	public void apagarTreino(Integer idTreino);
+    public void apagarTreino(Integer idTreino);
+        
+    public List<Treino> listarTreinosEscalao(int idEscalao);
 
 }

@@ -14,7 +14,17 @@ public class EquipaAdversaria {
     
     private int idEquipaAdversaria;
     private String nome;
+    private int idEscalao;
 
+    public int getidEscalao() {
+        return idEscalao;
+    }
+
+    public void setidEscalao(int idEscalao) {
+        this.idEscalao = idEscalao;
+    }
+
+    
     public int getIdEquipaAdversaria() {
         return idEquipaAdversaria;
     }

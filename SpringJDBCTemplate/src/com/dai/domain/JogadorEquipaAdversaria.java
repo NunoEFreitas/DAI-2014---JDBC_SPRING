@@ -10,7 +10,7 @@ package com.dai.domain;
  *
  * @author Nuno
  */
-public class JogadoresEquipaAdversaria {
+public class JogadorEquipaAdversaria {
     
     private int idJogador;
     private String nome;

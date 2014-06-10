@@ -32,13 +32,18 @@ public class TreinoServiceImpl implements TreinoService{
         
         @Override
         public void apagaTreino(int idTreino){
-            
+            treinodao.apagarTreino(idTreino);
             
         }
         
         @Override
-        public void updateTreino(int idTreino){
-            
+        public void updateTreino(Treino treino){
+            treinodao.updateTreino(treino);
         }
+        
+        @Override
+	public List<Treino> listaTreinosEscalao(int idEscalao) {
+		return treinodao.listarTreinosEscalao(idEscalao);
+	}
     
 }

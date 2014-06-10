@@ -1,9 +1,11 @@
 
 package com.dai.controller;
 
+import com.dai.domain.Competicao;
 import com.dai.domain.Escalao;
 import com.dai.domain.Perfil;
 import com.dai.domain.Utilizador;
+import com.dai.services.CompeticaoService;
 import com.dai.services.EscalaoService;
 import com.dai.services.PerfilService;
 import java.util.ArrayList;
@@ -35,59 +37,22 @@ public class UtilizadorController {
         @Autowired
         EscalaoService escalaoService;
         
+        @Autowired
+        CompeticaoService competicaoService;
+        
+
+        
+        
+        
+        
         @RequestMapping("/main")
 	public ModelAndView main() {
                
 		return new ModelAndView("main");
 	}
+
         
-         @RequestMapping("/criarPerfil")
-	public ModelAndView criarPerfil(@ModelAttribute Perfil perfil) {
-               
-		return new ModelAndView("criarPerfil");
-	}
-        
-        // futuramente alterar o redirect para uma pagina de confirmacao no caso de ter sido
-        // inserido com sucesso ou no caso de insucesso com o erro correspondente
-        @RequestMapping("/novoperfil")
-	public String inserePerfil(@ModelAttribute Perfil perfil) {
-		if (perfil != null)
-			perfilService.inserirPerfil(perfil);
-		return "redirect:/listaPerfil";
-	}
-         
-         @RequestMapping("/apagarPerfil")
-	public String apagarPerfil(@RequestParam Integer id) {
-               perfilService.apagarPerfil(id);
-		return "redirect:/listaPerfil";
-	}
-         
-        @RequestMapping("/listaPerfil")
-	public ModelAndView listaPerfil() {
-		List<Perfil> lperfil = perfilService.listarPerfil();
-		return new ModelAndView("listaPerfil", "perfilList", lperfil);
-	}
-        
-        @RequestMapping("/testenovoescalao")
-	public ModelAndView escalao(@ModelAttribute Escalao escalao) {
-               
-		return new ModelAndView("testenovoescalao");
-	}
-        
-        @RequestMapping("/novoescalao")
-	public String insereEscalao(@ModelAttribute Escalao escalao) {
-		if (escalao != null)
-			escalaoService.inserirEscalao(escalao);
-		return "redirect:/testelistaescalao";
-	}
-        
-        @RequestMapping("/testelistaescalao")
-	public ModelAndView listaEscalao() {
-		List<Escalao> lescalao = escalaoService.listarEscalao();
-		return new ModelAndView("testelistaescalao", "escalaoList", lescalao);
-	}
-        
-        @RequestMapping("/register")
+        @RequestMapping("/registarUtilizador")
 	public ModelAndView registaUtilizador(@ModelAttribute Utilizador utilizador) {
                 
                 List<Perfil> lp = perfilService.listarPerfil();
@@ -96,20 +61,20 @@ public class UtilizadorController {
                 Map<String, List> map = new HashMap<String, List>();
                 map.put("lp",lp);
                 map.put("li",li);
-		return new ModelAndView("register", "map", map);
+		return new ModelAndView("registarUtilizador", "map", map);
 	}
         
         @RequestMapping("/insereutilizador")
 	public String inserUtilizador(@ModelAttribute Utilizador utilizador) {
 		if (utilizador != null)
 			utilizadorService.inserirUtilizador(utilizador);
-		return "redirect:/userList";
+		return "redirect:/registarUtilizador";
 	}
         
-        @RequestMapping("/userList")
+        @RequestMapping("/listarUtilizadores")
 	public ModelAndView listaUtilizador() {
 		List<Utilizador> lutilizador = utilizadorService.listarUtilizador();
-		return new ModelAndView("userList", "utilizadorList", lutilizador);
+		return new ModelAndView("listarUtilizadores", "utilizadorList", lutilizador);
 	}
          @RequestMapping("/alterarDados")
 	public ModelAndView lista() {
@@ -117,44 +82,6 @@ public class UtilizadorController {
 		return new ModelAndView("alterarDados", "utilizadorList", lutilizador);
 	}
         
-
-/*
-	@RequestMapping("/register")
-	public ModelAndView registerUser(@ModelAttribute User user) {
-                
-                List<String> Tipo_de_utilizador = new ArrayList<String>();
-		Tipo_de_utilizador.add("Treinador");
-		Tipo_de_utilizador.add("Treinador-Adjunto");
-                Tipo_de_utilizador.add("Atleta");
-            
-                
-                Map<String, List> map = new HashMap<String, List>();
-                map.put("Tipo_de_utilizador",Tipo_de_utilizador);
-		return new ModelAndView("register", "map", map);
-	}
-        
-        
-
-	@RequestMapping("/insert")
-	public String inserData(@ModelAttribute User user) {
-		if (user != null)
-			userService.insertData(user);
-		return "redirect:/getList";
-	}
-
-	@RequestMapping("/getList")
-	public ModelAndView getUserLIst() {
-		List<User> userL = userService.getUserList();
-		return new ModelAndView("userList", "userList", userL);
-	}
-        
-       
-        
-
-	
-
-	
-*/
 	@RequestMapping("/delete")
 	public String deleteUser(@RequestParam Integer id) {
 		utilizadorService.apagarUtilizador(id);
@@ -167,63 +94,21 @@ public class UtilizadorController {
 		return "redirect:/alterarDados";
 
 	}
-        @RequestMapping("/edit")
-	public ModelAndView editUtilizador(@RequestParam Integer id,
-			@ModelAttribute Utilizador user) {
-
-		user = utilizadorService.getUtilizador(id);
-
-		List<String> Tipo_de_utilizador = new ArrayList<String>();
-		Tipo_de_utilizador.add("Treinador");
-		Tipo_de_utilizador.add("Treinador-Adjunto");
-                Tipo_de_utilizador.add("Atleta");
-            
-                
-                Map<String, Object> map = new HashMap<String, Object>();
-                map.put("tdu",Tipo_de_utilizador);
-                map.put("user", user);
-		return new ModelAndView("edit", "map", map);
-
-	}
-        
-        @RequestMapping("/treino")
-	public ModelAndView criarTreino() {
-		return new ModelAndView("definirEquipa");
-	}
-        @RequestMapping("/equipa")
-	public ModelAndView criarEquipa() {
-		return new ModelAndView("criarEquipa");
-	}
-        
-        @RequestMapping("/verifica")
-	public ModelAndView verifica() {
-		return new ModelAndView("apresenta");
-	}
-        
-        
-        
-         @RequestMapping("/dadosTabela")
-	public ModelAndView dadosTabela() {
-		return new ModelAndView("dadosTabela");
-	}
-        @RequestMapping("/dadosGrafico")
-	public ModelAndView dadosGrafico() {
-		return new ModelAndView("dadosGrafico");
-	}
-        
+ 
         
         @RequestMapping("/login")
 	public ModelAndView login() {
 		return new ModelAndView("login");
 	}
         
-               @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public ModelAndView login(@RequestParam("username") Integer user, @RequestParam("password") String password, ModelMap model, HttpServletRequest request, HttpServletResponse response) {
+        @RequestMapping(value = "/login", method = RequestMethod.POST)
+        public ModelAndView login(@RequestParam("username") Integer user, @RequestParam("password") String password, ModelMap model, HttpServletRequest request, HttpServletResponse response) {
         String resultado;
         Utilizador ut = utilizadorService.getUtilizador(user);
         HttpSession session = request.getSession();
         session.setAttribute("user", user);
         session.setAttribute("perfil", ut.getIdPerfil());
+        session.setAttribute("escalao", ut.getIdEscalao());
 
         if (ut.getPassword().equals(password)) {
             if (ut.getIdPerfil() == 1) {
@@ -271,7 +156,29 @@ public class UtilizadorController {
 		return new ModelAndView("estadoUtilizadores", "utilizadorList", lutilizador);
 	}
                 
-                
+         @RequestMapping("/criarCompeticao")
+	public ModelAndView criarCompeticoes(@ModelAttribute Competicao competicao) {
+            
+                List<Escalao> li = escalaoService.listarEscalao();
+     
+                Map<String, List> map = new HashMap<String, List>();
+                map.put("li",li);
+
+		return new ModelAndView("criarCompeticao","map",map );
+	}    
+        
+        @RequestMapping("/inserirCompeticao")
+	public ModelAndView inserirCompeticao(@ModelAttribute Competicao competicao) {
+            
+               competicaoService.adicionaCompeticao(competicao);
+               
+               List<Escalao> li = escalaoService.listarEscalao();
+     
+                Map<String, List> map = new HashMap<String, List>();
+                map.put("li",li);
+
+		return new ModelAndView("criarCompeticao","map",map);
+	}
         
          
     
@@ -302,5 +209,6 @@ public class UtilizadorController {
 	public ModelAndView analistas() {
 		return new ModelAndView("analistas");
 	} 
+    
           
 }

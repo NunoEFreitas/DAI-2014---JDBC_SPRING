@@ -23,6 +23,7 @@ public class SelecaoJogoExtractor implements ResultSetExtractor<SelecaoJogo>{
         SelecaoJogo sl = new SelecaoJogo();
         sl.setIdJogo(resultSet.getInt("jogo_idjogo"));
         sl.setIdUtilizador(resultSet.getInt("utilizador_idutilizador"));
+        
 
 
         return sl;

@@ -23,6 +23,7 @@ public class CompeticaoExtractor implements ResultSetExtractor<Competicao> {
         Competicao competicao = new Competicao();
         competicao.setIdCompeticao(resultSet.getInt("idCompeticao"));
         competicao.setDesignacao(resultSet.getString("designacaoCompeticao"));
+        competicao.setIdEscalao(resultSet.getInt("escalao_idEscalao_c"));
 
 
         return competicao;
