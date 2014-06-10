@@ -24,6 +24,8 @@ import org.springframework.web.servlet.ModelAndView;
  *
  * @author Nuno
  */
+
+/*
 @Controller
 public class EquipaAdversariaController {
     
@@ -71,3 +73,4 @@ public class EquipaAdversariaController {
 		return new ModelAndView("criarJogadorEquipaAdversaria", "lea",lea);
 	}
 }
+*/

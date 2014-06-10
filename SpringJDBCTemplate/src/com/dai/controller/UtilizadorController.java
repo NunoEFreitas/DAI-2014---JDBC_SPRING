@@ -42,8 +42,6 @@ public class UtilizadorController {
         
 
         
-<<<<<<< HEAD
-=======
         // futuramente alterar o redirect para uma pagina de confirmacao no caso de ter sido
         // inserido com sucesso ou no caso de insucesso com o erro correspondente
         @RequestMapping("/novoperfil")
@@ -73,7 +71,6 @@ public class UtilizadorController {
 		List<Perfil> lperfil = perfilService.listarPerfil();
 		return new ModelAndView("listaPerfil", "perfilList", lperfil);
 	}
->>>>>>> origin/teste
         
         
         
