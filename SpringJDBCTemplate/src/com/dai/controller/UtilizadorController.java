@@ -42,6 +42,38 @@ public class UtilizadorController {
         
 
         
+<<<<<<< HEAD
+=======
+        // futuramente alterar o redirect para uma pagina de confirmacao no caso de ter sido
+        // inserido com sucesso ou no caso de insucesso com o erro correspondente
+        @RequestMapping("/novoperfil")
+	public String inserePerfil(@ModelAttribute Perfil perfil) {
+		if (perfil != null)
+			perfilService.inserirPerfil(perfil);
+		return "redirect:/listaPerfil";
+	}
+         
+         @RequestMapping("/apagarPerfil")
+	public String apagarPerfil(@RequestParam Integer id) {
+               perfilService.apagarPerfil(id);
+		return "redirect:/listaPerfil";
+	}
+         @RequestMapping("/activaUtilizador")
+	public String activaUtilizador(@RequestParam Integer id) {
+               utilizadorService.activaUtilizador(id);
+		return "redirect:/alterarDados";
+	}
+        @RequestMapping("/desactivaUtilizador")
+	public String desactivaUtilizador(@RequestParam Integer id) {
+               utilizadorService.desactivaUtilizador(id);
+		return "redirect:/alterarDados";
+	}
+        @RequestMapping("/listaPerfil")
+	public ModelAndView listaPerfil() {
+		List<Perfil> lperfil = perfilService.listarPerfil();
+		return new ModelAndView("listaPerfil", "perfilList", lperfil);
+	}
+>>>>>>> origin/teste
         
         
         
@@ -65,7 +97,7 @@ public class UtilizadorController {
 	}
         
         @RequestMapping("/insereutilizador")
-	public String inserUtilizador(@ModelAttribute Utilizador utilizador) {
+	public String insereUtilizador(@ModelAttribute Utilizador utilizador) {
 		if (utilizador != null)
 			utilizadorService.inserirUtilizador(utilizador);
 		return "redirect:/registarUtilizador";

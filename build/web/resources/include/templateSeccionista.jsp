@@ -17,10 +17,46 @@
                         <li class='active'><a href='seccionista'><span>Seccionista</span></a></li>
                         <li class='has-sub'><a href='#'><span>Gerir Recursos Humanos</span></a>
                             <ul>
+<<<<<<< HEAD
                                 <li><a href='registarUtilizador'><span>RegistarUtilizadores</span></a></li>
                                 <li><a href='alterarDados'><span>Editar Utilizadores</span></a></li>
                                 <li><a href='estadoUtilizadores'><span>Estado dos Utilizadores</span></a></li>  
                                 <li><a href='listarUtilizadores'><span>Consultar Utilizadores</span></a></li>
+=======
+                                <li><a href='register'><span>RegistarUtilizadores</span></a></li>
+                                <li><a href='alterarDados'><span>Editar Utilizadores</span></a>
+                              
+                                 <!--   <ul>
+                                      <li><a href='alterarDados'><span>Editar/Apagar Atleta</span></a></li>
+                                        <li class='has-sub'><a href='#'><span>Editar/Apagar Treinador<span></a></li>
+                                        <li class='has-sub'><a href='#'><span>Editar/Apagar TreinadorAdjunto<span></a></li>
+                                        <li class='has-sub'><a href='#'><span>Editar/Apagar Olheiro<span></a></li>
+                                        <li class='has-sub'><a href='#'><span>Editar/Apagar Seccionista<span></a></li>
+                                        <li class='has-sub'><a href='#'><span>Editar/Apagar Analista<span></a></li>
+                                             
+                                    </ul> -->
+                                </li>
+                                <li><a href='#'><span>Gerir Pagamentos/Recebimentos</span></a>
+                                    <ul>
+                                      <li><a href='#'><span>RegistarPagamento</span></a></li>
+                                        <li class='has-sub'><a href='#'><span>RegistarRecebimento<span></a></li>
+                                        <li class='has-sub'><a href='#'><span>AnalisarDívidas<span></a></li>
+                                        <li class='has-sub'><a href='#'><span>ConsultarPagamento<span></a></li>
+                                        <li class='has-sub'><a href='#'><span>ConsultarRecebimento<span></a></li>                                         
+                                    </ul>
+                                </li>
+                                
+                                <li><a href='userList'><span>Consultar Utilizadores</span></a></li>
+                                <li><a href='#'><span>Gerir Perfis</span></a>
+                                    <ul>
+                                        <li><a href='criarPerfil'><span>CriarPerfil</span></a></li>
+                                        <li class='has-sub'><a href='#'><span>EditarPerfil</span></a></li>
+                                        <li class='has-sub'><a href='listaPerfil'><span>VisualizarPerfil</span></a>
+                                        <li class='has-sub'><a href='#'><span>ApagarPerfil</span></a>
+                                         
+                                    </ul>
+                                </li> 
+>>>>>>> origin/teste
                             
                                 
                             </ul>
