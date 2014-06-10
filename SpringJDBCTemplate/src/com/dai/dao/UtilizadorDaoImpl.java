@@ -4,9 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementCallback;
+import org.springframework.jdbc.core.PreparedStatementCreator;
 import com.dai.domain.Utilizador;
 import com.dai.jdbc.UtilizadorRowMapper;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Connection;
 
 public class UtilizadorDaoImpl implements UtilizadorDao {
 
@@ -117,7 +123,7 @@ public class UtilizadorDaoImpl implements UtilizadorDao {
         
         @Override
         public void activaUtilizador(Integer id){
-		String sql = "update utilizador set estado = true where idUtilizador = "+ id;
+		String sql = "update utilizador set estado = 1 where idUtilizador = "+ id;
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
                 jdbcTemplate.update(sql);
             
@@ -125,7 +131,7 @@ public class UtilizadorDaoImpl implements UtilizadorDao {
         
         @Override
         public void desactivaUtilizador(Integer id){
-		String sql = "update utilizador set estado = false where idUtilizador = "+ id;
+		String sql = "update utilizador set estado = 0 where idUtilizador = "+ id;
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
                 jdbcTemplate.update(sql);
             

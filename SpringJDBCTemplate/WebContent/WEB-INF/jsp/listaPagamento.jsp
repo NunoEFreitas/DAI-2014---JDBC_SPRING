@@ -44,7 +44,7 @@
 					<td>${ul.idUtilizador}</td>
 					<td>${ul.nome}</td>
 					
-					<td><a href="pagamento?id=${ul.idUtilizador}">Edit</a></td>
+					<td><a href="pagamento/${ul.idUtilizador}">Edit</a></td>
                         </tr>
 			</c:forEach>
 		</table>
