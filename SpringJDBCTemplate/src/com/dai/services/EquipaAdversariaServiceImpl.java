@@ -17,10 +17,10 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 public class EquipaAdversariaServiceImpl implements EquipaAdversariaService{
     
-     @Autowired
+    @Autowired
     EquipaAdversariaDao eadao;
     
-     @Override
+    @Override
     public void adicionaEA(EquipaAdversaria ea){
         eadao.adicionaEA(ea);
     }

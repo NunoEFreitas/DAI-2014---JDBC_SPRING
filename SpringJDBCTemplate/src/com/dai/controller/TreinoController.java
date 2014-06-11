@@ -33,11 +33,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 @Controller
 public class TreinoController {
     
-    @Autowired
-	UtilizadorService utilizadorService;
+     @Autowired
+     UtilizadorService utilizadorService;
     
      @Autowired
-	TreinoService treinoService;
+     TreinoService treinoService;
      
      @Autowired
      SelecaoTreinoService stService;

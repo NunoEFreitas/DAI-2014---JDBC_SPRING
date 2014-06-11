@@ -11,6 +11,7 @@ import com.dai.domain.Escalao;
 import com.dai.domain.JogadorEquipaAdversaria;
 import com.dai.services.EquipaAdversariaService;
 import com.dai.services.EscalaoService;
+import com.dai.services.JogadorEquipaAdversariaService;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,18 +26,18 @@ import org.springframework.web.servlet.ModelAndView;
  * @author Nuno
  */
 
-/*
+
 @Controller
 public class EquipaAdversariaController {
     
-     @Autowired
-     EquipaAdversariaService easervice;
+      @Autowired
+      EquipaAdversariaService easervice;
      
       @Autowired
       EscalaoService eservice;
       
       @Autowired
-      JogadorEquipaAdversaria jeaservice;
+      JogadorEquipaAdversariaService jeaservice;
       
     
     @RequestMapping("/criarEquipaAdversaria")
@@ -52,7 +53,7 @@ public class EquipaAdversariaController {
         
         @RequestMapping("/inserirEA")
 	public String inserirEA(@ModelAttribute EquipaAdversaria ea) {
-                   easervice.adicionaEA(ea);
+                easervice.adicionaEA(ea);
         
 		return "redirect:/gestaoDeEquipasAdversarias";
 	}
@@ -72,5 +73,20 @@ public class EquipaAdversariaController {
             
 		return new ModelAndView("criarJogadorEquipaAdversaria", "lea",lea);
 	}
+        
+        @RequestMapping("/inserirJEA")
+	public String inserirJEA(@ModelAttribute JogadorEquipaAdversaria jogadorEquipaAdversaria) {
+               
+               jeaservice.adicionaJEA(jogadorEquipaAdversaria);
+            
+		return "redirect:/criarJogadorEquipaAdversaria" ;
+	}
+        
+        @RequestMapping("/listarJogadoresEquipaAdversaria")
+	public ModelAndView listarEA(@ModelAttribute JogadorEquipaAdversaria jea) {
+               
+            List<JogadorEquipaAdversaria> li = jeaservice.listaJEA();
+            
+		return new ModelAndView("listarJogadoresEquipaAdversaria", "li",li);
+	}
 }
-*/

@@ -13,19 +13,21 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <form:form method="post" action="/inserirEA" modelAttribute="jogadorEquipaAdversaria"  >
+        <form:form method="post" action="/inserirJEA" modelAttribute="jogadorEquipaAdversaria"  >
             
             <label>Nome: </label>
             <form:input class="input" path="nome" />
-            <label>Nome: </label>
+            <br>
+            <label>Posição: </label>
             <form:input class="input" path="posicao" />
+            <br>
                 <label>Equipa Adversaria :</label>
                 <form:select   path = "idEquipaAdversaria" name="idEquipaAdversaria">
                     <c:forEach items='${lea}' var='lea'>
                         <form:option class="input" value ="${lea.idEquipaAdversaria}">${lea.nome}</form:option>
                     </c:forEach>
                 </form:select>
-
+                <br>
             <input class="button" type="submit" value="Guardar" />
         </form:form>
     </body>

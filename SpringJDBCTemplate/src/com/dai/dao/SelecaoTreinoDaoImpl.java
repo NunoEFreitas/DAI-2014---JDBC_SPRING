@@ -20,7 +20,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
  */
 public class SelecaoTreinoDaoImpl implements SelecaoTreinoDao{
     
-    @Autowired
+        @Autowired
 	DataSource dataSource;
 
         @Override

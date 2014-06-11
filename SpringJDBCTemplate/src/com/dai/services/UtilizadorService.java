@@ -4,6 +4,7 @@ import com.dai.domain.Utilizador;
 import java.util.List;
 
 public interface UtilizadorService {
+    
 	public void inserirUtilizador(Utilizador ut);
 
 	public List<Utilizador> listarUtilizador();

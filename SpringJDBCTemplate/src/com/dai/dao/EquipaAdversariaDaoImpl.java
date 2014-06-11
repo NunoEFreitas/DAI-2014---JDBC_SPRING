@@ -20,7 +20,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
  */
 public class EquipaAdversariaDaoImpl implements EquipaAdversariaDao{
     
-    @Autowired
+        @Autowired
 	DataSource dataSource;
 
         @Override

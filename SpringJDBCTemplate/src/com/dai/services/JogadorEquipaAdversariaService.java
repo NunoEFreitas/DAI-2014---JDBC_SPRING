@@ -23,6 +23,8 @@ public interface JogadorEquipaAdversariaService {
     
     public void alteraClubeJEA(int idJEA, int novoidEA);
             
-    public List<JogadorEquipaAdversaria> listaJEA(int idEA); 
+    public List<JogadorEquipaAdversaria> listaJEAporEquipa(int idEA);
+    
+    public List<JogadorEquipaAdversaria> listaJEA();
     
 }

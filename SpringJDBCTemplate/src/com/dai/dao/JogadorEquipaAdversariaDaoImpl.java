@@ -20,7 +20,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
  */
 public class JogadorEquipaAdversariaDaoImpl implements JogadorEquipaAdversariaDao {
     
-    @Autowired
+        @Autowired
 	DataSource dataSource;
 
         @Override
@@ -49,7 +49,7 @@ public class JogadorEquipaAdversariaDaoImpl implements JogadorEquipaAdversariaDa
         }
         
         @Override
-        public List<JogadorEquipaAdversaria> listaJEA(int idEA){
+        public List<JogadorEquipaAdversaria> listaJEAporEquipa(int idEA){
             List<JogadorEquipaAdversaria> jeaList = new ArrayList();
 
 		String sql = "select * from jogadorEquipaAdversaria where equipaAdversaria_idEquipaAdversaria= " + idEA ;
@@ -70,7 +70,7 @@ public class JogadorEquipaAdversariaDaoImpl implements JogadorEquipaAdversariaDa
         }
     
         @Override
-    public void alteraClubeJEA(int idJEA, int novoidEA){
+        public void alteraClubeJEA(int idJEA, int novoidEA){
         String sql = "UPDATE jogadorEquipaAdversaria set equipaAdversaria_idEquipaAdversaria = ? where idJogadorEquipaAdversaria = " + idJEA;
             JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 
@@ -79,5 +79,16 @@ public class JogadorEquipaAdversariaDaoImpl implements JogadorEquipaAdversariaDa
 				new Object[] { novoidEA });
         
     }
+        
+        @Override
+        public List<JogadorEquipaAdversaria> listaJEA(){
+            List<JogadorEquipaAdversaria> jeaList = new ArrayList();
+
+		String sql = "select * from jogadorEquipaAdversaria";
+
+		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		jeaList = jdbcTemplate.query(sql, new JogadorEquipaAdversariaRowMapper());
+		return jeaList;
+        }
     
 }
