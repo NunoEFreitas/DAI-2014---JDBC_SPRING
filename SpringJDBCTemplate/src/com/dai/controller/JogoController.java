@@ -59,6 +59,13 @@ public class JogoController {
 		return new ModelAndView("main" );
 	}
         
+                @RequestMapping("/criarVideo")
+	public ModelAndView criarVideo(@ModelAttribute Jogo jogo) {
+          
+        
+		return new ModelAndView("FileUploadForm");
+	}
+        
         @RequestMapping("/jogoSelecionados/{idJogo}")
 	public ModelAndView selecionaJogadores(@PathVariable("idJogo") Integer jogo) {
                     List<Integer> idjogo = new ArrayList();
