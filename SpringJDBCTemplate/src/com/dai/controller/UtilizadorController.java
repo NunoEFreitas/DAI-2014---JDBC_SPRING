@@ -123,6 +123,25 @@ public class UtilizadorController {
 		return "redirect:/alterarDados";
 
 	}
+        
+           @RequestMapping("/edit")
+	public ModelAndView editUtilizador(@RequestParam Integer id,
+			@ModelAttribute Utilizador user) {
+
+		user = utilizadorService.getUtilizador(id);
+
+		List<String> Tipo_de_utilizador = new ArrayList<String>();
+		Tipo_de_utilizador.add("Treinador");
+		Tipo_de_utilizador.add("Treinador-Adjunto");
+                Tipo_de_utilizador.add("Atleta");
+            
+                
+                Map<String, Object> map = new HashMap<String, Object>();
+                map.put("tdu",Tipo_de_utilizador);
+                map.put("user", user);
+		return new ModelAndView("edit", "map", map);
+
+	}
  
         
         @RequestMapping("/login")

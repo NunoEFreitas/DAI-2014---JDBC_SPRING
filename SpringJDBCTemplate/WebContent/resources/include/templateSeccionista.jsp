@@ -5,7 +5,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Sistema de Informação - SBC</title>
-        <%--<link href="<c:url value="/resources/css/dropdown.css" />" rel="stylesheet"  type="text/css" />--%>
+        <link href="<c:url value="/resources/css/dropdown.css" />" rel="stylesheet"  type="text/css" />
 
     </head>
     <body>
