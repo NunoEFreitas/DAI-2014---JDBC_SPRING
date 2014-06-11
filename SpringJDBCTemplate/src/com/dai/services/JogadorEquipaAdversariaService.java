@@ -6,10 +6,23 @@
 
 package com.dai.services;
 
+import com.dai.domain.JogadorEquipaAdversaria;
+import java.util.List;
+
 /**
  *
  * @author Nuno
  */
-public class JogadorEquipaAdversariaService {
+public interface JogadorEquipaAdversariaService {
+    
+    public void adicionaJEA(JogadorEquipaAdversaria jea);
+    
+    public void apagaJEA(int idJEA);
+    
+    public void alteraPosicaoJEA(int idJEA, String novaPosicao);
+    
+    public void alteraClubeJEA(int idJEA, int novoidEA);
+            
+    public List<JogadorEquipaAdversaria> listaJEA(int idEA); 
     
 }
