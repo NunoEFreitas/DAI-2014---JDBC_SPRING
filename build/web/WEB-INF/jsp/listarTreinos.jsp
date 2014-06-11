@@ -36,7 +36,7 @@
                 <td> ${li.getHoraTreino()} </td>
                 <td> ${li.getTipoTreino()} </td>
                 <td><a href="treino/selecionar/${li.getIdTreino()}">Selecionar</a></td>
-                <td><a href="treino/update/${li.getIdTreino()}">Selecionar</a></td>
+                <td><a href="treino/editar/${li.getIdTreino()}">Selecionar</a></td>
                 <td><a href="treino/apagar/${li.getIdTreino()}">Selecionar</a></td>
                 <td><a href="treino/presencas/${li.getIdTreino()}">Selecionar</a></td>
             </tr>

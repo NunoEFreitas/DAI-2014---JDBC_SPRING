@@ -13,7 +13,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1> Jogo ${map.treino.get(0)}</h1>
+        <h1> Treino ${map.treino.get(0)}</h1>
         
         <table border="1"> 
         <tr>

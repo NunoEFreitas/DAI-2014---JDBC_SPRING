@@ -85,7 +85,7 @@ public class TreinoController {
                     treino.add(idTreino);
                     HttpSession session = request.getSession();
                     int escalao = ((int) session.getAttribute("escalao"));
-                    List<Utilizador> lutilizador = utilizadorService.listarUtilizadorPorEscalao(escalao);
+                    List<Utilizador> lutilizador = utilizadorService.listarUTparaTreino(idTreino, escalao);
                     Map<String, List> map = new HashMap<String, List>();
                     map.put("treino", treino);
                     map.put("utilizador", lutilizador);
@@ -121,7 +121,6 @@ public class TreinoController {
                    
                 stService.jogadorFaltou(ut, treino);
                 
-                
 		return "redirect:/treino/presencas/" + treino;
 	}
         
@@ -134,5 +133,19 @@ public class TreinoController {
 		return "redirect:/treino/presencas/" + treino;
 	}
         
-    
+        @RequestMapping("treino/editar/{idTreino}")
+	public ModelAndView editarTreino(@ModelAttribute Treino treino, @PathVariable("idTreino") Integer idtreino) {
+               
+                Treino tr = treinoService.getTreino(idtreino);
+                
+		return new ModelAndView("editarTreino","tr",tr);
+	}
+        
+        @RequestMapping("/updateTreino")
+	public String updateTreino(@ModelAttribute Treino treino) {
+                 
+                treinoService.updateTreino(treino);
+                
+		return "redirect:/listarTreinos";
+	}
 }

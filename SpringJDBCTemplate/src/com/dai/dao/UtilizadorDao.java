@@ -21,5 +21,8 @@ public interface UtilizadorDao {
          public void activaUtilizador(Integer id);
          
          public void desactivaUtilizador(Integer id);
+         
+         public List<Utilizador> listarUTparaTreino(Integer idtreino, Integer idescalao);
+         
 
 }

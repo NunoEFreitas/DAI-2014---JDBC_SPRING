@@ -24,4 +24,6 @@ public interface TreinoService {
     public void updateTreino(Treino idTreino);
     
     public List<Treino> listaTreinosEscalao(int idEscalao);
+    
+    public Treino getTreino(Integer idTreino);
 }

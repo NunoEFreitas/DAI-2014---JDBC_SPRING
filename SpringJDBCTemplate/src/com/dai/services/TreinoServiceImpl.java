@@ -45,5 +45,10 @@ public class TreinoServiceImpl implements TreinoService{
 	public List<Treino> listaTreinosEscalao(int idEscalao) {
 		return treinodao.listarTreinosEscalao(idEscalao);
 	}
+        
+        @Override
+        public Treino getTreino(Integer idTreino){
+            return treinodao.getTreino(idTreino);
+        }
     
 }

@@ -136,5 +136,17 @@ public class UtilizadorDaoImpl implements UtilizadorDao {
                 jdbcTemplate.update(sql);
             
         }
+        
+        @Override
+        public List<Utilizador> listarUTparaTreino(Integer idtreino, Integer idescalao){
+            List<Utilizador> utList = new ArrayList<Utilizador>();
+		String sql = "select * from utilizador where idPerfil = 1 and idEscalao =" + idescalao + " and idutilizador NOT IN "
+                        + "(select utilizador_idutilizador_st from selecaotreino "
+                        + "where treino_idtreino =" + idtreino + ")";
+		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+                utList = jdbcTemplate.query(sql, new UtilizadorRowMapper());
+                return utList;
+            
+        }
 
 }

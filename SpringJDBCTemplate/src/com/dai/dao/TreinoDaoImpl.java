@@ -57,6 +57,15 @@ public class TreinoDaoImpl implements TreinoDao{
         @Override
         public void updateTreino(Treino treino){
             
+            String sql = "UPDATE treino set duracaoTreino = ?, localTreino = ?, dataTreino = ?, tipoTreino = ?, horaTreino = ?, escalao_idEscalao_t = ?"
+                        + " where idTreino = ?";
+            JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+
+		jdbcTemplate.update(
+				sql,
+				new Object[] {  treino.getDuracaoTreino(), treino.getLocalTreino(), treino.getDataTreino(),
+                                treino.getTipoTreino(), treino.getHoraTreino(), treino.getIdEscalao(), treino.getIdTreino()});
+            
             
         }
         
@@ -79,5 +88,16 @@ public class TreinoDaoImpl implements TreinoDao{
 		return treinoList;
         }
         
+        public Treino getTreino(Integer idTreino){
+                List<Treino> treinoList = new ArrayList();
+
+		String sql = "select * from treino where idTreino = " + idTreino;
+
+		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		treinoList= jdbcTemplate.query(sql, new TreinoRowMapper());
+		return treinoList.get(0);
+        }
+        
+     
     
 }

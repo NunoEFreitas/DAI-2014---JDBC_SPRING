@@ -29,6 +29,7 @@ public class TreinoExtractor implements ResultSetExtractor<Treino> {
                 treino.setDataTreino(resultSet.getString("dataTreino"));
                 treino.setTipoTreino(resultSet.getString("tipoTreino"));
                 treino.setHoraTreino(resultSet.getString("horaTreino"));
+                treino.setIdEscalao(resultSet.getInt("escalao_idEscalao_t"));
                 
 
 		return treino;

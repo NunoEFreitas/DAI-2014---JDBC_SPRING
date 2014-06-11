@@ -24,5 +24,7 @@ public interface TreinoDao {
     public void apagarTreino(Integer idTreino);
         
     public List<Treino> listarTreinosEscalao(int idEscalao);
+    
+    public Treino getTreino(Integer idTreino);
 
 }

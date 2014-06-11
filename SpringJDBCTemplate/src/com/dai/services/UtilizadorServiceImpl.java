@@ -59,5 +59,8 @@ public class UtilizadorServiceImpl implements UtilizadorService {
              utilizadordao.desactivaUtilizador(id);
         }
 
+        public List<Utilizador> listarUTparaTreino(Integer idtreino, Integer idescalao){
+            return utilizadordao.listarUTparaTreino(idtreino, idescalao);
+        }
 	
 }
