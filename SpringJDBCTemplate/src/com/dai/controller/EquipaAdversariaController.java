@@ -11,6 +11,7 @@ import com.dai.domain.Escalao;
 import com.dai.domain.JogadorEquipaAdversaria;
 import com.dai.services.EquipaAdversariaService;
 import com.dai.services.EscalaoService;
+import com.dai.services.JogadorEquipaAdversariaService;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,7 +26,7 @@ import org.springframework.web.servlet.ModelAndView;
  * @author Nuno
  */
 
-/*
+
 @Controller
 public class EquipaAdversariaController {
     
@@ -35,8 +36,7 @@ public class EquipaAdversariaController {
       @Autowired
       EscalaoService eservice;
       
-      @Autowired
-      JogadorEquipaAdversaria jeaservice;
+
       
     
     @RequestMapping("/criarEquipaAdversaria")
@@ -73,4 +73,3 @@ public class EquipaAdversariaController {
 		return new ModelAndView("criarJogadorEquipaAdversaria", "lea",lea);
 	}
 }
-*/

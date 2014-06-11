@@ -61,6 +61,9 @@ class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMa
         
         <bean id="equipaAdversariaDao" class="com.dai.dao.EquipaAdversariaDaoImpl" />
 	<bean id="equipaAdversariaService" class="com.dai.services.EquipaAdversariaServiceImpl" />
+        
+        <bean id="jogadorEquipaAdversariaDao" class="com.dai.dao.JogadorEquipaAdversariaDaoImpl" />
+	<bean id="jogadorEquipaAdversariaService" class="com.dai.services.JogadorEquipaAdversariaServiceImpl" />
 
 	<!-- declare datasource bean -->
 	<bean id="dataSource"

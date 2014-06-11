@@ -17,7 +17,7 @@
             
             <label>Nome: </label>
             <form:input class="input" path="nome" />
-            <label>Nome: </label>
+            <label>Posição: </label>
             <form:input class="input" path="posicao" />
                 <label>Equipa Adversaria :</label>
                 <form:select   path = "idEquipaAdversaria" name="idEquipaAdversaria">
