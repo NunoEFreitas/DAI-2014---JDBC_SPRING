@@ -1,7 +1,7 @@
   function  oculta(valor) {
-      
-//$('input[class*="input"]').each(function (){
-//    $(this).val(""); });
+
+      document.getElementById("contactform").reset();
+      document.getElementById("perfil").value= valor;
 
            if (valor == 2 || valor==3 || valor==4 || valor==5 || valor==6) {
         
@@ -22,7 +22,7 @@
                     document.getElementById('15').style.display = 'none';
                     document.getElementById('16').style.display = 'none';
                     document.getElementById('17').style.display = 'none';
-                    document.getElementById('18').style.display = 'none';
+                    document.getElementById('18').style.display = 'block';
                     document.getElementById('19').style.display = 'block';
 
                 }
@@ -51,7 +51,6 @@
                     document.getElementById('19').style.display = 'block';
 
                 }
-                
 
   }
   
@@ -82,7 +81,7 @@ function validacao() {
 //   validacao para o perfil atleta 
  if(perfil==1){
     
-    if (document.register.nome.value == "" || register.nome.value.length < 9) {
+    if (document.register.nome.value == "" || register.nome.value.length < 9 || IsNum(register.nome.value)) {
         document.getElementById("texto").innerHTML = "Preencha o nome correctamente";
         document.register.nome.focus();
         return false;
@@ -97,27 +96,46 @@ function validacao() {
         document.register.telefone.focus();       
         return false;
     } 
-    if (document.register.morada.value == "" || register.morada.value.length < 10) {
+    if (document.register.morada.value == "") {
         document.getElementById("texto").innerHTML = "Preencha a morada correctamente";
         document.register.morada.focus();
         return false;
     }
-    if (document.register.altura.value == "" || register.altura.value.length < 4 ) {
-        document.getElementById("texto").innerHTML = "Preencha a altura correctamente. Ex: 1,75";
+    if (document.register.altura.value == "" || !IsNum(register.altura.value)) {
+        document.getElementById("texto").innerHTML = "Preencha a altura correctamente. Ex: 175";
         document.register.altura.focus();
         return false;
     }  
-    if (document.register.peso.value == "" || register.peso.value.length < 4 ) {
+    if (document.register.peso.value == "") {
         document.getElementById("texto").innerHTML = "Preencha o peso correctamente. Ex: 60,00";
         document.register.peso.focus();
         return false;
     }
-    if (document.register.saltoVertical.value == "" || register.saltoVertical.value.length < 4 ) {
+    if (document.register.saltoVertical.value == "" || !IsNum(register.saltoVertical.value) ) {
         document.getElementById("texto").innerHTML = "Preencha o Salto Vertical correctamente. Ex: 0,90";
         document.register.saltoVertical.focus();
         return false;
     }
-    
+     if (document.register.velocidadeDeslocamento.value == "" || !IsNum(register.velocidadeDeslocamento.value) ) {
+        document.getElementById("texto").innerHTML = "Preencha o Velocidade Deslocamento correctamente.";
+        document.register.velocidadeDeslocamento.focus();
+        return false;
+    }
+    if (document.register.alcanceAtaque.value == "" || !IsNum(register.alcanceAtaque.value) ) {
+        document.getElementById("texto").innerHTML = "Preencha o Alcance Ataque correctamente.";
+        document.register.alcanceAtaque.focus();
+        return false;
+    }
+        if (document.register.alcanceBloco.value == "" || !IsNum(register.alcanceBloco.value) ) {
+        document.getElementById("texto").innerHTML = "Preencha o Alcance Bloco correctamente.";
+        document.register.alcanceBloco.focus();
+        return false;
+    }
+       if (document.register.envergadura.value == "" || !IsNum(register.envergadura.value) ) {
+        document.getElementById("texto").innerHTML = "Preencha o Envergadura correctamente.";
+        document.register.envergadura.focus();
+        return false;
+    }
     
     
     
@@ -125,7 +143,7 @@ function validacao() {
     
 //    validaçao para os restantes perfis
  }else{ 
-      if (document.register.nome.value == "" || register.nome.value.length < 9) {
+      if (document.register.nome.value == "" || register.nome.value.length < 9 || IsNum(register.nome.value)) {
         document.getElementById("texto").innerHTML = "Preencha o nome correctamente";
         document.register.nome.focus();
         return false;
@@ -142,7 +160,7 @@ function validacao() {
         document.register.telefone.focus();       
         return false;
     } 
-    if (document.register.morada.value == "" || register.morada.value.length < 10) {
+    if (document.register.morada.value == "") {
         document.getElementById("texto").innerHTML = "Preencha o morada correctamente";
         document.register.morada.focus();
         return false;

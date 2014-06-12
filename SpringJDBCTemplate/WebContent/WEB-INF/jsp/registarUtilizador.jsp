@@ -9,7 +9,7 @@
 
 
         <!-- Bootstrap core CSS -->
-        <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
+        <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css"> 
         <link href="<c:url value ="/resources/css/register.css"/>" rel="stylesheet" type="text/css">
         <script src="<c:url value="/resources/js/javascript.js" />"></script>
 
@@ -20,7 +20,7 @@
         <%@include file="/resources/include/templateSeccionista.jsp" %>
 
         <!-- Page content -->
-
+        
         <Div  class = "cabecalho da pagina" > 
             <h1> Recursos humanos<small> Registar Utilizadores </small>  </h1> 
         </div>
@@ -29,7 +29,7 @@
           <img  class="foto" src="<c:url value="/resources/images/register.jpg" />" />
             <div class="field">
                 <label>Perfil : </label>
-                <form:select  id="perfil" path = "idPerfil"  onchange="oculta(this.value)">
+                <form:select  id="perfil" path = "idPerfil" name="perfil" onchange="oculta(this.value)">
                     <c:forEach items='${map.lp}' var='lp'>
                         <form:option value ="${lp.idPerfil}">${lp.designacao}</form:option>
                     </c:forEach>
@@ -67,27 +67,27 @@
             </div>
             <div class="field" id="8">
                 <label>Altura :</label>
-                <form:input type="number" step="0.01" min="0" class="input" name="altura" path="altura" />
+                <form:input type="number" step="1" min="0" class="input" name="altura" path="altura" />
             </div>
             <div class="field" id="9">
                 <label>Peso :</label>
-                <form:input type="number" step="0.01" min="0" name="peso" class="input"  path="peso" />
+                <form:input type="number" step="1" min="0" name="peso"  class="input"  path="peso" />
             </div>
             <div class="field" id="10">
                 <label>Salto Vertical :</label>
-                <form:input type="number" step="0.01" min="0" name="saltoVertical" class="input"  path="saltoVertical" />
+                <form:input type="number" step="1" min="0" name="saltoVertical" class="input"  path="saltoVertical" />
             </div>
             <div class="field" id="11">
                 <label>Velocidade Deslocamento:</label>
-                <form:input type="number" step="0.01" min="0" class="input" path="velocidadeDeslocamento" />
+                <form:input type="number" step="1" min="0" class="input" name="velocidadeDeslocamento" path="velocidadeDeslocamento" />
             </div>
             <div class="field" id="12">
                 <label>Alcance Ataque:</label>
-                <form:input type="number" step="0.01" min="0" class="input"  path="alcanceAtaque" />
+                <form:input type="number" step="1" min="0" class="input" name="alcanceAtaque" path="alcanceAtaque" />
             </div>
             <div class="field" id="13">
                 <label>Alcance Bloco:</label>
-                <form:input type="number" step="0.01" min="0" class="input"  path="alcanceBloco" />
+                <form:input type="number" step="1" min="0" class="input" name="alcanceBloco" path="alcanceBloco" />
             </div>          
             <div class="field" id="14">
                 <label>Exames Clinicos: </label>
@@ -106,14 +106,10 @@
             </div>
             <div class="field" id="16">
                 <label>Envergadura:</label>
-                <form:input type="number" step="0.01" min="0" class="input"  path="envergadura" />
+                <form:input type="number" step="1" min="0" class="input" name="envergadura" path="envergadura" />
             </div>
             <div class="field" id="17">
-                <label>Estado:</label>
-                <form:select  class="input"  path="estado" >
-                    <form:option value ="false">Desativo</form:option>
-                    <form:option value ="true">Ativo</form:option>
-                </form:select>
+                <form:input  value="true"  path="estado" type="hidden"/>
             </div>
             <div class="field" id="18">
                 <label>Escalao :</label>
