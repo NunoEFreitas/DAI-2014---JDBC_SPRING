@@ -25,7 +25,7 @@
                 <td> ${li.getIdEquipaAdversaria()} </td>
                 <td> ${li.getNome()} </td>
                 <td> ${li.getidEscalao()} </td>
-                <td><a href="">Selecionar</a></td>
+                <td><a href="listarJogadoresEquipaAdversaria/${li.getIdEquipaAdversaria()}">Selecionar</a></td>
             </tr>
         </c:forEach>
     </table> 

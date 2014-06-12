@@ -216,16 +216,11 @@ public class UtilizadorController {
 	}    
         
         @RequestMapping("/inserirCompeticao")
-	public ModelAndView inserirCompeticao(@ModelAttribute Competicao competicao) {
+	public String inserirCompeticao(@ModelAttribute Competicao competicao) {
             
                competicaoService.adicionaCompeticao(competicao);
-               
-               List<Escalao> li = escalaoService.listarEscalao();
-     
-                Map<String, List> map = new HashMap<String, List>();
-                map.put("li",li);
 
-		return new ModelAndView("criarCompeticao","map",map);
+		return "redirect:/criarCompeticao";
 	}
         
          
@@ -257,6 +252,32 @@ public class UtilizadorController {
 	public ModelAndView analistas() {
 		return new ModelAndView("analistas");
 	} 
+        
+        @RequestMapping("/listarCompeticoes")
+	public ModelAndView listarCompeticao(@ModelAttribute Competicao competicao) {
+            
+                List<Competicao> li = competicaoService.listaCompeticao();
+
+		return new ModelAndView("listarCompeticoes","li",li);
+	}
+        
+        @RequestMapping("/criarEscalao")
+	public ModelAndView criarEscalao(Escalao escalao) {
+		return new ModelAndView("criarEscalao");
+	} 
+        
+        @RequestMapping("/inserirEscalao")
+	public String inserirEscalao(Escalao escalao) {
+            escalaoService.inserirEscalao(escalao);
+		return "redirect:/criarEscalao";
+	} 
     
+        @RequestMapping("/listarEscaloes")
+	public ModelAndView listarEscaloes(@ModelAttribute Escalao escalao) {
+           
+                List<Escalao> li = escalaoService.listarEscalao();
+
+		return new ModelAndView("listarEscaloes","li",li);
+	}
           
 }

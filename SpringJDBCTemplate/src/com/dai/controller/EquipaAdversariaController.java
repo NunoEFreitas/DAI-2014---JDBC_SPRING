@@ -18,6 +18,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -86,6 +87,14 @@ public class EquipaAdversariaController {
 	public ModelAndView listarEA(@ModelAttribute JogadorEquipaAdversaria jea) {
                
             List<JogadorEquipaAdversaria> li = jeaservice.listaJEA();
+            
+		return new ModelAndView("listarJogadoresEquipaAdversaria", "li",li);
+	}
+        
+        @RequestMapping("/listarJogadoresEquipaAdversaria/{idEquipa}")
+	public ModelAndView listarEA(@ModelAttribute JogadorEquipaAdversaria jea, @PathVariable("idEquipa") Integer equipa) {
+               
+            List<JogadorEquipaAdversaria> li = jeaservice.listaJEAporEquipa(equipa);
             
 		return new ModelAndView("listarJogadoresEquipaAdversaria", "li",li);
 	}
