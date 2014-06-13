@@ -6,9 +6,13 @@
 
 package com.dai.controller;
 
+import com.dai.domain.Competicao;
+import com.dai.domain.EquipaAdversaria;
 import com.dai.domain.Jogo;
 import com.dai.domain.SelecaoJogo;
 import com.dai.domain.Utilizador;
+import com.dai.services.CompeticaoService;
+import com.dai.services.EquipaAdversariaService;
 import com.dai.services.JogoService;
 import com.dai.services.SelecaoJogoService;
 import com.dai.services.UtilizadorService;
@@ -18,6 +22,7 @@ import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -41,25 +46,42 @@ public class JogoController {
     JogoService jogoService;
     
     @Autowired
+    CompeticaoService competicaoService;
+    
+    @Autowired
+    EquipaAdversariaService eaService;
+    
+    @Autowired
     UtilizadorService utilizadorService;
     
      @Autowired
      SelecaoJogoService slService;
     
-     @RequestMapping("/novoJogo")
-	public ModelAndView novoJogo(@ModelAttribute Jogo jogo) {
+     @RequestMapping("/criarJogo")
+	public ModelAndView novoJogo(@ModelAttribute Jogo jogo, HttpServletRequest request) {
+                
+            HttpSession session = request.getSession();
+                int escalao = ((int) session.getAttribute("escalao"));
+            List<EquipaAdversaria> lea = eaService.listaEAporEscalao(escalao);
+            
+            List<Competicao> lc = competicaoService.listaCompeticaoPorEscalao(escalao);
+            
+                    Map<String, List> map = new HashMap<String, List>();
+                    map.put("lea", lea);
+                    map.put("lc", lc);
+                
                
-		return new ModelAndView("novoJogo");
+		return new ModelAndView("criarJogo", "map", map);
 	}
         
-        @RequestMapping("/insereJogo")
+        @RequestMapping("/inserirJogo")
 	public ModelAndView insereJogo(@ModelAttribute Jogo jogo) {
                     jogoService.novoJogo(jogo);
         
-		return new ModelAndView("main" );
+		return new ModelAndView("criarJogo");
 	}
         
-                @RequestMapping("/criarVideo")
+        @RequestMapping("/criarVideo")
 	public ModelAndView criarVideo(@ModelAttribute Jogo jogo) {
           
         

@@ -36,7 +36,7 @@
                             <ul>
                                 <li class='has-sub'><a href='#'><span>AnalisarTempoReal</span></a>
                                     <ul>
-                                        <li><a href='novoJogo'><span>CriarJogo</span></a></li>
+                                        <li><a href='criarJogo'><span>CriarJogo</span></a></li>
                                     </ul>
                                 </li>
                                 <li class='has-sub'><a href='#'><span>AnalisarPosteriori</span></a>

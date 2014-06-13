@@ -59,5 +59,17 @@ public class CompeticaoDaoImpl implements CompeticaoDao{
 		slList = jdbcTemplate.query(sql, new CompeticaoRowMapper());
 		return slList;
         }
+        
+        @Override
+        public List<Competicao> listaCompeticaoPorEscalao(Integer idEscalao){
+            
+            List<Competicao> slList = new ArrayList();
+
+		String sql = "select * from competicao where escalao_idEscalao_c = " + idEscalao;
+
+		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		slList = jdbcTemplate.query(sql, new CompeticaoRowMapper());
+		return slList;
+        }
     
 }

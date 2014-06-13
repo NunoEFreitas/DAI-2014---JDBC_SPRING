@@ -71,9 +71,13 @@ public class TreinoDaoImpl implements TreinoDao{
         
         @Override        
         public void apagarTreino(Integer idTreino){
-            String sql = "delete from treino where idTreino=" + idTreino;
+            String sql = "delete from selecaotreino where treino_idTreino =" + idTreino;
+           
+		
+            String sql2 = "delete from treino where idTreino =" + idTreino;
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-		jdbcTemplate.update(sql);
+                jdbcTemplate.update(sql);
+		jdbcTemplate.update(sql2);
             
         }
         

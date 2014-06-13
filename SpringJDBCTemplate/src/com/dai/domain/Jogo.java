@@ -57,14 +57,23 @@ public class Jogo {
     private String data;
     private String hora;
     private String resultado;
-    private int competicao;
+    private int idCompeticao;
+    private int idEquipaAdversaria;
 
-    public int getCompeticao() {
-        return competicao;
+    public int getIdCompeticao() {
+        return idCompeticao;
     }
 
     public void setCompeticao(int competicao) {
-        this.competicao = competicao;
+        this.idCompeticao = competicao;
+    }
+
+    public int getIdEquipaAdversaria() {
+        return idEquipaAdversaria;
+    }
+
+    public void setIdEquipaAdversaria(int idEquipaAdversaria) {
+        this.idEquipaAdversaria = idEquipaAdversaria;
     }
 
     

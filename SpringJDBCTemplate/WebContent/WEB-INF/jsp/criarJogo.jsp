@@ -13,7 +13,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <form:form method="post" action="/insereJogo" modelAttribute="jogo"  >
+        <form:form method="post" action="/inserirJogo" modelAttribute="jogo"  >
             
             <label>Data: </label>
             <form:input class="input" path="data" />
@@ -21,8 +21,18 @@
             <form:input class="input" path="hora" />
             <label>Local: </label>
             <form:input class="input" path="local" />
-            <label>Competição: </label>
-            <form:input class="input" path="competicao" />
+            <label>Competição :</label>
+                <form:select   path = "idCompeticao" name="idCompeticao">
+                    <c:forEach items='${map.lc}' var='lc'>
+                        <form:option class="input" value ="${lc.idCompeticao}">${lc.designacao}</form:option>
+                    </c:forEach>
+                </form:select>
+            <label>Equipa Adversaria :</label>
+                <form:select   path = "idEquipaAdversaria" name="idEquipaAdversaria">
+                    <c:forEach items='${map.lea}' var='lea'>
+                        <form:option class="input" value ="${lea.idEquipaAdversaria}">${lea.nome}</form:option>
+                    </c:forEach>
+                </form:select>
             <input class="button" type="submit" value="Guardar" />
         </form:form>
     </body>

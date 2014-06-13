@@ -56,7 +56,7 @@ public class EquipaAdversariaController {
 	public String inserirEA(@ModelAttribute EquipaAdversaria ea) {
                 easervice.adicionaEA(ea);
         
-		return "redirect:/gestaoDeEquipasAdversarias";
+		return "redirect:/criarEquipaAdversaria";
 	}
         
         @RequestMapping("/listarEquipasAdversarias")

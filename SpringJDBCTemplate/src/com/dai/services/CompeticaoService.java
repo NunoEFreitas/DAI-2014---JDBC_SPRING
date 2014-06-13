@@ -21,4 +21,6 @@ public interface CompeticaoService {
     
     public List<Competicao> listaCompeticao();
     
+    public List<Competicao> listaCompeticaoPorEscalao(Integer idEscalao);
+    
 }

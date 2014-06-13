@@ -36,4 +36,9 @@ public class CompeticaoServiceImpl implements CompeticaoService{
         return competicaodao.listaCompeticao();
     }
     
+    @Override
+    public List<Competicao> listaCompeticaoPorEscalao(Integer idEscalao){
+        return competicaodao.listaCompeticaoPorEscalao(idEscalao);
+    }
+    
 }
