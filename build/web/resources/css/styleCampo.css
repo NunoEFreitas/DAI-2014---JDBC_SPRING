@@ -15,11 +15,6 @@ h3{
     background: gray;
 }
 
-#textboxes label{
-    font-size: large;
-    border: 2px solid blue;
-    background: gray;
-}
 
 body{
     margin-left:8%;
@@ -67,7 +62,7 @@ body{
 
 #scoreboard{
     height:200px;
-    width:220px;
+    width:300px;
     border: 5px solid black;
     float:left;
     margin-left:108px;
@@ -101,8 +96,15 @@ body{
 
 #atribui{
     border: 1px solid blue;
-    height: 400px;
-    width: 400px;
+    height: 200px;
+    width: 250px;
+    float:right;
+}
+
+#atribui2{
+    border: 1px solid blue;
+    height: 200px;
+    width: 250px;
     float:right;
 }
 
@@ -123,14 +125,20 @@ body{
 
 #textboxes{
     border: 2px solid yellow;
-    height:400px;
-    width:270px;
+    height:100px;
+    width:650px;
     float:left;
+    margin-left: 100px;
+}
+
+#textboxes textarea{
+    width:600px;
+    height:50px;
 }
 
 #campo{
     border: 2px solid blue;
-    height: 500px; 
+    height: 440px; 
     width: 850px;
     float:left;
 }
