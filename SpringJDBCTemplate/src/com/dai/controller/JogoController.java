@@ -75,10 +75,10 @@ public class JogoController {
 	}
         
         @RequestMapping("/inserirJogo")
-	public ModelAndView insereJogo(@ModelAttribute Jogo jogo) {
+	public String insereJogo(@ModelAttribute Jogo jogo) {
                     jogoService.novoJogo(jogo);
         
-		return new ModelAndView("criarJogo");
+		return "redirect:/criarJogo";
 	}
         
         @RequestMapping("/criarVideo")
@@ -89,16 +89,20 @@ public class JogoController {
 	}
         
         @RequestMapping("/jogoSelecionados/{idJogo}")
-	public ModelAndView selecionaJogadores(@PathVariable("idJogo") Integer jogo) {
+	public ModelAndView selecionaJogadores(@PathVariable("idJogo") Integer jogo, HttpServletRequest request) {
                     List<Integer> idjogo = new ArrayList();
                     idjogo.add(jogo);
-                    List<Utilizador> lutilizador = utilizadorService.listarUtilizador();
-                    Map<String, List> map = new HashMap<String, List>();
+                    HttpSession session = request.getSession();
+                    int escalao = ((int) session.getAttribute("escalao"));
+                    List<Utilizador> lutilizador = utilizadorService.listarUTparaJogo(jogo, escalao);
+                    List<Utilizador> lEscolhas = utilizadorService.listarUTselecionadosJogo(jogo, escalao);
+                    Map<String, List> map = new HashMap<String, List>();        
                     map.put("jogo", idjogo);
                     map.put("utilizador", lutilizador);
+                    map.put("escolhas", lEscolhas);
 
                         
-		return new ModelAndView("jogadoresSelecionados","map",map );
+		return new ModelAndView("jogoSelecionados","map",map );
 	}
        
         @RequestMapping("/jogoSelecionados/jogadorSelecionado/{idJogo}/{idUtilizador}")
@@ -108,7 +112,14 @@ public class JogoController {
                 sl.setIdJogo(jogo);
                 sl.setIdUtilizador(ut);
                 slService.adicionaSL(sl);
-		return "redirect:/jogadoresSelecionados/"+jogo;
+		return "redirect:/jogoSelecionados/"+jogo;
+	}
+        
+        @RequestMapping("/jogoSelecionados/jogadorDesSelecionado/{idJogo}/{idUtilizador}")
+	public String desSelecionaJogador(@PathVariable("idJogo") Integer jogo, @PathVariable("idUtilizador") Integer ut) {
+                  
+                slService.apagaSL(ut, jogo);
+		return "redirect:/jogoSelecionados/"+jogo;
 	}
        
         
@@ -124,10 +135,10 @@ public class JogoController {
             return new ModelAndView("jogo");
 	}
         
-        @RequestMapping("/listaJogos")
+        @RequestMapping("/listarJogosT")
 	public ModelAndView listaJogos() {
 		List<Jogo> lJogos = jogoService.listaJogos();
-		return new ModelAndView("listaJogos", "ljogos", lJogos);
+		return new ModelAndView("listarJogosT", "ljogos", lJogos);
 	}
         /*
         @RequestMapping(value="/insere", method= RequestMethod.GET)

@@ -32,11 +32,14 @@
                             </ul>
                         </li>
                         
-                        <li class='has-sub'><a href='#'><span>Gerir Competições</span></a>
+                        <li class='has-sub'><a href='#'><span>Gerir Competicoes</span></a>
                             <ul>
                                 <li class='has-sub'><a href='#'><span>AnalisarTempoReal</span></a>
                                     <ul>
-                                        <li><a href='criarJogo'><span>CriarJogo</span></a></li>
+                                        <li class='last'><a href='criarJogo'><span>CriarJogo</span></a></li>
+                                    </ul>
+                                    <ul>
+                                        <li class='last'><a href='listarJogosT'><span>Listar Jogos</span></a></li>
                                     </ul>
                                 </li>
                                 <li class='has-sub'><a href='#'><span>AnalisarPosteriori</span></a>

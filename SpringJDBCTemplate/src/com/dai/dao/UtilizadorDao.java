@@ -24,5 +24,9 @@ public interface UtilizadorDao {
          
          public List<Utilizador> listarUTparaTreino(Integer idtreino, Integer idescalao);
          
+         public List<Utilizador> listarUTparaJogo(Integer idJogo, Integer idEscalao);
+         
+         public List<Utilizador> listarUTselecionadosJogo(Integer idJogo, Integer idEscalao);
+         
 
 }

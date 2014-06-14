@@ -1,12 +1,11 @@
 <%-- 
-    Document   : listarTreinos
-    Created on : 6/Jun/2014, 8:03:45
+    Document   : listarTreinosJ
+    Created on : 14/Jun/2014, 19:40:01
     Author     : Nuno
 --%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -22,10 +21,6 @@
             <td Class="heading"> Data </td>
             <td Class="heading"> Hora </td>
             <td Class="heading"> Tipo </td>
-            <td Class="heading"> Escolher Equipa </td>
-            <td Class="heading"> Alterar Treino </td>
-            <td Class="heading"> Apagar Treino </td>
-            <td Class="heading"> Marcar Presencas </td>
         </tr>
         <c:forEach var="li" items="${li}">
             <tr>
@@ -35,10 +30,6 @@
                 <td> ${li.getDataTreino()} </td>
                 <td> ${li.getHoraTreino()} </td>
                 <td> ${li.getTipoTreino()} </td>
-                <td><a href="treino/selecionar/${li.getIdTreino()}">Selecionar</a></td>
-                <td><a href="treino/editar/${li.getIdTreino()}">Selecionar</a></td>
-                <td><a href="treino/apagar/${li.getIdTreino()}">Selecionar</a></td>
-                <td><a href="treino/presencas/${li.getIdTreino()}">Selecionar</a></td>
             </tr>
         </c:forEach>
     </table>

@@ -14,11 +14,12 @@
     </head>
     <body>
         <h1> Jogo ${map.jogo.get(0)}</h1>
-        
+        <h2> Selecionaveis </h2>
         <table border="1"> 
         <tr>
             <td Class="heading"> Id Jogador </td>
             <td Class="heading"> Nome </td>
+            <td Class="heading"> Selecionar </td>
         </tr>
         <c:forEach var="ut" items="${map.utilizador}">
             <tr>
@@ -29,8 +30,20 @@
             </tr>
         </c:forEach>
             
-            <div id="selecionados">
+       <h2> Selecionados </h2>
+        <table border="1"> 
+        <tr>
+            <td Class="heading"> Id Jogador </td>
+            <td Class="heading"> Nome </td>
+            <td Class="heading"> Retirar </td>
+        </tr>
+        <c:forEach var="es" items="${map.escolhas}">
+            <tr>
+                <td> ${es.getIdUtilizador()} </td>
+                <td> ${es.getNome()} </td>
+                <td><a href="jogadorDesSelecionado/${map.jogo.get(0)}/ ${es.getIdUtilizador()}">Selecionar</a></td>
                 
-            </div>    
+            </tr>
+        </c:forEach>   
     </body>
 </html>

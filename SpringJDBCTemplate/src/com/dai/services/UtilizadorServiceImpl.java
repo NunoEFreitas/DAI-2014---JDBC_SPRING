@@ -59,8 +59,19 @@ public class UtilizadorServiceImpl implements UtilizadorService {
              utilizadordao.desactivaUtilizador(id);
         }
 
+        @Override
         public List<Utilizador> listarUTparaTreino(Integer idtreino, Integer idescalao){
             return utilizadordao.listarUTparaTreino(idtreino, idescalao);
+        }
+        
+        @Override
+        public List<Utilizador> listarUTparaJogo(Integer idJogo, Integer idEscalao){
+            return utilizadordao.listarUTparaJogo(idJogo, idEscalao);
+        }
+        
+        @Override
+        public List<Utilizador> listarUTselecionadosJogo(Integer idJogo, Integer idEscalao){
+            return utilizadordao.listarUTselecionadosJogo(idJogo, idEscalao);
         }
 	
 }

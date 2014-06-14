@@ -148,5 +148,30 @@ public class UtilizadorDaoImpl implements UtilizadorDao {
                 return utList;
             
         }
+        
+        @Override
+        public List<Utilizador> listarUTparaJogo(Integer idJogo, Integer idEscalao){
+            
+        List<Utilizador> utList = new ArrayList<Utilizador>();
+        String sql = "select * from utilizador "
+                + "where idEscalao = " + idEscalao + " and idPerfil = 1 and idutilizador not in(select utilizador_idutilizador "
+                + "from selecaojogo where jogo_idjogo = " + idJogo + ")";
 
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+                utList = jdbcTemplate.query(sql, new UtilizadorRowMapper());
+                return utList;
+        }
+        
+        @Override
+        public List<Utilizador> listarUTselecionadosJogo(Integer idJogo, Integer idEscalao){
+            
+        List<Utilizador> utList = new ArrayList<Utilizador>();
+        String sql = "select * from utilizador "
+                + "where idEscalao = " + idEscalao + " and idPerfil = 1 and idutilizador in(select utilizador_idutilizador "
+                + "from selecaojogo where jogo_idjogo = " + idJogo + ")";
+
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+                utList = jdbcTemplate.query(sql, new UtilizadorRowMapper());
+                return utList;
+        }
 }

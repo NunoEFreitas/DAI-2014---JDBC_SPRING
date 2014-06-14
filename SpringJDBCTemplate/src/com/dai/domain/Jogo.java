@@ -64,9 +64,12 @@ public class Jogo {
         return idCompeticao;
     }
 
-    public void setCompeticao(int competicao) {
-        this.idCompeticao = competicao;
+    public void setIdCompeticao(int idCompeticao) {
+        this.idCompeticao = idCompeticao;
     }
+
+
+    
 
     public int getIdEquipaAdversaria() {
         return idEquipaAdversaria;
