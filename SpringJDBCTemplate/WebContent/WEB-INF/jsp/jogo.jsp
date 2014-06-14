@@ -29,14 +29,14 @@
                                 <span id="casa">
                                     <p>Casa</p>
                                     <input type="button" class="button" id="btncasa" value="0" />
-                                    <br>
+                                    
                                     <p>Set:</p>            
                                     <input type="button" class="button" id="btnsetcasa" value="0" />
                                 </span>
                                 <span id="fora">
                                     <p>Fora</p>
                                     <input type="button" class="button" id="btnfora" value="0"/>
-                                    <br>
+                                    
                                     <p>Set:</p>
                                     <input type="button" class="button" id="btnsetfora" value="0" />
                                 </span>
@@ -94,42 +94,10 @@
                                                     <div class="elementOutRight" id="pos18" name="pos18" > 18 </div>  
                                                     <div class="elementServiceRight" id="pos20" name="pos20" > 20 </div> 
 
-
-
-
                                                 </div>
-
-
-                                                <div id="textboxes">
-                                                    <label class="labelR"> Jogadas </label>
-                                                    <textarea class="relato"id="jogadasTxt"rows = "5" cols ="30"></textarea>
-
-                                                    <label class="labelA"> Ataques </label>
-                                                    <textarea class="ataques"id="ataquesTxt"rows = "5" cols ="30"></textarea>
-
-                                                    <label class="labelD"> Defesas </label>
-                                                    <textarea class="defesas"id="defesasTxt"rows = "5" cols ="30"></textarea>
-
-                                                </div>
-
-                                            </div>
-
-
-                                            <div id=tabela>
-                                                <input name="generate" type="button" value="Create Table!" onclick='createTable();'/>
-                                                <div id="wrapper"></div>
-                                            </div>
-
-
-
-                                            <div id="atribui">            
-                                                <input type="submit" class="button" name = "calcula" onclick="helloAjax()">
-                                                <input type="submit" class="button" name = "ataques" value = "Ataques" onclick = "mostraAtaques()" >
-                                                <input type="submit" class="button" name = "ataques" value ="Defesas" onclick = "mostraDefesas()" >
-                                                <input type="submit" class="button" name = "jogadores" value = "Jogadores" onclick="jog()">
-                                                <input type="submit" class="button" name = "rotacao1" value = "rotacao1" onclick="rotacaoCampo1()">
-                                                <input type="submit" class="button" name = "rotacao2" value = "rotacao2" onclick="rotacaoCampo2()">
-                                                <br>
+                                            
+                                                <div id="atribui">
+                                                </label> Campo1 </label>
                                                 <br>
                                                 <label> Zona 1 </label>
                                                 <select id="zona1" onchange="atribui1()"></select>
@@ -150,8 +118,47 @@
                                                 <select id="zona6"onchange="atribui6()"></select>
                                                 <br>
                                             </div>
+                                                
+                                                <div id="atribui2">
+                                                </label> Campo1 </label>
+                                                <br>
+                                                <label> Zona 1 </label>
+                                                <select id="zona1" onchange="atribui1()"></select>
+                                                <br>
+                                                <label> Zona 2 </label>
+                                                <select id="zona2" onchange="atribui2()"></select>
+                                                <br>
+                                                <label> Zona 3 </label>
+                                                <select id="zona3" onchange="atribui3()"></select>
+                                                <br>
+                                                <label> Zona 4 </label>
+                                                <select id="zona4" onchange="atribui4()"></select>
+                                                <br>
+                                                <label> Zona 5 </label>
+                                                <select id="zona5" onchange="atribui5()"></select>
+                                                <br>
+                                                <label> Zona 6 </label>
+                                                <select id="zona6"onchange="atribui6()"></select>
+                                                <br>
+                                            </div>
+                                                
+                                                <div id="textboxes">
+                                                    <textarea class="relato"id="jogadasTxt"rows = "5" cols ="30"></textarea>
+                                                </div>
+
+                                            </div>
+
+
+                                            
 
                                             <!--
+                                            
+                                            <div id=tabela>
+                                                <input name="generate" type="button" value="Create Table!" onclick='createTable();'/>
+                                                <div id="wrapper"></div>
+                                            </div>
+                                            
+                                            
                                                                 <div id="dragAndDrop">
                                                                     <div id="dragj1" class="ui-widget-content" >Jogador 1</div>
                                             
