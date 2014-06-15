@@ -149,53 +149,61 @@ public class UtilizadorController {
 		return new ModelAndView("login");
 	}
         
-        @RequestMapping(value = "/login", method = RequestMethod.POST)
-        public ModelAndView login(@RequestParam("username") Integer user, @RequestParam("password") String password, ModelMap model, HttpServletRequest request, HttpServletResponse response) {
+            @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public ModelAndView login(@RequestParam("username") Integer user, @RequestParam("password") String password, ModelMap model, HttpServletRequest request, HttpServletResponse response) {
         String resultado;
-        Utilizador ut = utilizadorService.getUtilizador(user);
-        HttpSession session = request.getSession();
-        session.setAttribute("user", user);
-        session.setAttribute("perfil", ut.getIdPerfil());
-        session.setAttribute("escalao", ut.getIdEscalao());
+        Utilizador ut;
+        if (utilizadorService.verificaUtilizador(user)) {
+            ut = utilizadorService.getUtilizador(user);
 
-        if (ut.getPassword().equals(password)) {
-            if (ut.getIdPerfil() == 1) {
-                resultado = "Login efectuado com sucesso";
-                return new ModelAndView("atleta", "resultado", resultado);
+            HttpSession session = request.getSession();
+            session.setAttribute("user", user);
+            session.setAttribute("perfil", ut.getIdPerfil());
+            session.setAttribute("escalao", ut.getIdEscalao());
 
+            if (ut.getPassword().equals(password)) {
+                if (ut.getIdPerfil() == 1) {
+                    resultado = "Login efectuado com sucesso";
+                    return new ModelAndView("atleta", "resultado", resultado);
+
+                }
+                if (ut.getIdPerfil() == 2) {
+                    resultado = "Login efectuado com sucesso";
+                    return new ModelAndView("treinador", "resultado", resultado);
+                }
+                if (ut.getIdPerfil() == 3) {
+                    resultado = "Login efectuado com sucesso";
+                    return new ModelAndView("treinadorAdjunto", "resultado", resultado);
+
+                }
+                if (ut.getIdPerfil() == 4) {
+                    resultado = "Login efectuado com sucesso";
+                    return new ModelAndView("olheiro", "resultado", resultado);
+
+                }
+                if (ut.getIdPerfil() == 5) {
+                    resultado = "Login efectuado com sucesso";
+                    return new ModelAndView("analistas", "resultado", resultado);
+                }
+                if (ut.getIdPerfil() == 6) {
+                    resultado = "Login efectuado com sucesso";
+                    return new ModelAndView("seccionista", "resultado", resultado);
+
+                }
+
+
+            } else {
+                resultado = "Dados Inexistentes";
+                return new ModelAndView("login", "resultado", resultado);
             }
-            if (ut.getIdPerfil() == 2) {
-                resultado = "Login efectuado com sucesso";
-                return new ModelAndView("treinador", "resultado", resultado);
-            }
-            if (ut.getIdPerfil() == 3) {
-                resultado = "Login efectuado com sucesso";
-                return new ModelAndView("treinadorAdjunto", "resultado", resultado);
-
-            }
-            if (ut.getIdPerfil() == 4) {
-                resultado = "Login efectuado com sucesso";
-                return new ModelAndView("olheiro", "resultado", resultado);
-
-            }
-            if (ut.getIdPerfil() == 5) {
-                resultado = "Login efectuado com sucesso";
-                return new ModelAndView("analistas", "resultado", resultado);
-            }
-            if (ut.getIdPerfil() == 6) {
-                resultado = "Login efectuado com sucesso";
-                return new ModelAndView("seccionista", "resultado", resultado);
-
-            }
-
-
         } else {
-            resultado = "Password Errada";
-            return new ModelAndView("login");
+            resultado = "Dados Inexistentes";
+            return new ModelAndView("login", "resultado", resultado);
+
         }
         return null;
     }
-         
+
                
          
        @RequestMapping("/estadoUtilizadores")
