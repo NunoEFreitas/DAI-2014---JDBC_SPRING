@@ -17,5 +17,17 @@ public interface JogoService {
     
     public void novoJogo(Jogo jogo);
     
-    public List<Jogo> listaJogos();
+    public List<Jogo> listaJogosPendentes();
+    
+    public void alteraJogo(Jogo jogo);
+    
+    public List<Jogo> listaJogosPendentesEscalao(Integer idEscalao);
+    
+    public void apagaJogo(Integer idJogo);
+    
+    public List<Jogo> listaJogosPassados(Integer idEscalao);
+    
+    public List<Jogo> listaJogosSelecionado(Integer idUtilizador);
+    
+    public Jogo getJogo(Integer idJogo);
 }

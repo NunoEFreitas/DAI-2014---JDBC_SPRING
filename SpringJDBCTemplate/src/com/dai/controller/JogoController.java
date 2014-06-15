@@ -136,9 +136,52 @@ public class JogoController {
 	}
         
         @RequestMapping("/listarJogosT")
-	public ModelAndView listaJogos() {
-		List<Jogo> lJogos = jogoService.listaJogos();
+	public ModelAndView listaJogosT(HttpServletRequest request) {
+            HttpSession session = request.getSession();
+                    int escalao = ((int) session.getAttribute("escalao"));
+		List<Jogo> lJogos = jogoService.listaJogosPendentesEscalao(escalao);
 		return new ModelAndView("listarJogosT", "ljogos", lJogos);
+	}
+        
+        @RequestMapping("/listarJogosTA")
+	public ModelAndView listaJogosTA(HttpServletRequest request) {
+            HttpSession session = request.getSession();
+                    int escalao = ((int) session.getAttribute("escalao"));
+		List<Jogo> lJogos = jogoService.listaJogosPendentesEscalao(escalao);
+		return new ModelAndView("listarJogosTA", "ljogos", lJogos);
+	}
+        
+        @RequestMapping("/listarJogosJ")
+	public ModelAndView listaJogosJ(HttpServletRequest request) {
+            HttpSession session = request.getSession();
+                    int utilizador = ((int) session.getAttribute("user"));
+		List<Jogo> lJogos = jogoService.listaJogosSelecionado(utilizador);
+		return new ModelAndView("listarJogosJ", "ljogos", lJogos);
+	}
+        
+        @RequestMapping("/listarJogosA")
+	public ModelAndView listaJogosA() {
+		List<Jogo> lJogos = jogoService.listaJogosPendentes();
+		return new ModelAndView("listarJogosA", "ljogos", lJogos);
+	}
+        
+        @RequestMapping("editarJogo/{idJogo}")
+	public ModelAndView editarJogo(@ModelAttribute Jogo jogo, @PathVariable("idJogo") Integer idJogo, HttpServletRequest request) {
+               
+                Jogo jg = jogoService.getJogo(idJogo);
+                List<Jogo> lj  = new ArrayList();
+                lj.add(jg);
+                HttpSession session = request.getSession();
+                int escalao = ((int) session.getAttribute("escalao"));
+                List<Competicao> lc = competicaoService.listaCompeticaoPorEscalao(escalao);
+                List<EquipaAdversaria> lea = eaService.listaEAporEscalao(escalao);
+                
+                Map<String, List> map = new HashMap<String, List>();        
+                    map.put("lj", lj);
+                    map.put("lc", lc);
+                    map.put("lea", lea);
+                
+		return new ModelAndView("editarJogo","map",map);
 	}
         /*
         @RequestMapping(value="/insere", method= RequestMethod.GET)

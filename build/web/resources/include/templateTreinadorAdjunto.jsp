@@ -16,15 +16,8 @@
                         <li class='active'><a href='treinadorAdjunto'><span>TreinadorAdjunto</span></a></li>
                          <li class='has-sub'><a href='#'><span>Gerir Treinos</span></a>
                             <ul>
-                                <li class='has-sub'><a href='#'><span>CriarTreino</span></a>
-                                    <ul>
-                                        <li><a href='#'><span>DefinirEquipa</span></a></li>
-                                        <li class="last"><a href="#"><span>DefinirPlanoTreino</span></a></li>
-                                    </ul>
+                                <li class='has-sub'><a href='listarTreinosTA'><span>Listar Treinos</span></a>
                                 </li>
-                                <li class='has-sub'><a href='#'><span>VisualizarTreino</span></a></li>
-                                <li class='has-sub'><a href='#'><span>ControlarPresenças</span></a></li>
-                                <li class='has-sub'><a href='#'><span>VisualizarHistoricoTreino</span></a></li>
                             </ul>
                         </li>
                         <li class='has-sub'><a href='#'><span>Gerir Competições</span></a>

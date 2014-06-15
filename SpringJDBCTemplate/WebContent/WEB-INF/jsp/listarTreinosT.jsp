@@ -22,6 +22,9 @@
             <td Class="heading"> Data </td>
             <td Class="heading"> Hora </td>
             <td Class="heading"> Tipo </td>
+            <td Class="heading"> Editar Treino </td>
+            <td Class="heading"> Apagar Treino </td>
+            <td Class="heading"> Escolher Atletas </td>
             <td Class="heading"> Marcar Presencas </td>
         </tr>
         <c:forEach var="li" items="${li}">
@@ -32,6 +35,9 @@
                 <td> ${li.getDataTreino()} </td>
                 <td> ${li.getHoraTreino()} </td>
                 <td> ${li.getTipoTreino()} </td>
+                <td><a href="treino/editar/${li.getIdTreino()}">Selecionar</a></td>
+                <td><a href="treino/apagar/${li.getIdTreino()}">Selecionar</a></td>
+                <td><a href="treino/selecionar/${li.getIdTreino()}">Selecionar</a></td>
                 <td><a href="treino/presencas/${li.getIdTreino()}">Selecionar</a></td>
             </tr>
         </c:forEach>

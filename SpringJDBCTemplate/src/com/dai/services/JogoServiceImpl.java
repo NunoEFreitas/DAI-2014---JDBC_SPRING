@@ -26,8 +26,38 @@ public class JogoServiceImpl implements JogoService {
 	}
         
         @Override
-	public List<Jogo> listaJogos() {
+	public List<Jogo> listaJogosPendentes() {
 		return jogodao.listaJogosPendentes();
 	}
+        
+        @Override
+        public void alteraJogo(Jogo jogo){
+            jogodao.alteraJogo(jogo);
+        }
+        
+        @Override
+        public List<Jogo> listaJogosPendentesEscalao(Integer idEscalao){
+            return jogodao.listaJogosPendentesEscalao(idEscalao);
+        }
+        
+        @Override
+        public void apagaJogo(Integer idJogo){
+            jogodao.apagaJogo(idJogo);
+        }
+        
+        @Override
+        public List<Jogo> listaJogosPassados(Integer idEscalao){
+            return jogodao.listaJogosPassados(idEscalao);
+        }
+        
+        @Override
+        public List<Jogo> listaJogosSelecionado(Integer idUtilizador){
+            return jogodao.listaJogosSelecionado(idUtilizador);
+        }
+        
+        @Override
+        public Jogo getJogo(Integer idJogo){
+            return jogodao.getJogo(idJogo);
+        }
 
 }

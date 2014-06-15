@@ -28,7 +28,7 @@
                             <ul>
                                 <li class='has-sub'><a href='criarTreino'><span>CriarTreino</span></a>
 
-                                <li><a href="listarTreinos"><span>Listar Treinos</span></a></li>
+                                <li><a href="listarTreinosT"><span>Listar Treinos</span></a></li>
                             </ul>
                         </li>
                         

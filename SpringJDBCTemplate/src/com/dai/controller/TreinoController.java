@@ -63,13 +63,13 @@ public class TreinoController {
 		return new ModelAndView("criarTreino" );
 	}
         
-        @RequestMapping("/listarTreinos")
+        @RequestMapping("/listarTreinosT")
 	public ModelAndView listarTreinos(@ModelAttribute Treino treino, HttpServletRequest request) {
                 HttpSession session = request.getSession();
                 int escalao = ((int) session.getAttribute("escalao"));
                 List<Treino> li = treinoService.listaTreinosEscalao(escalao);
 
-		return new ModelAndView("listarTreinos","li",li);
+		return new ModelAndView("listarTreinosT","li",li);
 	}
         
         @RequestMapping("/treino/apagar/{idTreino}")
