@@ -29,5 +29,5 @@ public interface JogoService {
     
     public List<Jogo> listaJogosSelecionado(Integer idUtilizador);
     
-    public Jogo getJogo(Integer idJogo);
+    public List<Jogo> getJogo(Integer idJogo);
 }

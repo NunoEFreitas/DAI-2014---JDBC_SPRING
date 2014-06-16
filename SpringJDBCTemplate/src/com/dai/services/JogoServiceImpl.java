@@ -56,7 +56,7 @@ public class JogoServiceImpl implements JogoService {
         }
         
         @Override
-        public Jogo getJogo(Integer idJogo){
+        public List<Jogo> getJogo(Integer idJogo){
             return jogodao.getJogo(idJogo);
         }
 

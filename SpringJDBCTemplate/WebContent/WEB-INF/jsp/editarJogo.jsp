@@ -6,7 +6,6 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,32 +14,33 @@
     </head>
     <body>
         <form:form method="post" action="/updateJogo" modelAttribute="jogo">
-				<table>
-					<tr>
-						<td>Local :</td>
-						<form:input path="local" class="input" value="${map.lj.local}" />
-					</tr>
-					<tr>
-						<td>Data :</td>
-						<td><form:input path="data" value="${map.lj.data}" />
-						</td>
-					</tr>
-					<tr>
-						<td>Hora :</td>
-						<td><form:input path="hora" value="${map.lj.hora}" />
-						</td>
-					</tr>
-                                        
-                                      
-                                        <tr>
-                                                 <td>&nbsp;</td>
-						<td><input type="submit" value="Save" />
-						</td>
-					</tr>
-                                        	
-				</table>
 				
+            
+            <label>Local :</label>
+            <form:input path="local" class="input" value="${map.lj.get(0).local}" />
+            <label>Data :</label>
+            <td><form:input path="data" value="${map.lj.get(0).data}" />
+            <label>Hora :</label>
+            <td><form:input path="hora" value="${map.lj.get(0).hora}" />				
+            
+            <label>Competição :</label>
+                <form:select   path = "idCompeticao" name="idCompeticao">
+                    <c:forEach items='${map.competicao}' var='lc'>
+                        <form:option class="input" value ="${lc.idCompeticao}">${lc.designacao}</form:option>
+                    </c:forEach>
+                </form:select>
+            <label>Equipa Adversaria :</label>
+                <form:select   path = "idEquipaAdversaria" name="idEquipaAdversaria">
+                    <c:forEach items='${map.ea}' var='lea'>
+                        <form:option class="input" value ="${lea.idEquipaAdversaria}">${lea.nome}</form:option>
+                    </c:forEach>
+                </form:select>     
+            <form:hidden path="idJogo" value="${map.lj.get(0).idJogo}" />		
+                 <input type="submit" value="Save" />                     
+            </form:form>                      
+                            
+		
              
-			</form:form>
+			
     </body>
 </html>

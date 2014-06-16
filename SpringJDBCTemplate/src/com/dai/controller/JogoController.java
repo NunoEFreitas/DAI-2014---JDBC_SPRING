@@ -168,9 +168,8 @@ public class JogoController {
         @RequestMapping("editarJogo/{idJogo}")
 	public ModelAndView editarJogo(@ModelAttribute Jogo jogo, @PathVariable("idJogo") Integer idJogo, HttpServletRequest request) {
                
-                Jogo jg = jogoService.getJogo(idJogo);
-                List<Jogo> lj  = new ArrayList();
-                lj.add(jg);
+        
+                List<Jogo> lj  = jogoService.getJogo(idJogo);
                 HttpSession session = request.getSession();
                 int escalao = ((int) session.getAttribute("escalao"));
                 List<Competicao> lc = competicaoService.listaCompeticaoPorEscalao(escalao);
@@ -178,10 +177,16 @@ public class JogoController {
                 
                 Map<String, List> map = new HashMap<String, List>();        
                     map.put("lj", lj);
-                    map.put("lc", lc);
-                    map.put("lea", lea);
+                    map.put("competicao", lc);
+                    map.put("ea", lea);
                 
 		return new ModelAndView("editarJogo","map",map);
+	}
+        
+        @RequestMapping("/updateJogo")
+	public String updateJogo(@ModelAttribute Jogo jogo) {
+		jogoService.alteraJogo(jogo);
+		return "redirect:/listarJogosT";
 	}
         /*
         @RequestMapping(value="/insere", method= RequestMethod.GET)

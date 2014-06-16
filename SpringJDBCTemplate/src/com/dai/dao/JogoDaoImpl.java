@@ -63,7 +63,7 @@ public class JogoDaoImpl implements JogoDao{
 		jdbcTemplate.update(
 				sql,
 				new Object[] { jogo.getLocal(), jogo.getData(), jogo.getHora(),
-                                jogo.getIdCompeticao(), jogo.getIdEquipaAdversaria()});
+                                jogo.getIdCompeticao(), jogo.getIdEquipaAdversaria(), jogo.getIdJogo()});
             
         
             
@@ -124,14 +124,14 @@ public class JogoDaoImpl implements JogoDao{
         }
         
         @Override
-        public Jogo getJogo(Integer idJogo){
+        public List<Jogo> getJogo(Integer idJogo){
                 List<Jogo> jogoList = new ArrayList();
 
 		String sql = "select * from jogo where idJogo = " + idJogo;
 
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		jogoList= jdbcTemplate.query(sql, new JogoRowMapper());
-		return jogoList.get(0);
+		return jogoList;
         }
         
 }
