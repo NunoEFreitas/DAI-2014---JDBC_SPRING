@@ -88,6 +88,13 @@ public class JogoController {
 		return new ModelAndView("FileUploadForm");
 	}
         
+         @RequestMapping("/estatisticas")
+	public ModelAndView estatisticas(@ModelAttribute Jogo jogo) {
+          
+        
+		return new ModelAndView("estatisticas");
+	}
+        
         @RequestMapping("/jogoSelecionados/{idJogo}")
 	public ModelAndView selecionaJogadores(@PathVariable("idJogo") Integer jogo, HttpServletRequest request) {
                     List<Integer> idjogo = new ArrayList();

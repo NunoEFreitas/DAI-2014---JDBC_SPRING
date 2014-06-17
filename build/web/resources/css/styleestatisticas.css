@@ -1,42 +1,18 @@
 html{
-    background:url(../images/volley.jpg) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: contain;
-    background-color: black;
-    text-align: center;
+  background:url(../images/volley.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: contain;
+  background-color: black;
+  text-align: center;
 
 }
 
-h3{
-    font-size: large;
-    border: 0px solid blue;
-    background: gray;
+h1{
+alignment-baseline: central;
 }
 
-
-body{
-    margin-left:8%;
-    margin-right:8%;
-    font-weight: bold;
-}
-
-#top{
-    height:70px;
-    width:100%;
-    border: 0px solid pink;
-}
-#mid{
-    height:500px;
-    width:100%;
-    border: 0px solid pink;
-}
-
-#btnestat{
-    float:left;
-
-}
 
 a {
     color: white;
@@ -46,141 +22,32 @@ a:hover {
     color: red;
 }
 
-#rotacaoCampo1{
-    width:200px;
-    height:50px;
-    border:0px solid black;
-    float:left;
-    margin-left: 30px;
+#voltarCampo{
+float: right;
+margin-top: 450px;
 
+    
 }
 
-#rotacaoCampo1 label{
-    color:blue;
-    background: black;
-}
-
-#rotacaoCampo2{
-    width:200px;
-    height:50px;
-    border:0px solid black;
-    float:left;
-    margin-left: 40px;
-}
-
-#rotacaoCampo2 label{
-    color:blue;
-    background: black;
-}
-
-#scoreboard{
-    height:40px;
-    width:350px;
-    border:0px solid blue;
-    float:left;
-    margin-left: 40px;
-}
-
-#fora{
-    float:left;
-    width:150px;
-    border:0px solid yellow;
-    margin-left: 20px;
-}
-
-#casa{
-    width:150px;
-    float:left;
-    border:0px solid yellow;
-}
-
-
-
-#setCasa input{
-    background: black;
-    font-size:small;
-    color:blue;
-
-}
-
-
-#setFora input{
-    background: black;
-    font-size:small;
-    color:blue;
-}
-
-
-
-#pontoCasa input{
-    background: black;
-    height: 30px;
-    width: 40px;
-    font-size:medium;
-    color:blue;
-}
-
-#pontoFora input{
-    background: black;
-    height: 30px;
-    width: 40px;
-    font-size:medium;
-    color:blue;
-}
-
-#classificacao{
-
-    border: 0px solid red;
-    height:200px;
-    width: 270px;
-    float:right;
-
-}
-
-
-
-#atribui{
+#comboestat1{
     border: 0px solid blue;
     height: 200px;
-    width: 250px;
-    float:right;
+    width: 150px;
+    float:left;
 }
-
-#atribui2{
+#comboestat2{
     border: 0px solid blue;
     height: 200px;
-    width: 250px;
+    width: 150px;
     float:right;
 }
 
-
-
-#textboxes{
-    border: 0px solid yellow;
-    height:100px;
-    width:650px;
-    float:left;
-    margin-left: 100px;
+body{
+    margin-left:8%;
+    margin-right:8%;
+    font-weight: bold;
 }
 
-#textboxes textarea{
-    width:600px;
-    height:50px;
-}
-
-#campo{
-    border: 0px solid blue;
-    height: 430px; 
-    width: 850px;
-    float:left;
-}
-
-#tabela{
-    border:2px solid green;
-    height:500px;
-    width: 500px;
-    float:right;
-}
 
 /* -------------------------- campo ------------------------------*/
 
@@ -191,7 +58,7 @@ a:hover {
     margin:0 10px 0 0;
     position:absolute;
     top: 195px;
-    right:36%; 
+    right:28%; 
     margin-right:670px;
     margin-top: 7%;
     background-color:red;
@@ -201,7 +68,6 @@ a:hover {
 
 }
 
-.elementServiceLeft:hover { background-color: #FFC4CB; }
 
 .elementServiceRight{
     width: 50px;
@@ -210,7 +76,7 @@ a:hover {
     margin:0 10px 0 0;
     position:absolute;
     top: 0px;
-    right:36%; 
+    right:28%; 
     margin-right: -70px;
     margin-top: 7%;
     background-color:red;
@@ -220,8 +86,6 @@ a:hover {
 
 }
 
-.elementServiceRight:hover { background-color: #FFC4CB; }
-
 .elementTopLeft{
     width: 255px;
     height: 40px;
@@ -229,7 +93,7 @@ a:hover {
     margin:0 10px 0 0;
     position:absolute;
     top: 0px;
-    right:36%; 
+    right:28%; 
     margin-right:350px;
     margin-top: 7%;
     background-color:blue;
@@ -239,7 +103,7 @@ a:hover {
 
 
 }
-.elementTopLeft:hover { background-color: #ADAFFF; }
+
 
 .elementTopRight{
     width: 255px;
@@ -248,7 +112,7 @@ a:hover {
     margin:0 10px 0 0;
     position:absolute;
     top: 0px;
-    right:36%; 
+    right:28%; 
     margin-right:45px;
     margin-top: 7%;
     background-color:blue;
@@ -257,7 +121,7 @@ a:hover {
     box-shadow:5px 5px 2px #000000;
 }
 
-.elementTopRight:hover { background-color: #ADAFFF; }
+
 
 .elementBotLeft{
     width: 255px;
@@ -266,7 +130,7 @@ a:hover {
     margin:0 10px 0 0;
     position:absolute;
     top: 350px;
-    right:36%; 
+    right:28%; 
     margin-right:350px;
     margin-top: 7%;
     background-color:blue;
@@ -275,7 +139,6 @@ a:hover {
     box-shadow:5px 5px 2px #000000;
 }
 
-.elementBotLeft:hover { background-color: #ADAFFF; }
 
 .elementBotRight{
     width: 255px;
@@ -284,7 +147,7 @@ a:hover {
     margin:0 10px 0 0;
     position:absolute;
     top: 350px;
-    right:36%; 
+    right:28%; 
     margin-right:45px;
     margin-top: 7%;
     background-color:blue;
@@ -293,7 +156,7 @@ a:hover {
     box-shadow:5px 5px 2px #000000;
 }
 
-.elementBotRight:hover { background-color: #ADAFFF; }
+
 
 .elementOutLeft{
     width: 50px;
@@ -302,7 +165,7 @@ a:hover {
     margin:0 10px 0 0;
     position:absolute;
     top: 0px;
-    right:36%; 
+    right:28%; 
     margin-right:610px;
     margin-top: 7%;
     background-color:blue;
@@ -311,8 +174,6 @@ a:hover {
     box-shadow:5px 5px 2px #000000;
 }
 
-.elementOutLeft:hover { background-color: #ADAFFF; }
-
 .elementOutRight{
     width: 50px;
     height: 390px;
@@ -320,7 +181,7 @@ a:hover {
     margin:0 10px 0 0;
     position:absolute;
     top: 0px;
-    right:36%; 
+    right:28%; 
     margin-right: -10px;
     margin-top: 7%;
     background-color:blue;
@@ -329,7 +190,7 @@ a:hover {
     box-shadow:5px 5px 2px #000000;
 }
 
-.elementOutRight:hover { background-color: #ADAFFF; }
+
 
 
 .element1 {
@@ -339,7 +200,7 @@ a:hover {
     margin:0 10px 0 0;
     position:absolute;
     top:250px;
-    right:36%; 
+    right:28%; 
     margin-right:480px;
     margin-top: 7%;
     background-color:#FAAF37;
@@ -350,7 +211,7 @@ a:hover {
 
 }
 
-.element1:hover { background-color: #F7C87C; }
+
 
 .element2 {
     width: 125px;
@@ -359,7 +220,7 @@ a:hover {
     margin:0 10px 0 0;
     position:absolute;
     top:250px;
-    right:36%; 
+    right:28%; 
     margin-right:350px;
     margin-top: 7%;
     background-color:#FAAF37;
@@ -369,7 +230,6 @@ a:hover {
 
 
 }
-.element2:hover { background-color: #F7C87C; }
 
 .element3 {
     width: 125px;
@@ -378,7 +238,7 @@ a:hover {
     margin:0 10px 0 0;
     position:absolute;
     top:150px;
-    right:36%; 
+    right:28%; 
     margin-right:350px;
     margin-top: 7%;
     background-color:#FAAF37;
@@ -388,7 +248,7 @@ a:hover {
 
 
 }
-.element3:hover { background-color: #F7C87C; }
+
 
 .element6 {
     width: 125px;
@@ -397,7 +257,7 @@ a:hover {
     margin:0 10px 0 0;
     position:absolute;
     top:150px;
-    right:36%; 
+    right:28%; 
     margin-right:480px;
     margin-top: 7%;
     background-color:#FAAF37;
@@ -407,8 +267,7 @@ a:hover {
 
 
 }
-.element6:hover { background-color: #F7C87C; }
-.element4:hover { background-color: #F7C87C; }
+
 
 
 .element4 {
@@ -418,7 +277,7 @@ a:hover {
     margin:0 10px 0 0;
     position:absolute;
     top:50px;
-    right:36%; 
+    right:28%; 
     margin-right:350px;
     margin-top: 7%;
     background-color:#FAAF37;
@@ -436,7 +295,7 @@ a:hover {
     margin:0 10px 0 0;
     position:absolute;
     top:50px;
-    right:36%; 
+    right:28%; 
     margin-right:480px;
     margin-top: 7%;
     background-color:#FAAF37;
@@ -447,7 +306,6 @@ a:hover {
 
 }
 
-.element5:hover { background-color: #F7C87C; }	
 
 
 .elementLinha{
@@ -457,7 +315,7 @@ a:hover {
     margin:0 10px 0 0;
     position:absolute;
     top:0px;
-    right:36%; 
+    right:28%; 
     margin-right:315px;
     margin-top: 7%;
     background-color:red;
@@ -468,8 +326,6 @@ a:hover {
 
 }
 
-.elementLinha:hover { background-color: #FFC4CB; }
-
 .element7 {
     width: 125px;
     height: 90px;
@@ -477,7 +333,7 @@ a:hover {
     margin:0 10px 0 0;
     position:absolute;
     top:50px;
-    right:36%; 
+    right:28%; 
     margin-right:45px;
     margin-top: 7%;
     background-color:#FAAF37;
@@ -486,7 +342,7 @@ a:hover {
     box-shadow:5px 5px 2px #000000;
 
 }
-.element7:hover { background-color: #F7C87C; }	
+
 
 .element12 {
     width: 125px;
@@ -495,7 +351,7 @@ a:hover {
     margin:0 10px 0 0;
     position:absolute;
     top:150px;
-    right:36%; 
+    right:28%; 
     margin-right:45px;
     margin-top: 7%;
     background-color:#FAAF37;
@@ -505,7 +361,6 @@ a:hover {
 
 }
 
-.element12:hover { background-color: #F7C87C; }
 
 .element11 {
     width: 125px;
@@ -514,7 +369,7 @@ a:hover {
     margin:0 10px 0 0;
     position:absolute;
     top:250px;
-    right:36%; 
+    right:28%; 
     margin-right:45px;
     margin-top: 7%;
     background-color:#FAAF37;
@@ -524,7 +379,6 @@ a:hover {
 
 }
 
-.element11:hover { background-color: #F7C87C; }
 
 .element10 {
     width: 125px;
@@ -533,7 +387,7 @@ a:hover {
     margin:0 10px 0 0;
     position:absolute;
     top:250px;
-    right:36%; 
+    right:28%; 
     margin-right:175px;
     margin-top: 7%;
     background-color:#FAAF37;
@@ -543,7 +397,6 @@ a:hover {
 
 }
 
-.element10:hover { background-color: #F7C87C; }
 
 .element9 {
     width: 125px;
@@ -552,7 +405,7 @@ a:hover {
     margin:0 10px 0 0;
     position:absolute;
     top:150px;
-    right:36%; 
+    right:28%; 
     margin-right:175px;
     margin-top: 7%;
     background-color:#FAAF37;
@@ -562,7 +415,7 @@ a:hover {
 
 }
 
-.element9:hover { background-color: #F7C87C; }
+
 
 .element8 {
     width: 125px;
@@ -571,7 +424,7 @@ a:hover {
     margin:0 10px 0 0;
     position:absolute;
     top:50px;
-    right:36%; 
+    right:28%; 
     margin-right:175px;
     margin-top: 7%;
     background-color:#FAAF37;
@@ -581,65 +434,4 @@ a:hover {
 
 }
 
-.element8:hover { background-color: #F7C87C; }
 
-/* --------------------------- drag and drop ------------------------------------ */
-
-/*
-#dragj1 { 
-  width: 100px; 
-  height: 100px; 
-  padding: 0.5em; 
-  float: left; 
-  margin: 10px 10px 10px 0; 
-  background-image: url(jogador1.jpg); }
-  #dragj2 { 
-  width: 100px; 
-  height: 100px; 
-  padding: 0.5em; 
-  float: left; 
-  margin: 10px 10px 10px 0; 
-  background-image: url(jogador2.jpg); }
-  #dragj3 { 
-  width: 100px; 
-  height: 100px; 
-  padding: 0.5em; 
-  float: left; 
-  margin: 10px 10px 10px 0; 
-  background-image: url(jogador3.jpg); }
-  #dragj4 { 
-  width: 100px; 
-  height: 100px; 
-  padding: 0.5em; 
-  float: left; 
-  margin: 10px 10px 10px 0; 
-  background-image: url(jogador4.jpg); }
-  #dragj5 { 
-  width: 100px; 
-  height: 100px; 
-  padding: 0.5em; 
-  float: left; 
-  margin: 10px 10px 10px 0; 
-  background-image: url(jogador5.jpg); }
-  #dragj6 { 
-  width: 100px; 
-  height: 100px; 
-  padding: 0.5em; 
-  float: left; 
-  margin: 10px 10px 10px 0; 
-  background-image: url(jogador6.jpg); }
-  #dropP1 { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
-  #dropP2 { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
-  #dropP3 { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
-  #dropP4 { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
-  #dropP5 { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
-  #dropP6 { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
-  
-  #dragAndDrop{
-      border: 0px solid red;
-      width:100%;
-      height:500px;
-      float:left;
-  }
-
-*/

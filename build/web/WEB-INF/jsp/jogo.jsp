@@ -28,22 +28,22 @@
 
                                 <span id="casa">
                                     <span id="pontoCasa">
-                                    <label>Casa</label>
-                                    <input type="button" class="button" id="btncasa" value="0" />
+                                        <label>Casa</label>
+                                        <input type="button" class="button" id="btncasa" value="0" />
                                     </span>
                                     <span id ="setCasa">
-                                    <label>Set</label>           
-                                    <input type="button" class="button" id="btnsetcasa" value="0" />
+                                        <label>Set</label>           
+                                        <input type="button" class="button" id="btnsetcasa" value="0" />
                                     </span>
                                 </span>
                                 <span id="fora">
                                     <span id="pontoFora">
-                                    <label>Fora</label>
-                                    <input type="button" class="button" id="btnfora" value="0"/>
+                                        <label>Fora</label>
+                                        <input type="button" class="button" id="btnfora" value="0"/>
                                     </span>
                                     <span id ="setFora">
-                                    <label>Set</label>
-                                    <input type="button" class="button" id="btnsetfora" value="0" />
+                                        <label>Set</label>
+                                        <input type="button" class="button" id="btnsetfora" value="0" />
                                     </span>
                                 </span>
                             </div>
@@ -101,61 +101,67 @@
                                                     <div class="elementServiceRight" id="pos20" name="pos20" > 20 </div> 
 
                                                 </div>
-                                            
+
                                                 <div id="atribui">
-                                                </label> Campo1 </label>
-                                                <br>
-                                                <label> Zona 1 </label>
-                                                <select id="zona1" onchange="atribui1()"></select>
-                                                <br>
-                                                <label> Zona 2 </label>
-                                                <select id="zona2" onchange="atribui2()"></select>
-                                                <br>
-                                                <label> Zona 3 </label>
-                                                <select id="zona3" onchange="atribui3()"></select>
-                                                <br>
-                                                <label> Zona 4 </label>
-                                                <select id="zona4" onchange="atribui4()"></select>
-                                                <br>
-                                                <label> Zona 5 </label>
-                                                <select id="zona5" onchange="atribui5()"></select>
-                                                <br>
-                                                <label> Zona 6 </label>
-                                                <select id="zona6"onchange="atribui6()"></select>
-                                                <br>
-                                            </div>
-                                                
+                                                    </label> Campo1 </label>
+                                                    <br>
+                                                    <label> Zona 1 </label>
+                                                    <select id="zona1" onchange="atribui1()"></select>
+                                                    <br>
+                                                    <label> Zona 2 </label>
+                                                    <select id="zona2" onchange="atribui2()"></select>
+                                                    <br>
+                                                    <label> Zona 3 </label>
+                                                    <select id="zona3" onchange="atribui3()"></select>
+                                                    <br>
+                                                    <label> Zona 4 </label>
+                                                    <select id="zona4" onchange="atribui4()"></select>
+                                                    <br>
+                                                    <label> Zona 5 </label>
+                                                    <select id="zona5" onchange="atribui5()"></select>
+                                                    <br>
+                                                    <label> Zona 6 </label>
+                                                    <select id="zona6"onchange="atribui6()"></select>
+                                                    <br>
+                                                </div>
+
                                                 <div id="atribui2">
-                                                </label> Campo1 </label>
-                                                <br>
-                                                <label> Zona 1 </label>
-                                                <select id="zona1" onchange="atribui1()"></select>
-                                                <br>
-                                                <label> Zona 2 </label>
-                                                <select id="zona2" onchange="atribui2()"></select>
-                                                <br>
-                                                <label> Zona 3 </label>
-                                                <select id="zona3" onchange="atribui3()"></select>
-                                                <br>
-                                                <label> Zona 4 </label>
-                                                <select id="zona4" onchange="atribui4()"></select>
-                                                <br>
-                                                <label> Zona 5 </label>
-                                                <select id="zona5" onchange="atribui5()"></select>
-                                                <br>
-                                                <label> Zona 6 </label>
-                                                <select id="zona6"onchange="atribui6()"></select>
-                                                <br>
-                                            </div>
-                                                
+                                                    </label> Campo2 </label>
+                                                    <br>
+                                                    <label> Zona 7 </label>
+                                                    <select id="zona1" onchange="atribui7()"></select>
+                                                    <br>
+                                                    <label> Zona 8 </label>
+                                                    <select id="zona2" onchange="atribui8()"></select>
+                                                    <br>
+                                                    <label> Zona 9 </label>
+                                                    <select id="zona3" onchange="atribui9()"></select>
+                                                    <br>
+                                                    <label> Zona 10 </label>
+                                                    <select id="zona4" onchange="atribui10()"></select>
+                                                    <br>
+                                                    <label> Zona 11 </label>
+                                                    <select id="zona5" onchange="atribui11()"></select>
+                                                    <br>
+                                                    <label> Zona 12 </label>
+                                                    <select id="zona6"onchange="atribui12()"></select>
+                                                    <br>
+                                                </div>
+
                                                 <div id="textboxes">
                                                     <textarea class="relato"id="jogadasTxt"rows = "5" cols ="30"></textarea>
                                                 </div>
 
                                             </div>
 
+                                            <div id="btnestat">
 
-                                            
+                                                <a href="estatisticas"><h2>Visualizar estatísticas</h2></a>
+                                                </a></div>
+
+
+
+
 
                                             <!--
                                             
@@ -221,18 +227,18 @@
                                                 adv.push('ADV5');
                                                 adv.push('ADV6');
 
-function helloAjax(){  
-        var jogador = 'nuno';
-        var clube = 'fcp';
-        $.ajax({  
-            url : '${pageContext.request.contextPath}/helloajax',  
-            data : {"jogador":jogador,"clube":clube},   
-            success : function(result) {  
-                alert(result);  
-            }  
-        });  
-  }                                                  
-                                                
+                                                function helloAjax() {
+                                                    var jogador = 'nuno';
+                                                    var clube = 'fcp';
+                                                    $.ajax({
+                                                        url: '${pageContext.request.contextPath}/helloajax',
+                                                        data: {"jogador": jogador, "clube": clube},
+                                                        success: function(result) {
+                                                            alert(result);
+                                                        }
+                                                    });
+                                                }
+
 
                                                 function rotacaoCampo1() {
                                                     var fluxo = new Array();
@@ -434,12 +440,12 @@ function helloAjax(){
                                                 }
 
                                                 function ataqueEdefesa() {
-                                                  
+
                                                     var x = ar.length;
                                                     var ultima = ar[x - 1];
                                                     var pultima = ar[x - 2];
                                                     if (x > 2) {
-          
+
                                                         if ($.inArray(parseInt(pultima[2]), campo1) >= 0 && $.inArray(parseInt(ultima[2]), campo2) >= 0) {
                                                             //$('#ataquesTxt').html('ataque da jogadora '+ pultima[1] +' da posicao ' + pultima[2] + ' para a posicao ' + ultima[2]);
                                                             document.getElementById('rba').style.display = 'block';
@@ -667,7 +673,7 @@ function helloAjax(){
                                                     alert(ar);
                                                 }
 
-                        // -------------------------TABELA----------------------------------------------
+                                                // -------------------------TABELA----------------------------------------------
                                                 function createTable()
                                                 {
                                                     var num_rows = 10;
@@ -690,7 +696,7 @@ function helloAjax(){
                                                     document.getElementById('wrapper').innerHTML = theader + tbody + tfooter;
                                                 }
 
-                        // ----------------------------------------drag and drop-------------------------------------
+                                                // ----------------------------------------drag and drop-------------------------------------
 
                                                 $(document).ready(function() {
                                                     $("#dragj1, #dragj2, #dragj3, #dragj4, #dragj5, #dragj6").draggable();
