@@ -36,7 +36,7 @@ function valida(form) {
 }
     
     if (form.username.value==""|| !IsNum(form.username.value)) {
-alert("Peencha o campo username com valor numérico.");
+alert("Preencha o campo username com valor numérico.");
 form.username.focus();
 return false;
 }
@@ -64,11 +64,11 @@ return false;
                         <form onsubmit="return valida(this);" autocomplete="on" method="post" action="login">
                             <center>
                                 <div  class= "input-group input-group-lg" >  
-                                    <input  type= "text" name="username" class= "form-control"  placeholder= "Username" required="required" > 
-                                    <input  type ="password" name="password" class= "form-control"  placeholder= "Password" required="required" > 
+                                    <input  type= "text" name="username" class= "form-control"  placeholder= "Username"> 
+                                    <input  type ="password" name="password" class= "form-control"  placeholder= "Password" > 
                                 </div>
                             </center>
-
+                        <h3><p style="color: blue">${resultado}</p></h3>
                             <hr class="intro-divider">
 
                             <button type="submit" class="btn btn-default">Entrar</button>

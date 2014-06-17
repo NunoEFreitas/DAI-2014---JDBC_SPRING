@@ -193,11 +193,11 @@ public class UtilizadorController {
 
 
             } else {
-                resultado = "Dados Inexistentes";
+                resultado = "Password Errada!";
                 return new ModelAndView("login", "resultado", resultado);
             }
         } else {
-            resultado = "Dados Inexistentes";
+            resultado = "Os dados introduzidos não existem!";
             return new ModelAndView("login", "resultado", resultado);
 
         }
