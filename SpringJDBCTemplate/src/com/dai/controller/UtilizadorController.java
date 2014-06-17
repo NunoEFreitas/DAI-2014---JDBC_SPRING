@@ -127,9 +127,9 @@ public class UtilizadorController {
            @RequestMapping("/edit")
 	public ModelAndView editUtilizador(@RequestParam Integer id,
 			@ModelAttribute Utilizador user) {
-
+               
 		user = utilizadorService.getUtilizador(id);
-
+                
 		List<String> Tipo_de_utilizador = new ArrayList<String>();
 		Tipo_de_utilizador.add("Treinador");
 		Tipo_de_utilizador.add("Treinador-Adjunto");

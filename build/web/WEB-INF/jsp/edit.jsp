@@ -9,10 +9,10 @@
         <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
         <link href="<c:url value ="/resources/css/register.css"/>" rel="stylesheet" type="text/css">
         <script src="<c:url value="/resources/js/editar.js"/>"/></script>
- 
+  
 </head>
-<body >
-
+<body onload="edit('${map.user.idPerfil}')">
+   
        <%@include file="/resources/include/templateSeccionista.jsp" %>
 
         <!-- Page content -->
@@ -21,42 +21,72 @@
         </div>
        
 
-            <form:form id="contactform" class="rounded" name="editar" method="post" action="/update" modelAttribute="utilizador" onload="edit(${map.user.nome})">
-                <div class="field" id="2">
+            <form:form id="contactform" name="editar" class="rounded" method="post" action="/update" modelAttribute="utilizador" >
+                <div class="field" id="1">
                     <label>Nome:</label>
-                    <form:input path="Nome" name="nome" class="input" value="${map.user.nome}" />
+                    <form:input path="nome" name="nome" class="input" value="${map.user.nome}" />
                 </div> 	
-                <div class="field" id="2">
-                    <label>Morada:</label>
-                    <form:input path="Morada" class="input" value="${map.user.morada}" />
-                </div> 
-                <div class="field" id="2">
-                    <label>Telefone:</label>
-                    <form:input path="Telefone" class="input" value="${map.user.telefone}" />
-                </div> 
-                <div class="field" id="2">
-                    <label>Altura:</label>
-                    <form:input path="Altura" class="input" value="${map.user.altura}" />
-                </div> 
-                <div class="field" id="2">
-                    <label>Peso:</label>
-                    <form:input path="Peso" class="input" value="${map.user.peso}" />
-                </div> 
-
-                <div class="field" id="2">
-                    <label>Email:</label>
-                    <form:input path="Email" class="input" value="${map.user.email}" />
-                </div> 
-
-                <div class="field" id="2">
+                  <div class="field" id="2">
                     <label>Password:</label>
-                    <form:input path="Password" class="input" value="${map.user.password}" />
+                    <form:input path="Password" name="password" class="input" value="${map.user.password}" />
+                </div> 
+                                
+                <div class="field" id="3">
+                    <label>Morada:</label>
+                    <form:input path="Morada" name="morada" class="input" value="${map.user.morada}" />
+                </div> 
+                <div class="field" id="4">
+                    <label>Telefone:</label>
+                    <form:input path="Telefone" name="telefone" class="input" value="${map.user.telefone}" />
                 </div> 
                 
-                 <div class="field" id="2">
-                    <label>Password:</label>
-                    <form:input path="Password" class="input" value="${map.user.password}" />
+                 <div class="field" id="5">
+                    <label>Email:</label>
+                    <form:input path="Email" type="email" required="required" class="input" value="${map.user.email}" />
+                </div>               
+                <div class="field" id="6">
+                    <label>Altura:</label>
+                    <form:input type="number" step="1" min="0" path="Altura" class="input" value="${map.user.altura}" />
                 </div> 
+                <div class="field" id="7">
+                    <label>Peso:</label>
+                    <form:input type="number" step="1" min="0" path="Peso" class="input" value="${map.user.peso}" />
+                </div> 
+                <div class="field" id="8">
+                    <label>Salto Vertical:</label>
+                    <form:input type="number" step="1" min="0" path="saltoVertical" class="input" value="${map.user.saltoVertical}" />
+                </div> 
+                
+                 <div class="field" id="9">
+                     <label>Velocidade de Deslocamento:</label>
+                    <form:input type="number" step="1" min="0" path="velocidadeDeslocamento" class="input" value="${map.user.velocidadeDeslocamento}" />
+                </div> 
+                
+                 <div class="field" id="10">
+                     <label>Alcance de ataque:</label>
+                    <form:input type="number" step="1" min="0" path="alcanceAtaque" class="input" value="${map.user.alcanceAtaque}" />
+                </div> 
+                 <div class="field" id="11">
+                     <label>Exames Clinicos:</label>
+                    <form:input path="examesClinicos" class="input" value="${map.user.examesClinicos}" />
+                </div> 
+
+                 <div class="field" id="12">
+                     <label>Estatura::</label>
+                    <form:input type="number" step="1" min="0" path="estatura" class="input" value="${map.user.estatura}" />
+                </div> 
+                
+                <div class="field" id="13">
+                     <label>Escalao:</label>
+                    <form:input path="idEscalao" class="input" value="${map.user.idEscalao}" />
+                </div> 
+                
+                
+
+
+              
+                
+               
 
                 <%--		<tr>
                                    
@@ -81,7 +111,7 @@
                 --%>                             <div id="19">
                     <label>&nbsp;</label>
                     <div id="texto" style="color:red"><h2></h2></div>
-                    <input onClick="return validacao(${map.user.idPerfil});" type="submit" value="Save" />
+                    <input onClick="return validacao();" type="submit" value="Save" />
                 </div>	
 
                 <form:hidden path="idUtilizador" value="${map.user.idUtilizador}" />

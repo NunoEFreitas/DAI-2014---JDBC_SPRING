@@ -12,6 +12,7 @@
         <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css"> 
         <link href="<c:url value ="/resources/css/register.css"/>" rel="stylesheet" type="text/css">
         <script src="<c:url value="/resources/js/javascript.js" />"></script>
+        
 
     </head>
     <body onload="oculta(1);" >
