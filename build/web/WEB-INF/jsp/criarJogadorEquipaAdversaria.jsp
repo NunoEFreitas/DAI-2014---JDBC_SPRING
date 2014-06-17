@@ -11,20 +11,29 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+         <link href="<c:url value ="/resources/css/register.css"/>" rel="stylesheet" type="text/css">
+         <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <form:form method="post" action="/inserirJEA" modelAttribute="jogadorEquipaAdversaria"  >
+
+        
+        <%@include file="/resources/include/templateSeccionista.jsp"%>
+           <Div  class = "cabecalho da pagina" > 
+            <h1>Gerir equipas adversarias<small> Inserir jogador equipa adversaria </small>  </h1> 
+        </div>
+        
+        <form:form id="contactform" class="rounded" method="post" action="/inserirJEA" modelAttribute="jogadorEquipaAdversaria"  >
             
             <label>Nome: </label>
-            <form:input class="input" path="nome" />
+            <form:input required="required" class="input" path="nome" />
             <br>
             <label>Posição: </label>
-            <form:input class="input" path="posicao" />
+            <form:input required="required" class="input" path="posicao" />
             <br>
                 <label>Equipa Adversaria :</label>
-                <form:select   path = "idEquipaAdversaria" name="idEquipaAdversaria">
+                <form:select  class="input"  path = "idEquipaAdversaria" name="idEquipaAdversaria">
                     <c:forEach items='${lea}' var='lea'>
-                        <form:option class="input" value ="${lea.idEquipaAdversaria}">${lea.nome}</form:option>
+                        <form:option  value ="${lea.idEquipaAdversaria}">${lea.nome}</form:option>
                     </c:forEach>
                 </form:select>
                 <br>

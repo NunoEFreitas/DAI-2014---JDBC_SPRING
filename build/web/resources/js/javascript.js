@@ -131,15 +131,7 @@ function validacao() {
         document.register.alcanceBloco.focus();
         return false;
     }
-       if (document.register.envergadura.value == "" || !IsNum(register.envergadura.value) ) {
-        document.getElementById("texto").innerHTML = "Preencha o Envergadura correctamente.";
-        document.register.envergadura.focus();
-        return false;
-    }
-    
-    
-    
-    
+
     
 //    validaçao para os restantes perfis
  }else{ 

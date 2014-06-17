@@ -124,7 +124,7 @@
             <div id="19">
                 <div id="texto" style="color:red"><h2></h2></div>
                 <label>&nbsp;</label>
-                <input onClick="return validacao();" type="submit" value="Guardar" />  
+                <input onClick="return validacao();"  class="button" type="submit" value="Guardar" />  
             </div>
         </form:form>
 

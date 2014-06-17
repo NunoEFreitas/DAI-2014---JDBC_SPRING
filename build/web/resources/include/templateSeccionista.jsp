@@ -19,8 +19,7 @@
                             <ul>
 
                                 <li><a href='registarUtilizador'><span>RegistarUtilizadores</span></a></li>
-                                <li><a href='alterarDados'><span>Editar Utilizadores</span></a></li>
-                                <li><a href='estadoUtilizadores'><span>Estado dos Utilizadores</span></a></li>  
+                                <li><a href='alterarDados'><span>Editar Utilizadores</span></a></li>  
                                 <li><a href='listarUtilizadores'><span>Consultar Utilizadores</span></a></li>
                             
                                 

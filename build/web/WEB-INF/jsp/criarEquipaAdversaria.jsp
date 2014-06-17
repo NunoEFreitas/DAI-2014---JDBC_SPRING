@@ -12,20 +12,31 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link href="<c:url value ="/resources/css/register.css"/>" rel="stylesheet" type="text/css">
+        <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
     </head>
     <body>
-     <form:form method="post" action="/inserirEA" modelAttribute="equipaAdversaria"  >
-            
-            <label>Nome: </label>
-            <form:input class="input" path="nome" />
-                <label>Escalao :</label>
-                <form:select   path = "idEscalao" name="idEscalao">
-                    <c:forEach items='${map.li}' var='li'>
-                        <form:option class="input" value ="${li.idEscalao}">${li.designacao}</form:option>
-                    </c:forEach>
-                </form:select>
-
-            <input class="button" type="submit" value="Guardar" />
-        </form:form>
+        
+        
+          <%@include file="/resources/include/templateSeccionista.jsp"%>
+          
+           <Div  class = "cabecalho da pagina" > 
+            <h1>Gerir equipas adversarias<small>Inserir equipa adversaria </small>  </h1> 
+        </div>
+          
+          <form:form id="contactform" class="rounded" method="post" action="/inserirEA" modelAttribute="equipaAdversaria"  >
+          
+              <label>Nome:</label>
+              <form:input required="required" class="input" path="nome" /><br>
+ 
+              <label>Escalao:</label>
+              <form:select   class="input" path = "idEscalao" name="idEscalao">
+                  <c:forEach items='${map.li}' var='li'>
+                      <form:option value ="${li.idEscalao}">${li.designacao}</form:option>
+                  </c:forEach>
+              </form:select>
+             
+              <input class="button" type="submit" value="Guardar" />
+          </form:form>
     </body>
 </html>

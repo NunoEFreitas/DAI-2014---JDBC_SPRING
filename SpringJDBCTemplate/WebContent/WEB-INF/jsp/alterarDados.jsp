@@ -18,9 +18,7 @@
 
     <%@include file="/resources/include/templateSeccionista.jsp"%>
   
- <%
-     
- %>
+
                  
         <Div  class = "cabecalho da pagina" > 
             <h1> Recursos humanos<small> Editar Utilizadores </small>  </h1> 
