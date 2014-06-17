@@ -27,18 +27,24 @@
                             <div id="scoreboard">
 
                                 <span id="casa">
-                                    <p>Casa</p>
+                                    <span id="pontoCasa">
+                                    <label>Casa</label>
                                     <input type="button" class="button" id="btncasa" value="0" />
-                                    
-                                    <p>Set:</p>            
+                                    </span>
+                                    <span id ="setCasa">
+                                    <label>Set</label>           
                                     <input type="button" class="button" id="btnsetcasa" value="0" />
+                                    </span>
                                 </span>
                                 <span id="fora">
-                                    <p>Fora</p>
+                                    <span id="pontoFora">
+                                    <label>Fora</label>
                                     <input type="button" class="button" id="btnfora" value="0"/>
-                                    
-                                    <p>Set:</p>
+                                    </span>
+                                    <span id ="setFora">
+                                    <label>Set</label>
                                     <input type="button" class="button" id="btnsetfora" value="0" />
+                                    </span>
                                 </span>
                             </div>
 
