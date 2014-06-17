@@ -11,7 +11,7 @@
 
         <%@include file="/resources/include/templateAnalistas.jsp" %>
           <!-- Page content -->
-        ${resultado} 
+        <h1> ${resultado} </h1><a href="logout" onClick="return confirmLogout()">Sair</a>
 
         <%
             out.print("<h4> welcome" + session.getAttribute("user"));

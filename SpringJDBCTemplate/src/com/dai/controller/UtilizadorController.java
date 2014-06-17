@@ -143,6 +143,10 @@ public class UtilizadorController {
 
 	}
  
+         @RequestMapping("/logout")
+	public ModelAndView logout() {
+		return new ModelAndView("login");
+	}
         
         @RequestMapping("/login")
 	public ModelAndView login() {
@@ -178,7 +182,7 @@ public class UtilizadorController {
                 }
                 if (ut.getIdPerfil() == 4) {
                     resultado = "Login efectuado com sucesso";
-                    return new ModelAndView("olheiro", "resultado", resultado);
+                    return new ModelAndView("olheiros", "resultado", resultado);
 
                 }
                 if (ut.getIdPerfil() == 5) {

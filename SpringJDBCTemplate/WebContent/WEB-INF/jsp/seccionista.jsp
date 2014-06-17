@@ -13,16 +13,13 @@
 
       
           <!-- Page content -->
-          <h1> ${resultado} </h1>
+          <h1> ${resultado} </h1><a href="logout" onClick="return confirmLogout()">Sair</a>
        
         <%
            out.print("<h4> Id:" + session.getAttribute("user") + " Perfil: " + session.getAttribute("perfil"));
 
         %>
-
-    </div>
-</div>      
-</div>
+        
 
 </body>
 
