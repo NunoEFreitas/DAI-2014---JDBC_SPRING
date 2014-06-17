@@ -74,10 +74,10 @@
 
 	    <section class="container">
 	
-		     <Div  class = "cabecalho da pagina" > 
-            <h1> Recursos humanos<small> Consultar Utilizadores </small>  </h1> 
-        </div>
-	
+                <Div  class = "cabecalho da pagina" > 
+                    <h1> Recursos humanos<small> Consultar Utilizadores </small>  </h1> 
+                </div><br>
+
 		<input type="search" class="light-table-filter" data-table="order-table" placeholder="Filtrar Dados Atleta">
 	
 		<table class="order-table table">
