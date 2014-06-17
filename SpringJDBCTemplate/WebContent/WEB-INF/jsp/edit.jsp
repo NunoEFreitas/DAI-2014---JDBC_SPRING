@@ -8,7 +8,7 @@
         <title>Editar - Sistema de Informação - SCB</title>
         <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
         <link href="<c:url value ="/resources/css/register.css"/>" rel="stylesheet" type="text/css">
-        <script src="<c:url value="/resources/js/editar.js"/>"/></script>
+        <script type="text/javascript" src="<c:url value="/resources/js/editar.js"/>"/></script>
 
 </head>
 <body onload="edit('${map.user.idPerfil}')">

@@ -18,7 +18,7 @@
                             <ul>
                                 <li class='has-sub'><a href='#'><span>Visualizar Atleta</span></a>
                                     <ul>
-                                        <li><a href='userList'><span>VisualizarDadosAtleta</span></a></li>
+                                        <li><a href='listarUtilizadores'><span>VisualizarDadosAtleta</span></a></li>
                                         <li><a href='#'><span>VisualizarHistoricoAtleta</span></a></li>
                                     </ul>
                                 </li>
@@ -83,10 +83,7 @@
                         
 
                 </ul>
-                </div>
-            </div>
-        </div>
-                   
+      
                   
     </body>
 </html>                                		

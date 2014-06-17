@@ -1,8 +1,3 @@
-<%-- 
-    Document   : listaJogos
-    Created on : 17/Mai/2014, 21:36:47
-    Author     : Nuno
---%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
@@ -12,9 +7,17 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+         <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <table border="1"> 
+        
+          <%@include file="/resources/include/templateTreinador.jsp" %>
+          <Div  class = "cabecalho da pagina" > 
+            <h1>Analisar em tempo real<small> Listar jogos </small>  </h1> 
+        </div><br>
+          
+          
+        <table class="table"> 
         <tr>
             <td Class="heading"> ID Jogo </td>
             <td Class="heading"> Local </td>

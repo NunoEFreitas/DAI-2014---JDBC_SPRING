@@ -1,8 +1,3 @@
-<%-- 
-    Document   : listarTreinos
-    Created on : 6/Jun/2014, 8:03:45
-    Author     : Nuno
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
@@ -12,9 +7,20 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+       <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
     </head>
+    
     <body>
-        <table border="1"> 
+        
+        
+             <%@include file="/resources/include/templateTreinador.jsp" %>
+             
+             <Div  class = "cabecalho da pagina" > 
+                 <h1>Gerir treinos<small> Listar treinos </small>  </h1> 
+             </div><br>
+        
+        
+        <table class="table"> 
         <tr>
             <td Class="heading"> ID Treino </td>
             <td Class="heading"> Duracao </td>

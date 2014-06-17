@@ -1,8 +1,3 @@
-<%-- 
-    Document   : inserirTreino
-    Created on : 6/Jun/2014, 8:02:44
-    Author     : Nuno
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
@@ -12,6 +7,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+          <link href="<c:url value ="/resources/css/register.css"/>" rel="stylesheet" type="text/css">
+         <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
     </head>
     <body>
         
@@ -28,19 +25,23 @@
         }
          %>
          
-        <form:form method="post" action="/inserirTreino" modelAttribute="treino"  >
+           <Div  class = "cabecalho da pagina" > 
+            <h1>Gerir treinos<small> Criar treino </small>  </h1> 
+        </div>
+         
+        <form:form id="contactform" class="rounded" method="post" action="/inserirTreino" modelAttribute="treino"  >
             
             <label>Duracao do Treino: </label>
-            <form:input class="input" path="duracaoTreino" />
+            <form:input type="time" required="required" class="input" path="duracaoTreino" /><br>
             <label>Data: </label>
-            <form:input class="input" path="dataTreino" />
+            <form:input  type="date" required="required" class="input" path="dataTreino" /><br>
             <label>Hora: </label>
-            <form:input class="input" path="horaTreino" />
+            <form:input type="time" required="required" class="input" path="horaTreino" /><br>
             <label>Local: </label>
-            <form:input class="input" path="localTreino" />
+            <form:input required="required" class="input" path="localTreino" /><br>
             <label>Tipo: </label>
-            <form:input class="input" path="tipoTreino" />
-            <input class="button" type="submit" value="Guardar" />
+            <form:input required="required" class="input" path="tipoTreino" />
+            <input class="button" type="submit" value="Guardar" /><br>
         </form:form>
     </body>
 </html>
