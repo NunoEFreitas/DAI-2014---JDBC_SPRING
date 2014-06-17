@@ -15,16 +15,19 @@ alignment-baseline: central;
 
 
 a {
-    color: white;
+    color: darkblue;
+
 }
 
 a:hover {
-    color: red;
+    color: white;
 }
 
 #voltarCampo{
-float: right;
-margin-top: 450px;
+float: left;
+margin-top: 490px;
+
+
 
     
 }

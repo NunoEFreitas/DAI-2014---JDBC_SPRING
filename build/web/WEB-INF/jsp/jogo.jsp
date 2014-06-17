@@ -149,7 +149,7 @@
                                                 </div>
 
                                                 <div id="textboxes">
-                                                    <textarea class="relato"id="jogadasTxt"rows = "5" cols ="30"></textarea>
+                                                    <textarea readonly class="relato"id="jogadasTxt"rows = "5" cols ="30"></textarea>
                                                 </div>
 
                                             </div>

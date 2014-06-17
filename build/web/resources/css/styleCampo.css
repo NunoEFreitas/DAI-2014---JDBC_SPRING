@@ -39,11 +39,11 @@ body{
 }
 
 a {
-    color: white;
+    color: darkblue;
 }
 
 a:hover {
-    color: red;
+    color: white;
 }
 
 #rotacaoCampo1{
@@ -152,15 +152,17 @@ a:hover {
     width: 250px;
     float:right;
 }
-
-
-
+#jogadasTxt{
+    font-weight: 900;
+}
 #textboxes{
     border: 0px solid yellow;
-    height:100px;
+    height:50px;
     width:650px;
     float:left;
     margin-left: 100px;
+
+
 }
 
 #textboxes textarea{
