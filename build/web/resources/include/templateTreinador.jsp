@@ -72,7 +72,7 @@
                                 </li> 
                                 <li class='has-sub'><a href='#'><span>ManusearVídeo</span></a>
                                     <ul>
-                                        <li><a href='#'><span>InserirVídeo</span></a></li>
+                                        <li><a href='criarVideo'><span>InserirVídeo</span></a></li>
                                         <li><a href='#'><span>ApagarVídeo</span></a></li>
                                         <li><a href='#'><span>VisualizarVídeo</span></a></li>
                                     </ul>
