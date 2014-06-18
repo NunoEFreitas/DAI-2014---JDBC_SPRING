@@ -11,34 +11,57 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        
+          <link href="<c:url value ="/resources/css/register.css"/>" rel="stylesheet" type="text/css">
+         <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <form:form method="post" action="/updateJogo" modelAttribute="jogo">
+        
+          <% 
+	if(session.getAttribute("perfil").equals(6)){ %>  
+ 	    <%@include file="/resources/include/templateSeccionista.jsp"%>
+	    <% 
+	  }else if(session.getAttribute("perfil").equals(2)){ %>
+          <%@include file="/resources/include/templateTreinador.jsp" %>
+          <% }else if(session.getAttribute("perfil").equals(3)){ %>
+          
+	  <%@include file="/resources/include/templateTreinadorAdjunto.jsp" %>         
+	 <% 
+        }
+         %>
+        
+          <Div  class = "cabecalho da pagina" > 
+            <h1>Inserir Dados em tempo real<small> Criar jogo </small>  </h1> 
+        </div>
+        
+        
+        
+        <form:form id="contactform" class="rounded" method="post" action="/updateJogo" modelAttribute="jogo">
 				
             
             <label>Local :</label>
-            <form:input path="local" class="input" value="${map.lj.get(0).local}" />
+            <form:input path="local" class="input" value="${map.lj.get(0).local}" /><br>
             <label>Data :</label>
-            <td><form:input path="data" value="${map.lj.get(0).data}" />
+            <td><form:input type="date" path="data" class="input" value="${map.lj.get(0).data}" /><br>
             <label>Hora :</label>
-            <td><form:input path="hora" value="${map.lj.get(0).hora}" />				
+            <td><form:input type="time" path="hora" class="input" value="${map.lj.get(0).hora}" /><br>				
             
             <label>Competição :</label>
-                <form:select   path = "idCompeticao" name="idCompeticao">
+                <form:select class="input" path = "idCompeticao" name="idCompeticao">
                     <c:forEach items='${map.competicao}' var='lc'>
-                        <form:option class="input" value ="${lc.idCompeticao}">${lc.designacao}</form:option>
+                        <form:option  value ="${lc.idCompeticao}">${lc.designacao}</form:option>
                     </c:forEach>
-                </form:select>
+                </form:select><br>
             <label>Equipa Adversaria :</label>
-                <form:select   path = "idEquipaAdversaria" name="idEquipaAdversaria">
+                <form:select class="input" path = "idEquipaAdversaria" name="idEquipaAdversaria">
                     <c:forEach items='${map.ea}' var='lea'>
-                        <form:option class="input" value ="${lea.idEquipaAdversaria}">${lea.nome}</form:option>
+                        <form:option value ="${lea.idEquipaAdversaria}">${lea.nome}</form:option>
                     </c:forEach>
-                </form:select>     
+                </form:select><br>
             <form:hidden path="idJogo" value="${map.lj.get(0).idJogo}" />		
-                 <input type="submit" value="Save" />                     
+                 <input class="button" type="submit" value="Save" />                     
             </form:form>                      
-                            
+                             
 		
              
 			
