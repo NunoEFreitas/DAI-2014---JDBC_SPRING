@@ -11,8 +11,29 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+         <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
     </head>
     <body>
+        
+           <% 
+	if(session.getAttribute("perfil").equals(6)){ %>  
+ 	    <%@include file="/resources/include/templateSeccionista.jsp"%>
+	    <% 
+	  }else if(session.getAttribute("perfil").equals(2)){ %>
+          <%@include file="/resources/include/templateTreinador.jsp" %>
+          <% }else if(session.getAttribute("perfil").equals(3)){ %>
+          
+	  <%@include file="/resources/include/templateTreinadorAdjunto.jsp" %>         
+	 <% 
+        }
+         %>
+         <Div  class = "cabecalho da pagina" > 
+            <h1>Listar Jogos<small> Escolher equipa</small>  </h1> 
+        </div>
+        
+        
+        
+        
         <h1> Jogo ${map.jogo.get(0)}</h1>
         <h2> Selecionaveis </h2>
         <table border="1"> 

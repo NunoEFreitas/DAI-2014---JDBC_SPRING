@@ -40,7 +40,7 @@
              <table>
 
                  <label>Duracao :</label>
-                 <form:input type="time" class="input" path="duracaoTreino" value="${tr.duracaoTreino}" /><br>
+                 <form:input type="text" class="input" path="duracaoTreino" value="${tr.duracaoTreino}" /><br>
 
 
                  <label>Local :</label>

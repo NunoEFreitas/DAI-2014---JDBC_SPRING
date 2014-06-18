@@ -17,8 +17,8 @@
     </head>
     <body>
          <% 
-	if(session.getAttribute("perfil").equals(6)){ %>  
- 	    <%@include file="/resources/include/templateSeccionista.jsp"%>
+	if(session.getAttribute("perfil").equals(4)){ %>  
+ 	    <%@include file="/resources/include/templateOlheiros.jsp"%>
 	    <% 
 	  }else if(session.getAttribute("perfil").equals(2)){ %>
           <%@include file="/resources/include/templateTreinador.jsp" %>

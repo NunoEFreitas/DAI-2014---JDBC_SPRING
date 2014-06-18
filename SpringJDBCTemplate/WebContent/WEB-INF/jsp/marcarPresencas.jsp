@@ -1,8 +1,3 @@
-<%-- 
-    Document   : marcarPresencas
-    Created on : 6/Jun/2014, 8:03:55
-    Author     : Nuno
---%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -11,10 +6,28 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+                <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
     </head>
     <body>
         
-        <table border="1"> 
+            <% 
+	if(session.getAttribute("perfil").equals(6)){ %>  
+ 	    <%@include file="/resources/include/templateSeccionista.jsp"%>
+	    <% 
+	  }else if(session.getAttribute("perfil").equals(2)){ %>
+          <%@include file="/resources/include/templateTreinador.jsp" %>
+          <% }else if(session.getAttribute("perfil").equals(3)){ %>
+          
+	  <%@include file="/resources/include/templateTreinadorAdjunto.jsp" %>         
+	 <% 
+        }
+         %>
+        
+         <Div  class = "cabecalho da pagina" > 
+                    <h1> Listar treinos<small> Marcar Presenças </small>  </h1> 
+                </div><br>
+        
+        <table class="table"> 
         <tr>
             <td Class="heading"> Id Jogador </td>
             <td Class="heading"> Nome </td>
