@@ -10,12 +10,14 @@ import com.dai.domain.Competicao;
 import com.dai.domain.EquipaAdversaria;
 import com.dai.domain.JogadorEquipaAdversaria;
 import com.dai.domain.Jogo;
+import com.dai.domain.SelecaoJEA;
 import com.dai.domain.SelecaoJogo;
 import com.dai.domain.Utilizador;
 import com.dai.services.CompeticaoService;
 import com.dai.services.EquipaAdversariaService;
 import com.dai.services.JogadorEquipaAdversariaService;
 import com.dai.services.JogoService;
+import com.dai.services.SelecaoJEAService;
 import com.dai.services.SelecaoJogoService;
 import com.dai.services.UtilizadorService;
 import java.util.ArrayList;
@@ -61,6 +63,9 @@ public class JogoController {
      
      @Autowired
      JogadorEquipaAdversariaService jeaService;
+     
+     @Autowired
+     SelecaoJEAService sjeaService;
     
      @RequestMapping("/criarJogo")
 	public ModelAndView novoJogo(@ModelAttribute Jogo jogo, HttpServletRequest request) {
@@ -127,11 +132,28 @@ public class JogoController {
 		return "redirect:/jogoSelecionados/"+jogo;
 	}
         
-        @RequestMapping("/jogoSelecionados/jogadorDesSelecionado/{idJogo}/{idUtilizador}")
+        @RequestMapping("jogoSelecionados/jogadorDesSelecionado/{idJogo}/{idUtilizador}")
 	public String desSelecionaJogador(@PathVariable("idJogo") Integer jogo, @PathVariable("idUtilizador") Integer ut) {
                   
                 slService.apagaSL(ut, jogo);
 		return "redirect:/jogoSelecionados/"+jogo;
+	}
+        
+        @RequestMapping("/jogoSelecionadosEA/{idEquipaAdversaria}/jeaSelecionado/{idJogo}/{IdJogador}")
+	public String selecionaJEA(@PathVariable("idEquipaAdversaria") Integer ea, @PathVariable("idJogo") Integer jogo, @PathVariable("IdJogador") Integer jea) {
+                SelecaoJEA sjea = new SelecaoJEA();
+                sjea.setIdJEA(jea);
+                sjea.setIdJogo(jogo);
+                String nome = jeaService.getNome(jea);
+                sjea.setNome(nome);
+                sjeaService.adicionaSJEA(sjea);
+		return "redirect:/jogoSelecionadosEA/"+ea+"/"+jogo;
+	}
+        
+        @RequestMapping("/jogoSelecionadosEA/{idEquipaAdversaria}/jeaDesSelecionado/{idJogo}/{IdJogador}")
+	public String desSelecionaJEA(@PathVariable("idEquipaAdversaria") Integer ea, @PathVariable("idJogo") Integer jogo, @PathVariable("IdJogador") Integer jea) {
+                sjeaService.apagaSJEA(jea, jogo);
+		return "redirect:/jogoSelecionadosEA/"+ea+"/"+jogo;
 	}
        
         
@@ -201,19 +223,19 @@ public class JogoController {
 		return "redirect:/listarJogosT";
 	}
         
-        @RequestMapping("/jogoSelecionadosEA/{idJogo}/{idEquipaAdversaria}")
-	public ModelAndView selecionaJogadoresEA(@PathVariable("idJogo") Integer jogo,@PathVariable("idEquipaAdversaria") Integer ea) {
+        @RequestMapping("/jogoSelecionadosEA/{idEquipaAdversaria}/{idJogo}")
+	public ModelAndView selecionaJogadoresEA(@PathVariable("idEquipaAdversaria") Integer ea, @PathVariable("idJogo") Integer jogo) {
                     List<Integer> idjogo = new ArrayList();
                     idjogo.add(jogo);
-                    List<JogadorEquipaAdversaria> ljea = jeaService.listaJEAporEquipa(ea);
-                    List<Utilizador> lEscolhas = utilizadorService.listarUTselecionadosJogo(jogo, escalao);
+                    List<JogadorEquipaAdversaria> ljea = jeaService.listarJEAparaJogo(jogo, ea);
+                    List<JogadorEquipaAdversaria> lEscolhas = jeaService.listarJEAselecionadosJogo(jogo, ea);
                     Map<String, List> map = new HashMap<String, List>();        
                     map.put("jogo", idjogo);
                     map.put("ljea", ljea);
                     map.put("escolhas", lEscolhas);
 
                         
-		return new ModelAndView("jogoSelecionados","map",map );
+		return new ModelAndView("jogoSelecionadosEA","map",map );
 	}
         /*
         @RequestMapping(value="/insere", method= RequestMethod.GET)

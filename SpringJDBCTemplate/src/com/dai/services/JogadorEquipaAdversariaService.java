@@ -27,4 +27,10 @@ public interface JogadorEquipaAdversariaService {
     
     public List<JogadorEquipaAdversaria> listaJEA();
     
+    public List<JogadorEquipaAdversaria> listarJEAselecionadosJogo(Integer idJogo, Integer idEA);
+    
+    public List<JogadorEquipaAdversaria> listarJEAparaJogo(Integer idJogo, Integer idEA);
+    
+    public String getNome(Integer idJea);
+    
 }

@@ -49,4 +49,19 @@ public class JogadorEquipaAdversariaServiceImpl implements JogadorEquipaAdversar
     public List<JogadorEquipaAdversaria> listaJEA(){
         return jeadao.listaJEA();
     }
+    
+    @Override
+    public List<JogadorEquipaAdversaria> listarJEAselecionadosJogo(Integer idJogo, Integer idEA){
+        return jeadao.listarJEAselecionadosJogo(idJogo, idEA);
+    }
+    
+    @Override
+    public List<JogadorEquipaAdversaria> listarJEAparaJogo(Integer idJogo, Integer idEA){
+        return jeadao.listarJEAparaJogo(idJogo, idEA);
+    }
+    
+    @Override
+    public String getNome(Integer idJea){
+        return jeadao.getNome(idJea);
+    }
 }

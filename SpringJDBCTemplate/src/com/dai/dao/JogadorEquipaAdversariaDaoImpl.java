@@ -90,5 +90,40 @@ public class JogadorEquipaAdversariaDaoImpl implements JogadorEquipaAdversariaDa
 		jeaList = jdbcTemplate.query(sql, new JogadorEquipaAdversariaRowMapper());
 		return jeaList;
         }
+        
+        @Override
+        public List<JogadorEquipaAdversaria> listarJEAselecionadosJogo(Integer idJogo, Integer idEA){
+            
+        List<JogadorEquipaAdversaria> jeaList = new ArrayList<JogadorEquipaAdversaria>();
+        String sql = "select * from jogadorEquipaAdversaria "
+                + "where equipaAdversaria_idEquipaAdversaria = " + idEA + " and idJogadorEquipaAdversaria in(select idJogadorEquipaAdversaria_s "
+                + "from selecaoJEA where idJogo_s = " + idJogo + ")";
+
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+                jeaList = jdbcTemplate.query(sql, new JogadorEquipaAdversariaRowMapper());
+                return jeaList;
+        }
+        
+        @Override
+        public List<JogadorEquipaAdversaria> listarJEAparaJogo(Integer idJogo, Integer idEA){
+            
+        List<JogadorEquipaAdversaria> jeaList = new ArrayList<JogadorEquipaAdversaria>();
+        String sql = "select * from jogadorEquipaAdversaria "
+                + "where equipaAdversaria_idEquipaAdversaria = " + idEA + " and idJogadorEquipaAdversaria not in(select idJogadorEquipaAdversaria_s "
+                + "from selecaoJEA where idJogo_s = " + idJogo + ")";
+
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+                jeaList = jdbcTemplate.query(sql, new JogadorEquipaAdversariaRowMapper());
+                return jeaList;
+        }
+        
+        @Override
+        public String getNome(Integer idJea){
+            List<JogadorEquipaAdversaria> jeaList = new ArrayList<JogadorEquipaAdversaria>();
+            String sql = "select * from jogadorEquipaAdversaria where idJogadorEquipaAdversaria = "+ idJea ;
+            JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+            jeaList = jdbcTemplate.query(sql, new JogadorEquipaAdversariaRowMapper());
+            return jeaList.get(0).getNome();
+        }
     
 }
