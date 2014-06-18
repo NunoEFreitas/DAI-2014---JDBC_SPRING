@@ -8,11 +8,13 @@ package com.dai.controller;
 
 import com.dai.domain.Competicao;
 import com.dai.domain.EquipaAdversaria;
+import com.dai.domain.JogadorEquipaAdversaria;
 import com.dai.domain.Jogo;
 import com.dai.domain.SelecaoJogo;
 import com.dai.domain.Utilizador;
 import com.dai.services.CompeticaoService;
 import com.dai.services.EquipaAdversariaService;
+import com.dai.services.JogadorEquipaAdversariaService;
 import com.dai.services.JogoService;
 import com.dai.services.SelecaoJogoService;
 import com.dai.services.UtilizadorService;
@@ -56,6 +58,9 @@ public class JogoController {
     
      @Autowired
      SelecaoJogoService slService;
+     
+     @Autowired
+     JogadorEquipaAdversariaService jeaService;
     
      @RequestMapping("/criarJogo")
 	public ModelAndView novoJogo(@ModelAttribute Jogo jogo, HttpServletRequest request) {
@@ -194,6 +199,21 @@ public class JogoController {
 	public String updateJogo(@ModelAttribute Jogo jogo) {
 		jogoService.alteraJogo(jogo);
 		return "redirect:/listarJogosT";
+	}
+        
+        @RequestMapping("/jogoSelecionadosEA/{idJogo}/{idEquipaAdversaria}")
+	public ModelAndView selecionaJogadoresEA(@PathVariable("idJogo") Integer jogo,@PathVariable("idEquipaAdversaria") Integer ea) {
+                    List<Integer> idjogo = new ArrayList();
+                    idjogo.add(jogo);
+                    List<JogadorEquipaAdversaria> ljea = jeaService.listaJEAporEquipa(ea);
+                    List<Utilizador> lEscolhas = utilizadorService.listarUTselecionadosJogo(jogo, escalao);
+                    Map<String, List> map = new HashMap<String, List>();        
+                    map.put("jogo", idjogo);
+                    map.put("ljea", ljea);
+                    map.put("escolhas", lEscolhas);
+
+                        
+		return new ModelAndView("jogoSelecionados","map",map );
 	}
         /*
         @RequestMapping(value="/insere", method= RequestMethod.GET)

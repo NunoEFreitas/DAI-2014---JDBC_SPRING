@@ -47,6 +47,9 @@ class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMa
         <bean id="selecaoJogoDao" class="com.dai.dao.SelecaoJogoDaoImpl" />
 	<bean id="selecaoJogoService" class="com.dai.services.SelecaoJogoServiceImpl" />
         
+        <bean id="selecaoJEA" class="com.dai.dao.SelecaoJEADaoImpl" />
+	<bean id="selecaoJEAService" class="com.dai.services.SelecaoJEAServiceImpl" />
+        
           <bean id="competicaoDao" class="com.dai.dao.CompeticaoDaoImpl" />
 	<bean id="competicaoService" class="com.dai.services.CompeticaoServiceImpl" />
         

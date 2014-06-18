@@ -20,8 +20,9 @@
             <td Class="heading"> Data </td>
             <td Class="heading"> Hora </td>
             <td Class="heading"> Competição </td>
+            <td Class="heading"> Equipa Adversaria </td>
             <td Class="heading"> Resultado </td>
-            <td Class="heading"> Escolher Equipa </td>
+            <td Class="heading"> Escolher Equipa Adversaria </td>
             <td Class="heading"> Editar Jogo </td>
         </tr>
         <c:forEach var="lj" items="${ljogos}">
@@ -31,8 +32,9 @@
                 <td> ${lj.getData()} </td>
                 <td> ${lj.getHora()} </td>
                 <td> ${lj.getIdCompeticao()} </td>
+                <td> ${lj.getIdEquipaAdversaria()} </td>
                 <td> ${lj.getResultado()} </td>
-                <td><a href="jogoSelecionados/${lj.getIdJogo()}">Selecionar</a></td>
+                <td><a href="jogoSelecionadosEA/${lj.getIdJogo()}/${lj.getIdEquipaAdversaria()}">Selecionar</a></td>
                 <td><a href="editarJogo/${lj.getIdJogo()}">Selecionar</a></td>
             </tr>
         </c:forEach>

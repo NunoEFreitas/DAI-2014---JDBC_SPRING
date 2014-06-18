@@ -6,7 +6,7 @@
 
 package com.dai.jdbc;
 
-import com.dai.domain.SelecaoJogo;
+import com.dai.domain.SelecaoJEA;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import org.springframework.dao.DataAccessException;
@@ -16,18 +16,16 @@ import org.springframework.jdbc.core.ResultSetExtractor;
  *
  * @author Nuno
  */
-public class SelecaoJogoExtractor implements ResultSetExtractor<SelecaoJogo>{
+public class SelecaoJEAExtractor implements ResultSetExtractor<SelecaoJEA>{
     
-    public SelecaoJogo extractData(ResultSet resultSet) throws SQLException,
+    public SelecaoJEA extractData(ResultSet resultSet) throws SQLException,
             DataAccessException {
-        SelecaoJogo sl = new SelecaoJogo();
-        sl.setIdJogo(resultSet.getInt("jogo_idjogo"));
-        sl.setIdUtilizador(resultSet.getInt("utilizador_idutilizador"));
-        sl.setNome(resultSet.getString("nomeSL"));
-        
+        SelecaoJEA sjea = new SelecaoJEA();
+        sjea.setIdJEA(resultSet.getInt("idJogadorEquipaAdversaria_s"));
+        sjea.setIdJogo(resultSet.getInt("idJogo_s"));
+        sjea.setNome(resultSet.getString("nomeJEA"));
 
-
-        return sl;
+        return sjea;
     }
     
 }

@@ -24,7 +24,7 @@
                             <ul>
                                 <li class='has-sub'><a href='#'><span>AnalisarTempoReal</span></a>
                                     <ul>
-                                        <li><a href='#'><span>CriarJogo</span></a></li>
+                                        <li><a href='listarJogosTA'><span>Listar Jogos</span></a></li>
                                         <li><a href='#'><span>InserirDadosJogo</span></a></li>
                                     </ul>
                                 </li>

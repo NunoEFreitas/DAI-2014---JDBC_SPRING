@@ -6,8 +6,8 @@
 
 package com.dai.dao;
 
-import com.dai.domain.SelecaoJogo;
-import com.dai.jdbc.SelecaoJogoRowMapper;
+import com.dai.domain.SelecaoJEA;
+import com.dai.jdbc.SelecaoJEARowMapper;
 import java.util.ArrayList;
 import java.util.List;
 import javax.sql.DataSource;
@@ -18,16 +18,16 @@ import org.springframework.jdbc.core.JdbcTemplate;
  *
  * @author Nuno
  */
-public class SelecaoJogoDaoImpl implements SelecaoJogoDao{
+public class SelecaoJEADaoImpl implements SelecaoJEADao {
     
-    @Autowired
+        @Autowired
 	DataSource dataSource;
 
         @Override
-	public void adicionaSL(SelecaoJogo sl) {
+	public void adicionaSJEA(SelecaoJEA sjea) {
 
-		String sql = "INSERT INTO selecaoJogo "
-				+ "( utilizador_idutilizador, jogo_idjogo, nomeSL) VALUES (?, ?, ?)";
+		String sql = "INSERT INTO selecaoJEA "
+				+ "( idJogadorEquipaAdversaria_s, idJogo_s, nomeJEA) VALUES (?, ?, ?)";
 
 		JdbcTemplate template = new JdbcTemplate(dataSource);
                 
@@ -35,27 +35,29 @@ public class SelecaoJogoDaoImpl implements SelecaoJogoDao{
                 
 		template.update(
 				sql,
-				new Object[] {sl.getIdUtilizador(), sl.getIdJogo(), sl.getNome() });
+				new Object[] {sjea.getIdJEA(), sjea.getIdJogo(), sjea.getNome() });
 
 	}
         
         @Override
-	public void apagaSL(int idUtilizador, int idJogo) {
+	public void apagaSJEA(int idJEA, int idJogo) {
             
-            String sql = "delete from selecaoJogo where utilizador_idUtilizador =" + idUtilizador + " and jogo_idJogo =" + idJogo;
+            String sql = "delete from selecaoJEA where idJogadorEquipaAdversaria_s =" + idJEA + " and idJogo_s =" + idJogo;
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		jdbcTemplate.update(sql);
             
         }
         
-        public List<SelecaoJogo> listaSL(int idJogo){
+         @Override
+        public List<SelecaoJEA> listaSJEA(int idJogo){
             
-            List<SelecaoJogo> slList = new ArrayList();
+            List<SelecaoJEA> slList = new ArrayList();
 
-		String sql = "select * from selecaoJogo where jogo_idjogo=" + idJogo;
+		String sql = "select * from selecaoJEA where idJogo_s=" + idJogo;
 
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-		slList = jdbcTemplate.query(sql, new SelecaoJogoRowMapper());
+		slList = jdbcTemplate.query(sql, new SelecaoJEARowMapper());
 		return slList;
         }
+    
 }
