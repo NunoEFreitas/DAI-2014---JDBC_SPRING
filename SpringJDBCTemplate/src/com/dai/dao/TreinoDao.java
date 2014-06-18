@@ -26,5 +26,7 @@ public interface TreinoDao {
     public List<Treino> listarTreinosEscalao(int idEscalao);
     
     public Treino getTreino(Integer idTreino);
+    
+    public List<Treino> listarTreinosPorUT(Integer idUtilizador);
 
 }

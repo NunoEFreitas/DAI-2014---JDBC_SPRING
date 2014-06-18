@@ -33,6 +33,8 @@
                                         <li><a href='#'><span>GerarDadosGráfico</span></a></li>
                                     </ul>
                                 </li>
+                                <li class='has-sub'><a href='listarTreinosJ'><span>Listar Treinos</span></a>
+                                <li class='has-sub'><a href='listarJogosJ'><span>Listar Treinos</span></a>
                             </ul>
                         </li>
                         

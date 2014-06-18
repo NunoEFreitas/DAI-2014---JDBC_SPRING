@@ -64,7 +64,7 @@ public class TreinoController {
 	}
         
         @RequestMapping("/listarTreinosT")
-	public ModelAndView listarTreinos(@ModelAttribute Treino treino, HttpServletRequest request) {
+	public ModelAndView listarTreinosT(@ModelAttribute Treino treino, HttpServletRequest request) {
                 HttpSession session = request.getSession();
                 int escalao = ((int) session.getAttribute("escalao"));
                 List<Treino> li = treinoService.listaTreinosEscalao(escalao);
@@ -72,11 +72,29 @@ public class TreinoController {
 		return new ModelAndView("listarTreinosT","li",li);
 	}
         
+        @RequestMapping("/listarTreinosTA")
+	public ModelAndView listarTreinosTA(@ModelAttribute Treino treino, HttpServletRequest request) {
+                HttpSession session = request.getSession();
+                int escalao = ((int) session.getAttribute("escalao"));
+                List<Treino> li = treinoService.listaTreinosEscalao(escalao);
+
+		return new ModelAndView("listarTreinosTA","li",li);
+	}
+        
         @RequestMapping("/treino/apagar/{idTreino}")
 	public String apagarTreino(@PathVariable("idTreino") Integer idTreino) {
                 treinoService.apagaTreino(idTreino);
 
 		return "redirect:/listarTreinosT";
+	}
+        
+        @RequestMapping("/listarTreinosJ")
+	public ModelAndView listarTreinos(@ModelAttribute Treino treino, HttpServletRequest request) {
+                HttpSession session = request.getSession();
+                int user = ((int) session.getAttribute("user"));
+                List<Treino> li = treinoService.listarTreinosPorUT(user);
+
+		return new ModelAndView("listarTreinosJ","li",li);
 	}
         
         @RequestMapping("/treino/selecionar/{idTreino}")
