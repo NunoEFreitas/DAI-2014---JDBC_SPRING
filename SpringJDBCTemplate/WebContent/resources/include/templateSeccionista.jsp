@@ -11,7 +11,7 @@
     <body>
         <div id="wrapper">
             <div id="leftcolumn"><img src="<c:url value="/resources/images/braga.jpg" />" /> </div>
-            <div id="rightcolumn">
+            <div id="rightcolumn">            
                 <div id='cssmenu'>
                     <ul>
                         <li class='active'><a href='seccionista'><span>Seccionista</span></a></li>

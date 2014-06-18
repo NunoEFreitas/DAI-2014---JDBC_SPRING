@@ -13,7 +13,14 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <table border="1"> 
+        <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
+        
+          <%@include file="/resources/include/templateTreinadorAdjunto.jsp" %>  
+                  <Div  class = "cabecalho da pagina" > 
+                    <h1> Analisar tempo real<small> Listar Jogos </small>  </h1> 
+                </div><br>
+                
+        <table class="table"> 
         <tr>
             <td Class="heading"> ID Jogo </td>
             <td Class="heading"> Local </td>

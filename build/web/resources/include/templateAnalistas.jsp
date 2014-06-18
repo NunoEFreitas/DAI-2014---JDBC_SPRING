@@ -9,7 +9,7 @@
     </head>
     <body>
         <div id="wrapper">
-            <div id="leftcolumn"><img src="<c:url value="/resources/images/braga.jpg" />" /> </div>
+            <div id="leftcolumn"><img src="<c:url value="/resources/images/braga.jpg" />" /> </div> 
             <div id="rightcolumn">
                 <div id='cssmenu'>
                     <ul>

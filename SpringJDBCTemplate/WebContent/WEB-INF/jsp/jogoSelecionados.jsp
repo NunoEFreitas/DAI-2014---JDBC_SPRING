@@ -36,7 +36,7 @@
         
         <h1> Jogo ${map.jogo.get(0)}</h1>
         <h2> Selecionaveis </h2>
-        <table border="1"> 
+        <table class="table"> 
         <tr>
             <td Class="heading"> Id Jogador </td>
             <td Class="heading"> Nome </td>
