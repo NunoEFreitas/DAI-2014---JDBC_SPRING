@@ -36,7 +36,7 @@
             <label>Data: </label>
             <form:input  type="date" required="required" class="input" path="dataTreino" /><br>
             <label>Hora: </label>
-            <form:input type="text" required="required" class="input" path="horaTreino" /><br>
+            <form:input type="time" required="required" class="input" path="horaTreino" /><br>
             <label>Local: </label>
             <form:input required="required" class="input" path="localTreino" /><br>
             <label>Tipo: </label>
