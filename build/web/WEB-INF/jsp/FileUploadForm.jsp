@@ -44,8 +44,9 @@ File Upload Form
  
 		<form:errors path="*" cssClass="errorblock" element="div" />
  
-		Por favor selecione um arquivo para enviar: <input class="input" type="file" name="file" />
-		<input class="button" type="submit" value="Guardar" /><br>
+		Por favor selecione um arquivo para enviar:<br>
+                <input class="input" type="file" name="file" /><br>
+		<input class="button" type="submit" value="Guardar" />
 		<span><form:errors path="file" cssClass="error" />
 		</span>
  
