@@ -14,21 +14,22 @@
             <div id="rightcolumn">            
                 <div id='cssmenu'>
                     <ul>
-                        <li class='active'><a href='seccionista'><span>Seccionista</span></a></li>
+                        <li class='active'><a href=''><span>Seccionista</span></a></li>
+                         <li><button onclick="location.href='login?logout=sair'"><img src="<c:url value="/resources/images/logout.png" />" /></button></li>
                         <li class='has-sub'><a href='#'><span>Gerir Recursos Humanos</span></a>
                             <ul>
 
-                                <li><a href='registarUtilizador'><span>RegistarUtilizadores</span></a></li>
-                                <li><a href='alterarDados'><span>Editar Utilizadores</span></a></li>  
-                                <li><a href='listarUtilizadores'><span>Consultar Utilizadores</span></a></li>
+                                <li><a href='/VoleiUM/registarUtilizador'><span>RegistarUtilizadores</span></a></li>
+                                <li><a href='/VoleiUM/alterarDados'><span>Editar Utilizadores</span></a></li>  
+                                <li><a href='/VoleiUM/listarUtilizadores'><span>Consultar Utilizadores</span></a></li>
                             
                                 
                             </ul>
                         </li>
                         <li class='has-sub'><a href='#'><span>Gerir Competições</span></a>
                             <ul>
-                                <li><a href='criarCompeticao'><span>Inserir Competições</span></a></li>
-                                <li><a href='listarCompeticoes'><span>Listar Competições</span></a></li>
+                                <li><a href='/VoleiUM/criarCompeticao'><span>Inserir Competições</span></a></li>
+                                <li><a href='/VoleiUM/listarCompeticoes'><span>Listar Competições</span></a></li>
                             
                             
                                 
@@ -36,8 +37,8 @@
                             
                             <li class='has-sub'><a href='#'><span>Gerir Escalões</span></a>
                             <ul>
-                                <li><a href='criarEscalao'><span>Inserir Escalão</span></a></li>
-                                <li><a href='listarEscaloes'><span>Listar Escalões</span></a></li>
+                                <li><a href='/VoleiUM/criarEscalao'><span>Inserir Escalão</span></a></li>
+                                <li><a href='/VoleiUM/listarEscaloes'><span>Listar Escalões</span></a></li>
       
                             </ul>
                             
@@ -45,10 +46,10 @@
                         
                         <li class='has-sub'><a href='#'><span>Gerir Equipas Adversarias</span></a>
                             <ul>
-                                <li><a href='criarEquipaAdversaria'><span>Inserir Equipa Adversaria</span></a></li>
-                                <li><a href='listarEquipasAdversarias'><span>Listar Equipas Adversarias</span></a></li>
-                                <li><a href='criarJogadorEquipaAdversaria'><span>Inserir Jogador Equipa Adversaria</span></a></li>
-                                <li><a href='listarJogadoresEquipaAdversaria'><span>Listar Jogadores Equipa Adversaria</span></a></li>
+                                <li><a href='/VoleiUM/criarEquipaAdversaria'><span>Inserir Equipa Adversaria</span></a></li>
+                                <li><a href='/VoleiUM/listarEquipasAdversarias'><span>Listar Equipas Adversarias</span></a></li>
+                                <li><a href='/VoleiUM/criarJogadorEquipaAdversaria'><span>Inserir Jogador Equipa Adversaria</span></a></li>
+                                <li><a href='/VoleiUM/listarJogadoresEquipaAdversaria'><span>Listar Jogadores Equipa Adversaria</span></a></li>
       
                             </ul>
                             

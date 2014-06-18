@@ -13,11 +13,12 @@
             <div id="rightcolumn">
                 <div id='cssmenu'>
                     <ul>
-                        <li class='active'><a href='olheiros'><span>Olheiro</span></a></li>
+                        <li class='active'><a href=''><span>Olheiro</span></a></li>
+                         <li><button onclick="location.href='login?logout=sair'"><img src="<c:url value="/resources/images/logout.png" />" /></button></li>
 
                         <li class='has-sub'><a href='#'><span>Inserir Dados em Tempo Real</span></a>
                             <ul>
-                                <li class='has-sub'><a href='criarJogo'><span>CriarJogo</span></a></li>
+                                <li class='has-sub'><a href='/VoleiUM/criarJogo'><span>CriarJogo</span></a></li>
                                 <li class='has-sub'><a href='#'><span>InserirDadosJogo</span></a>
                                     <ul>
                                         <li><a href='#'><span>InserirTendênciaPasse</span></a></li>
