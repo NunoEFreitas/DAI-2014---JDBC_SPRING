@@ -61,7 +61,7 @@
                             <ul>
                                 <li class='has-sub'><a href='#'><span>InserirDadosTempoReal</span></a>
                                     <ul>
-                                        <li><a href='#'><span>CriarJogo</span></a></li>
+                                        <li><a href='criarJogo'><span>CriarJogo</span></a></li>
                                         <li><a href='#'><span>InserirDadosJogo</span></a></li>
                                     </ul>
                                 </li>

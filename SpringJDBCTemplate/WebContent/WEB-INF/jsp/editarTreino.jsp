@@ -1,3 +1,4 @@
+
 <%-- 
     Document   : alterarTreino
     Created on : 10/Jun/2014, 20:42:47
@@ -12,50 +13,66 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+         <link href="<c:url value ="/resources/css/register.css"/>" rel="stylesheet" type="text/css">
+         <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
+        
     </head>
     <body>
-         <form:form method="post" action="/updateTreino" modelAttribute="treino">
-				<table>
-					<tr>
-						<td>Duracao :</td>
-						<td><form:input path="duracaoTreino" value="${tr.duracaoTreino}" />
-						</td>
-					</tr>
-					<tr>
-						<td>Local :</td>
-						<td><form:input path="localTreino" value="${tr.localTreino}" />
-						</td>
-					</tr>
-					<tr>
-						<td>Data :</td>
-						<td><form:input path="dataTreino" value="${tr.dataTreino}" />
-						</td>
-					</tr>
-                                        
-                                        <tr>
-						<td>Tipo :</td>
-						<td><form:input path="tipoTreino"
-								value="${tr.tipoTreino}" />
-						</td>
-					</tr>
-                                        	<tr>
-						<td>Hora :</td>
-						<td><form:input path="horaTreino"
-								value="${tr.horaTreino}" />
-						</td>
-					</tr>
-                                        <tr>
-                                                 <td>&nbsp;</td>
-						<td><input type="submit" value="Save" />
-						</td>
-					</tr>
-                                        	
-				</table>
-				<form:hidden path="idEscalao" value="${tr.idEscalao}" />
-                                <form:hidden path="idTreino" value="${tr.idTreino}" />
-                            
-			</form:form>
         
-                                       
+         <% 
+	if(session.getAttribute("perfil").equals(6)){ %>  
+ 	    <%@include file="/resources/include/templateSeccionista.jsp"%>
+	    <% 
+	  }else if(session.getAttribute("perfil").equals(2)){ %>
+          <%@include file="/resources/include/templateTreinador.jsp" %>
+          <% }else if(session.getAttribute("perfil").equals(3)){ %>
+          
+	  <%@include file="/resources/include/templateTreinadorAdjunto.jsp" %>         
+	 <% 
+        }
+         %>
+        
+         <Div  class = "cabecalho da pagina" > 
+            <h1>Listar treinos<small> Editar treinos </small>  </h1> 
+        </div>
+        
+         <form:form id="contactform" class="rounded" method="post" action="/updateTreino" modelAttribute="treino">
+             <table>
+
+                 <label>Duracao :</label>
+                 <form:input type="text" class="input" path="duracaoTreino" value="${tr.duracaoTreino}" /><br>
+
+
+                 <label>Local :</label>
+                 <form:input class="input" path="localTreino" value="${tr.localTreino}" /><br>
+
+
+                 <label>Data :</label>
+                 <form:input type="date" class="input" path="dataTreino" value="${tr.dataTreino}" /><br>
+
+
+
+
+                 <label>Tipo :</label>
+                 <form:input class="input" path="tipoTreino" value="${tr.tipoTreino}" /><br>
+
+
+
+                 <label>Hora :</label>
+                 <form:input type="time" class="input" path="horaTreino" value="${tr.horaTreino}" /><br>
+
+
+                 <label>&nbsp;</label>
+                 <input class="button" type="submit" value="Save" />
+
+
+
+
+                 <form:hidden path="idEscalao" value="${tr.idEscalao}" />
+                 <form:hidden path="idTreino" value="${tr.idTreino}" />
+
+             </form:form>
+
+
     </body>
 </html>
