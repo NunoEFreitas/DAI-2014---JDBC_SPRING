@@ -20,6 +20,7 @@
             <td Class="heading"> Data </td>
             <td Class="heading"> Hora </td>
             <td Class="heading"> Competição </td>
+            <td Class="heading"> Equipa Adversaria </td>
             <td Class="heading"> Resultado </td>
             <td Class="heading"> Inserir Dados </td>
         </tr>
@@ -30,6 +31,7 @@
                 <td> ${lj.getData()} </td>
                 <td> ${lj.getHora()} </td>
                 <td> ${lj.getIdCompeticao()} </td>
+                <td> ${lj.getIdEquipaAdversaria()} </td>
                 <td> ${lj.getResultado()} </td>
                 <td><a href="jogo/${lj.getIdJogo()}">Selecionar</a></td>
             </tr>

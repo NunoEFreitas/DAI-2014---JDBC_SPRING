@@ -10,28 +10,18 @@ package com.dai.domain;
  *
  * @author Nuno
  */
-public class SelecaoJogo {
+public class SelecaoJEA {
     
-    private int idUtilizador;
+    private int idJEA;
     private int idJogo;
-    private String nome;
+    private String Nome;
 
-    public String getNome() {
-        return nome;
+    public int getIdJEA() {
+        return idJEA;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-    
-    
-
-    public int getIdUtilizador() {
-        return idUtilizador;
-    }
-
-    public void setIdUtilizador(int idUtilizador) {
-        this.idUtilizador = idUtilizador;
+    public void setIdJEA(int idJEA) {
+        this.idJEA = idJEA;
     }
 
     public int getIdJogo() {
@@ -40,6 +30,14 @@ public class SelecaoJogo {
 
     public void setIdJogo(int idJogo) {
         this.idJogo = idJogo;
+    }
+
+    public String getNome() {
+        return Nome;
+    }
+
+    public void setNome(String Nome) {
+        this.Nome = Nome;
     }
     
     
