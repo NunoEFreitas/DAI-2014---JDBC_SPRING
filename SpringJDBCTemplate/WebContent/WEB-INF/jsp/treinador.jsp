@@ -13,7 +13,7 @@
      <!-- Page content -->
         <%@include file="/resources/include/templateTreinador.jsp" %>
          
-        <h1> ${resultado} </h1><a href="logout" onClick="return confirmLogout()">Sair</a>
+        <h1> ${resultado} </h1>
 
          <%
            out.print("<h4> Id:" + session.getAttribute("user") + " Perfil: " + session.getAttribute("perfil"));

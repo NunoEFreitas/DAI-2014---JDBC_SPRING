@@ -14,6 +14,7 @@
                 <div id='cssmenu'>
                     <ul>
                         <li class='active'><a href='olheiros'><span>Olheiro</span></a></li>
+                         <li><button onclick="location.href='login?logout=sair'"><img src="<c:url value="/resources/images/logout.png" />" /></button></li>
 
                         <li class='has-sub'><a href='#'><span>Inserir Dados em Tempo Real</span></a>
                             <ul>
