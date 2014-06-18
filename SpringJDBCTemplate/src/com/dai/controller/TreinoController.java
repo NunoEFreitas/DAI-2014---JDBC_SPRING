@@ -54,13 +54,13 @@ public class TreinoController {
 	}
     
         @RequestMapping("/inserirTreino")
-	public ModelAndView inserirTreino(@ModelAttribute Treino treino, HttpServletRequest request) {
+	public String inserirTreino(@ModelAttribute Treino treino, HttpServletRequest request) {
                    HttpSession session = request.getSession();
                    int escalao = ((int) session.getAttribute("escalao"));
                    treino.setIdEscalao(escalao);
                    treinoService.novoTreino(treino);
         
-		return new ModelAndView("criarTreino" );
+		return "redirect:/criarTreino";
 	}
         
         @RequestMapping("/listarTreinosT")
@@ -73,10 +73,10 @@ public class TreinoController {
 	}
         
         @RequestMapping("/treino/apagar/{idTreino}")
-	public ModelAndView apagarTreino(@PathVariable("idTreino") Integer idTreino) {
+	public String apagarTreino(@PathVariable("idTreino") Integer idTreino) {
                 treinoService.apagaTreino(idTreino);
 
-		return new ModelAndView("redirect:/listarTreinos");
+		return "redirect:/listarTreinosT";
 	}
         
         @RequestMapping("/treino/selecionar/{idTreino}")
@@ -146,6 +146,6 @@ public class TreinoController {
                  
                 treinoService.updateTreino(treino);
                 
-		return "redirect:/listarTreinos";
+		return "redirect:/listarTreinosT";
 	}
 }
