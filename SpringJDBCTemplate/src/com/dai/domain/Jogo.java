@@ -59,6 +59,26 @@ public class Jogo {
     private String resultado;
     private int idCompeticao;
     private int idEquipaAdversaria;
+    private String designacaoC;
+    private String designacaoEA;
+
+    public String getDesignacaoC() {
+        return designacaoC;
+    }
+
+    public void setDesignacaoC(String designacaoC) {
+        this.designacaoC = designacaoC;
+    }
+
+    public String getDesignacaoEA() {
+        return designacaoEA;
+    }
+
+    public void setDesignacaoEA(String designacaoEA) {
+        this.designacaoEA = designacaoEA;
+    }
+    
+    
 
     public int getIdCompeticao() {
         return idCompeticao;

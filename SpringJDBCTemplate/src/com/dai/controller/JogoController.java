@@ -124,10 +124,11 @@ public class JogoController {
        
         @RequestMapping("/jogoSelecionados/jogadorSelecionado/{idJogo}/{idUtilizador}")
 	public String selecionaJogador(@PathVariable("idJogo") Integer jogo, @PathVariable("idUtilizador") Integer ut) {
-                   
+                String nome = utilizadorService.getNome(ut);
                 SelecaoJogo sl = new SelecaoJogo();    
                 sl.setIdJogo(jogo);
                 sl.setIdUtilizador(ut);
+                sl.setNome(nome);
                 slService.adicionaSL(sl);
 		return "redirect:/jogoSelecionados/"+jogo;
 	}
@@ -157,17 +158,22 @@ public class JogoController {
 	}
        
         
-        @RequestMapping("/jogo/{idJogo}")
-	public ModelAndView carregaJogo(@PathVariable("idJogo") Integer jogo) {
+        @RequestMapping("/inserirDados/{idJogo}")
+	public ModelAndView carregaJogo(@ModelAttribute Jogo jogo,@PathVariable("idJogo") Integer idJogo) {
+            
+            List<Integer> idjogo = new ArrayList();
+            idjogo.add(idJogo);
+            List<SelecaoJEA> ljea = sjeaService.listaSJEA(idJogo);
+            List<SelecaoJogo> lut = slService.listaSL(idJogo);
+            Map<String, List> map = new HashMap<String, List>();        
+            map.put("jogo", idjogo);
+            map.put("ljea", ljea);
+            map.put("lut", lut);
+            
 			
-            return new ModelAndView("jogo");
+            return new ModelAndView("campo","map",map);
 	}
         
-        @RequestMapping("/jogo")
-	public ModelAndView carregaCampo() {
-			
-            return new ModelAndView("jogo");
-	}
         
         @RequestMapping("/listarJogosT")
 	public ModelAndView listaJogosT(HttpServletRequest request) {

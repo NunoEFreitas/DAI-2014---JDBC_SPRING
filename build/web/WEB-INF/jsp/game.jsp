@@ -10,6 +10,7 @@
         <title>Sistema de Informação - SCB</title>
         <script src="<c:url value="/resources/js/jquery-1.11.1.js" />"></script>
         <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        
         <link href="<c:url value ="/resources/css/styleCampo.css"/>" rel="stylesheet" type="text/css">
     </head>
     <!--
@@ -82,26 +83,31 @@
                                                     <div class="elementOutLeft" id="pos13" name="pos13" > 13 </div>    
                                                     <div class="elementTopLeft" id="pos14" name="pos14" > 14 </div>    
                                                     <div class="elementBotLeft" id="pos14" name="pos15" > 15 </div>   
-                                                    <div class="element1" id="pos1" name="pos1" ><label id="p1"> 1 </label> <br> <label id="l1"> Jogador </label> </div>
-                                                    <div class="element2" id="pos2" name="pos2" ><label id="p2"> 2 </label> <br> <label id="l2"> Jogador </label> </div>
-                                                    <div class="element3" id="pos3" name="pos3" ><label id="p3"> 3 </label> <br> <label id="l3"> Jogador </label></div>
-                                                    <div class="element6" id="pos6" name="pos6" ><label id="p6"> 6 </label> <br> <label id="l6"> Jogador </label></div>
-                                                    <div class="element4" id="pos4" name="pos4" ><label id="p4"> 4 </label> <br> <label id="l4"> Jogador </label></div>
-                                                    <div class="element5" id="pos5" name="pos5" ><label id="p5"> 5 </label> <br> <label id="l5"> Jogador </label></div>
+                                                    <div class="element1" id="pos1" name="pos1" ><label id="p1"> 1 </label> <br> <label id="l1"> Jogador </label> <br> <label id="i1"> ID </label> </div>
+                                                    <div class="element2" id="pos2" name="pos2" ><label id="p2"> 2 </label> <br> <label id="l2"> Jogador </label> <br> <label id="i2"> ID </label> </div>
+                                                    <div class="element3" id="pos3" name="pos3" ><label id="p3"> 3 </label> <br> <label id="l3"> Jogador </label> <br> <label id="i3"> ID </label> </div>
+                                                    <div class="element6" id="pos6" name="pos6" ><label id="p6"> 6 </label> <br> <label id="l6"> Jogador </label> <br> <label id="i6"> ID </label> </div>
+                                                    <div class="element4" id="pos4" name="pos4" ><label id="p4"> 4 </label> <br> <label id="l4"> Jogador </label> <br> <label id="i4"> ID </label> </div>
+                                                    <div class="element5" id="pos5" name="pos5" ><label id="p5"> 5 </label> <br> <label id="l5"> Jogador </label> <br> <label id="i5"> ID </label></div>
                                                     <div class="elementLinha" id="posLinha" name="linha" > L </div>
-                                                    <div class="element7" id="pos7" name="pos7" ><label id="p7">7</label> <br> <label id="l7"> ADV 7 </label></div>
-                                                    <div class="element12" id="pos12" name="pos12" ><label id="p12">12</label> <br> <label id="l12"> ADV 12 </label></div>
-                                                    <div class="element11" id="pos11" name="pos11" ><label id="p11">11</label> <br> <label id="l11"> ADV 11</label></div>
-                                                    <div class="element10" id="pos10" name="pos10" ><label id="p10">10</label> <br> <label id="l10"> ADV 10</label></div>
-                                                    <div class="element9" id="pos9" name="pos9" ><label id="p9">9</label> <br> <label id="l9"> ADV 9</label></div>
-                                                    <div class="element8" id="pos8" name="pos8" ><label id="p8">8</label> <br> <label id="l8"> ADV 8</label></div>
+                                                    <div class="element7" id="pos7" name="pos7" ><label id="p7">7</label> <br> <label id="l7"> ADV 7 </label> <br> <label id="i7"> ID </label> </div>
+                                                    <div class="element12" id="pos12" name="pos12" ><label id="p12">12</label> <br> <label id="l12"> ADV 12 </label> <br> <label id="i12"> ID </label></div>
+                                                    <div class="element11" id="pos11" name="pos11" ><label id="p11">11</label> <br> <label id="l11"> ADV 11</label> <br> <label id="i11"> ID </label></div>
+                                                    <div class="element10" id="pos10" name="pos10" ><label id="p10">10</label> <br> <label id="l10"> ADV 10</label> <br> <label id="i10"> ID </label></div>
+                                                    <div class="element9" id="pos9" name="pos9" ><label id="p9">9</label> <br> <label id="l9"> ADV 9</label> <br> <label id="i9"> ID </label></div>
+                                                    <div class="element8" id="pos8" name="pos8" ><label id="p8">8</label> <br> <label id="l8"> ADV 8</label> <br> <label id="i8"> ID </label></div>
                                                     <div class="elementTopRight" id="pos16" name="pos16" > 16 </div>
                                                     <div class="elementBotRight" id="pos17" name="pos17" > 17 </div>
                                                     <div class="elementOutRight" id="pos18" name="pos18" > 18 </div>  
                                                     <div class="elementServiceRight" id="pos20" name="pos20" > 20 </div> 
 
                                                 </div>
-
+                                                    
+                                                
+                                                
+                                                <input type="submit" onClick ="rotacaoCampo1()" value="rotacao" />
+                                                
+                                                
                                                 <div id="atribui">
                                                     </label> Campo1 </label>
                                                     <br>
@@ -129,22 +135,22 @@
                                                     </label> Campo2 </label>
                                                     <br>
                                                     <label> Zona 7 </label>
-                                                    <select id="zona1" onchange="atribui7()"></select>
+                                                    <select id="zona7" onchange="atribui7()"></select>
                                                     <br>
                                                     <label> Zona 8 </label>
-                                                    <select id="zona2" onchange="atribui8()"></select>
+                                                    <select id="zona8" onchange="atribui8()"></select>
                                                     <br>
                                                     <label> Zona 9 </label>
-                                                    <select id="zona3" onchange="atribui9()"></select>
+                                                    <select id="zona9" onchange="atribui9()"></select>
                                                     <br>
                                                     <label> Zona 10 </label>
-                                                    <select id="zona4" onchange="atribui10()"></select>
+                                                    <select id="zona10" onchange="atribui10()"></select>
                                                     <br>
                                                     <label> Zona 11 </label>
-                                                    <select id="zona5" onchange="atribui11()"></select>
+                                                    <select id="zona11" onchange="atribui11()"></select>
                                                     <br>
                                                     <label> Zona 12 </label>
-                                                    <select id="zona6"onchange="atribui12()"></select>
+                                                    <select id="zona12" onchange="atribui12()"></select>
                                                     <br>
                                                 </div>
 
@@ -201,6 +207,10 @@
                                             !-->
                                             <script>
 
+
+
+
+
                                                         var campo1 = [1, 2, 3, 4, 5, 6, 19];
                                                         var campo2 = [7, 8, 9, 10, 11, 12, 20];
                                                         var fora = [14, 15, 16, 17, 13, 18];
@@ -210,22 +220,7 @@
                                                         var defesas = new Array;
                                                         var erros = {};
                                                         var servicos = {};
-                                                        var jogadores = new Array;
-                                                        jogadores.push('Ana');
-                                                        jogadores.push('Maria');
-                                                        jogadores.push('Manuela');
-                                                        jogadores.push('Joaquina');
-                                                        jogadores.push('Carla');
-                                                        jogadores.push('Diana');
-
-                                                        var adv = new Array();
-
-                                                        adv.push('ADV1');
-                                                        adv.push('ADV2');
-                                                        adv.push('ADV3');
-                                                        adv.push('ADV4');
-                                                        adv.push('ADV5');
-                                                        adv.push('ADV6');
+                                                       
 
                                                         function helloAjax() {
                                                             var jogador = 'nuno';
@@ -256,8 +251,26 @@
                                                             document.getElementById('l4').innerHTML = fluxo[3];
                                                             document.getElementById('l3').innerHTML = fluxo[4];
                                                             document.getElementById('l2').innerHTML = fluxo[5];
-
+                                                            
+                                                            
+                                                            var fluxoID = new Array();
+                                                            fluxoID.push(document.getElementById('i1').innerHTML);
+                                                            fluxoID.push(document.getElementById('i6').innerHTML);
+                                                            fluxoID.push(document.getElementById('i5').innerHTML);
+                                                            fluxoID.push(document.getElementById('i4').innerHTML);
+                                                            fluxoID.push(document.getElementById('i3').innerHTML);
+                                                            fluxoID.push(document.getElementById('i2').innerHTML);
+                                                            var a = fluxoID.pop();
+                                                            fluxoID.unshift(a);
+                                                            document.getElementById('i1').innerHTML = fluxoID[0];
+                                                            document.getElementById('i6').innerHTML = fluxoID[1];
+                                                            document.getElementById('i5').innerHTML = fluxoID[2];
+                                                            document.getElementById('i4').innerHTML = fluxoID[3];
+                                                            document.getElementById('i3').innerHTML = fluxoID[4];
+                                                            document.getElementById('i2').innerHTML = fluxoID[5];
+                                                            
                                                             var rotacao = parseInt($("#r").text());
+                                                            alert(rotacao);
                                                             if (rotacao < 6) {
                                                                 document.getElementById('r').innerHTML = rotacao + 1;
                                                             } else {
@@ -282,6 +295,22 @@
                                                             document.getElementById('l10').innerHTML = fluxo[3];
                                                             document.getElementById('l9').innerHTML = fluxo[4];
                                                             document.getElementById('l8').innerHTML = fluxo[5];
+                                                            
+                                                            var fluxoID = new Array();
+                                                            fluxoID.push(document.getElementById('i7').innerHTML);
+                                                            fluxoID.push(document.getElementById('i12').innerHTML);
+                                                            fluxoID.push(document.getElementById('i11').innerHTML);
+                                                            fluxoID.push(document.getElementById('i10').innerHTML);
+                                                            fluxoID.push(document.getElementById('i9').innerHTML);
+                                                            fluxoID.push(document.getElementById('i8').innerHTML);
+                                                            var a = fluxoID.pop();
+                                                            fluxoID.unshift(a);
+                                                            document.getElementById('i7').innerHTML = fluxoID[0];
+                                                            document.getElementById('i12').innerHTML = fluxoID[1];
+                                                            document.getElementById('i11').innerHTML = fluxoID[2];
+                                                            document.getElementById('i10').innerHTML = fluxoID[3];
+                                                            document.getElementById('i9').innerHTML = fluxoID[4];
+                                                            document.getElementById('i8').innerHTML = fluxoID[5];
 
                                                             var rotacao = parseInt($("#r").text());
                                                             if (rotacao < 12) {
@@ -291,53 +320,54 @@
                                                             }
 
                                                         }
+  
                                                         var sel1 = document.getElementById('zona1');
-                                                        for (var i = 0; i < jogadores.length; i++) {
+                                                        <c:forEach items='${map.lut}' var='lut'>
                                                             var opt1 = document.createElement('option');
-                                                            opt1.innerHTML = jogadores[i];
-                                                            opt1.value = jogadores[i];
+                                                            opt1.innerHTML = "<c:out value ="${lut.nome}"></c:out>";
+                                                            opt1.value = <c:out value ="${lut.idUtilizador}"></c:out>;
                                                             sel1.appendChild(opt1);
-                                                        }
+                                                        </c:forEach>
 
                                                         var sel2 = document.getElementById('zona2');
-                                                        for (var i = 0; i < jogadores.length; i++) {
+                                                        <c:forEach items='${map.lut}' var='lut'>
                                                             var opt2 = document.createElement('option');
-                                                            opt2.innerHTML = jogadores[i];
-                                                            opt2.value = jogadores[i];
+                                                            opt2.innerHTML = "<c:out value ="${lut.nome}"></c:out>";
+                                                            opt2.value = <c:out value ="${lut.idUtilizador}"></c:out>;
                                                             sel2.appendChild(opt2);
-                                                        }
+                                                        </c:forEach>
 
                                                         var sel3 = document.getElementById('zona3');
-                                                        for (var i = 0; i < jogadores.length; i++) {
+                                                        <c:forEach items='${map.lut}' var='lut'>
                                                             var opt3 = document.createElement('option');
-                                                            opt3.innerHTML = jogadores[i];
-                                                            opt3.value = jogadores[i];
+                                                            opt3.innerHTML = "<c:out value ="${lut.nome}"></c:out>";
+                                                            opt3.value = <c:out value ="${lut.idUtilizador}"></c:out>;
                                                             sel3.appendChild(opt3);
-                                                        }
+                                                        </c:forEach>
 
                                                         var sel4 = document.getElementById('zona4');
-                                                        for (var i = 0; i < jogadores.length; i++) {
+                                                        <c:forEach items='${map.lut}' var='lut'>
                                                             var opt4 = document.createElement('option');
-                                                            opt4.innerHTML = jogadores[i];
-                                                            opt4.value = jogadores[i];
+                                                            opt4.innerHTML = "<c:out value ="${lut.nome}"></c:out>";
+                                                            opt4.value = <c:out value ="${lut.idUtilizador}"></c:out>;
                                                             sel4.appendChild(opt4);
-                                                        }
+                                                        </c:forEach>
 
                                                         var sel5 = document.getElementById('zona5');
-                                                        for (var i = 0; i < jogadores.length; i++) {
+                                                        <c:forEach items='${map.lut}' var='lut'>
                                                             var opt5 = document.createElement('option');
-                                                            opt5.innerHTML = jogadores[i];
-                                                            opt5.value = jogadores[i];
+                                                            opt5.innerHTML = "<c:out value ="${lut.nome}"></c:out>";
+                                                            opt5.value = <c:out value ="${lut.idUtilizador}"></c:out>;
                                                             sel5.appendChild(opt5);
-                                                        }
+                                                        </c:forEach>
 
                                                         var sel6 = document.getElementById('zona6');
-                                                        for (var i = 0; i < jogadores.length; i++) {
+                                                        <c:forEach items='${map.lut}' var='lut'>
                                                             var opt6 = document.createElement('option');
-                                                            opt6.innerHTML = jogadores[i];
-                                                            opt6.value = jogadores[i];
+                                                            opt6.innerHTML = "<c:out value ="${lut.nome}"></c:out>";
+                                                            opt6.value = <c:out value ="${lut.idUtilizador}"></c:out>;
                                                             sel6.appendChild(opt6);
-                                                        }
+                                                         </c:forEach>
 
                                                         function jog() {
                                                             alert(jogadores);
@@ -345,33 +375,132 @@
 
                                                         function atribui1() {
                                                             var myselect = document.getElementById('zona1');
-                                                            document.getElementById('l1').innerHTML = myselect.options[myselect.selectedIndex].value;
+                                                            document.getElementById('i1').innerHTML = myselect.options[myselect.selectedIndex].value;
+                                                            document.getElementById('l1').innerHTML = myselect.options[myselect.selectedIndex].text;
+                                                  
                                                         }
 
                                                         function atribui2() {
                                                             var myselect = document.getElementById('zona2');
-                                                            document.getElementById('l2').innerHTML = myselect.options[myselect.selectedIndex].value;
+                                                            document.getElementById('i2').innerHTML = myselect.options[myselect.selectedIndex].value;
+                                                            document.getElementById('l2').innerHTML = myselect.options[myselect.selectedIndex].text;
                                                         }
 
                                                         function atribui3() {
                                                             var myselect = document.getElementById('zona3');
-                                                            document.getElementById('l3').innerHTML = myselect.options[myselect.selectedIndex].value;
+                                                            document.getElementById('i3').innerHTML = myselect.options[myselect.selectedIndex].value;
+                                                            document.getElementById('l3').innerHTML = myselect.options[myselect.selectedIndex].text;
                                                         }
 
                                                         function atribui4() {
                                                             var myselect = document.getElementById('zona4');
-                                                            document.getElementById('l4').innerHTML = myselect.options[myselect.selectedIndex].value;
+                                                            document.getElementById('i4').innerHTML = myselect.options[myselect.selectedIndex].value;
+                                                            document.getElementById('l4').innerHTML = myselect.options[myselect.selectedIndex].text;
                                                         }
 
                                                         function atribui5() {
                                                             var myselect = document.getElementById('zona5');
-                                                            document.getElementById('l5').innerHTML = myselect.options[myselect.selectedIndex].value;
+                                                            document.getElementById('i5').innerHTML = myselect.options[myselect.selectedIndex].value;
+                                                            document.getElementById('l5').innerHTML = myselect.options[myselect.selectedIndex].text;
                                                         }
 
                                                         function atribui6() {
                                                             var myselect = document.getElementById('zona6');
-                                                            document.getElementById('l6').innerHTML = myselect.options[myselect.selectedIndex].value;
+                                                            document.getElementById('i6').innerHTML = myselect.options[myselect.selectedIndex].value;
+                                                            document.getElementById('l6').innerHTML = myselect.options[myselect.selectedIndex].text;
                                                         }
+                                                        
+                                                        
+                                                        var sel7 = document.getElementById('zona7');
+                                                        <c:forEach items='${map.ljea}' var='ljea'>
+                                                            var opt7 = document.createElement('option');
+                                                            opt7.innerHTML = "<c:out value ="${ljea.nome}"></c:out>";
+                                                            opt7.value = <c:out value ="${ljea.idJEA}"></c:out>;
+                                                            sel7.appendChild(opt7);
+                                                        </c:forEach>
+
+                                                        var sel8 = document.getElementById('zona8');
+                                                        <c:forEach items='${map.ljea}' var='ljea'>
+                                                            var opt8 = document.createElement('option');
+                                                            opt8.innerHTML = "<c:out value ="${ljea.nome}"></c:out>";
+                                                            opt8.value = <c:out value ="${ljea.idJEA}"></c:out>;
+                                                            sel8.appendChild(opt8);
+                                                        </c:forEach>
+
+                                                        var sel9 = document.getElementById('zona9');
+                                                        <c:forEach items='${map.ljea}' var='ljea'>
+                                                            var opt9 = document.createElement('option');
+                                                            opt9.innerHTML = "<c:out value ="${ljea.nome}"></c:out>";
+                                                            opt9.value = <c:out value ="${ljea.idJEA}"></c:out>;
+                                                            sel9.appendChild(opt9);
+                                                        </c:forEach>
+
+                                                        var sel10 = document.getElementById('zona10');
+                                                        <c:forEach items='${map.ljea}' var='ljea'>
+                                                            var opt10 = document.createElement('option');
+                                                            opt10.innerHTML = "<c:out value ="${ljea.nome}"></c:out>";
+                                                            opt10.value = <c:out value ="${ljea.idJEA}"></c:out>;
+                                                            sel10.appendChild(opt10);
+                                                        </c:forEach>
+
+                                                        var sel11 = document.getElementById('zona11');
+                                                        <c:forEach items='${map.ljea}' var='ljea'>
+                                                            var opt11 = document.createElement('option');
+                                                            opt11.innerHTML = "<c:out value ="${ljea.nome}"></c:out>";
+                                                            opt11.value = <c:out value ="${ljea.idJEA}"></c:out>;
+                                                            sel11.appendChild(opt11);
+                                                        </c:forEach>
+
+                                                        var sel12 = document.getElementById('zona12');
+                                                        <c:forEach items='${map.ljea}' var='ljea'>
+                                                            var opt12 = document.createElement('option');
+                                                            opt12.innerHTML = "<c:out value ="${ljea.nome}"></c:out>";
+                                                            opt12.value = <c:out value ="${ljea.idJEA}"></c:out>;
+                                                            sel12.appendChild(opt12);
+                                                         </c:forEach>
+                                                             
+                                                             
+                                                        function atribui7() {
+                                                            var myselect = document.getElementById('zona7');
+                                                            document.getElementById('i7').innerHTML = myselect.options[myselect.selectedIndex].value;
+                                                            document.getElementById('l7').innerHTML = myselect.options[myselect.selectedIndex].text;
+                                                        }
+
+                                                        function atribui8() {
+                                                            var myselect = document.getElementById('zona8');
+                                                            document.getElementById('i8').innerHTML = myselect.options[myselect.selectedIndex].value;
+                                                            document.getElementById('l8').innerHTML = myselect.options[myselect.selectedIndex].text;
+                                                        }
+
+                                                        function atribui9() {
+                                                            var myselect = document.getElementById('zona9');
+                                                            document.getElementById('i9').innerHTML = myselect.options[myselect.selectedIndex].value;
+                                                            document.getElementById('l9').innerHTML = myselect.options[myselect.selectedIndex].text;
+                                                        }
+
+                                                        function atribui10() {
+                                                            var myselect = document.getElementById('zona10');
+                                                            document.getElementById('i10').innerHTML = myselect.options[myselect.selectedIndex].value;
+                                                            document.getElementById('l10').innerHTML = myselect.options[myselect.selectedIndex].text;
+                                                        }
+
+                                                        function atribui11() {
+                                                            var myselect = document.getElementById('zona11');
+                                                            document.getElementById('i11').innerHTML = myselect.options[myselect.selectedIndex].value;
+                                                            document.getElementById('l11').innerHTML = myselect.options[myselect.selectedIndex].text;
+                                                        }
+
+                                                        function atribui12() {
+                                                            var myselect = document.getElementById('zona12');
+                                                            document.getElementById('i12').innerHTML = myselect.options[myselect.selectedIndex].value;
+                                                            document.getElementById('l12').innerHTML = myselect.options[myselect.selectedIndex].text;
+                                                        }     
+
+                                                        function jog() {
+                                                            alert(jogadores);
+                                                        }
+
+                          
 
 
                                                         function comeco() {

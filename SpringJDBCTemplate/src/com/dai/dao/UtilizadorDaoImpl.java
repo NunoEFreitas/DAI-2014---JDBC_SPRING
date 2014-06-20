@@ -174,4 +174,15 @@ public class UtilizadorDaoImpl implements UtilizadorDao {
                 utList = jdbcTemplate.query(sql, new UtilizadorRowMapper());
                 return utList;
         }
+        
+        @Override
+        public String getNome(Integer idUtilizador){
+            List<Utilizador> utList = new ArrayList<Utilizador>();
+        String sql = "select * from utilizador "
+                + "where idUtilizador = " + idUtilizador;
+
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+                utList = jdbcTemplate.query(sql, new UtilizadorRowMapper());
+                return utList.get(0).getNome();
+        }
 }

@@ -28,4 +28,6 @@ public interface UtilizadorService {
         public List<Utilizador> listarUTparaJogo(Integer idJogo, Integer idEscalao);
         
         public List<Utilizador> listarUTselecionadosJogo(Integer idJogo, Integer idEscalao);
+        
+        public String getNome(Integer idUtilizador);
 }

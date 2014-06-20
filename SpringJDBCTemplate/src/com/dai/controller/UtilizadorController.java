@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import com.dai.services.UtilizadorService;
+import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -143,13 +144,12 @@ public class UtilizadorController {
 
 	}
  
-         @RequestMapping("/logout")
-	public ModelAndView logout() {
-		return new ModelAndView("login");
-	}
+      
         
         @RequestMapping("/login")
 	public ModelAndView login() {
+            
+           
 		return new ModelAndView("login");
 	}
         
@@ -157,6 +157,7 @@ public class UtilizadorController {
     public ModelAndView login(@RequestParam("username") Integer user, @RequestParam("password") String password, ModelMap model, HttpServletRequest request, HttpServletResponse response) {
         String resultado;
         Utilizador ut;
+               
         if (utilizadorService.verificaUtilizador(user)) {
             ut = utilizadorService.getUtilizador(user);
 
@@ -206,6 +207,7 @@ public class UtilizadorController {
 
         }
         return null;
+       
     }
 
                
@@ -291,5 +293,22 @@ public class UtilizadorController {
 
 		return new ModelAndView("listarEscaloes","li",li);
 	}
+          @RequestMapping("/sair")
+	public ModelAndView sair(HttpServletRequest request, HttpServletResponse response) throws IOException {
+                HttpSession session = request.getSession();  
+              
+//           session.removeAttribute("perfil");
+//                session.invalidate();
+               session.removeAttribute("user");
+              System.out.println(session.getAttribute("user"));
+      
+        session.invalidate();
+            
+
+
+		return new ModelAndView("login");
+	}
+        
+        
           
 }

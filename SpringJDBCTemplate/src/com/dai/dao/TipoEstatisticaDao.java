@@ -6,10 +6,14 @@
 
 package com.dai.dao;
 
+import java.util.List;
+
 /**
  *
  * @author Nuno
  */
-public class TipoEstatisticaDao {
+public interface TipoEstatisticaDao {
+    
+    public List<TipoEstatistica> listaEstatisticas();
     
 }

@@ -20,7 +20,7 @@ body {
  margin: 10px 0px 0px 0px;
  padding: 10px;
  height: 1100px;
- width: 165px;
+ width: 15%;
  float: left;
  text-align: center;
 }
@@ -31,7 +31,8 @@ body {
  background:#CCC8B3;
  margin: 10px 0px 10px 0px;
  padding: 10px;
- height: 1100px;
+ min-height: 1100px;
+ height: 100%;
  width: 1140px;
  display: inline;
  position: relative;

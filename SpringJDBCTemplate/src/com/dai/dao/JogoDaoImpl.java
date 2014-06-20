@@ -8,6 +8,7 @@ package com.dai.dao;
 
 import com.dai.domain.Jogo;
 import com.dai.jdbc.JogoRowMapper;
+import com.dai.jdbc.JogoRowMapperL;
 import java.util.ArrayList;
 import java.util.List;
 import javax.sql.DataSource;
@@ -68,7 +69,7 @@ public class JogoDaoImpl implements JogoDao{
         
             
         }
-    
+    /*
         @Override
         public List<Jogo> listaJogosPendentesEscalao(Integer idEscalao){
                 List<Jogo> utList = new ArrayList();
@@ -79,7 +80,22 @@ public class JogoDaoImpl implements JogoDao{
 		utList = jdbcTemplate.query(sql, new JogoRowMapper());
 		return utList;
         }
-    
+    */
+        
+         @Override
+        public List<Jogo> listaJogosPendentesEscalao(Integer idEscalao){
+                List<Jogo> utList = new ArrayList();
+                String sql = "select jogo.idJogo, jogo.localJogo, jogo.dataJogo, jogo.resultadoJogo, "
+                        + "jogo.horaJogo, jogo.competicao_idCompeticao, competicao.designacaoCompeticao, "
+                        + "jogo.equipaAdversaria_idEquipaAdversaria, equipaadversaria.nomeEquipaAdversaria  "
+                        + "from jogo inner join competicao on jogo.competicao_idCompeticao = competicao.idCompeticao " +
+                        "inner join equipaadversaria on jogo.equipaAdversaria_idEquipaAdversaria = equipaadversaria.idEquipaAdversaria "
+                        + "where resultadoJogo is null and competicao_idCompeticao IN (select idCompeticao from competicao where escalao_idEscalao_c = " + idEscalao +  ")";
+                JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		utList = jdbcTemplate.query(sql, new JogoRowMapperL());
+		return utList;
+        }
+        
         @Override
         public void apagaJogo(Integer idJogo){
             
@@ -133,5 +149,6 @@ public class JogoDaoImpl implements JogoDao{
 		jogoList= jdbcTemplate.query(sql, new JogoRowMapper());
 		return jogoList;
         }
+      
         
 }

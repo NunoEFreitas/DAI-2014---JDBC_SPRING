@@ -13,14 +13,13 @@
             <div id="rightcolumn">
                 <div id='cssmenu'>
                     <ul>
-                        <li class='active'><a href='atleta'><span>Atleta</span></a></li>
-                        <li><button onclick="location.href='login?logout=sair'"><img src="<c:url value="/resources/images/logout.png" />" /></button></li>
-
+                        <li class='active'><a href=''><span>Atleta</span></a></li>
+                         <li><a href='sair'><img src="<c:url value="/resources/images/logout.png" />" /></a></li>
                          <li class='has-sub'><a href='#'><span>Gerir Atletas</span></a>
                             <ul>
                                 <li class='has-sub'><a href='#'><span>Visualizar Atleta</span></a>
                                     <ul>
-                                        <li><a href='listarUtilizadores'><span>VisualizarDadosAtleta</span></a></li>
+                                        <li><a href='/VoleiUM/listarUtilizadores'><span>VisualizarDadosAtleta</span></a></li>
                                         <li><a href='#'><span>VisualizarHistoricoAtleta</span></a></li>
                                     </ul>
                                 </li>
@@ -34,6 +33,8 @@
                                         <li><a href='gerarDadosGrafico'><span>GerarDadosGráfico</span></a></li>
                                     </ul>
                                 </li>
+                                <li class='has-sub'><a href='listarTreinosJ'><span>Listar Treinos</span></a>
+                                <li class='has-sub'><a href='listarJogosJ'><span>Listar Treinos</span></a>
                             </ul>
                         </li>
                         

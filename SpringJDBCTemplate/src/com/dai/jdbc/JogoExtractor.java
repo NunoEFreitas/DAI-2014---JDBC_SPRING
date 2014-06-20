@@ -29,7 +29,9 @@ public class JogoExtractor implements ResultSetExtractor<Jogo> {
                 jogo.setHora(resultSet.getString("horaJogo"));
                 jogo.setResultado(resultSet.getString("resultadoJogo"));
                 jogo.setIdCompeticao(resultSet.getInt("competicao_idCompeticao"));
-                jogo.setIdEquipaAdversaria(resultSet.getInt("equipaAdversaria_idequipaAdversaria"));
+                jogo.setIdEquipaAdversaria(resultSet.getInt("equipaAdversaria_idequipaAdversaria"));   
+                
+                
 
                 
 		return jogo;

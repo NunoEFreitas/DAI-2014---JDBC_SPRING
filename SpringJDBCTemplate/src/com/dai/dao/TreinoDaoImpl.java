@@ -102,6 +102,19 @@ public class TreinoDaoImpl implements TreinoDao{
 		return treinoList.get(0);
         }
         
+        public List<Treino> listarTreinosPorUT(Integer idUtilizador){
+            
+            List<Treino> treinoList = new ArrayList();
+            String sql = "select * from treino where idTreino in"
+                    + " (select treino_idtreino from selecaotreino where "
+                    + "utilizador_idutilizador_st = " + idUtilizador+" and presenca is null )";
+            
+            JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		treinoList= jdbcTemplate.query(sql, new TreinoRowMapper());
+		return treinoList;
+            
+        }
+        
      
     
 }

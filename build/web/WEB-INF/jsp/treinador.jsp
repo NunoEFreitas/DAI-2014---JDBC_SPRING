@@ -14,10 +14,14 @@
         <%@include file="/resources/include/templateTreinador.jsp" %>
          
         <h1> ${resultado} </h1>
+        
 
          <%
+ 
+        
+            
            out.print("<h4> Id:" + session.getAttribute("user") + " Perfil: " + session.getAttribute("perfil"));
-
+        
         %>
 
  </div>

@@ -50,5 +50,10 @@ public class TreinoServiceImpl implements TreinoService{
         public Treino getTreino(Integer idTreino){
             return treinodao.getTreino(idTreino);
         }
+        
+        @Override
+        public List<Treino> listarTreinosPorUT(Integer idUtilizador){
+            return treinodao.listarTreinosPorUT(idUtilizador);
+        }
     
 }
