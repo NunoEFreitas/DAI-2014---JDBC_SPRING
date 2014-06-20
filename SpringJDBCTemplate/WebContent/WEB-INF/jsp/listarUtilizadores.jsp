@@ -57,8 +57,11 @@
 	        </script>
  	</head>
  	<body>
+            <% 
+	if(session.getAttribute("perfil").equals(1)){ %>  
+ 	    <%@include file="/resources/include/templateAtleta.jsp"%>
  	    <% 
-	if(session.getAttribute("perfil").equals(6)){ %>  
+        }else if(session.getAttribute("perfil").equals(6)){ %>  
  	    <%@include file="/resources/include/templateSeccionista.jsp"%>
 	    <% 
 	  }else if(session.getAttribute("perfil").equals(2)){ %>

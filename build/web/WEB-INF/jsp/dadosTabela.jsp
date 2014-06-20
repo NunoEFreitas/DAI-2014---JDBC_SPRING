@@ -20,5 +20,9 @@
 <a href="#"  style="background-color:#b92c28;font-weight:bold;color:#ffffff;" class="btn"><i class="icon-align-justify"></i> <strong>AnalisarTendênciaServiço</strong></a>
 <a href="#"  style="background-color:#b92c28;font-weight:bold;color:#ffffff;" class="btn"><i class="icon-align-justify"></i> <strong>AnalisarTendênciaAtaque</strong></a>
 <a href="#"  style="background-color:#b92c28;font-weight:bold;color:#ffffff;" class="btn"><i class="icon-align-justify"></i> <strong>AnalisarPiorRecetora</strong></a>
+  
+             <Div  class = "cabecalho da pagina" > 
+                 <h1>AnalisarAdversários<small> Analisar Dados em Tabela </small>  </h1> 
+             </div><br>
 </body>
 </html>

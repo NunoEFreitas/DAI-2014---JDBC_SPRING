@@ -30,7 +30,7 @@
          %>
         
         <Div  class = "cabecalho da pagina" > 
-            <h1>Inserir Dados em tempo real<small> Criar jogo </small>  </h1> 
+            <h1>Analisar em tempo real<small> Criar jogo </small>  </h1> 
         </div>
         
         

@@ -5,14 +5,24 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
         <title>JSP Page</title>
     </head>
     <body>
-       <table border="1"> 
+        
+          <%@include file="/resources/include/templateTreinadorAdjunto.jsp" %>
+          
+           <Div  class = "cabecalho da pagina" > 
+                 <h1>Gerir treinos<small> Listar treinos </small>  </h1> 
+             </div><br>
+          
+       <table class="table"> 
         <tr>
             <td Class="heading"> ID Treino </td>
             <td Class="heading"> Duracao </td>

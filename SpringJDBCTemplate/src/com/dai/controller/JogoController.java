@@ -265,6 +265,7 @@ public class JogoController {
         @RequestParam("clube") Integer clube)  {  
             String mensagem="llll";
             return mensagem;
+<<<<<<< HEAD
     }  
         */
         
@@ -287,5 +288,29 @@ public class JogoController {
             return mensagem;
     } 
        
+=======
+    }
+        
+         @RequestMapping("/dadosGrafico")
+	public ModelAndView dadosGrafico() {
+               
+		return new ModelAndView("dadosGrafico");
+	}
+  @RequestMapping("/dadosTabela")
+	public ModelAndView dadosTabela() {
+               
+		return new ModelAndView("dadosTabela");
+	}
+         @RequestMapping("/gerarDadosTabela")
+	public ModelAndView gerarDadosTabela() {
+               
+		return new ModelAndView("gerarDadosTabela");
+	}
+        @RequestMapping("/gerarDadosGrafico")
+	public ModelAndView gerarDadosGrafico() {
+               
+		return new ModelAndView("gerarDadosGrafico");
+	}
+>>>>>>> 9d9067a9268731d9b60b72c91c3d7461fff7f319
 }  
         
