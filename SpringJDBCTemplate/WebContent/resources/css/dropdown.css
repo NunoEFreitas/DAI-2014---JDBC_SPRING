@@ -20,7 +20,7 @@ body {
  margin: 10px 0px 0px 0px;
  padding: 10px;
  height: 1100px;
- width: 15%;
+ width: 10%;
  float: left;
  text-align: center;
 }
@@ -33,7 +33,7 @@ body {
  padding: 10px;
  min-height: 1100px;
  height: 100%;
- width: 1140px;
+ width: 90%;
  display: inline;
  position: relative;
 }

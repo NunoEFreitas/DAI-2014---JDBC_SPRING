@@ -26,13 +26,7 @@
 						<a href="login">Login</a>
 					</li>
                                         
-                                        <li>
-						<a href="jogo">Campo</a>
-					</li>
-                                        
-                                        <li>
-						<a href="gestaoDeTreinos">Gerir Treinos</a>
-					</li>   
+
 				</ul>
 				<div class="connect">
 					*

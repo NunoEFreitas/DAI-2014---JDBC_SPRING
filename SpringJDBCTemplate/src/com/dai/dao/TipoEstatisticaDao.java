@@ -6,6 +6,7 @@
 
 package com.dai.dao;
 
+import com.dai.domain.TipoEstatistica;
 import java.util.List;
 
 /**
