@@ -16,7 +16,7 @@ import org.springframework.jdbc.core.ResultSetExtractor;
  *
  * @author Nuno
  */
-public class JogoExtractor implements ResultSetExtractor<Jogo> {
+public class JogoExtractorL implements ResultSetExtractor<Jogo> {
     
     public Jogo extractData(ResultSet resultSet) throws SQLException,
 			DataAccessException {
@@ -29,7 +29,9 @@ public class JogoExtractor implements ResultSetExtractor<Jogo> {
                 jogo.setHora(resultSet.getString("horaJogo"));
                 jogo.setResultado(resultSet.getString("resultadoJogo"));
                 jogo.setIdCompeticao(resultSet.getInt("competicao_idCompeticao"));
-                jogo.setIdEquipaAdversaria(resultSet.getInt("equipaAdversaria_idequipaAdversaria"));   
+                jogo.setIdEquipaAdversaria(resultSet.getInt("equipaAdversaria_idequipaAdversaria"));
+                jogo.setDesignacaoC(resultSet.getString("competicao.designacaoCompeticao"));
+                jogo.setDesignacaoEA(resultSet.getString("equipaadversaria.nomeEquipaAdversaria"));    
                 
                 
 

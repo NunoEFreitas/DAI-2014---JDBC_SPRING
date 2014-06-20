@@ -33,7 +33,7 @@
                 <td> ${lj.getIdCompeticao()} </td>
                 <td> ${lj.getIdEquipaAdversaria()} </td>
                 <td> ${lj.getResultado()} </td>
-                <td><a href="jogo/${lj.getIdJogo()}">Selecionar</a></td>
+                <td><a href="inserirDados/${lj.getIdJogo()}">Selecionar</a></td>
             </tr>
         </c:forEach>
     </table>

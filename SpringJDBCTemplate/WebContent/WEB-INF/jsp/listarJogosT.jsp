@@ -35,8 +35,8 @@
                 <td> ${lj.getLocal()} </td>
                 <td> ${lj.getData()} </td>
                 <td> ${lj.getHora()} </td>
-                <td> ${lj.getIdCompeticao()} </td>
-                <td> ${lj.getIdEquipaAdversaria()} </td>
+                <td> ${lj.getDesignacaoC()} </td>
+                <td> ${lj.getDesignacaoEA()} </td>
                 <td> ${lj.getResultado()} </td>
                 <td><a href="jogoSelecionados/${lj.getIdJogo()}">Selecionar</a></td>
                 <td><a href="editarJogo/${lj.getIdJogo()}">Selecionar</a></td>

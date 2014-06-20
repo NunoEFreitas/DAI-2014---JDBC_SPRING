@@ -17,14 +17,8 @@
                          <li><button onclick="location.href='login?logout=sair'"><img src="<c:url value="/resources/images/logout.png" />" /></button></li>
                         <li class='has-sub'><a href='#'><span>Analisar em Tempo Real</span></a>
                             <ul>
-                                <li class='has-sub'><a href='#'><span>InserirDadosJogo</span></a>
-                                    <ul>
-                                        <li><a href='#'><span>InserirDadosReceção</span></a></li>
-                                        <li><a href='#'><span>InserirDadosAtaque</span></a></li>
-                                         <li><a href='#'><span>InserirDadosDefesa</span></a></li>
-                                          <li><a href='#'><span>InserirDadosBloco</span></a></li>
-                                           <li><a href='#'><span>InserirDadoserviço</span></a></li>
-                                    </ul>
+                                <li class='has-sub'><a href='listarJogosA'><span>Listar Jogos</span></a>
+                                   
                                 </li>
                                 
                             </ul>

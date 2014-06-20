@@ -73,5 +73,10 @@ public class UtilizadorServiceImpl implements UtilizadorService {
         public List<Utilizador> listarUTselecionadosJogo(Integer idJogo, Integer idEscalao){
             return utilizadordao.listarUTselecionadosJogo(idJogo, idEscalao);
         }
+        
+        @Override
+        public String getNome(Integer idUtilizador){
+            return utilizadordao.getNome(idUtilizador);
+        }
 	
 }

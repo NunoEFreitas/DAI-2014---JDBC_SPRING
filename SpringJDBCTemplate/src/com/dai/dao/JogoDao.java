@@ -31,4 +31,5 @@ public interface JogoDao {
     
     public List<Jogo> getJogo(Integer idJogo);
     
+    
 }
