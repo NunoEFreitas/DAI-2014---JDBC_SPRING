@@ -71,7 +71,14 @@ public class TreinoController {
 
 		return new ModelAndView("listarTreinosT","li",li);
 	}
-        
+        @RequestMapping("/listarTreinosTA")
+	public ModelAndView listarTreinosTA(@ModelAttribute Treino treino, HttpServletRequest request) {
+                HttpSession session = request.getSession();
+                int escalao = ((int) session.getAttribute("escalao"));
+                List<Treino> li = treinoService.listaTreinosEscalao(escalao);
+
+		return new ModelAndView("listarTreinosTA","li",li);
+	}
         @RequestMapping("/treino/apagar/{idTreino}")
 	public String apagarTreino(@PathVariable("idTreino") Integer idTreino) {
                 treinoService.apagaTreino(idTreino);

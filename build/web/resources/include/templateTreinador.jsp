@@ -44,8 +44,8 @@
                                 </li>
                                 <li class='has-sub'><a href='#'><span>AnalisarPosteriori</span></a>
                                     <ul>
-                                        <li><a href='#'><span>GerarDadosTabela</span></a></li>
-                                        <li class='last'><a href='#'><span>GerarDadosGráfico</span></a></li>
+                                        <li><a href='gerarDadosTabela'><span>GerarDadosTabela</span></a></li>
+                                        <li class='last'><a href='gerarDadosGrafico'><span>GerarDadosGráfico</span></a></li>
                                     </ul>
                                 </li>
                                 <li class='has-sub'><a href='#'><span>ManusearVídeo</span></a>

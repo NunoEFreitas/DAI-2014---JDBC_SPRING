@@ -254,6 +254,27 @@ public class JogoController {
         @RequestParam("clube") String clube)  {  
             String mensagem=jogador;
             return mensagem;
-    }  
+    }
+        
+         @RequestMapping("/dadosGrafico")
+	public ModelAndView dadosGrafico() {
+               
+		return new ModelAndView("dadosGrafico");
+	}
+  @RequestMapping("/dadosTabela")
+	public ModelAndView dadosTabela() {
+               
+		return new ModelAndView("dadosTabela");
+	}
+         @RequestMapping("/gerarDadosTabela")
+	public ModelAndView gerarDadosTabela() {
+               
+		return new ModelAndView("gerarDadosTabela");
+	}
+        @RequestMapping("/gerarDadosGrafico")
+	public ModelAndView gerarDadosGrafico() {
+               
+		return new ModelAndView("gerarDadosGrafico");
+	}
 }  
         

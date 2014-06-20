@@ -16,18 +16,14 @@
           
 		<div class="page">
 			<div class="logo">
-                            
-                            <a href="login" >Login</a>
-                            <br>
-                            
-				<span> <a href="main"><img src="<c:url value="/resources/images/logotipo.jpg" />" /></a> </span>
-			</div>
+		<span> <a href="main"><img src="<c:url value="/resources/images/logotipo.jpg" />" /></a> </span>
+	        </div>
 			<div class="sidebar">
 				<ul>
 					
                                         
                                         <li>
-						<a href="listaJogos">Lista Jogos</a>
+						<a href="login">Login</a>
 					</li>
                                         
                                         <li>
@@ -36,11 +32,7 @@
                                         
                                         <li>
 						<a href="gestaoDeTreinos">Gerir Treinos</a>
-					</li>
-                                        
-                                        <li> 
-                                            <a href="gestaoDeEquipasAdversarias"> Gerir Equipas Adversarias </a>
-                                        </li>    
+					</li>   
 				</ul>
 				<div class="connect">
 					*
@@ -62,19 +54,18 @@
 					</li>
 					<li class="second">
 						<a href="#"><img src="<c:url value="/resources/images/puppy.jpg" />" /></a>
-						<h3><a href="blog.html">Voleibol Feminino</a></h3>
+						<h3><a href="#">Voleibol Feminino</a></h3>
 						<span></span>
 						<p>
-						Hoje, a sociedade bracarense já despertou para uma modalidade no feminino ? o VOLEIBOL.	
+						Hoje, a sociedade bracarense já despertou para uma modalidade no feminino, o VOLEIBOL.	
 						</p>
 					</li>
 					<li class="third">
-						<h3><a href="#"></a></h3>
-						<a href=""><img src="<c:url value="/resources/images/grilled-pork.jpg" />" /></a> <span></span>
-						<p>
-						2011/2012
-                                                     SC Braga Cadetes - Campeãs Nacionais	
-						</p>
+						 <h3><a href="#">2011/2012 SC Braga Cadetes - Campeãs Nacionais</a></h3>
+						<a href=""><img src="<c:url value="/resources/images/grilled-pork.jpg" />" /></a> 
+                                               
+                                                <span></span>
+						
 					</li>
 				</ul>
 			</div>

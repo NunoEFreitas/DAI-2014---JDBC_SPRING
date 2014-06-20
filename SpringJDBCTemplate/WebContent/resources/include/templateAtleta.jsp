@@ -30,8 +30,8 @@
                             <ul>
                                 <li class='has-sub'><a href='#'><span>Analisar À Posteriori</span></a>
                                     <ul>
-                                        <li><a href='#'><span>GerarDadosTabela</span></a></li>
-                                        <li><a href='#'><span>GerarDadosGráfico</span></a></li>
+                                        <li><a href='gerarDadosTabela'><span>GerarDadosTabela</span></a></li>
+                                        <li><a href='gerarDadosGrafico'><span>GerarDadosGráfico</span></a></li>
                                     </ul>
                                 </li>
                             </ul>
