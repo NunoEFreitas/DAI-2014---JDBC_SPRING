@@ -4,15 +4,16 @@
  * and open the template in the editor.
  */
 
-package com.dai.dao;
+package com.dai.services;
 
+import com.dai.domain.TipoEstatistica;
 import java.util.List;
 
 /**
  *
  * @author Nuno
  */
-public interface TipoEstatisticaDao {
+public interface TipoEstatisticaService {
     
     public List<TipoEstatistica> listaEstatisticas();
     

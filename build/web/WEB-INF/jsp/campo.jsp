@@ -53,36 +53,16 @@
                                 <h3> Rotação Campo2: <label id="r2">1<label> </h3>
                                             </div>
 
-                                            <div id ="classificacao">	
-                                                <div id="rbd" style="display:none">
-                                                    <h3>Classificação de Defesa</h3>
-                                                    <input type="radio" name="cld" value="3" onclick="defesa()" />3<br>
-                                                    <input type="radio" name="cld" value="2" onclick="defesa()" />2<br>
-                                                    <input type="radio" name="cld" value="1" onclick="defesa()" />1<br>
-                                                    <input type="radio" name="cld" value="0" onclick="defesa()" />0<br>
-                                                    <input type="radio" name="cld" value="-1" onclick="defesa()" />Erro<br>
-                                                </div>
+                                            
 
-                                                <div id="rba" style="display:none">
-                                                    <h3>Classificação de Ataque</h3>
-                                                    <input type="radio" name="cla" value="3" onclick="ataque()" />3<br>
-                                                    <input type="radio" name="cla" value="2" onclick="ataque()" />2<br>
-                                                    <input type="radio" name="cla" value="1" onclick="ataque()"/>1<br>
-                                                    <input type="radio" name="cla" value="0" onclick="ataque()"/>0<br>
-                                                    <input type="radio" name="cla" value="-1" onclick="ataque()"/>Erro<br>
-
-                                                </div>
-
-                                            </div>
-
-                                            </div>
+                                            
                                             <div id="mid">
 
                                                 <div id="campo">
                                                     <div class="elementServiceLeft" id="pos19" name="pos19" > 19 </div>
                                                     <div class="elementOutLeft" id="pos13" name="pos13" > 13 </div>    
                                                     <div class="elementTopLeft" id="pos14" name="pos14" > 14 </div>    
-                                                    <div class="elementBotLeft" id="pos14" name="pos15" > 15 </div>   
+                                                    <div class="elementBotLeft" id="pos15" name="pos15" > 15 </div>   
                                                     <div class="element1" id="pos1" name="pos1" ><label id="p1"> 1 </label> <br> <label id="l1"> Jogador </label> <br> <label id="i1"> ID </label> </div>
                                                     <div class="element2" id="pos2" name="pos2" ><label id="p2"> 2 </label> <br> <label id="l2"> Jogador </label> <br> <label id="i2"> ID </label> </div>
                                                     <div class="element3" id="pos3" name="pos3" ><label id="p3"> 3 </label> <br> <label id="l3"> Jogador </label> <br> <label id="i3"> ID </label> </div>
@@ -105,7 +85,7 @@
                                                     
                                                 
                                                 
-                                                <input type="submit" onClick ="rotacaoCampo1()" value="rotacao" />
+                                                <input type="submit" onClick ="calc()" value="Calc" />
                                                 
                                                 
                                                 <div id="atribui">
@@ -169,60 +149,76 @@
 
 
 
-                                            <!--
                                             
-                                            <div id=tabela>
-                                                <input name="generate" type="button" value="Create Table!" onclick='createTable();'/>
-                                                <div id="wrapper"></div>
-                                            </div>
-                                            
-                                            
-                                                                <div id="dragAndDrop">
-                                                                    <div id="dragj1" class="ui-widget-content" >Jogador 1</div>
-                                            
-                                                                    <div id="dragj2" class="ui-widget-content">Jogador 2</div>
-                                            
-                                                                    <div id="dragj3" class="ui-widget-content">Jogador 3</div>
-                                            
-                                                                    <div id="dragj4" class="ui-widget-content">Jogador 4</div>
-                                            
-                                                                    <div id="dragj5" class="ui-widget-content">Jogador 5</div>
-                                            
-                                                                    <div id="dragj6" class="ui-widget-content">Jogador 6</div>
-                                            
-                                            
-                                                                    <div id="dropP1" class="ui-widget-header"><p>Posicao 1</p></div>
-                                            
-                                                                    <div id="dropP2" class="ui-widget-header"><p>Posicao 2</p></div>
-                                            
-                                                                    <div id="dropP3" class="ui-widget-header"><p>Posicao 3</p></div>
-                                            
-                                                                    <div id="dropP4" class="ui-widget-header"><p>Posicao 4</p></div>
-                                            
-                                                                    <div id="dropP5" class="ui-widget-header"><p>Posicao 5</p></div>
-                                            
-                                                                    <div id="dropP6" class="ui-widget-header"><p>Posicao 6</p></div>
-                                                                </div>
-                                            
-                                            !-->
                                             <script>
 
 
 
 
 
-                                                        var campo1 = [1, 2, 3, 4, 5, 6, 19];
-                                                        var campo2 = [7, 8, 9, 10, 11, 12, 20];
-                                                        var fora = [14, 15, 16, 17, 13, 18];
+                                                        var campo1 = [1, 2, 3, 4, 5, 6];
+                                                        var campo2 = [7, 8, 9, 10, 11, 12];
+                                                        var fora1 = [13, 14, 15];
+                                                        var fora2 = [16, 17, 18];
                                                         var servico1 = [19];
                                                         var servico2 = [20];
-                                                        var ataques = new Array;
-                                                        var defesas = new Array;
-                                                        var erros = {};
-                                                        var servicos = {};
-                                                       
+                                                        var ar = new Array();
+                                                        var jogada = new Array();
+                                                        
+                                                        function controlo(){
+                                                           
+                                                            var nJogadas = ar.length;
+                                                            var posicaoUjogada = parseInt(ar[nJogadas - 1][2]);
+                                                            
+                                                            if(nJogadas>1){
+                                                            var posicaoPjogada = parseInt(ar[nJogadas - 2][2]);
+                                                            }
+                                                            var rotacaoPropria;
+                                                            var rotacaoEA;
+                                                            var jogadorP;
+                                                            var jogadorEA;
+                                                            var posicaoP;
+                                                            var posicaoEA;
+                                                            
+                                                            if (nJogadas==1) {
+                                                                if (($.inArray(posicaoUjogada, servico1) >= 0) || ($.inArray(posicaoUjogada, servico2) >= 0)) {
+                                                                    $('#jogadasTxt').html('servico');
+                                                                } else {
+                                                                    $('#jogadasTxt').html('Atenção todas as jogadas tem de comecar com um servico');
+                                                                    ar.length = 0;
+                                                                }
+                                                            }
+                                                            if (nJogadas == 2) {
+                                                                alert(posicaoUjogada);
+                                                                if (($.inArray(posicaoUjogada, campo1) >= 1) || ($.inArray(posicaoUjogada, campo2) >= 1)) {
+                                                                    $('#jogadasTxt').html('servico para a zona' + posicaoUjogada);
+                                                                    if(posicaoPjogada==19){
+                                                                        rotacaoPropria = ar[nJogadas - 2] [0];
+                                                                        rotacaoEA = ar[nJogadas - 1] [0];
+                                                                        jogadorP = ar[nJogadas -2] [1];
+                                                                        jogadorEA = ar[nJogadas -1] [1];
+                                                                        posicaoP = ar[nJogadas -2] [2];
+                                                                        posicaoEA = ar[nJogadas -1] [2];
+                                                                        alert("servico casa");
+                                                                    } else {
+                                                                        rotacaoPropria = ar[nJogadas - 1] [0];
+                                                                        rotacaoEA = ar[nJogadas - 2] [0];
+                                                                        jogadorP = ar[nJogadas - 1] [1];
+                                                                        jogadorEA = ar[nJogadas - 2] [1];
+                                                                        posicaoP = ar[nJogadas - 1] [2];
+                                                                        posicaoEA = ar[nJogadas - 2] [2];
+                                                                        alert("servico fora");
+                                                                    }
+                                                                } else {
+                                                                    $('#jogadasTxt').html('servico para a fora');
 
-                                                        function helloAjax() {
+                                                                }
+                                                            }
+                                                            
+                                                            
+                                                        }
+
+                                                        function insere() {
                                                             var jogador = 'nuno';
                                                             var clube = 'fcp';
                                                             $.ajax({
@@ -296,6 +292,7 @@
                                                             document.getElementById('l9').innerHTML = fluxo[4];
                                                             document.getElementById('l8').innerHTML = fluxo[5];
                                                             
+                                                            
                                                             var fluxoID = new Array();
                                                             fluxoID.push(document.getElementById('i7').innerHTML);
                                                             fluxoID.push(document.getElementById('i12').innerHTML);
@@ -312,11 +309,11 @@
                                                             document.getElementById('i9').innerHTML = fluxoID[4];
                                                             document.getElementById('i8').innerHTML = fluxoID[5];
 
-                                                            var rotacao = parseInt($("#r").text());
+                                                            var rotacao = parseInt($("#r2").text());
                                                             if (rotacao < 12) {
-                                                                document.getElementById('r').innerHTML = rotacao + 1;
+                                                                document.getElementById('r2').innerHTML = rotacao + 1;
                                                             } else {
-                                                                document.getElementById('r').innerHTML = 7;
+                                                                document.getElementById('r2').innerHTML = 7;
                                                             }
 
                                                         }
@@ -496,258 +493,124 @@
                                                             document.getElementById('l12').innerHTML = myselect.options[myselect.selectedIndex].text;
                                                         }     
 
-                                                        function jog() {
-                                                            alert(jogadores);
-                                                        }
-
-                          
-
-
-                                                        function comeco() {
-
-                                                            var x = ar.length;
-                                                            var ultima = parseInt(ar[x - 1][2]);
-                                                            if (x == 1) {
-                                                                if ($.inArray(ultima, servico1) >= 0 || $.inArray(ultima, servico2) >= 0) {
-                                                                    $('#jogadasTxt').html('servico');
-                                                                } else {
-                                                                    $('#jogadasTxt').html('erro todas as jogadas tem de comecar com um servico');
-                                                                    ar.length = 0;
-                                                                }
-                                                            }
-                                                            if (x == 2) {
-                                                                if ($.inArray(ultima, fora) < 0) {
-                                                                    $('#jogadasTxt').html('servico para a zona' + ultima);
-
-                                                                } else {
-                                                                    $('#jogadasTxt').html('servico para a fora');
-
-                                                                }
-                                                            }
-                                                        }
-
-                                                        function servico() {
-                                                            var x = ar.length;
-                                                            var ul = parseInt(ar[x - 1][2]);
-                                                            if (x == 1) {
-                                                                // servico tem de comecar por area de servico
-                                                                if ($.inArray(ul, servico1) >= 0 || $.inArray(ul, servico2) >= 0) {
-                                                                    $('#jogadasTxt').html('servico');
-                                                                } else {
-                                                                    $('#jogadasTxt').html('erro todas as jogadas tem de comecar com um servico');
-                                                                    ar.length = 0;
-                                                                }
-                                                            }
-                                                        }
-
-
-
-                                                        function ponto() {
-                                                            var x = ar.length;
-                                                            var ul = parseInt(ar[x - 1][2]);
-                                                            var pr = parseInt(ar[0][2]);
-                                                            if (x > 2) {
-                                                                if ($.inArray(ul, servico1) >= 0) {
-                                                                    $('#jogadasTxt').html('ponto equipa da casa');
-                                                                    document.getElementById('btncasa').value++;
-                                                                    if (ul != pr) {
-                                                                        rotacaoCampo1();
-                                                                    }
-                                                                    ar.length = 0;
-                                                                } else {
-                                                                    if ($.inArray(ul, servico2) >= 0) {
-                                                                        $('#jogadasTxt').html('ponto equipa de fora');
-                                                                        document.getElementById('btnfora').value++;
-                                                                        if (ul != pr) {
-                                                                            rotacaoCampo2();
-                                                                        }
-                                                                        ar.length = 0;
-                                                                    }
-                                                                }
-
-                                                            }
-                                                        }
-
-                                                        function ataqueEdefesa() {
-
-                                                            var x = ar.length;
-                                                            var ultima = ar[x - 1];
-                                                            var pultima = ar[x - 2];
-                                                            if (x > 2) {
-
-                                                                if ($.inArray(parseInt(pultima[2]), campo1) >= 0 && $.inArray(parseInt(ultima[2]), campo2) >= 0) {
-                                                                    //$('#ataquesTxt').html('ataque da jogadora '+ pultima[1] +' da posicao ' + pultima[2] + ' para a posicao ' + ultima[2]);
-                                                                    document.getElementById('rba').style.display = 'block';
-
-                                                                } else {
-                                                                    if ($.inArray(parseInt(ultima[2]), campo1) >= 0 && $.inArray(parseInt(pultima[2]), campo2) >= 0) {
-                                                                        //$('#defesasTxt').html('defesa da jogadora ' + ultima[1] +'na posicao ' + ultima[2] + ' a um ataque da posicao ' + pultima[2]);
-                                                                        document.getElementById('rbd').style.display = 'block';
-
-                                                                    }
-                                                                }
-
-                                                            }
-                                                        }
-
-                                                        function ataque() {
-                                                            var x = ar.length;
-                                                            var ultima = ar[x - 1];
-                                                            var pultima = ar[x - 2];
-                                                            document.getElementById("ataquesTxt").value += 'Ataque da jogadora ' + pultima[1] + ' da posicao ' + pultima[2] + ' para a posicao ' + ultima[2] + '\n';
-                                                            var cl = $("input[type='radio'][name='cla']:checked").val();
-                                                            // controlar quando for erro enviar para a funcao ponto 
-                                                            var at = [pultima[0], pultima[1], pultima[2], ultima[1], ultima[2]];
-                                                            ataques.push(at);
-                                                            document.getElementById('rba').style.display = 'none';
-
-                                                        }
-
-                                                        function defesa() {
-                                                            var x = ar.length;
-                                                            var ultima = ar[x - 1];
-                                                            var pultima = ar[x - 2];
-                                                            document.getElementById("defesasTxt").value += 'Defesa da jogadora ' + ultima[1] + 'na posicao ' + ultima[2] + ' a um ataque da posicao ' + pultima[2] + '\n';
-                                                            var cl = $("input[type='radio'][name='cld']:checked").val();
-                                                            // controlar quando for erro enviar para a funcao ponto
-                                                            var df = [ultima[0], ultima[1], ultima[2], pultima[1], pultima[2]];
-                                                            defesas.push(df);
-                                                            document.getElementById('rbd').style.display = 'none';
-
-                                                        }
-
-
-                                                        function mostraAtaques() {
-                                                            alert(ataques);
-
-
-                                                        }
-
-                                                        function mostraDefesas() {
-                                                            alert(defesas);
-                                                        }
-
-
-
-                                                        var ar = new Array();
-                                                        var jogada = new Array();
+                                                       
 
                                                         $(document).ready(function() {
                                                             $('#pos1').click(function(e) {
                                                                 var rotacao = $("#r").text();
-                                                                var jogador = $("#l1").text();
+                                                                var jogador = $("#i1").text();
                                                                 var posicao = $("#p1").text();
                                                                 jogada = [rotacao, jogador, posicao];
+                                                                alert(jogada);
                                                                 ar.push(jogada);
-                                                                comeco();
-                                                                ataqueEdefesa();
+                                                                controlo();
 
                                                             });
 
                                                             $('#pos2').click(function(e) {
                                                                 var rotacao = $("#r").text();
-                                                                var jogador = $("#l2").text();
+                                                                var jogador = $("#i2").text();
                                                                 var posicao = $("#p2").text();
                                                                 jogada = [rotacao, jogador, posicao];
+                                                                alert(jogada);
                                                                 ar.push(jogada);
-                                                                comeco();
-                                                                ataqueEdefesa();
+                                                                controlo();
                                                             });
                                                             $('#pos3').click(function(e) {
                                                                 var rotacao = $("#r").text();
-                                                                var jogador = $("#l3").text();
+                                                                var jogador = $("#i3").text();
                                                                 var posicao = $("#p3").text();
                                                                 jogada = [rotacao, jogador, posicao];
+                                                                alert(jogada);
                                                                 ar.push(jogada);
-                                                                comeco();
-                                                                ataqueEdefesa();
+                                                                controlo();
 
                                                             });
                                                             $('#pos4').click(function(e) {
                                                                 var rotacao = $("#r").text();
-                                                                var jogador = $("#l4").text();
+                                                                var jogador = $("#i4").text();
                                                                 var posicao = $("#p4").text();
                                                                 jogada = [rotacao, jogador, posicao];
+                                                                alert(jogada);
                                                                 ar.push(jogada);
-                                                                comeco();
-                                                                ataqueEdefesa();
+                                                                controlo();
 
                                                             });
                                                             $('#pos5').click(function(e) {
                                                                 var rotacao = $("#r").text();
-                                                                var jogador = $("#l5").text();
+                                                                var jogador = $("#i5").text();
                                                                 var posicao = $("#p5").text();
                                                                 jogada = [rotacao, jogador, posicao];
+                                                                alert(jogada);
                                                                 ar.push(jogada);
-                                                                comeco();
-                                                                ataqueEdefesa();
+                                                                controlo();
 
                                                             });
                                                             $('#pos6').click(function(e) {
                                                                 var rotacao = $("#r").text();
-                                                                var jogador = $("#l6").text();
+                                                                var jogador = $("#i6").text();
                                                                 var posicao = $("#p6").text();
                                                                 jogada = [rotacao, jogador, posicao];
+                                                                alert(jogada);
                                                                 ar.push(jogada);
-                                                                comeco();
-                                                                ataqueEdefesa();
+                                                                controlo();
 
                                                             });
                                                             $('#pos7').click(function(e) {
-                                                                var rotacao = $("#r").text();
-                                                                var jogador = $("#l7").text();
+                                                                var rotacao = $("#r2").text();
+                                                                var jogador = $("#i7").text();
                                                                 var posicao = $("#p7").text();
                                                                 jogada = [rotacao, jogador, posicao];
+                                                                alert(jogada);
                                                                 ar.push(jogada);
-                                                                comeco();
-                                                                ataqueEdefesa();
+                                                                controlo();
 
                                                             });
                                                             $('#pos8').click(function(e) {
-                                                                var rotacao = $("#r").text();
-                                                                var jogador = $("#l8").text();
+                                                                var rotacao = $("#r2").text();
+                                                                var jogador = $("#i8").text();
                                                                 var posicao = $("#p8").text();
                                                                 jogada = [rotacao, jogador, posicao];
+                                                                alert(jogada);
                                                                 ar.push(jogada);
-                                                                comeco();
-                                                                ataqueEdefesa();
+                                                                controlo();
 
                                                             });
                                                             $('#pos9').click(function(e) {
-                                                                var rotacao = $("#r").text();
+                                                                var rotacao = $("#r2").text();
                                                                 var jogador = $("#l9").text();
                                                                 var posicao = $("#p9").text();
                                                                 jogada = [rotacao, jogador, posicao];
+                                                                alert(jogada);
                                                                 ar.push(jogada);
-                                                                comeco();
-                                                                ataqueEdefesa();
+                                                                controlo();
                                                             });
                                                             $('#pos10').click(function(e) {
-                                                                var rotacao = $("#r").text();
+                                                                var rotacao = $("#r2").text();
                                                                 var jogador = $("#l10").text();
                                                                 var posicao = $("#p10").text();
                                                                 jogada = [rotacao, jogador, posicao];
+                                                                alert(jogada);
                                                                 ar.push(jogada);
-                                                                comeco();
-                                                                ataqueEdefesa();
+                                                                controlo();
                                                             });
                                                             $('#pos11').click(function(e) {
-                                                                var rotacao = $("#r").text();
+                                                                var rotacao = $("#r2").text();
                                                                 var jogador = $("#l11").text();
                                                                 var posicao = $("#p11").text();
                                                                 jogada = [rotacao, jogador, posicao];
+                                                                alert(jogada);
                                                                 ar.push(jogada);
-                                                                comeco();
-                                                                ataqueEdefesa();
+                                                                controlo();
                                                             });
                                                             $('#pos12').click(function(e) {
-                                                                var rotacao = $("#r").text();
+                                                                var rotacao = $("#r2").text();
                                                                 var jogador = $("#l12").text();
                                                                 var posicao = $("#p12").text();
                                                                 jogada = [rotacao, jogador, posicao];
+                                                                alert(jogada);
                                                                 ar.push(jogada);
-                                                                comeco();
-                                                                ataqueEdefesa();
+                                                                controlo();
 
                                                             });
                                                             $('#pos19').click(function(e) {
@@ -756,34 +619,61 @@
                                                                 var posicao = document.getElementById('pos19').innerHTML;
                                                                 jogada = [rotacao, jogador, posicao];
                                                                 ar.push(jogada);
-                                                                comeco();
+                                                                controlo();
 
-                                                                ponto();
-
-                                                            });
-                                                            $('#pos14').click(function(e) {
-                                                                ar.push(document.getElementById('pos14').innerHTML);
-                                                                comeco();
-                                                            });
-                                                            $('#pos15').click(function(e) {
-                                                                ar.push(document.getElementById('pos15').innerHTML);
-                                                                comeco();
-                                                            });
-                                                            $('#pos16').click(function(e) {
-                                                                ar.push(document.getElementById('pos16').innerHTML);
-                                                                comeco();
-                                                            });
-                                                            $('#pos17').click(function(e) {
-                                                                ar.push(document.getElementById('pos17').innerHTML);
-                                                                comeco();
                                                             });
                                                             $('#pos13').click(function(e) {
-                                                                ar.push(document.getElementById('pos13').innerHTML);
+                                                                var rotacao = $("#r").text();
+                                                                var jogador = null;
+                                                                var posicao = document.getElementById('pos13').innerHTML;
+                                                                jogada = [rotacao, jogador, posicao];
+                                                                ar.push(jogada);
+                                                               
                                                                 comeco();
                                                             });
+                                                            $('#pos14').click(function(e) {
+                                                                var rotacao = $("#r").text();
+                                                                var jogador = null;
+                                                                var posicao = document.getElementById('pos14').innerHTML;
+                                                                jogada = [rotacao, jogador, posicao];
+                                                                ar.push(jogada);   
+                                                                controlo();
+                                                            });
+                                                            $('#pos15').click(function(e) {
+                                                                var rotacao = $("#r").text();
+                                                                var jogador = null;
+                                                                var posicao = document.getElementById('pos15').innerHTML;
+                                                                jogada = [rotacao, jogador, posicao];
+                                                                ar.push(jogada);
+                                                                controlo();
+                                                            });
+                                                            $('#pos16').click(function(e) {
+                                                                var rotacao = $("#r2").text();
+                                                                var jogador = null;
+                                                                var posicao = document.getElementById('pos16').innerHTML;
+                                                                jogada = [rotacao, jogador, posicao];
+                                                                ar.push(jogada);
+                                                               
+                                                                controlo();
+                                                            });
+                                                            $('#pos17').click(function(e) {
+                                                                var rotacao = $("#r2").text();
+                                                                var jogador = null;
+                                                                var posicao = document.getElementById('pos17').innerHTML;
+                                                                jogada = [rotacao, jogador, posicao];
+                                                                ar.push(jogada);
+                                                                
+                                                                controlo();
+                                                            });
+                                                            
                                                             $('#pos18').click(function(e) {
-                                                                ar.push(document.getElementById('pos18').innerHTML);
-                                                                comeco();
+                                                                var rotacao = $("#r2").text();
+                                                                var jogador = null;
+                                                                var posicao = document.getElementById('pos18').innerHTML;
+                                                                jogada = [rotacao, jogador, posicao];
+                                                                ar.push(jogada);
+                                                                
+                                                                controlo();
                                                             });
                                                             $('#pos20').click(function(e) {
                                                                 var rotacao = $("#r").text();
@@ -791,12 +681,11 @@
                                                                 var posicao = document.getElementById('pos20').innerHTML;
                                                                 jogada = [rotacao, jogador, posicao];
                                                                 ar.push(jogada);
-                                                                comeco();
-                                                                ponto();
+                                                                controlo();
                                                             });
                                                         });
 
-
+                                                        
 
                                                         function calc() {
                                                             alert(ar);
