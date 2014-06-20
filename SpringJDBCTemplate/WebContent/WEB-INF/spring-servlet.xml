@@ -53,9 +53,6 @@ class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMa
           <bean id="competicaoDao" class="com.dai.dao.CompeticaoDaoImpl" />
 	<bean id="competicaoService" class="com.dai.services.CompeticaoServiceImpl" />
         
-        <bean id="rhDao" class="com.dai.dao.RhDaoImpl" />
-	<bean id="rhService" class="com.dai.services.RhServiceImpl" />
-        
         <bean id="selecaoTreinoDao" class="com.dai.dao.SelecaoTreinoDaoImpl" />
 	<bean id="selecaoTreinoService" class="com.dai.services.SelecaoTreinoServiceImpl" />
         
@@ -68,6 +65,8 @@ class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMa
         <bean id="jogadorEquipaAdversariaDao" class="com.dai.dao.JogadorEquipaAdversariaDaoImpl" />
 	<bean id="jogadorEquipaAdversariaService" class="com.dai.services.JogadorEquipaAdversariaServiceImpl" />
 
+        <bean id="estatisticaDao" class="com.dai.dao.EstatisticaDaoImpl" />
+	<bean id="estatisticaService" class="com.dai.services.EstatisticaServiceImpl" />
 	<!-- declare datasource bean -->
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">

@@ -8,6 +8,7 @@ package com.dai.controller;
 
 import com.dai.domain.Competicao;
 import com.dai.domain.EquipaAdversaria;
+import com.dai.domain.Estatistica;
 import com.dai.domain.JogadorEquipaAdversaria;
 import com.dai.domain.Jogo;
 import com.dai.domain.SelecaoJEA;
@@ -15,6 +16,7 @@ import com.dai.domain.SelecaoJogo;
 import com.dai.domain.Utilizador;
 import com.dai.services.CompeticaoService;
 import com.dai.services.EquipaAdversariaService;
+import com.dai.services.EstatisticaService;
 import com.dai.services.JogadorEquipaAdversariaService;
 import com.dai.services.JogoService;
 import com.dai.services.SelecaoJEAService;
@@ -66,6 +68,9 @@ public class JogoController {
      
      @Autowired
      SelecaoJEAService sjeaService;
+     
+     @Autowired
+     EstatisticaService eService;
     
      @RequestMapping("/criarJogo")
 	public ModelAndView novoJogo(@ModelAttribute Jogo jogo, HttpServletRequest request) {
@@ -253,13 +258,34 @@ public class JogoController {
                 
 	}
         */
-        
-@RequestMapping(value = "/helloajax", method = RequestMethod.GET)  
+        /*
+        @RequestMapping(value = "/helloajax", method = RequestMethod.GET)  
         public @ResponseBody  
-        String insere(@RequestParam("jogador") String jogador,
-        @RequestParam("clube") String clube)  {  
-            String mensagem=jogador;
+        String insere(@RequestParam("jogador") Integer jogador,
+        @RequestParam("clube") Integer clube)  {  
+            String mensagem="llll";
             return mensagem;
     }  
+        */
+        
+        @RequestMapping(value = "/helloajax", method = RequestMethod.GET)  
+        public @ResponseBody  
+        String insere(@RequestParam("rotacaoP") String rotacaoP, @RequestParam("jogadorP") Integer jogadorP,  
+                @RequestParam("posicaoP") Integer posicaoP,  @RequestParam("rotacaoEA") String rotacaoEA,  
+                @RequestParam("jogadorEA") Integer jogadorEA,   @RequestParam("posicaoEA") Integer posicaoEA){  
+            String mensagem = "FCP";
+            Estatistica est = new Estatistica();
+            est.setDestino(posicaoEA);
+            est.setIdJea(jogadorEA);
+            est.setRotacaoEA(rotacaoEA);
+            est.setIdUtilizador(jogadorP);
+            est.setRotacaoPropria(rotacaoP);
+            est.setOrigem(posicaoP);
+            est.setIdJogo(1);
+            est.setIdTipoEstatistica(6);
+            eService.adicionaEstatistica(est);
+            return mensagem;
+    } 
+       
 }  
         

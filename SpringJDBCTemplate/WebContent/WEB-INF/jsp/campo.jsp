@@ -173,13 +173,13 @@
                                                             if(nJogadas>1){
                                                             var posicaoPjogada = parseInt(ar[nJogadas - 2][2]);
                                                             }
-                                                            var rotacaoPropria;
+                                                            var rotacaoP;
                                                             var rotacaoEA;
                                                             var jogadorP;
                                                             var jogadorEA;
                                                             var posicaoP;
                                                             var posicaoEA;
-                                                            
+                                                            alert("posicao" + posicaoUjogada);
                                                             if (nJogadas==1) {
                                                                 if (($.inArray(posicaoUjogada, servico1) >= 0) || ($.inArray(posicaoUjogada, servico2) >= 0)) {
                                                                     $('#jogadasTxt').html('servico');
@@ -190,24 +190,29 @@
                                                             }
                                                             if (nJogadas == 2) {
                                                                 alert(posicaoUjogada);
-                                                                if (($.inArray(posicaoUjogada, campo1) >= 1) || ($.inArray(posicaoUjogada, campo2) >= 1)) {
+                                                                if (($.inArray(posicaoUjogada, campo1) >= 0) || ($.inArray(posicaoUjogada, campo2) >= 0)) {
                                                                     $('#jogadasTxt').html('servico para a zona' + posicaoUjogada);
                                                                     if(posicaoPjogada==19){
-                                                                        rotacaoPropria = ar[nJogadas - 2] [0];
+                                                                        rotacaoP = ar[nJogadas - 2] [0];
                                                                         rotacaoEA = ar[nJogadas - 1] [0];
                                                                         jogadorP = ar[nJogadas -2] [1];
                                                                         jogadorEA = ar[nJogadas -1] [1];
                                                                         posicaoP = ar[nJogadas -2] [2];
                                                                         posicaoEA = ar[nJogadas -1] [2];
+                                                                        alert("Funcao");
+                                                                        alert(jogadorP);
+                                                                        alert(jogadorEA);
+                                                                        insere(rotacaoP,jogadorP,posicaoP,rotacaoEA,jogadorEA,posicaoEA);
                                                                         alert("servico casa");
                                                                     } else {
-                                                                        rotacaoPropria = ar[nJogadas - 1] [0];
+                                                                        rotacaoP = ar[nJogadas - 1] [0];
                                                                         rotacaoEA = ar[nJogadas - 2] [0];
                                                                         jogadorP = ar[nJogadas - 1] [1];
                                                                         jogadorEA = ar[nJogadas - 2] [1];
                                                                         posicaoP = ar[nJogadas - 1] [2];
                                                                         posicaoEA = ar[nJogadas - 2] [2];
-                                                                        alert("servico fora");
+                                                                        helloAjax(rotacaoP,jogadorP,posicaoP,rotacaoEA,jogadorEA,posicaoEA);
+                                                                        insere("servico fora");
                                                                     }
                                                                 } else {
                                                                     $('#jogadasTxt').html('servico para a fora');
@@ -218,9 +223,24 @@
                                                             
                                                         }
 
-                                                        function insere() {
-                                                            var jogador = 'nuno';
-                                                            var clube = 'fcp';
+                                                        function insere(rotacaoP, rotacaoEA, jogadorP, jogadorEA, posicaoP, posicaoEA) {
+                                                           
+                                                            alert("ajax");
+                                                            $.ajax({
+                                                                url: '${pageContext.request.contextPath}/helloajax',
+                                                                data: {"rotacaoP": rotacaoP,  "jogadorP": jogadorP, "posicaoP": posicaoP, "rotacaoEA": rotacaoEA, "jogadorEA": jogadorEA, "posicaoEA": posicaoEA },
+                                                                success: function(result) {
+                                                                    alert(result);
+                                                                }
+                                                            });
+                                                        }
+                                                        
+                                                        function helloAjax(jogadorP,jogadorEA) {
+                                                        alert("ajax");
+                                                            var jogador = jogadorP;
+                                                            var clube = jogadorEA;
+                                                            alert(jogador);
+                                                            alert(clube);
                                                             $.ajax({
                                                                 url: '${pageContext.request.contextPath}/helloajax',
                                                                 data: {"jogador": jogador, "clube": clube},
@@ -501,7 +521,7 @@
                                                                 var jogador = $("#i1").text();
                                                                 var posicao = $("#p1").text();
                                                                 jogada = [rotacao, jogador, posicao];
-                                                                alert(jogada);
+                                                          
                                                                 ar.push(jogada);
                                                                 controlo();
 
@@ -521,7 +541,7 @@
                                                                 var jogador = $("#i3").text();
                                                                 var posicao = $("#p3").text();
                                                                 jogada = [rotacao, jogador, posicao];
-                                                                alert(jogada);
+                                                           
                                                                 ar.push(jogada);
                                                                 controlo();
 
@@ -531,7 +551,7 @@
                                                                 var jogador = $("#i4").text();
                                                                 var posicao = $("#p4").text();
                                                                 jogada = [rotacao, jogador, posicao];
-                                                                alert(jogada);
+                                                           
                                                                 ar.push(jogada);
                                                                 controlo();
 
@@ -541,7 +561,7 @@
                                                                 var jogador = $("#i5").text();
                                                                 var posicao = $("#p5").text();
                                                                 jogada = [rotacao, jogador, posicao];
-                                                                alert(jogada);
+                                                             
                                                                 ar.push(jogada);
                                                                 controlo();
 
@@ -551,7 +571,7 @@
                                                                 var jogador = $("#i6").text();
                                                                 var posicao = $("#p6").text();
                                                                 jogada = [rotacao, jogador, posicao];
-                                                                alert(jogada);
+                                                               
                                                                 ar.push(jogada);
                                                                 controlo();
 
@@ -561,7 +581,7 @@
                                                                 var jogador = $("#i7").text();
                                                                 var posicao = $("#p7").text();
                                                                 jogada = [rotacao, jogador, posicao];
-                                                                alert(jogada);
+                                                                
                                                                 ar.push(jogada);
                                                                 controlo();
 
@@ -571,7 +591,7 @@
                                                                 var jogador = $("#i8").text();
                                                                 var posicao = $("#p8").text();
                                                                 jogada = [rotacao, jogador, posicao];
-                                                                alert(jogada);
+                                                               
                                                                 ar.push(jogada);
                                                                 controlo();
 
@@ -581,7 +601,7 @@
                                                                 var jogador = $("#l9").text();
                                                                 var posicao = $("#p9").text();
                                                                 jogada = [rotacao, jogador, posicao];
-                                                                alert(jogada);
+                                                                
                                                                 ar.push(jogada);
                                                                 controlo();
                                                             });
@@ -590,7 +610,7 @@
                                                                 var jogador = $("#l10").text();
                                                                 var posicao = $("#p10").text();
                                                                 jogada = [rotacao, jogador, posicao];
-                                                                alert(jogada);
+                                                              
                                                                 ar.push(jogada);
                                                                 controlo();
                                                             });
@@ -599,7 +619,7 @@
                                                                 var jogador = $("#l11").text();
                                                                 var posicao = $("#p11").text();
                                                                 jogada = [rotacao, jogador, posicao];
-                                                                alert(jogada);
+                                                                
                                                                 ar.push(jogada);
                                                                 controlo();
                                                             });
@@ -608,18 +628,21 @@
                                                                 var jogador = $("#l12").text();
                                                                 var posicao = $("#p12").text();
                                                                 jogada = [rotacao, jogador, posicao];
-                                                                alert(jogada);
+                                                               
                                                                 ar.push(jogada);
                                                                 controlo();
 
                                                             });
                                                             $('#pos19').click(function(e) {
                                                                 var rotacao = $("#r").text();
-                                                                var jogador = $("#l1").text();
+                                                                var jogador = $("#i1").text();
                                                                 var posicao = document.getElementById('pos19').innerHTML;
                                                                 jogada = [rotacao, jogador, posicao];
                                                                 ar.push(jogada);
+                                                                
+                                                            
                                                                 controlo();
+                                                                
 
                                                             });
                                                             $('#pos13').click(function(e) {
@@ -677,10 +700,11 @@
                                                             });
                                                             $('#pos20').click(function(e) {
                                                                 var rotacao = $("#r").text();
-                                                                var jogador = $("#l7").text();
+                                                                var jogador = $("#i7").text();
                                                                 var posicao = document.getElementById('pos20').innerHTML;
                                                                 jogada = [rotacao, jogador, posicao];
                                                                 ar.push(jogada);
+                                                              
                                                                 controlo();
                                                             });
                                                         });
