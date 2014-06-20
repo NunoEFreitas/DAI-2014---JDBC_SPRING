@@ -43,5 +43,9 @@
             <form:input required="required" class="input" path="tipoTreino" />
             <input class="button" type="submit" value="Guardar" /><br>
         </form:form>
+            
+    </div>
+</div>
+</div>
     </body>
 </html>

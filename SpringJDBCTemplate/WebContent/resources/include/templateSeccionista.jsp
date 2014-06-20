@@ -15,7 +15,7 @@
                 <div id='cssmenu'>
                     <ul>
                         <li class='active'><a href=''><span>Seccionista</span></a></li>
-                         <li><button onclick="location.href='login?logout=sair'"><img src="<c:url value="/resources/images/logout.png" />" /></button></li>
+                        <li><a href='sair'><img src="<c:url value="/resources/images/logout.png" />" /></a></li>
                         <li class='has-sub'><a href='#'><span>Gerir Recursos Humanos</span></a>
                             <ul>
 

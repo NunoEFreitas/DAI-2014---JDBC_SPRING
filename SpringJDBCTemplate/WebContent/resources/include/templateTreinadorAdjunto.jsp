@@ -14,8 +14,8 @@
                 <div id='cssmenu'>
                     <ul>
                         <li class='active'><a href=''><span>TreinadorAdjunto</span></a></li>
-                         <li><button onclick="location.href='login?logout=sair'"><img src="<c:url value="/resources/images/logout.png" />" /></button></li>
-                         <li class='has-sub'><a href='#'><span>Gerir Treinos</span></a>
+                          <li><a href='sair'><img src="<c:url value="/resources/images/logout.png" />" /></a></li>
+                        <li class='has-sub'><a href='#'><span>Gerir Treinos</span></a>
                             <ul>
                                 <li class='has-sub'><a href='/VoleiUM/listarTreinosTA'><span>Listar Treinos</span></a>
                                 </li>
