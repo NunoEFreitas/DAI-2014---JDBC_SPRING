@@ -3,7 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
+            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/atleta.jsp</file>
             <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/resources/include/templateSeccionista.jsp</file>
             <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/services/JogoService.java</file>
             <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/listarJogosT.jsp</file>
@@ -14,6 +14,7 @@
             <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/dao/JogadorEquipaAdversariaDao.java</file>
             <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/edit.jsp</file>
             <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/domain/Utilizador.java</file>
+            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/editarT.jsp</file>
             <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/jdbc/PerfilExtractor.java</file>
             <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/listarJogosTA.jsp</file>
             <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/dao/TipoEstatisticaDao.java</file>
@@ -71,6 +72,7 @@
             <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/web.xml</file>
             <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/domain/Estatistica.java</file>
             <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/dao/SelecaoJogoDaoImpl.java</file>
+            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/alterarDados.jsp</file>
             <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/listarJogosA.jsp</file>
             <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/dao/JogoDaoImpl.java</file>
             <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/dao/CompeticaoDao.java</file>
@@ -102,6 +104,7 @@
             <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/services/JogoServiceImpl.java</file>
             <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/spring-servlet.xml</file>
             <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/services/JogadorEquipaAdversariaServiceImpl.java</file>
+            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/listarUtilizadores.jsp</file>
             <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/jdbc/JogoExtractor.java</file>
             <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/estatisticas.jsp</file>
             <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/resources/include/templateTreinadorAdjunto.jsp</file>
@@ -112,18 +115,10 @@
             <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/jdbc/TipoEstatisticaRowMapper.java</file>
             <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/game.jsp</file>
             <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/services/EstatisticaService.java</file>
+            <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/marcarPresencas.jsp</file>
             <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/services/TipoEstatisticaServiceImpl.java</file>
             <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/services/SelecaoJEAServiceImpl.java</file>
             <file>file:/C:/Users/Nuno/Documents/NetBeansProjects/New%20Folder/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/registarUtilizador.jsp</file>
-=======
-            <file>file:/C:/Users/Albano/Documents/GitHub/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/controller/JogoController.java</file>
-            <file>file:/C:/Users/Albano/Documents/GitHub/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/listarTreinosTA.jsp</file>
-            <file>file:/C:/Users/Albano/Documents/GitHub/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/dadosGrafico.jsp</file>
-            <file>file:/C:/Users/Albano/Documents/GitHub/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/listarTreinosT.jsp</file>
-            <file>file:/C:/Users/Albano/Documents/GitHub/SpringJDBCTemplate/SpringJDBCTemplate/src/com/dai/controller/TreinoController.java</file>
-            <file>file:/C:/Users/Albano/Documents/GitHub/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/dadosTabela.jsp</file>
-            <file>file:/C:/Users/Albano/Documents/GitHub/SpringJDBCTemplate/SpringJDBCTemplate/WebContent/WEB-INF/jsp/criarJogo.jsp</file>
->>>>>>> 9d9067a9268731d9b60b72c91c3d7461fff7f319
         </group>
     </open-files>
 </project-private>
