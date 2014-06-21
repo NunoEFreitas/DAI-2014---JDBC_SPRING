@@ -27,8 +27,12 @@
         }else if(session.getAttribute("perfil").equals(2)){ %>  
  	    <%@include file="/resources/include/templateTreinador.jsp"%>
 	    <% 
-	  }else if(session.getAttribute("perfil").equals(3)){ %>
-          <%@include file="/resources/include/templateTreinadorAdjunto.jsp" %>       
+              
+        }else if(session.getAttribute("perfil").equals(3)){ %>  
+ 	    <%@include file="/resources/include/templateTreinadorAdjunto.jsp"%>
+	    <% 
+	  }else if(session.getAttribute("perfil").equals(5)){ %>
+          <%@include file="/resources/include/templateAnalistas.jsp" %>       
 	 <% 
         }
          %>
@@ -38,7 +42,7 @@
 <a href="#"  style="background-color:#b92c28;font-weight:bold;color:#ffffff;" class="btn"><i class="icon-align-justify"></i> <strong>AnalisarTendênciaAtaque</strong></a>
 <a href="#"  style="background-color:#b92c28;font-weight:bold;color:#ffffff;" class="btn"><i class="icon-align-justify"></i> <strong>AnalisarPiorRecetora</strong></a>
 <Div  class = "cabecalho da pagina" > 
-                 <h1>Gerir Competições<small> Gerar Dados em Gráfico </small>  </h1> 
+                 <h1>Analisar à Posteriori<small> Gerar Dados em Gráfico </small>  </h1> 
              </div><br>
             
 </body>

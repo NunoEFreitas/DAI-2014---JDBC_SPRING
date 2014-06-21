@@ -103,10 +103,26 @@ public class UtilizadorController {
 	}
         
         @RequestMapping("/listarUtilizadores")
-	public ModelAndView listaUtilizador() {
-		List<Utilizador> lutilizador = utilizadorService.listarUtilizador();
-		return new ModelAndView("listarUtilizadores", "utilizadorList", lutilizador);
+	public ModelAndView listaUtilizador(HttpServletRequest request) {
+                HttpSession session = request.getSession();
+                int escalao = ((int) session.getAttribute("escalao"));
+                
+                int perfil = ((int) session.getAttribute("perfil"));
+                List<Utilizador> lutilizador = null;
+                switch(perfil) {
+                    case 2:
+                    lutilizador = utilizadorService.listarUtilizadorPorEscalao(escalao);
+                break;
+                case 3:
+                    lutilizador = utilizadorService.listarUtilizadorPorEscalao(escalao);
+                break;
+                case 6:
+                    lutilizador = utilizadorService.listarUtilizador();
+                break;
+                }
+               return new ModelAndView("listarUtilizadores", "lutilizador", lutilizador);
 	}
+        
          @RequestMapping("/alterarDados")
 	public ModelAndView lista() {
 		List<Utilizador> lutilizador = utilizadorService.listarUtilizador();

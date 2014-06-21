@@ -62,7 +62,7 @@
                             <ul>
                                 <li class='has-sub'><a href='#'><span>InserirDadosTempoReal</span></a></li>
                                     
-                                        <li><a href='/VoleiUM/criarJogo'><span>-CriarJogo</span></a></li>
+                                        <li><a href='/VoleiUM/criarJogoAD'><span>-CriarJogo</span></a></li>
                                         <li><a href='#'><span>-InserirDadosJogo</span></a></li>
                                     
                                 
