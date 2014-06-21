@@ -31,6 +31,7 @@
             <td Class="heading"> Resultado </td>
             <td Class="heading"> Escolher Equipa Adversaria </td>
             <td Class="heading"> Editar Jogo </td>
+            <td Class="heading"> Iniciar Jogo </td>
         </tr>
         <c:forEach var="lj" items="${ljogos}">
             <tr>

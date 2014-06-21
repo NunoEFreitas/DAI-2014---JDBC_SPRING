@@ -245,9 +245,19 @@ public class JogoController {
 	}
         
         @RequestMapping("/updateJogo")
-	public String updateJogo(@ModelAttribute Jogo jogo) {
+	public String updateJogo(@ModelAttribute Jogo jogo,HttpServletRequest request) {
 		jogoService.alteraJogo(jogo);
-		return "redirect:/listarJogosT";
+                HttpSession session = request.getSession();
+                int perfil = ((int) session.getAttribute("perfil"));
+                String retorno="";
+                if(perfil==2){     
+		retorno="redirect:/listarJogosT";
+                } else {
+                    if(perfil==3){
+                    retorno="redirect:/listarJogosTA"; 
+                    }
+                }
+                return retorno;
 	}
         
         @RequestMapping("/jogoSelecionadosEA/{idEquipaAdversaria}/{idJogo}")
@@ -281,7 +291,6 @@ public class JogoController {
         @RequestParam("clube") Integer clube)  {  
             String mensagem="llll";
             return mensagem;
-<<<<<<< HEAD
     }  
         */
         
@@ -303,7 +312,64 @@ public class JogoController {
             eService.adicionaEstatistica(est);
             return mensagem;
     } 
-       
+        @RequestMapping(value = "/servico", method = RequestMethod.GET)    
+          public @ResponseBody  
+         String insereServico(@RequestParam("rotacaoP") String rotacaoP, @RequestParam("jogadorP") Integer jogadorP,  
+                 @RequestParam("origem") Integer origem,  @RequestParam("rotacaoEA") String rotacaoEA,  
+                 @RequestParam("jogadorEA") Integer jogadorEA,   @RequestParam("destino") Integer destino, @RequestParam("classificacao") Integer classificacao){  
+             String mensagem = "Servico"+ classificacao;
+              Estatistica est = new Estatistica();
+             est.setDestino(origem);
+             est.setClassificacao(classificacao);
+              est.setIdJea(jogadorEA);
+              est.setRotacaoEA(rotacaoEA);
+              est.setIdUtilizador(jogadorP);
+              est.setRotacaoPropria(rotacaoP);
+             est.setOrigem(destino);
+ 
+              est.setIdJogo(1);
+              est.setIdTipoEstatistica(6);
+              eService.adicionaEstatistica(est);
+              return mensagem;
+      } 
+         
+        @RequestMapping(value = "/defesa", method = RequestMethod.GET)  
+         public @ResponseBody  
+         String insereDefesa(@RequestParam("rotacaoP") String rotacaoP, @RequestParam("jogadorP") Integer jogadorP,  
+                 @RequestParam("origem") Integer origem,  @RequestParam("rotacaoEA") String rotacaoEA,  
+                 @RequestParam("jogadorEA") Integer jogadorEA,   @RequestParam("destino") Integer destino){  
+             String mensagem = "DEfesa";
+             Estatistica est = new Estatistica();
+             est.setDestino(destino);
+             est.setIdJea(jogadorEA);
+             est.setRotacaoEA(rotacaoEA);
+             est.setIdUtilizador(jogadorP);
+             est.setRotacaoPropria(rotacaoP);
+             est.setOrigem(origem);
+             est.setIdJogo(1);
+             est.setIdTipoEstatistica(4);
+             eService.adicionaEstatistica(est);
+             return mensagem;
+     }
+         
+         @RequestMapping(value = "/ataque", method = RequestMethod.GET)  
+         public @ResponseBody  
+         String insereAtaque(@RequestParam("rotacaoP") String rotacaoP, @RequestParam("jogadorP") Integer jogadorP,  
+                 @RequestParam("origem") Integer origem,  @RequestParam("rotacaoEA") String rotacaoEA,  
+                 @RequestParam("jogadorEA") Integer jogadorEA,   @RequestParam("destino") Integer destino){  
+             String mensagem = "Ataque";
+             Estatistica est = new Estatistica();
+             est.setDestino(destino);
+             est.setIdJea(jogadorEA);
+             est.setRotacaoEA(rotacaoEA);
+             est.setIdUtilizador(jogadorP);
+             est.setRotacaoPropria(rotacaoP);
+             est.setOrigem(origem);
+             est.setIdJogo(1);
+             est.setIdTipoEstatistica(2);
+             eService.adicionaEstatistica(est);
+             return mensagem;
+     }
 
     
         

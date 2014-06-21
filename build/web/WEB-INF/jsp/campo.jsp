@@ -10,8 +10,96 @@
         <title>Sistema de Informação - SCB</title>
         <script src="<c:url value="/resources/js/jquery-1.11.1.js" />"></script>
         <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
         
+        <!--
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+        !-->
         <link href="<c:url value ="/resources/css/styleCampo.css"/>" rel="stylesheet" type="text/css">
+        
+          <style type="text/css">
+    #popUpDivAtaques{
+    z-index: 100;
+    position: absolute;
+    background-color: rgba(123, 123,123, 0.8);
+    display: none;
+    top: 40%;
+    left: 40%;
+    width: 20%;
+    height: 30%;
+}
+#popupSelectAtaques{
+    z-index: 1000;
+    position: absolute;
+    top: 130px;
+    left: 50px;
+}
+
+#popUpDivDefesas{
+    z-index: 100;
+    position: absolute;
+    background-color: rgba(123, 123,123, 0.8);
+    display: none;
+    top: 40%;
+    left: 40%;
+    width: 20%;
+    height: 30%;
+}
+#popupSelectDefesas{
+    z-index: 1000;
+    position: absolute;
+    top: 130px;
+    left: 50px;
+}
+
+#popUpDivServicos{
+    z-index: 100;
+    position: absolute;
+    background-color: rgba(123, 123,123, 0.8);
+    display: none;
+    top: 40%;
+    left: 40%;
+    width: 20%;
+    height: 30%;
+}
+#popupSelectServicos{
+    z-index: 1000;
+    position: absolute;
+    top: 130px;
+    left: 50px;
+}
+
+
+
+  </style>
+  
+
+
+<script type="text/javascript">
+ 
+$(window).load(function(){
+$("#baseDiv").click(function(e) {
+    $("#popUpDiv").show();
+});
+$("#popUpDiv input[name='class']").click(function(e) {
+	$("#baseDiv").html($('input:radio[name=class]:checked').val() + ' clicked. Click again to change.');
+    $("#popUpDiv").hide();
+});
+});
+
+$(window).load(function(){
+$("#popUpDivServicos input[name='class']").click(function(e) {
+    $("#popUpDivServicos").hide();
+    //$("#classificacao").html($('input:radio[name=class]:checked').val());
+    classificacao = ($('input:radio[name=class]:checked').val());
+    alert(classificacao);
+    insereServico(rotacaoP,jogadorP,origem,rotacaoEA,jogadorEA,destino,classificacao);
+});
+});
+
+</script>
     </head>
     <!--
       <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
@@ -141,16 +229,72 @@
                                             </div>
 
                                             <div id="btnestat">
-
+                                                <button onclick="getOpcao()">Try it</button>
                                                 <a href="estatisticas"><h2>Visualizar estatísticas</h2></a>
                                                 </a></div>
 
+ 
+
+    
 
 
-
-
+<div id="popUpDivDefesas" name="defesas">
+    <h3> Defesas</h3>
+        <input type="radio" name="class" id="radio-mini-1" value=0  />
+    	<label for="class">Erro</label>
+        <br>
+	<input type="radio" name="class" id="radio-mini-2" value=1  />
+    	<label for="class">1</label>
+    	<br>
+    	<input type="radio" name="class" id="radio-mini-3" value=2  />
+    	<label for="class">2</label>
+		<br>
+    	<input type="radio" name="class" id="radio-mini-3" value=3  />
+    	<label for="class">3</label>
+		<br>
+    	<input type="radio" name="class" id="radio-mini-3" value=4  />
+    	<label for="class">4</label>
+</div>
+            
+<div id="popUpDivServicos" name="servico">
+    <h3> Servico</h3>
+        <input type="radio" name="class" id="radio-mini-1" value=0  />
+    	<label for="class">Erro</label>
+        <br>
+	<input type="radio" name="class" id="radio-mini-2" value=1  />
+    	<label for="class">1</label>
+    	<br>
+    	<input type="radio" name="class" id="radio-mini-3" value=2  />
+    	<label for="class">2</label>
+		<br>
+    	<input type="radio" name="class" id="radio-mini-3" value=3  />
+    	<label for="class">3</label>
+		<br>
+    	<input type="radio" name="class" id="radio-mini-3" value=4  />
+    	<label for="class">4</label>
+</div>
+            
+<div id="popUpDivAtaques" name="ataques">
+    <h3> Ataques</h3>
+        <input type="radio" name="class" id="radio-mini-1" value=0  />
+    	<label for="class">Erro</label>
+        <br>
+	<input type="radio" name="class" id="radio-mini-2" value=1  />
+    	<label for="class">1</label>
+    	<br>
+    	<input type="radio" name="class" id="radio-mini-3" value=2  />
+    	<label for="class">2</label>
+		<br>
+    	<input type="radio" name="class" id="radio-mini-3" value=3  />
+    	<label for="class">3</label>
+		<br>
+    	<input type="radio" name="class" id="radio-mini-3" value=4  />
+    	<label for="class">4</label>
+</div>
+             
+            <label id="classificacao" >Classificacao</label>            
                                             
-                                            <script>
+<script>
 
 
 
@@ -164,6 +308,13 @@
                                                         var servico2 = [20];
                                                         var ar = new Array();
                                                         var jogada = new Array();
+                                                        var classificacao;
+                                                        var rotacaoP;
+                                                        var rotacaoEA;
+                                                        var jogadorP;
+                                                        var jogadorEA;
+                                                        var origem;
+                                                        var destino;
                                                         
                                                         function controlo(){
                                                            
@@ -173,13 +324,8 @@
                                                             if(nJogadas>1){
                                                             var posicaoPjogada = parseInt(ar[nJogadas - 2][2]);
                                                             }
-                                                            var rotacaoP;
-                                                            var rotacaoEA;
-                                                            var jogadorP;
-                                                            var jogadorEA;
-                                                            var origem;
-                                                            var destino;
-                                                            alert(nJogadas);
+                                                            
+                                                        
                                                             if (nJogadas == 1) {
                                                                 if (($.inArray(posicaoUjogada, servico1) >= 0) || ($.inArray(posicaoUjogada, servico2) >= 0)) {
                                                                     $('#jogadasTxt').html('servico');
@@ -198,8 +344,12 @@
                                                                         jogadorEA = ar[nJogadas -1] [1];
                                                                         origem = ar[nJogadas -2] [2];
                                                                         destino = ar[nJogadas -1] [2];
-                                                                        insereServico(rotacaoP,jogadorP,origem,rotacaoEA,jogadorEA,destino);
-                                                                        alert("servico casa");
+                                                                        $("#popUpDivServicos").show();
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
                                                                     } else {
                                                                         rotacaoP = ar[nJogadas - 1] [0];
                                                                         rotacaoEA = ar[nJogadas - 2] [0];
@@ -207,9 +357,10 @@
                                                                         jogadorEA = ar[nJogadas - 2] [1];
                                                                         origem = ar[nJogadas - 1] [2];
                                                                         destino = ar[nJogadas - 2] [2];
-                                                                        insereServico(rotacaoP,jogadorP,origem,rotacaoEA,jogadorEA,destino);
-                                                                        insereDefesa(rotacaoP,jogadorP,destino,rotacaoEA,jogadorEA,origem);
-                                                                        insere("servico fora");
+                                                                        classificacao = 0;
+                                                                        insereServico(rotacaoP,jogadorP,origem,rotacaoEA,jogadorEA,destino,classificacao);
+                                                                        insereDefesa(rotacaoP,jogadorP,destino,rotacaoEA,jogadorEA,origem,classificacao);
+                                                                      
                                                                     }
                                                                 } else {
                                                                     $('#jogadasTxt').html('servico para a fora');
@@ -242,12 +393,12 @@
                                                         }
                                                     }
 
-                                                        function insereServico(rotacaoP, jogadorP, origem, rotacaoEA,jogadorEA,destino) {
-                                                           
+                                                        function insereServico(rotacaoP, jogadorP, origem, rotacaoEA,jogadorEA,destino,classificacao) {
+                                                           alert(classificacao);
                                                             
                                                             $.ajax({
                                                                 url: '${pageContext.request.contextPath}/servico',
-                                                                data: {"rotacaoP": rotacaoP,  "jogadorP": jogadorP, "origem": origem, "rotacaoEA": rotacaoEA, "jogadorEA": jogadorEA, "destino": destino },
+                                                                data: {"rotacaoP": rotacaoP,  "jogadorP": jogadorP, "origem": origem, "rotacaoEA": rotacaoEA, "jogadorEA": jogadorEA, "destino": destino, "classificacao": classificacao },
                                                                 success: function(result) {
                                                                     alert(result);
                                                                 }
@@ -740,8 +891,13 @@
                                                                 controlo();
                                                             });
                                                         });
-
-                                              
+$("#baseDiv").click(function(e) {
+    $("#popUpDiv").show();
+});
+$("#popupSelect").change(function(e) {
+    $("#baseDiv").html($("#popupSelect").val() + ' clicked. Click again to change.');
+    $("#popUpDiv").hide();
+});
 
 
 
