@@ -88,6 +88,22 @@ public class JogoController {
                
 		return new ModelAndView("criarJogo", "map", map);
 	}
+        @RequestMapping("/criarJogoAD")
+	public ModelAndView novoJogoAD(@ModelAttribute Jogo jogo, HttpServletRequest request) {
+                
+            HttpSession session = request.getSession();
+                int escalao = ((int) session.getAttribute("escalao"));
+            List<EquipaAdversaria> lea = eaService.listaEAporEscalao(escalao);
+            
+            List<Competicao> lc = competicaoService.listaCompeticaoPorEscalao(escalao);
+            
+                    Map<String, List> map = new HashMap<String, List>();
+                    map.put("lea", lea);
+                    map.put("lc", lc);
+                
+               
+		return new ModelAndView("criarJogoAD", "map", map);
+	}
         
         @RequestMapping("/inserirJogo")
 	public String insereJogo(@ModelAttribute Jogo jogo) {
