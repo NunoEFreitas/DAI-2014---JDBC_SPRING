@@ -39,7 +39,7 @@
 <a href="#"  style="background-color:#b92c28;font-weight:bold;color:#ffffff;" class="btn"><i class="icon-align-justify"></i> <strong>AnalisarPiorRecetora</strong></a>
   
              <Div  class = "cabecalho da pagina" > 
-                 <h1>Gerir Competições<small> Gerar Dados em Tabela </small>  </h1> 
+                 <h1>Analisar à Posteriori<small> Gerar Dados em Tabela </small>  </h1> 
              </div><br>
              
              

@@ -100,7 +100,7 @@
 	                                <th>Escalão</th>            
  				</tr>
 	                </thead>
- 				<c:forEach var="ul" items="${utilizadorList}">
+ 				<c:forEach var="ul" items="${lutilizador}">
 
 					<tbody>
 	                            <tr>

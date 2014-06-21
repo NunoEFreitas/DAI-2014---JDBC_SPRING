@@ -88,6 +88,22 @@ public class JogoController {
                
 		return new ModelAndView("criarJogo", "map", map);
 	}
+        @RequestMapping("/criarJogoAD")
+	public ModelAndView novoJogoAD(@ModelAttribute Jogo jogo, HttpServletRequest request) {
+                
+            HttpSession session = request.getSession();
+                int escalao = ((int) session.getAttribute("escalao"));
+            List<EquipaAdversaria> lea = eaService.listaEAporEscalao(escalao);
+            
+            List<Competicao> lc = competicaoService.listaCompeticaoPorEscalao(escalao);
+            
+                    Map<String, List> map = new HashMap<String, List>();
+                    map.put("lea", lea);
+                    map.put("lc", lc);
+                
+               
+		return new ModelAndView("criarJogoAD", "map", map);
+	}
         
         @RequestMapping("/inserirJogo")
 	public String insereJogo(@ModelAttribute Jogo jogo) {
@@ -275,66 +291,28 @@ public class JogoController {
         @RequestParam("clube") Integer clube)  {  
             String mensagem="llll";
             return mensagem;
-
+<<<<<<< HEAD
     }  
         */
         
-        @RequestMapping(value = "/servico", method = RequestMethod.GET)  
+        @RequestMapping(value = "/helloajax", method = RequestMethod.GET)  
         public @ResponseBody  
-        String insereServico(@RequestParam("rotacaoP") String rotacaoP, @RequestParam("jogadorP") Integer jogadorP,  
-                @RequestParam("origem") Integer origem,  @RequestParam("rotacaoEA") String rotacaoEA,  
-                @RequestParam("jogadorEA") Integer jogadorEA,   @RequestParam("destino") Integer destino){  
-            String mensagem = "Servico";
+        String insere(@RequestParam("rotacaoP") String rotacaoP, @RequestParam("jogadorP") Integer jogadorP,  
+                @RequestParam("posicaoP") Integer posicaoP,  @RequestParam("rotacaoEA") String rotacaoEA,  
+                @RequestParam("jogadorEA") Integer jogadorEA,   @RequestParam("posicaoEA") Integer posicaoEA){  
+            String mensagem = "FCP";
             Estatistica est = new Estatistica();
-            est.setDestino(origem);
+            est.setDestino(posicaoEA);
             est.setIdJea(jogadorEA);
             est.setRotacaoEA(rotacaoEA);
             est.setIdUtilizador(jogadorP);
             est.setRotacaoPropria(rotacaoP);
-            est.setOrigem(destino);
+            est.setOrigem(posicaoP);
             est.setIdJogo(1);
             est.setIdTipoEstatistica(6);
             eService.adicionaEstatistica(est);
             return mensagem;
     } 
-        
-        @RequestMapping(value = "/defesa", method = RequestMethod.GET)  
-        public @ResponseBody  
-        String insereDefesa(@RequestParam("rotacaoP") String rotacaoP, @RequestParam("jogadorP") Integer jogadorP,  
-                @RequestParam("origem") Integer origem,  @RequestParam("rotacaoEA") String rotacaoEA,  
-                @RequestParam("jogadorEA") Integer jogadorEA,   @RequestParam("destino") Integer destino){  
-            String mensagem = "DEfesa";
-            Estatistica est = new Estatistica();
-            est.setDestino(destino);
-            est.setIdJea(jogadorEA);
-            est.setRotacaoEA(rotacaoEA);
-            est.setIdUtilizador(jogadorP);
-            est.setRotacaoPropria(rotacaoP);
-            est.setOrigem(origem);
-            est.setIdJogo(1);
-            est.setIdTipoEstatistica(4);
-            eService.adicionaEstatistica(est);
-            return mensagem;
-    }
-        
-        @RequestMapping(value = "/ataque", method = RequestMethod.GET)  
-        public @ResponseBody  
-        String insereAtaque(@RequestParam("rotacaoP") String rotacaoP, @RequestParam("jogadorP") Integer jogadorP,  
-                @RequestParam("origem") Integer origem,  @RequestParam("rotacaoEA") String rotacaoEA,  
-                @RequestParam("jogadorEA") Integer jogadorEA,   @RequestParam("destino") Integer destino){  
-            String mensagem = "Ataque";
-            Estatistica est = new Estatistica();
-            est.setDestino(destino);
-            est.setIdJea(jogadorEA);
-            est.setRotacaoEA(rotacaoEA);
-            est.setIdUtilizador(jogadorP);
-            est.setRotacaoPropria(rotacaoP);
-            est.setOrigem(origem);
-            est.setIdJogo(1);
-            est.setIdTipoEstatistica(2);
-            eService.adicionaEstatistica(est);
-            return mensagem;
-    }
        
 
     
@@ -344,8 +322,7 @@ public class JogoController {
                
 		return new ModelAndView("dadosGrafico");
 	}
-
-        @RequestMapping("/dadosTabela")
+  @RequestMapping("/dadosTabela")
 	public ModelAndView dadosTabela() {
                
 		return new ModelAndView("dadosTabela");
@@ -360,5 +337,6 @@ public class JogoController {
                
 		return new ModelAndView("gerarDadosGrafico");
 	}
+
 }  
         
