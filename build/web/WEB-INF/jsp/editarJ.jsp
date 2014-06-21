@@ -45,19 +45,19 @@
             <label>Email :</label>
             <form:input type="text" path="email" required="required" class="input" value="${map.user.getEmail()}" /><br>       
              <label>Altura :</label>
-            <form:input type="number" step="1" name="altura" path="altura" class="input" value="${map.user.getAltura()}" /><br>  
+            <form:input type="number" step="1" min="1" name="altura" path="altura" class="input" value="${map.user.getAltura()}" /><br>  
             <label>Peso :</label>
-            <form:input type="number" step="1"  name="peso" path="peso" class="input" value="${map.user.getPeso()}" /><br> 
+            <form:input type="number" step="1" min="1" name="peso" path="peso" class="input" value="${map.user.getPeso()}" /><br> 
             <label>Salto Vertical :</label>
-            <form:input type="number" step="1"  name="saltoVertical" path="saltoVertical" class="input" value="${map.user.getSaltoVertical()}" /><br> 
+            <form:input type="number" step="1" min="1" name="saltoVertical" path="saltoVertical" class="input" value="${map.user.getSaltoVertical()}" /><br> 
             <label>Velocidade Deslocamento:</label>
-            <form:input type="number" step="1" name="velocidadeDeslocamento" path="velocidadeDeslocamento" class="input" value="${map.user.getVelocidadeDeslocamento()}" /><br>  
+            <form:input type="number" step="1" min="1" name="velocidadeDeslocamento" path="velocidadeDeslocamento" class="input" value="${map.user.getVelocidadeDeslocamento()}" /><br>  
              <label>Alcance Ataque:</label>
-            <form:input type="number" step="1"  name="alcanceAtaque" path="alcanceAtaque" class="input" value="${map.user.getAlcanceAtaque()}" /><br>  
+            <form:input type="number" step="1"  min="1" name="alcanceAtaque" path="alcanceAtaque" class="input" value="${map.user.getAlcanceAtaque()}" /><br>  
             <label>Alcance Bloco:</label>
-            <form:input type="number" step="1"  name="alcanceBloco" path="alcanceBloco" class="input" value="${map.user.getAlcanceBloco()}" /><br> 
+            <form:input type="number" step="1"  min="1" name="alcanceBloco" path="alcanceBloco" class="input" value="${map.user.getAlcanceBloco()}" /><br> 
                <label>Envergadura:</label>
-            <form:input type="number" step="1"  name="envergadura" path="envergadura" class="input" value="${map.user.getEnvergadura()}" /><br> 
+            <form:input type="number" step="1"  min="1" name="envergadura" path="envergadura" class="input" value="${map.user.getEnvergadura()}" /><br> 
             
             <label>Estatura:</label>
                 <form:select class="input" path="estatura"  >
@@ -89,10 +89,10 @@
             <form:hidden path="idUtilizador" value="${map.user.getIdUtilizador()}" />		
             <form:hidden path="sexo" value="${map.user.getSexo()}" />
             <form:hidden path="estado" value="${map.user.getEstado()}" />          
-             <form:hidden path="idPerfil" value="${map.user.getIdPerfil()}" />
+            <form:hidden path="idPerfil" value="${map.user.getIdPerfil()}" />
              <div id="texto" style="color:red"><h2></h2></div>
              
-                 <input onClick="return validacao('${map.user.idPerfil}');" class="button" type="submit" value="Save" />                     
+             <input onClick="return validacao('${map.user.idPerfil}');" class="button" type="submit" value="Save" />                     
             </form:form>  
     </body>
 </html>
