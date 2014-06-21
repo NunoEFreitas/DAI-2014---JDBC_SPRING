@@ -27,8 +27,12 @@
         }else if(session.getAttribute("perfil").equals(2)){ %>  
  	    <%@include file="/resources/include/templateTreinador.jsp"%>
 	    <% 
-	  }else if(session.getAttribute("perfil").equals(3)){ %>
-          <%@include file="/resources/include/templateTreinadorAdjunto.jsp" %>       
+              
+        }else if(session.getAttribute("perfil").equals(3)){ %>  
+ 	    <%@include file="/resources/include/templateTreinadorAdjunto.jsp"%>
+	    <% 
+	  }else if(session.getAttribute("perfil").equals(5)){ %>
+          <%@include file="/resources/include/templateAnalistas.jsp" %>       
 	 <% 
         }
          %>
