@@ -23,7 +23,7 @@ body{
 }
 
 #top{
-    height:70px;
+    height:11%;
     width:100%;
     border: 0px solid pink;
 }
@@ -187,14 +187,13 @@ a:hover {
 /* -------------------------- campo ------------------------------*/
 
 .elementServiceLeft{
-    width: 50px;
-    height: 195px;
+    width: 3.6%;
+    height: 25.4%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
-    top: 195px;
+    top: 25.4%;
     right:36%; 
-    margin-right:670px;
+    margin-right:49.05%;
     margin-top: 7%;
     background-color:red;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -206,14 +205,13 @@ a:hover {
 .elementServiceLeft:hover { background-color: #FFC4CB; }
 
 .elementServiceRight{
-    width: 50px;
-    height: 195px;
+    width: 3.6%;
+    height: 25.4%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
     top: 0px;
     right:36%; 
-    margin-right: -70px;
+    margin-right: -5.12%;
     margin-top: 7%;
     background-color:red;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -225,14 +223,14 @@ a:hover {
 .elementServiceRight:hover { background-color: #FFC4CB; }
 
 .elementTopLeft{
-    width: 255px;
-    height: 40px;
+    width: 18.7%;
+    height: 5.2%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
+
     position:absolute;
     top: 0px;
     right:36%; 
-    margin-right:350px;
+    margin-right:25.6%;
     margin-top: 7%;
     background-color:blue;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -244,14 +242,13 @@ a:hover {
 .elementTopLeft:hover { background-color: #ADAFFF; }
 
 .elementTopRight{
-    width: 255px;
-    height: 40px;
+    width: 18.7%;
+    height: 5.2%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
     top: 0px;
     right:36%; 
-    margin-right:45px;
+    margin-right:3.3%;
     margin-top: 7%;
     background-color:blue;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -262,14 +259,13 @@ a:hover {
 .elementTopRight:hover { background-color: #ADAFFF; }
 
 .elementBotLeft{
-    width: 255px;
-    height: 40px;
+    width: 18.7%;
+    height: 5.2%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
-    top: 350px;
+    top: 45.6%;
     right:36%; 
-    margin-right:350px;
+    margin-right:25.6%;
     margin-top: 7%;
     background-color:blue;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -280,14 +276,13 @@ a:hover {
 .elementBotLeft:hover { background-color: #ADAFFF; }
 
 .elementBotRight{
-    width: 255px;
-    height: 40px;
+    width: 18.7%;
+    height: 5.2%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
-    top: 350px;
+    top: 45.6%;
     right:36%; 
-    margin-right:45px;
+    margin-right:3.3%;
     margin-top: 7%;
     background-color:blue;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -298,14 +293,13 @@ a:hover {
 .elementBotRight:hover { background-color: #ADAFFF; }
 
 .elementOutLeft{
-    width: 50px;
-    height: 390px;
+    width: 3.6%;
+    height: 50.8%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
     top: 0px;
     right:36%; 
-    margin-right:610px;
+    margin-right:44.7%;
     margin-top: 7%;
     background-color:blue;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -316,14 +310,13 @@ a:hover {
 .elementOutLeft:hover { background-color: #ADAFFF; }
 
 .elementOutRight{
-    width: 50px;
-    height: 390px;
+    width: 3.6%;
+    height: 50.8%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
     top: 0px;
     right:36%; 
-    margin-right: -10px;
+    margin-right: -0.73%;
     margin-top: 7%;
     background-color:blue;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -335,14 +328,13 @@ a:hover {
 
 
 .element1 {
-    width: 125px;
-    height: 90px;
+    width: 9.15%;
+    height: 11.7%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
-    top:250px;
+    top:32.6%;
     right:36%; 
-    margin-right:480px;
+    margin-right:35.13%;
     margin-top: 7%;
     background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -355,14 +347,14 @@ a:hover {
 .element1:hover { background-color: #F7C87C; }
 
 .element2 {
-    width: 125px;
-    height: 90px;
+    width: 9.15%;
+    height: 11.7%;
     border: 1px solid #000000;
     margin:0 10px 0 0;
     position:absolute;
-    top:250px;
+    top:32.6%;
     right:36%; 
-    margin-right:350px;
+    margin-right:25.6%;
     margin-top: 7%;
     background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -374,14 +366,13 @@ a:hover {
 .element2:hover { background-color: #F7C87C; }
 
 .element3 {
-    width: 125px;
-    height: 90px;
+    width: 9.15%;
+    height: 11.7%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
-    top:150px;
+    top:19.5%;
     right:36%; 
-    margin-right:350px;
+    margin-right:25.6%;
     margin-top: 7%;
     background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -393,14 +384,13 @@ a:hover {
 .element3:hover { background-color: #F7C87C; }
 
 .element6 {
-    width: 125px;
-    height: 90px;
+    width: 9.15%;
+    height: 11.7%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
-    top:150px;
+    top:19.5%;
     right:36%; 
-    margin-right:480px;
+    margin-right:35.13%;
     margin-top: 7%;
     background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -414,14 +404,14 @@ a:hover {
 
 
 .element4 {
-    width: 125px;
-    height: 90px;
+    width: 9.15%;
+    height: 11.7%;
     border: 1px solid #000000;
     margin:0 10px 0 0;
     position:absolute;
-    top:50px;
+    top:6.5%;
     right:36%; 
-    margin-right:350px;
+    margin-right:25.6%;
     margin-top: 7%;
     background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -432,14 +422,13 @@ a:hover {
 }
 
 .element5 {
-    width: 125px;
-    height: 90px;
+    width: 9.15%;
+    height: 11.7%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
-    top:50px;
+    top:6.5%;
     right:36%; 
-    margin-right:480px;
+    margin-right:35.13%;
     margin-top: 7%;
     background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -453,14 +442,13 @@ a:hover {
 
 
 .elementLinha{
-    width: 20px;
-    height: 390px;
+    width: 1.46%;
+    height: 50.8%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
     top:0px;
     right:36%; 
-    margin-right:315px;
+    margin-right:23%;
     margin-top: 7%;
     background-color:red;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -473,14 +461,13 @@ a:hover {
 .elementLinha:hover { background-color: #FFC4CB; }
 
 .element7 {
-    width: 125px;
-    height: 90px;
+    width: 9.15%;
+    height: 11.7%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
-    top:50px;
+    top:6.5%;
     right:36%; 
-    margin-right:45px;
+    margin-right:3.3%;
     margin-top: 7%;
     background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -491,14 +478,13 @@ a:hover {
 .element7:hover { background-color: #F7C87C; }	
 
 .element12 {
-    width: 125px;
-    height: 90px;
+    width: 9.15%;
+    height: 11.7%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
-    top:150px;
+    top:19.5%;
     right:36%; 
-    margin-right:45px;
+    margin-right:3.3%;
     margin-top: 7%;
     background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -510,14 +496,13 @@ a:hover {
 .element12:hover { background-color: #F7C87C; }
 
 .element11 {
-    width: 125px;
-    height: 90px;
+    width: 9.15%;
+    height: 11.7%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
-    top:250px;
+    top:32.6%;
     right:36%; 
-    margin-right:45px;
+    margin-right:3.3%;
     margin-top: 7%;
     background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -529,14 +514,13 @@ a:hover {
 .element11:hover { background-color: #F7C87C; }
 
 .element10 {
-    width: 125px;
-    height: 90px;
+    width: 9.15%;
+    height: 11.7%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
-    top:250px;
+    top:32.6%;
     right:36%; 
-    margin-right:175px;
+    margin-right:12.8%;
     margin-top: 7%;
     background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -548,14 +532,13 @@ a:hover {
 .element10:hover { background-color: #F7C87C; }
 
 .element9 {
-    width: 125px;
-    height: 90px;
+    width: 9.15%;
+    height: 11.7%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
-    top:150px;
+    top:19.5%;
     right:36%; 
-    margin-right:175px;
+    margin-right:12.8%;
     margin-top: 7%;
     background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -567,14 +550,13 @@ a:hover {
 .element9:hover { background-color: #F7C87C; }
 
 .element8 {
-    width: 125px;
-    height: 90px;
+    width: 9.15%;
+    height: 11.7%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
-    top:50px;
+    top:6.5%;
     right:36%; 
-    margin-right:175px;
+    margin-right:12.8%;
     margin-top: 7%;
     background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
