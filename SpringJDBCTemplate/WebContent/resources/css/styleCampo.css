@@ -3,40 +3,28 @@ html{
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: contain;
     background-color: black;
     text-align: center;
-
+    
 }
 
 h3{
+    float:left;
+    margin-left: 20%;
+    border-radius: 10px;
     font-size: large;
-    border: 0px solid blue;
-    background: gray;
+    border: 1px solid black;
+    background: lightgray;
 }
 
 
 body{
-    margin-left:8%;
-    margin-right:8%;
+    margin-left:2%;
+    margin-right:2%;
     font-weight: bold;
+    border: 0px solid blue;
 }
 
-#top{
-    height:11%;
-    width:100%;
-    border: 0px solid pink;
-}
-#mid{
-    height:500px;
-    width:100%;
-    border: 0px solid pink;
-}
-
-#btnestat{
-    float:left;
-
-}
 
 a {
     color: darkblue;
@@ -47,11 +35,13 @@ a:hover {
 }
 
 #rotacaoCampo1{
-    width:200px;
-    height:50px;
+    width:14%;
+    height:10px;
     border:0px solid black;
+    margin-left: 2.2%;
     float:left;
-    margin-left: 30px;
+
+
 
 }
 
@@ -61,11 +51,14 @@ a:hover {
 }
 
 #rotacaoCampo2{
-    width:200px;
-    height:50px;
-    border:0px solid black;
-    float:left;
-    margin-left: 40px;
+    width:14%;
+    height:10px;
+    float:right;
+    margin-right: 2.2%;
+    border:0px solid yellow;
+
+
+    
 }
 
 #rotacaoCampo2 label{
@@ -73,33 +66,33 @@ a:hover {
     background: black;
 }
 
-#scoreboard{
-    height:40px;
-    width:350px;
-    border:0px solid blue;
+#casa{
     float:left;
-    margin-left: 40px;
+    margin-left: 20%;
+    border-radius: 10px;
+    font-size: large;
+    border: 1px solid black;
+    background: lightgray;
+    
 }
+
 
 #fora{
-    float:left;
-    width:150px;
-    border:0px solid yellow;
-    margin-left: 20px;
-}
+    float:right;
+    margin-right: 20%;
+    border-radius: 10px;
+    font-size: large;
+    border: 1px solid black;
+    background: lightgray;
 
-#casa{
-    width:150px;
-    float:left;
-    border:0px solid yellow;
 }
-
 
 
 #setCasa input{
     background: black;
     font-size:small;
     color:white;
+    border:0px;
 
 }
 
@@ -108,6 +101,7 @@ a:hover {
     background: black;
     font-size:small;
     color:white;
+    border:0px;
 }
 
 
@@ -118,6 +112,7 @@ a:hover {
     width: 40px;
     font-size:medium;
     color:white;
+    border:0px;
 }
 
 #pontoFora input{
@@ -126,62 +121,73 @@ a:hover {
     width: 40px;
     font-size:medium;
     color:white;
+    border:0px;
 }
 
 #classificacao{
 
-    border: 0px solid red;
-    height:200px;
-    width: 270px;
-    float:right;
-
 }
 
+select{ 
+    background: lightgray;
+    border-radius: 20px;
+    width:100px;
+    text-align: center;
+    margin-left: 4px;
+}
 
+#atribui label{
+    color:white;
+    border: 1px solid black;
+    background: black;
+    width: 100px;
+    
+}
 
 #atribui{
     border: 0px solid blue;
-    height: 200px;
-    width: 250px;
-    float:right;
+    height: 25%;
+    width: 18%;
+    float:left;
+    margin-top: 10%;
+    
+}
+
+#atribui2 label{
+    color:white;
+    border: 1px solid black;
+    background: black;
+    
+    
 }
 
 #atribui2{
     border: 0px solid blue;
-    height: 200px;
-    width: 250px;
+    height: 25%;
+    width: 18%;
     float:right;
+    margin-top: 10%;
+
+    
 }
+
+
 #jogadasTxt{
     font-weight: 900;
 }
 #textboxes{
-    border: 0px solid yellow;
-    height:50px;
-    width:650px;
-    float:left;
-    margin-left: 100px;
+
+position:absolute;
+margin-top: 33%;
+margin-left: 25%;
 
 
 }
 
 #textboxes textarea{
-    width:600px;
-    height:50px;
-}
+width:600px;
+height: 50px;
 
-#campo{
-    border: 0px solid blue;
-    height: 430px; 
-    width: 850px;
-    float:left;
-}
-
-#tabela{
-    border:2px solid green;
-    height:500px;
-    width: 500px;
-    float:right;
 }
 
 /* -------------------------- campo ------------------------------*/
@@ -192,7 +198,7 @@ a:hover {
     border: 1px solid #000000;
     position:absolute;
     top: 25.4%;
-    right:36%; 
+    right:27%; 
     margin-right:49.05%;
     margin-top: 7%;
     background-color:red;
@@ -210,7 +216,7 @@ a:hover {
     border: 1px solid #000000;
     position:absolute;
     top: 0px;
-    right:36%; 
+    right:27%; 
     margin-right: -5.12%;
     margin-top: 7%;
     background-color:red;
@@ -229,7 +235,7 @@ a:hover {
 
     position:absolute;
     top: 0px;
-    right:36%; 
+    right:27%; 
     margin-right:25.6%;
     margin-top: 7%;
     background-color:blue;
@@ -247,7 +253,7 @@ a:hover {
     border: 1px solid #000000;
     position:absolute;
     top: 0px;
-    right:36%; 
+    right:27%; 
     margin-right:3.3%;
     margin-top: 7%;
     background-color:blue;
@@ -264,7 +270,7 @@ a:hover {
     border: 1px solid #000000;
     position:absolute;
     top: 45.6%;
-    right:36%; 
+    right:27%; 
     margin-right:25.6%;
     margin-top: 7%;
     background-color:blue;
@@ -281,7 +287,7 @@ a:hover {
     border: 1px solid #000000;
     position:absolute;
     top: 45.6%;
-    right:36%; 
+    right:27%; 
     margin-right:3.3%;
     margin-top: 7%;
     background-color:blue;
@@ -298,7 +304,7 @@ a:hover {
     border: 1px solid #000000;
     position:absolute;
     top: 0px;
-    right:36%; 
+    right:27%; 
     margin-right:44.7%;
     margin-top: 7%;
     background-color:blue;
@@ -315,7 +321,7 @@ a:hover {
     border: 1px solid #000000;
     position:absolute;
     top: 0px;
-    right:36%; 
+    right:27%; 
     margin-right: -0.73%;
     margin-top: 7%;
     background-color:blue;
@@ -333,7 +339,7 @@ a:hover {
     border: 1px solid #000000;
     position:absolute;
     top:32.6%;
-    right:36%; 
+    right:27%; 
     margin-right:35.13%;
     margin-top: 7%;
     background-color:#FAAF37;
@@ -353,7 +359,7 @@ a:hover {
     margin:0 10px 0 0;
     position:absolute;
     top:32.6%;
-    right:36%; 
+    right:27%; 
     margin-right:25.6%;
     margin-top: 7%;
     background-color:#FAAF37;
@@ -371,7 +377,7 @@ a:hover {
     border: 1px solid #000000;
     position:absolute;
     top:19.5%;
-    right:36%; 
+    right:27%; 
     margin-right:25.6%;
     margin-top: 7%;
     background-color:#FAAF37;
@@ -389,7 +395,7 @@ a:hover {
     border: 1px solid #000000;
     position:absolute;
     top:19.5%;
-    right:36%; 
+    right:27%; 
     margin-right:35.13%;
     margin-top: 7%;
     background-color:#FAAF37;
@@ -410,7 +416,7 @@ a:hover {
     margin:0 10px 0 0;
     position:absolute;
     top:6.5%;
-    right:36%; 
+    right:27%; 
     margin-right:25.6%;
     margin-top: 7%;
     background-color:#FAAF37;
@@ -427,7 +433,7 @@ a:hover {
     border: 1px solid #000000;
     position:absolute;
     top:6.5%;
-    right:36%; 
+    right:27%; 
     margin-right:35.13%;
     margin-top: 7%;
     background-color:#FAAF37;
@@ -447,7 +453,7 @@ a:hover {
     border: 1px solid #000000;
     position:absolute;
     top:0px;
-    right:36%; 
+    right:27%; 
     margin-right:23%;
     margin-top: 7%;
     background-color:red;
@@ -466,7 +472,7 @@ a:hover {
     border: 1px solid #000000;
     position:absolute;
     top:6.5%;
-    right:36%; 
+    right:27%; 
     margin-right:3.3%;
     margin-top: 7%;
     background-color:#FAAF37;
@@ -483,7 +489,7 @@ a:hover {
     border: 1px solid #000000;
     position:absolute;
     top:19.5%;
-    right:36%; 
+    right:27%; 
     margin-right:3.3%;
     margin-top: 7%;
     background-color:#FAAF37;
@@ -501,7 +507,7 @@ a:hover {
     border: 1px solid #000000;
     position:absolute;
     top:32.6%;
-    right:36%; 
+    right:27%; 
     margin-right:3.3%;
     margin-top: 7%;
     background-color:#FAAF37;
@@ -519,7 +525,7 @@ a:hover {
     border: 1px solid #000000;
     position:absolute;
     top:32.6%;
-    right:36%; 
+    right:27%; 
     margin-right:12.8%;
     margin-top: 7%;
     background-color:#FAAF37;
@@ -537,7 +543,7 @@ a:hover {
     border: 1px solid #000000;
     position:absolute;
     top:19.5%;
-    right:36%; 
+    right:27%; 
     margin-right:12.8%;
     margin-top: 7%;
     background-color:#FAAF37;
@@ -555,7 +561,7 @@ a:hover {
     border: 1px solid #000000;
     position:absolute;
     top:6.5%;
-    right:36%; 
+    right:27%; 
     margin-right:12.8%;
     margin-top: 7%;
     background-color:#FAAF37;
@@ -623,7 +629,7 @@ a:hover {
       border: 0px solid red;
       width:100%;
       height:500px;
-      float:left;
+      
   }
 
 */
