@@ -10,7 +10,13 @@
         <title>Sistema de Informação - SCB</title>
         <script src="<c:url value="/resources/js/jquery-1.11.1.js" />"></script>
         <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
         
+        <!--
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+        !-->
         <link href="<c:url value ="/resources/css/styleCampo.css"/>" rel="stylesheet" type="text/css">
     </head>
     <!--
@@ -141,12 +147,37 @@
                                             </div>
 
                                             <div id="btnestat">
-
+                                                <button onclick="getOpcao()">Try it</button>
                                                 <a href="estatisticas"><h2>Visualizar estatísticas</h2></a>
                                                 </a></div>
 
+<div data-role="page" >
+ 
+
+  <div data-role="main" class="ui-content">
+    
+
+    <div data-role="popup" id="popup">
 
 
+      <form>
+<fieldset data-role="controlgroup" data-mini="true" id="opcao">
+    	<input type="radio" name="radio-mini" id="radio-mini-1" value=1  />
+    	<label for="radio-mini-1">1</label>
+        <br>
+	<input type="radio" name="radio-mini" id="radio-mini-2" value=2  />
+    	<label for="radio-mini-2">2</label>
+    	<br>
+    	<input type="radio" name="radio-mini" id="radio-mini-3" value=3  />
+    	<label for="radio-mini-3">3</label>
+        <br>
+        <input type="radio" name="radio-mini" id="radio-mini-3" value=4  />
+    	<label for="radio-mini-3">4</label>
+        <br>
+        <input type="radio" name="radio-mini" id="radio-mini-3" value=0  />
+    	<label for="radio-mini-3">Erro</label>
+</fieldset>
+</form>
 
 
                                             
@@ -740,8 +771,26 @@
                                                                 controlo();
                                                             });
                                                         });
+function classificacao(){
+var selection;
 
-                                              
+$("input[type='radio']").change(function () {
+			selection=$(this).val();
+if(selection != null){
+popup.style.display = 'none';
+
+}
+
+
+
+		});
+            }
+
+function getOpcao() {
+
+var a = document.querySelector('input[type="radio"]:checked').value;
+alert(a);
+}
 
 
 

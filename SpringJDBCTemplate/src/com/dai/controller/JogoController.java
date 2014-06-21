@@ -229,9 +229,19 @@ public class JogoController {
 	}
         
         @RequestMapping("/updateJogo")
-	public String updateJogo(@ModelAttribute Jogo jogo) {
+	public String updateJogo(@ModelAttribute Jogo jogo,HttpServletRequest request) {
 		jogoService.alteraJogo(jogo);
-		return "redirect:/listarJogosT";
+                HttpSession session = request.getSession();
+                int perfil = ((int) session.getAttribute("perfil"));
+                String retorno="";
+                if(perfil==2){     
+		retorno="redirect:/listarJogosT";
+                } else {
+                    if(perfil==3){
+                    retorno="redirect:/listarJogosTA"; 
+                    }
+                }
+                return retorno;
 	}
         
         @RequestMapping("/jogoSelecionadosEA/{idEquipaAdversaria}/{idJogo}")
