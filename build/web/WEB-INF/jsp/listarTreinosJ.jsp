@@ -1,3 +1,4 @@
+
 <%-- 
     Document   : listarTreinosJ
     Created on : 14/Jun/2014, 19:40:01
@@ -11,9 +12,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <table border="1"> 
+        
+           <%@include file="/resources/include/templateAtleta.jsp"%>
+        <table class="table"> 
         <tr>
             <td Class="heading"> ID Treino </td>
             <td Class="heading"> Duracao </td>
