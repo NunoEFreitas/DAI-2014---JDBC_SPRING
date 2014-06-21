@@ -56,7 +56,7 @@ a:hover {
 }
 
 #rotacaoCampo1 label{
-    color:blue;
+    color:white;
     background: black;
 }
 
@@ -69,7 +69,7 @@ a:hover {
 }
 
 #rotacaoCampo2 label{
-    color:blue;
+    color:white;
     background: black;
 }
 
@@ -99,7 +99,7 @@ a:hover {
 #setCasa input{
     background: black;
     font-size:small;
-    color:blue;
+    color:white;
 
 }
 
@@ -107,7 +107,7 @@ a:hover {
 #setFora input{
     background: black;
     font-size:small;
-    color:blue;
+    color:white;
 }
 
 
@@ -117,7 +117,7 @@ a:hover {
     height: 30px;
     width: 40px;
     font-size:medium;
-    color:blue;
+    color:white;
 }
 
 #pontoFora input{
@@ -125,7 +125,7 @@ a:hover {
     height: 30px;
     width: 40px;
     font-size:medium;
-    color:blue;
+    color:white;
 }
 
 #classificacao{
