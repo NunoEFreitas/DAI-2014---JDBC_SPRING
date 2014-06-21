@@ -1,3 +1,4 @@
+
 <%-- 
     Document   : jogadoresSelecionados
     Created on : 19/Mai/2014, 8:01:39
@@ -12,6 +13,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
          <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
+          <link href="<c:url value ="/resources/css/tabelas.css"/>" rel="stylesheet" type="text/css">
     </head>
     <body>
         
@@ -35,8 +37,10 @@
         
         
         <h1> Jogo ${map.jogo.get(0)}</h1>
+        <div>
+            <div class="tabela1">
         <h2> Selecionaveis </h2>
-        <table class="table"> 
+        <table  border="1"> 
         <tr>
             <td Class="heading"> Id Jogador </td>
             <td Class="heading"> Nome </td>
@@ -50,9 +54,11 @@
                 
             </tr>
         </c:forEach>
-            
+        </table>
+        </div >
+            <div class="tabela">
        <h2> Selecionados </h2>
-        <table border="1"> 
+        <table  border="1"> 
         <tr>
             <td Class="heading"> Id Jogador </td>
             <td Class="heading"> Nome </td>
@@ -65,6 +71,8 @@
                 <td><a href="jogadorDesSelecionado/${map.jogo.get(0)}/ ${es.getIdUtilizador()}">Selecionar</a></td>
                 
             </tr>
-        </c:forEach>   
+        </c:forEach> 
+        </table>
+            </div>
     </body>
 </html>

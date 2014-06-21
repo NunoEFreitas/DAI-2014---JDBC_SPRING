@@ -1,0 +1,26 @@
+
+.tabela{
+position: relative;
+padding-right: 250px;
+float: right;
+
+}
+
+.tabela1{
+float: left;
+position: relative;
+
+}
+
+.tabela table{
+width: 450px;
+
+border: 3px solid red;
+
+}
+
+.tabela1 table{
+    border: 3px solid red;
+width: 450px;
+
+}

@@ -287,9 +287,8 @@ public class JogoController {
             eService.adicionaEstatistica(est);
             return mensagem;
     } 
-       
-=======
-    }
+
+    
         
          @RequestMapping("/dadosGrafico")
 	public ModelAndView dadosGrafico() {
@@ -311,6 +310,6 @@ public class JogoController {
                
 		return new ModelAndView("gerarDadosGrafico");
 	}
->>>>>>> 9d9067a9268731d9b60b72c91c3d7461fff7f319
+
 }  
         

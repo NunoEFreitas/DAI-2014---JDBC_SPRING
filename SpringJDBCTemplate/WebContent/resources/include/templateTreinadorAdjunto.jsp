@@ -1,3 +1,4 @@
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,48 +24,48 @@
                         </li>
                         <li class='has-sub'><a href='#'><span>Gerir Competições</span></a>
                             <ul>
-                                <li class='has-sub'><a href='#'><span>AnalisarTempoReal</span></a>
-                                    <ul>
-                                        <li><a href='/VoleiUM/listarJogosTA'><span>Listar Jogos</span></a></li>
-                                        <li><a href='#'><span>InserirDadosJogo</span></a></li>
-                                    </ul>
-                                </li>
-                                <li class='has-sub'><a href='#'><span>AnalisarPosteriori</span></a>
-                                    <ul>
-                                        <li><a href='gerarDadosTabela'><span>GerarDadosTabela</span></a></li>
-                                        <li class='last'><a href='gerarDadosGrafico'><span>GerarDadosGráfico</span></a></li>
-                                    </ul>
-                                </li>
-                                <li class='has-sub'><a href='#'><span>ManusearVídeo</span></a>
-                                    <ul>
-                                        <li><a href='#'><span>InserirVídeo</span></a></li>
-                                        <li class='last'><a href='#'><span>ApagarVídeo</span></a></li>
-                                        <li class='last'><a href='#'><span>VisualizarVídeo</span></a></li>
-                                    </ul>
-                                </li>
+                                <li class='has-sub'><a href='#'><span>AnalisarTempoReal</span></a>  </li>
+                                    
+                                        <li><a href='/VoleiUM/listarJogosTA'><span>-Listar Jogos</span></a></li>
+                                        <li><a href='#'><span>-InserirDadosJogo</span></a></li>
+                                    
+                              
+                                <li class='has-sub'><a href='#'><span>AnalisarPosteriori</span></a></li>
+                                    
+                                        <li><a href='gerarDadosTabela'><span>-GerarDadosTabela</span></a></li>
+                                        <li class='last'><a href='gerarDadosGrafico'><span>-GerarDadosGráfico</span></a></li>
+                                    
+                                
+                                <li class='has-sub'><a href='#'><span>ManusearVídeo</span></a></li>
+                                    
+                                        <li><a href='#'><span>-InserirVídeo</span></a></li>
+                                        <li class='last'><a href='#'><span>-ApagarVídeo</span></a></li>
+                                        <li class='last'><a href='#'><span>-VisualizarVídeo</span></a></li>
+                                    
+                                
                             </ul>
                         </li>
                         <li class='has-sub'><a href='#'><span>Analisar Adversários</span></a>
                             <ul>
-                                <li class='has-sub'><a href='#'><span>InserirDadosTempoReal</span></a>
-                                    <ul>
-                                        <li><a href='#'><span>CriarJogo</span></a></li>
-                                        <li><a href='#'><span>InserirDadosJogo</span></a></li>
-                                    </ul>
-                                </li>
-                                <li class='has-sub'><a href='#'><span>AnalisarPosteriori</span></a>
-                                    <ul>
-                                        <li><a href='dadosTabela'><span>AnalisarDadosTabela</span></a></li>
-                                        <li><a href='dadosGrafico'><span>AnalisarDadosGrafico</span></a></li>
-                                    </ul>
-                                </li> 
-                                <li class='has-sub'><a href='#'><span>ManusearVídeo</span></a>
-                                    <ul>
-                                        <li><a href='#'><span>InserirVídeo</span></a></li>
-                                        <li><a href='#'><span>ApagarVídeo</span></a></li>
-                                        <li><a href='#'><span>VisualizarVídeo</span></a></li>
-                                    </ul>
-                                </li> 
+                                <li class='has-sub'><a href='#'><span>InserirDadosTempoReal</span></a></li>
+                                    
+                                        <li><a href='#'><span>-CriarJogo</span></a></li>
+                                        <li><a href='#'><span>-InserirDadosJogo</span></a></li>
+                                    
+                                
+                                <li class='has-sub'><a href='#'><span>AnalisarPosteriori</span></a></li> 
+                                    
+                                        <li><a href='dadosTabela'><span>-AnalisarDadosTabela</span></a></li>
+                                        <li><a href='dadosGrafico'><span>-AnalisarDadosGrafico</span></a></li>
+                                    
+                                
+                                <li class='has-sub'><a href='#'><span>ManusearVídeo</span></a></li> 
+                                    
+                                        <li><a href='#'><span>-InserirVídeo</span></a></li>
+                                        <li><a href='#'><span>-ApagarVídeo</span></a></li>
+                                        <li><a href='#'><span>-VisualizarVídeo</span></a></li>
+                                    
+                                
                             </ul>
                         </li>
                         
@@ -73,4 +74,4 @@
 
      
     </body>
-</html>                                		
+</html>    
