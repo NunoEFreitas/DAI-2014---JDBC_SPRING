@@ -40,7 +40,7 @@
         <div>
             <div class="tabela1">
         <h2> Selecionaveis </h2>
-        <table  border="1"> 
+        <table > 
         <tr>
             <td Class="heading"> Id Jogador </td>
             <td Class="heading"> Nome </td>
@@ -58,7 +58,7 @@
         </div >
             <div class="tabela">
        <h2> Selecionados </h2>
-        <table  border="1"> 
+        <table> 
         <tr>
             <td Class="heading"> Id Jogador </td>
             <td Class="heading"> Nome </td>

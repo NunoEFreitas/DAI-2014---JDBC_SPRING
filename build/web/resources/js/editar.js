@@ -1,12 +1,12 @@
  function  validacao(valor) {
-alert(valor);
+
            if (valor == 2 || valor==3 || valor==4 || valor==5 || valor==6) {
        
              
-         if (document.editar.nome.value == "" || IsNum(editar.nome.value)) {
-            document.getElementById("texto").innerHTML = "Preencha o nome correctamente";
-            document.editar.nome.focus();
-            return false;
+     if (document.editar.nome.value == "" || IsNum(editar.nome.value)) {
+         document.getElementById("texto").innerHTML = "Preencha o nome correctamente";
+         document.editar.nome.focus();
+         return false;
 
     }
     if (document.editar.password.value == "" || editar.password.value.length < 4) {
@@ -15,18 +15,18 @@ alert(valor);
         return false;
 
     }
-    if (alert("sss")||document.editar.telefone.value == "" || editar.telefone.value.length < 9||editar.telefone.value.length > 10|| !IsNum(register.telefone.value) ) {
-        document.getElementById("texto").innerHTML = "Preencha o telefone correctamente";
-        document.editar.telefone.focus();       
-        return false;
-    } 
-    if (alert("sss")||document.editar.morada.value == "") {
+     if (document.editar.morada.value == "") {
         document.getElementById("texto").innerHTML = "Preencha o morada correctamente";
         document.editar.morada.focus();
         return false;
     }
+    if (document.editar.telefone.value == "" || editar.telefone.value.length < 9||editar.telefone.value.length > 10|| !IsNum(register.telefone.value)) {
+        document.getElementById("texto").innerHTML = "Preencha o telefone correctamente";
+        document.editar.telefone.focus();       
+        return false;
+    } 
    
-
+   
 
                 } 
 
@@ -84,12 +84,12 @@ alert(valor);
             document.editar.alcanceBloco.focus();
             return false;
         }
-        if (document.editar.envergadura.value == "" || !IsNum(editar.envergadura.value)) {
+        if (document.editar.envergadura.value == "" || !IsNum(editar.envergadura.value)|| editar.envergadura.value == "0") {
             document.getElementById("texto").innerHTML = "Preencha o Envergadura correctamente.";
             document.editar.envergadura.focus();
             return false;
         }
-        return false;
+     
     }
 
 }
@@ -113,4 +113,3 @@ function IsNum(v) {
     return IsNumber;
 
 }
-
