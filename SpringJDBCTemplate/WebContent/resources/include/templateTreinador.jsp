@@ -18,7 +18,7 @@
                         <li><a href='sair'><img src="<c:url value="/resources/images/logout.png" />" /></a></li>
                         <li class='has-sub'><a href='#'><span>Gerir Atletas</span></a>
                             <ul>
-                                <li class='has-sub'><a href='#'><span>Visualizar Atleta</span></a></li>
+                                <li class='has-sub'><a href='#'><span><p style="color: white; background-color: #b81c40; letter-spacing: 6">Visualizar Atleta</p></span></a></li>
                                     
                                         <li><a href='/VoleiUM/listarUtilizadores'><span>-VisualizarDadosAtleta</span></a></li>
                                         <li><a href='#'><span>-VisualizarHistoricoAtleta</span></a></li>
@@ -36,20 +36,20 @@
                         
                         <li class='has-sub'><a href='#'><span>Gerir Competicoes</span></a>
                             <ul>
-                                <li class="titulo"><a href='#'><span>AnalisarTempoReal</span></a></li>
+                                <li class="titulo"><a href='#'><span><p style="color: white; background-color: #b81c40; letter-spacing: 4">Analisar em Tempo Real</p></span></a></li>
                                     
                                         <li class='last'><a href='/VoleiUM/criarJogo'><span>-CriarJogo</span></a></li>
                                    
                                         <li class='last'><a href='/VoleiUM/listarJogosT'><span>-Listar Jogos</span></a></li>
                                     
                              
-                                <li class='has-sub'><a href='#'><span>AnalisarPosteriori</span></a></li>
+                                <li class='has-sub'><a href='#'><span><p style="color: white; background-color: #b81c40; letter-spacing: 6">Analisar à Posteriori</p></span></a></li>
                                     
                                         <li><a href='gerarDadosTabela'><span>-GerarDadosTabela</span></a></li>
                                         <li class='last'><a href='gerarDadosGrafico'><span>-GerarDadosGráfico</span></a></li>
                                     
                               
-                                <li class='has-sub'><a href='#'><span>ManusearVídeo</span></a></li>
+                                <li class='has-sub'><a href='#'><span><p style="color: white; background-color: #b81c40; letter-spacing: 6">Manusear Vídeo</p></span></a></li>
                                     
                                         <li><a href='/VoleiUM/criarVideo'><span>-InserirVídeo</span></a></li>
                                         <li class='last'><a href='#'><span>-ApagarVídeo</span></a></li>
@@ -60,19 +60,19 @@
                         </li>
                         <li class='has-sub'><a href='#'><span>Analisar Adversários</span></a>
                             <ul>
-                                <li class='has-sub'><a href='#'><span>InserirDadosTempoReal</span></a></li>
+                                <li class='has-sub'><a href='#'><span><p style="color: white; background-color: #b81c40; letter-spacing: 2">Inserir Dados em Tempo Real</p></span></a></li>
                                     
                                         <li><a href='/VoleiUM/criarJogoAD'><span>-CriarJogo</span></a></li>
                                         <li><a href='#'><span>-InserirDadosJogo</span></a></li>
                                     
                                 
-                                <li class='has-sub'><a href='#'><span>AnalisarPosteriori</span></a></li>
+                                <li class='has-sub'><a href='#'><span><p style="color: white; background-color: #b81c40; letter-spacing: 6">Analisar à Posteriori</p></span></a></li>
                                     
                                         <li><a href='/VoleiUM/dadosTabela'><span>-AnalisarDadosTabela</span></a></li>
                                         <li><a href='/VoleiUM/dadosGrafico'><span>-AnalisarDadosGrafico</span></a></li>
                                     
                                 
-                                <li class='has-sub'><a href='#'><span>ManusearVídeo</span></a></li>
+                                <li class='has-sub'><a href='#'><span><p style="color: white; background-color: #b81c40; letter-spacing: 6">Manusear Vídeo</p></span></a></li>
                                     
                                         <li><a href='/VoleiUM/criarVideo'><span>-InserirVídeo</span></a></li>
                                         <li><a href='#'><span>-ApagarVídeo</span></a></li>

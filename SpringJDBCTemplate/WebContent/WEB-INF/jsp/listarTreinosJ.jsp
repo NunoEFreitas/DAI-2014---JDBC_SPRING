@@ -17,6 +17,9 @@
     <body>
         
            <%@include file="/resources/include/templateAtleta.jsp"%>
+           <Div  class = "cabecalho da pagina" > 
+                    <h1>Gerir competições<small>Listar treino</small>  </h1> 
+                </div><br>
         <table class="table"> 
         <tr>
             <td Class="heading"> ID Treino </td>

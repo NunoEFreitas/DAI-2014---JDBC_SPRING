@@ -24,19 +24,19 @@
                         </li>
                         <li class='has-sub'><a href='#'><span>Gerir Competições</span></a>
                             <ul>
-                                <li class='has-sub'><a href='#'><span>AnalisarTempoReal</span></a>  </li>
+                                <li class='has-sub'><a href='#'><span><p style="color: white; background-color: #b81c40; letter-spacing: 4">Analisar em Tempo Real</p></span></a>  </li>
                                     
                                         <li><a href='/VoleiUM/listarJogosTA'><span>-Listar Jogos</span></a></li>
                                         <li><a href='#'><span>-InserirDadosJogo</span></a></li>
                                     
                               
-                                <li class='has-sub'><a href='#'><span>AnalisarPosteriori</span></a></li>
+                                <li class='has-sub'><a href='#'><span><p style="color: white; background-color: #b81c40; letter-spacing: 6">Analisar à Posteriori</p></span></a></li>
                                     
                                         <li><a href='gerarDadosTabela'><span>-GerarDadosTabela</span></a></li>
                                         <li class='last'><a href='gerarDadosGrafico'><span>-GerarDadosGráfico</span></a></li>
                                     
                                 
-                                <li class='has-sub'><a href='#'><span>ManusearVídeo</span></a></li>
+                                <li class='has-sub'><a href='#'><span><p style="color: white; background-color: #b81c40; letter-spacing: 6">Manusear Vídeo</p></span></a></li>
                                     
                                         <li><a href='criarVideo'><span>-InserirVídeo</span></a></li>
                                         <li class='last'><a href='#'><span>-ApagarVídeo</span></a></li>
@@ -47,19 +47,19 @@
                         </li>
                         <li class='has-sub'><a href='#'><span>Analisar Adversários</span></a>
                             <ul>
-                                <li class='has-sub'><a href='#'><span>InserirDadosTempoReal</span></a></li>
+                                <li class='has-sub'><a href='#'><span><p style="color: white; background-color: #b81c40; letter-spacing: 2">Inserir Dados em Tempo Real</p></span></a></li>
                                     
                                         <li><a href='criarJogoAD'><span>-CriarJogo</span></a></li>
                                         <li><a href='#'><span>-InserirDadosJogo</span></a></li>
                                     
                                 
-                                <li class='has-sub'><a href='#'><span>AnalisarPosteriori</span></a></li> 
+                                <li class='has-sub'><a href='#'><span><p style="color: white; background-color: #b81c40; letter-spacing: 6">Analisar à Posteriori</p></span></a></li> 
                                     
                                         <li><a href='dadosTabela'><span>-AnalisarDadosTabela</span></a></li>
                                         <li><a href='dadosGrafico'><span>-AnalisarDadosGrafico</span></a></li>
                                     
                                 
-                                <li class='has-sub'><a href='#'><span>ManusearVídeo</span></a></li> 
+                                <li class='has-sub'><a href='#'><span><p style="color: white; background-color: #b81c40; letter-spacing: 6">Manusear Vídeo</p></span></a></li> 
                                     
                                         <li><a href='#'><span>-InserirVídeo</span></a></li>
                                         <li><a href='#'><span>-ApagarVídeo</span></a></li>
