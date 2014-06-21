@@ -87,9 +87,9 @@ public class JogoDaoImpl implements JogoDao{
                 List<Jogo> utList = new ArrayList();
                 String sql = "select jogo.idJogo, jogo.localJogo, jogo.dataJogo, jogo.resultadoJogo, "
                         + "jogo.horaJogo, jogo.competicao_idCompeticao, competicao.designacaoCompeticao, "
-                        + "jogo.equipaAdversaria_idEquipaAdversaria, equipaadversaria.nomeEquipaAdversaria  "
+                        + "jogo.equipaAdversaria_idequipaAdversaria, equipaAdversaria.nomeEquipaAdversaria  "
                         + "from jogo inner join competicao on jogo.competicao_idCompeticao = competicao.idCompeticao " +
-                        "inner join equipaadversaria on jogo.equipaAdversaria_idEquipaAdversaria = equipaadversaria.idEquipaAdversaria "
+                        "inner join equipaAdversaria on jogo.equipaAdversaria_idequipaAdversaria = equipaAdversaria.idEquipaAdversaria "
                         + "where resultadoJogo is null and competicao_idCompeticao IN (select idCompeticao from competicao where escalao_idEscalao_c = " + idEscalao +  ")";
                 JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		utList = jdbcTemplate.query(sql, new JogoRowMapperL());
@@ -99,7 +99,7 @@ public class JogoDaoImpl implements JogoDao{
         @Override
         public void apagaJogo(Integer idJogo){
             
-            String sql = "delete from selecaoJogo where jogo_idJogo =" + idJogo;
+            String sql = "delete from selecaoJogo where jogo_idjogo =" + idJogo;
            
 		
             String sql2 = "delete from jogo where idJogo =" + idJogo;

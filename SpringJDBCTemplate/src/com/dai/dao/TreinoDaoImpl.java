@@ -71,7 +71,7 @@ public class TreinoDaoImpl implements TreinoDao{
         
         @Override        
         public void apagarTreino(Integer idTreino){
-            String sql = "delete from selecaotreino where treino_idTreino =" + idTreino;
+            String sql = "delete from selecaoTreino where treino_idtreino =" + idTreino;
            
 		
             String sql2 = "delete from treino where idTreino =" + idTreino;
@@ -106,7 +106,7 @@ public class TreinoDaoImpl implements TreinoDao{
             
             List<Treino> treinoList = new ArrayList();
             String sql = "select * from treino where idTreino in"
-                    + " (select treino_idtreino from selecaotreino where "
+                    + " (select treino_idtreino from selecaoTreino where "
                     + "utilizador_idutilizador_st = " + idUtilizador+" and presenca is null )";
             
             JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);

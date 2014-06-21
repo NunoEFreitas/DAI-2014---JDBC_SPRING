@@ -42,7 +42,7 @@ public class SelecaoJogoDaoImpl implements SelecaoJogoDao{
         @Override
 	public void apagaSL(int idUtilizador, int idJogo) {
             
-            String sql = "delete from selecaoJogo where utilizador_idUtilizador =" + idUtilizador + " and jogo_idJogo =" + idJogo;
+            String sql = "delete from selecaoJogo where utilizador_idutilizador =" + idUtilizador + " and jogo_idjogo =" + idJogo;
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		jdbcTemplate.update(sql);
             

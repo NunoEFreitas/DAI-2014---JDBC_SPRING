@@ -67,7 +67,7 @@ public class UtilizadorDaoImpl implements UtilizadorDao {
 
 	@Override
 	public void apagarUtilizador(Integer id) {
-		String sql = "delete from utilizador where idUtilizador=" + id;
+		String sql = "delete from utilizador where idutilizador=" + id;
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		jdbcTemplate.update(sql);
 
@@ -80,7 +80,7 @@ public class UtilizadorDaoImpl implements UtilizadorDao {
                         + "morada = ?, sexo = ?, telefone = ?, email = ?, altura = ?, peso = ?, estatura = ?, "
                         + "envergadura = ?, saltoVertical = ?, velocidadeDeslocamento = ?, alcanceAtaque = ?, "
                         + "alcanceBloco = ?, examesClinicos = ?,estado = ?, idPerfil = ?, idEscalao = ? "
-                        + "where idUtilizador = ?";
+                        + "where idutilizador = ?";
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 
 		jdbcTemplate.update(
@@ -97,7 +97,7 @@ public class UtilizadorDaoImpl implements UtilizadorDao {
 	@Override
 	public Utilizador getUtilizador(Integer id) {
 		List<Utilizador> utList = new ArrayList<Utilizador>();
-		String sql = "select * from utilizador where idUtilizador= " + id;
+		String sql = "select * from utilizador where idutilizador= " + id;
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		utList = jdbcTemplate.query(sql, new UtilizadorRowMapper());
                 
@@ -108,7 +108,7 @@ public class UtilizadorDaoImpl implements UtilizadorDao {
         public boolean verificaUtilizador(Integer id){
             boolean existe;
             List<Utilizador> utList = new ArrayList<Utilizador>();
-		String sql = "select * from utilizador where idUtilizador= " + id;
+		String sql = "select * from utilizador where idutilizador= " + id;
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		utList = jdbcTemplate.query(sql, new UtilizadorRowMapper());
                 if(utList.isEmpty()){
@@ -123,7 +123,7 @@ public class UtilizadorDaoImpl implements UtilizadorDao {
         
         @Override
         public void activaUtilizador(Integer id){
-		String sql = "update utilizador set estado = 1 where idUtilizador = "+ id;
+		String sql = "update utilizador set estado = 1 where idutilizador = "+ id;
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
                 jdbcTemplate.update(sql);
             
@@ -131,7 +131,7 @@ public class UtilizadorDaoImpl implements UtilizadorDao {
         
         @Override
         public void desactivaUtilizador(Integer id){
-		String sql = "update utilizador set estado = 0 where idUtilizador = "+ id;
+		String sql = "update utilizador set estado = 0 where idutilizador = "+ id;
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
                 jdbcTemplate.update(sql);
             
@@ -141,7 +141,7 @@ public class UtilizadorDaoImpl implements UtilizadorDao {
         public List<Utilizador> listarUTparaTreino(Integer idtreino, Integer idescalao){
             List<Utilizador> utList = new ArrayList<Utilizador>();
 		String sql = "select * from utilizador where idPerfil = 1 and idEscalao =" + idescalao + " and idutilizador NOT IN "
-                        + "(select utilizador_idutilizador_st from selecaotreino "
+                        + "(select utilizador_idutilizador_st from selecaoTreino "
                         + "where treino_idtreino =" + idtreino + ")";
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
                 utList = jdbcTemplate.query(sql, new UtilizadorRowMapper());
@@ -155,7 +155,7 @@ public class UtilizadorDaoImpl implements UtilizadorDao {
         List<Utilizador> utList = new ArrayList<Utilizador>();
         String sql = "select * from utilizador "
                 + "where idEscalao = " + idEscalao + " and idPerfil = 1 and idutilizador not in(select utilizador_idutilizador "
-                + "from selecaojogo where jogo_idjogo = " + idJogo + ")";
+                + "from selecaoJogo where jogo_idjogo = " + idJogo + ")";
 
         JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
                 utList = jdbcTemplate.query(sql, new UtilizadorRowMapper());
@@ -168,7 +168,7 @@ public class UtilizadorDaoImpl implements UtilizadorDao {
         List<Utilizador> utList = new ArrayList<Utilizador>();
         String sql = "select * from utilizador "
                 + "where idEscalao = " + idEscalao + " and idPerfil = 1 and idutilizador in(select utilizador_idutilizador "
-                + "from selecaojogo where jogo_idjogo = " + idJogo + ")";
+                + "from selecaoJogo where jogo_idjogo = " + idJogo + ")";
 
         JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
                 utList = jdbcTemplate.query(sql, new UtilizadorRowMapper());
