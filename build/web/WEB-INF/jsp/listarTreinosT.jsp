@@ -32,6 +32,7 @@
             <td Class="heading"> Apagar Treino </td>
             <td Class="heading"> Escolher Atletas </td>
             <td Class="heading"> Marcar Presencas </td>
+            <td Class="heading"> Listar Convocatoria </td>
         </tr>
         <c:forEach var="li" items="${li}">
             <tr>
