@@ -148,9 +148,12 @@ public class UtilizadorController {
                     model="editarTA";
                 break;
                 case 4:
-                    model="editarA";
+                    model="editarO";
                 break;
                 case 5:
+                    model="editarA";
+                break;
+                    case 6:
                     model="editarS";
                 break;
                 }

@@ -14,7 +14,7 @@
                 <div id='cssmenu'>
                     <ul>
                         <li class='active'><a href=''><span>Analista</span></a></li>
-                          <li><a href='sair'><img src="<c:url value="/resources/images/logout.png" />" /></a></li>
+                          <li><a href='/VoleiUM/sair'><img src="<c:url value="/resources/images/logout.png" />" /></a></li>
                         <li class='has-sub'><a href='#'><span>Analisar em Tempo Real</span></a>
                             <ul>
                                 <li class='has-sub'><a href='listarJogosA'><span>Listar Jogos</span></a>

@@ -15,7 +15,7 @@
                 <div id='cssmenu'>
                     <ul>
                         <li class='active'><a href='treinador'><span>Treinador</span></a></li>
-                        <li><a href='sair'><img src="<c:url value="/resources/images/logout.png" />" /></a></li>
+                        <li><a href='/VoleiUM/sair'><img src="<c:url value="/resources/images/logout.png" />" /></a></li>
                         <li class='has-sub'><a href='#'><span>Gerir Atletas</span></a>
                             <ul>
                                 <li class='has-sub'><a href='#'><span>Visualizar Atleta</span></a></li>
