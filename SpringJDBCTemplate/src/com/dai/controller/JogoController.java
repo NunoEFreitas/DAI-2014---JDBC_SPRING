@@ -265,38 +265,77 @@ public class JogoController {
         @RequestParam("clube") Integer clube)  {  
             String mensagem="llll";
             return mensagem;
-<<<<<<< HEAD
+
     }  
         */
         
-        @RequestMapping(value = "/helloajax", method = RequestMethod.GET)  
+        @RequestMapping(value = "/servico", method = RequestMethod.GET)  
         public @ResponseBody  
-        String insere(@RequestParam("rotacaoP") String rotacaoP, @RequestParam("jogadorP") Integer jogadorP,  
-                @RequestParam("posicaoP") Integer posicaoP,  @RequestParam("rotacaoEA") String rotacaoEA,  
-                @RequestParam("jogadorEA") Integer jogadorEA,   @RequestParam("posicaoEA") Integer posicaoEA){  
-            String mensagem = "FCP";
+        String insereServico(@RequestParam("rotacaoP") String rotacaoP, @RequestParam("jogadorP") Integer jogadorP,  
+                @RequestParam("origem") Integer origem,  @RequestParam("rotacaoEA") String rotacaoEA,  
+                @RequestParam("jogadorEA") Integer jogadorEA,   @RequestParam("destino") Integer destino){  
+            String mensagem = "Servico";
             Estatistica est = new Estatistica();
-            est.setDestino(posicaoEA);
+            est.setDestino(origem);
             est.setIdJea(jogadorEA);
             est.setRotacaoEA(rotacaoEA);
             est.setIdUtilizador(jogadorP);
             est.setRotacaoPropria(rotacaoP);
-            est.setOrigem(posicaoP);
+            est.setOrigem(destino);
             est.setIdJogo(1);
             est.setIdTipoEstatistica(6);
             eService.adicionaEstatistica(est);
             return mensagem;
     } 
-       
-=======
+        
+        @RequestMapping(value = "/defesa", method = RequestMethod.GET)  
+        public @ResponseBody  
+        String insereDefesa(@RequestParam("rotacaoP") String rotacaoP, @RequestParam("jogadorP") Integer jogadorP,  
+                @RequestParam("origem") Integer origem,  @RequestParam("rotacaoEA") String rotacaoEA,  
+                @RequestParam("jogadorEA") Integer jogadorEA,   @RequestParam("destino") Integer destino){  
+            String mensagem = "DEfesa";
+            Estatistica est = new Estatistica();
+            est.setDestino(destino);
+            est.setIdJea(jogadorEA);
+            est.setRotacaoEA(rotacaoEA);
+            est.setIdUtilizador(jogadorP);
+            est.setRotacaoPropria(rotacaoP);
+            est.setOrigem(origem);
+            est.setIdJogo(1);
+            est.setIdTipoEstatistica(4);
+            eService.adicionaEstatistica(est);
+            return mensagem;
     }
+        
+        @RequestMapping(value = "/ataque", method = RequestMethod.GET)  
+        public @ResponseBody  
+        String insereAtaque(@RequestParam("rotacaoP") String rotacaoP, @RequestParam("jogadorP") Integer jogadorP,  
+                @RequestParam("origem") Integer origem,  @RequestParam("rotacaoEA") String rotacaoEA,  
+                @RequestParam("jogadorEA") Integer jogadorEA,   @RequestParam("destino") Integer destino){  
+            String mensagem = "Ataque";
+            Estatistica est = new Estatistica();
+            est.setDestino(destino);
+            est.setIdJea(jogadorEA);
+            est.setRotacaoEA(rotacaoEA);
+            est.setIdUtilizador(jogadorP);
+            est.setRotacaoPropria(rotacaoP);
+            est.setOrigem(origem);
+            est.setIdJogo(1);
+            est.setIdTipoEstatistica(2);
+            eService.adicionaEstatistica(est);
+            return mensagem;
+    }
+       
+
+    
         
          @RequestMapping("/dadosGrafico")
 	public ModelAndView dadosGrafico() {
                
 		return new ModelAndView("dadosGrafico");
 	}
-  @RequestMapping("/dadosTabela")
+
+        @RequestMapping("/dadosTabela")
 	public ModelAndView dadosTabela() {
                
 		return new ModelAndView("dadosTabela");
@@ -311,6 +350,5 @@ public class JogoController {
                
 		return new ModelAndView("gerarDadosGrafico");
 	}
->>>>>>> 9d9067a9268731d9b60b72c91c3d7461fff7f319
 }  
         
