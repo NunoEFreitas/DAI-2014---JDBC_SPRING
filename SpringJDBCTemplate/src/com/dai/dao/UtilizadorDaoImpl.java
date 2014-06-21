@@ -77,7 +77,7 @@ public class UtilizadorDaoImpl implements UtilizadorDao {
 	public void updateUtilizador(Utilizador ut) {
                 
                 String sql = "UPDATE utilizador set nomeUtilizador = ?, password = ?, dataNascimento = ?, "
-                        + "morada = ?, sexo = ?, telefone = ?, email = ?, altura = ?, peso = ?, estatura = ? "
+                        + "morada = ?, sexo = ?, telefone = ?, email = ?, altura = ?, peso = ?, estatura = ?, "
                         + "envergadura = ?, saltoVertical = ?, velocidadeDeslocamento = ?, alcanceAtaque = ?, "
                         + "alcanceBloco = ?, examesClinicos = ?,estado = ?, idPerfil = ?, idEscalao = ? "
                         + "where idUtilizador = ?";

@@ -1,3 +1,4 @@
+
 <%-- 
     Document   : listarJogosJ
     Created on : 14/Jun/2014, 14:00:16
@@ -11,8 +12,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+          <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
     </head>
     <body>
+         <%@include file="/resources/include/templateAtleta.jsp"%>
         <table class="table"> 
         <tr>
             <td Class="heading"> ID Jogo </td>

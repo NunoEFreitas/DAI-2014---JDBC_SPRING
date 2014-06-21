@@ -24,6 +24,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
@@ -125,24 +126,40 @@ public class UtilizadorController {
 
 	}
         
-           @RequestMapping("/edit")
-	public ModelAndView editUtilizador(@RequestParam Integer id,
-			@ModelAttribute Utilizador user) {
-               
-		user = utilizadorService.getUtilizador(id);
-                
-		List<String> Tipo_de_utilizador = new ArrayList<String>();
-		Tipo_de_utilizador.add("Treinador");
-		Tipo_de_utilizador.add("Treinador-Adjunto");
-                Tipo_de_utilizador.add("Atleta");
-            
-                
+        @RequestMapping("/editar/{idUtilizador}")
+	public ModelAndView editUtilizador(@PathVariable("idUtilizador") Integer idUtilizador, @ModelAttribute Utilizador user) {
+               String model = null;
                 Map<String, Object> map = new HashMap<String, Object>();
-                map.put("tdu",Tipo_de_utilizador);
-                map.put("user", user);
-		return new ModelAndView("edit", "map", map);
+                List<Escalao> li = escalaoService.listarEscalao();
+                List<Perfil> lp = perfilService.listarPerfil();
+		user = utilizadorService.getUtilizador(idUtilizador);
+                 map.put("user", user);
+                 map.put("li", li);
+                 map.put("lp", lp);
+                int perfil = user.getIdPerfil();
+                switch(perfil) {
+                    case 1:
+                   model="editarJ";
+                break;
+                case 2:
+                    model="editarT";
+                break;
+                case 3:
+                    model="editarTA";
+                break;
+                case 4:
+                    model="editarA";
+                break;
+                case 5:
+                    model="editarS";
+                break;
+                }
+                
+                return new ModelAndView(model,"map",map);
 
 	}
+        
+        
  
       
         

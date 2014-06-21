@@ -28,7 +28,7 @@ public class EstatisticaDaoImpl implements EstatisticaDao {
         String sql = "INSERT INTO estatistica "
 			+ "( idutilizador_est, idjogo_est, tiposEstatistica_idtiposEstatistica, "
                         + "idJEA_est, classificacao, origem, destino, rotacaoPropria, rotacaoEA) "
-                        + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                        + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 		JdbcTemplate template = new JdbcTemplate(dataSource);
                 
