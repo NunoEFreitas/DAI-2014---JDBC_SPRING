@@ -76,10 +76,27 @@
  	                 
 
 	    <section class="container">
-	
-                <Div  class = "cabecalho da pagina" > 
+                
+                 <% 
+	if(session.getAttribute("perfil").equals(1)){ %>  
+ 	    <Div  class = "cabecalho da pagina" > 
+                    <h1>Visualizar Atleta<small> Visualizar Dados Atleta</small>  </h1> 
+                </div><br>
+ 	    <% 
+        }else if(session.getAttribute("perfil").equals(6)){ %>  
+ 	   <Div  class = "cabecalho da pagina" > 
                     <h1> Recursos humanos<small> Consultar Utilizadores </small>  </h1> 
                 </div><br>
+	    <% 
+	  }else if(session.getAttribute("perfil").equals(2)){ %>
+           <Div  class = "cabecalho da pagina" > 
+                    <h1>Visualizar Atleta<small> Visualizar Dados Atleta</small>  </h1> 
+                </div><br>
+         <%
+        }
+         %>
+	
+               
 
 		<input type="search" class="light-table-filter" data-table="order-table" placeholder="Filtrar Dados Atleta">
 	
