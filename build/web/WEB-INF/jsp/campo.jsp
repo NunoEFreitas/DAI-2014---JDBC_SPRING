@@ -177,10 +177,10 @@
                                                             var rotacaoEA;
                                                             var jogadorP;
                                                             var jogadorEA;
-                                                            var posicaoP;
-                                                            var posicaoEA;
-                                                            alert("posicao" + posicaoUjogada);
-                                                            if (nJogadas==1) {
+                                                            var origem;
+                                                            var destino;
+                                                            alert(nJogadas);
+                                                            if (nJogadas == 1) {
                                                                 if (($.inArray(posicaoUjogada, servico1) >= 0) || ($.inArray(posicaoUjogada, servico2) >= 0)) {
                                                                     $('#jogadasTxt').html('servico');
                                                                 } else {
@@ -189,7 +189,6 @@
                                                                 }
                                                             }
                                                             if (nJogadas == 2) {
-                                                                alert(posicaoUjogada);
                                                                 if (($.inArray(posicaoUjogada, campo1) >= 0) || ($.inArray(posicaoUjogada, campo2) >= 0)) {
                                                                     $('#jogadasTxt').html('servico para a zona' + posicaoUjogada);
                                                                     if(posicaoPjogada==19){
@@ -197,21 +196,19 @@
                                                                         rotacaoEA = ar[nJogadas - 1] [0];
                                                                         jogadorP = ar[nJogadas -2] [1];
                                                                         jogadorEA = ar[nJogadas -1] [1];
-                                                                        posicaoP = ar[nJogadas -2] [2];
-                                                                        posicaoEA = ar[nJogadas -1] [2];
-                                                                        alert("Funcao");
-                                                                        alert(jogadorP);
-                                                                        alert(jogadorEA);
-                                                                        insere(rotacaoP,jogadorP,posicaoP,rotacaoEA,jogadorEA,posicaoEA);
+                                                                        origem = ar[nJogadas -2] [2];
+                                                                        destino = ar[nJogadas -1] [2];
+                                                                        insereServico(rotacaoP,jogadorP,origem,rotacaoEA,jogadorEA,destino);
                                                                         alert("servico casa");
                                                                     } else {
                                                                         rotacaoP = ar[nJogadas - 1] [0];
                                                                         rotacaoEA = ar[nJogadas - 2] [0];
                                                                         jogadorP = ar[nJogadas - 1] [1];
                                                                         jogadorEA = ar[nJogadas - 2] [1];
-                                                                        posicaoP = ar[nJogadas - 1] [2];
-                                                                        posicaoEA = ar[nJogadas - 2] [2];
-                                                                        helloAjax(rotacaoP,jogadorP,posicaoP,rotacaoEA,jogadorEA,posicaoEA);
+                                                                        origem = ar[nJogadas - 1] [2];
+                                                                        destino = ar[nJogadas - 2] [2];
+                                                                        insereServico(rotacaoP,jogadorP,origem,rotacaoEA,jogadorEA,destino);
+                                                                        insereDefesa(rotacaoP,jogadorP,destino,rotacaoEA,jogadorEA,origem);
                                                                         insere("servico fora");
                                                                     }
                                                                 } else {
@@ -219,36 +216,71 @@
 
                                                                 }
                                                             }
+                                                            if(nJogadas > 2){
+                                                  
+                                                                if (($.inArray(posicaoUjogada, campo2) >= 0) && ($.inArray(posicaoPjogada, campo1) >= 0)) {
+                                                                    rotacaoP = ar[nJogadas - 2] [0];
+                                                                        rotacaoEA = ar[nJogadas - 1] [0];
+                                                                        jogadorP = ar[nJogadas -2] [1];
+                                                                        jogadorEA = ar[nJogadas -1] [1];
+                                                                        origem = ar[nJogadas -2] [2];
+                                                                        destino = ar[nJogadas -1] [2];
+                                                                        insereAtaque(rotacaoP,jogadorP,origem,rotacaoEA,jogadorEA,destino);
+                                                            } else {
+                                                                if(($.inArray(posicaoUjogada, campo1) >= 0) && ($.inArray(posicaoPjogada, campo2) >= 0)){
+                                                                    rotacaoP = ar[nJogadas - 1] [0];
+                                                                    rotacaoEA = ar[nJogadas - 2] [0];
+                                                                    jogadorP = ar[nJogadas - 1] [1];
+                                                                    jogadorEA = ar[nJogadas - 2] [1];
+                                                                    origem = ar[nJogadas - 1] [2];
+                                                                    destino = ar[nJogadas - 2] [2];
+                                                                    insereDefesa(rotacaoP,jogadorP,destino,rotacaoEA,jogadorEA,origem);
+                                                                }
+                                                            }
                                                             
                                                             
                                                         }
+                                                    }
 
-                                                        function insere(rotacaoP, rotacaoEA, jogadorP, jogadorEA, posicaoP, posicaoEA) {
+                                                        function insereServico(rotacaoP, jogadorP, origem, rotacaoEA,jogadorEA,destino) {
                                                            
-                                                            alert("ajax");
+                                                            
                                                             $.ajax({
-                                                                url: '${pageContext.request.contextPath}/helloajax',
-                                                                data: {"rotacaoP": rotacaoP,  "jogadorP": jogadorP, "posicaoP": posicaoP, "rotacaoEA": rotacaoEA, "jogadorEA": jogadorEA, "posicaoEA": posicaoEA },
+                                                                url: '${pageContext.request.contextPath}/servico',
+                                                                data: {"rotacaoP": rotacaoP,  "jogadorP": jogadorP, "origem": origem, "rotacaoEA": rotacaoEA, "jogadorEA": jogadorEA, "destino": destino },
                                                                 success: function(result) {
                                                                     alert(result);
                                                                 }
                                                             });
                                                         }
                                                         
-                                                        function helloAjax(jogadorP,jogadorEA) {
-                                                        alert("ajax");
-                                                            var jogador = jogadorP;
-                                                            var clube = jogadorEA;
-                                                            alert(jogador);
-                                                            alert(clube);
+                                                        function insereDefesa(rotacaoP, jogadorP, origem, rotacaoEA,jogadorEA,destino) {
+                                                           
+                                                            
                                                             $.ajax({
-                                                                url: '${pageContext.request.contextPath}/helloajax',
-                                                                data: {"jogador": jogador, "clube": clube},
+                                                                url: '${pageContext.request.contextPath}/defesa',
+                                                                data: {"rotacaoP": rotacaoP,  "jogadorP": jogadorP, "origem": origem, "rotacaoEA": rotacaoEA, "jogadorEA": jogadorEA, "destino": destino },
                                                                 success: function(result) {
                                                                     alert(result);
                                                                 }
                                                             });
                                                         }
+                                                        
+                                                        function insereAtaque(rotacaoP, jogadorP, origem, rotacaoEA,jogadorEA,destino) {
+                                                           
+                                                            
+                                                            $.ajax({
+                                                                url: '${pageContext.request.contextPath}/ataque',
+                                                                data: {"rotacaoP": rotacaoP,  "jogadorP": jogadorP, "origem": origem, "rotacaoEA": rotacaoEA, "jogadorEA": jogadorEA, "destino": destino },
+                                                                success: function(result) {
+                                                                    alert(result);
+                                                                }
+                                                            });
+                                                        }
+                                                        
+                                                        
+                                                        
+                                                 
 
 
                                                         function rotacaoCampo1() {
@@ -709,11 +741,7 @@
                                                             });
                                                         });
 
-                                                        
-
-                                                        function calc() {
-                                                            alert(ar);
-                                                        }
+                                              
 
 
 

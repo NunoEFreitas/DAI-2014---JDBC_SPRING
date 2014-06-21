@@ -41,7 +41,7 @@
 				<tr>
 					<td>${ul.idUtilizador}</td>
 					<td>${ul.nome}</td>
-                                        <td><a href="edit?id=${ul.idUtilizador}"><img src="<c:url value="/resources/images/editar.png" />" /></a></td>
+                                        <td><a href="editar/${ul.idUtilizador}"><img src="<c:url value="/resources/images/editar.png" />" /></a></td>
                                         <td>
                                             <c:if test="${ul.estado.equals(false)}">
                                              <p style="color: red">Bloqueado</p>
