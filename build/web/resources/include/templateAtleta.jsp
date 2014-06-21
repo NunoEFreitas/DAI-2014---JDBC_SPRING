@@ -13,7 +13,7 @@
             <div id="rightcolumn">
                 <div id='cssmenu'>
                     <ul>
-                        <li class='active'><a href=''><span>Atleta</span></a></li>
+                        <li class='active'><a href='atleta'><span>Atleta</span></a></li>
                          <li><a href='sair'><img src="<c:url value="/resources/images/logout.png" />" /></a></li>
                          <li class='has-sub'><a href='#'><span>Gerir Atletas</span></a>
                             <ul>
@@ -34,7 +34,7 @@
                                     </ul>
                                 </li>
                                 <li class='has-sub'><a href='listarTreinosJ'><span>Listar Treinos</span></a>
-                                <li class='has-sub'><a href='listarJogosJ'><span>Listar Treinos</span></a>
+                                <li class='has-sub'><a href='listarJogosJ'><span>Listar Jogos</span></a>
                             </ul>
                         </li>
                         

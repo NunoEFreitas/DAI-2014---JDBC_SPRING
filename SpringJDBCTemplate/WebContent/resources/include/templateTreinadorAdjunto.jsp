@@ -14,7 +14,7 @@
             <div id="rightcolumn">
                 <div id='cssmenu'>
                     <ul>
-                        <li class='active'><a href=''><span>TreinadorAdjunto</span></a></li>
+                        <li class='active'><a href='treinadorAdjunto'><span>TreinadorAdjunto</span></a></li>
                           <li><a href='sair'><img src="<c:url value="/resources/images/logout.png" />" /></a></li>
                         <li class='has-sub'><a href='#'><span>Gerir Treinos</span></a>
                             <ul>
@@ -38,7 +38,7 @@
                                 
                                 <li class='has-sub'><a href='#'><span>ManusearVídeo</span></a></li>
                                     
-                                        <li><a href='#'><span>-InserirVídeo</span></a></li>
+                                        <li><a href='criarVideo'><span>-InserirVídeo</span></a></li>
                                         <li class='last'><a href='#'><span>-ApagarVídeo</span></a></li>
                                         <li class='last'><a href='#'><span>-VisualizarVídeo</span></a></li>
                                     
@@ -49,7 +49,7 @@
                             <ul>
                                 <li class='has-sub'><a href='#'><span>InserirDadosTempoReal</span></a></li>
                                     
-                                        <li><a href='#'><span>-CriarJogo</span></a></li>
+                                        <li><a href='criarJogoAD'><span>-CriarJogo</span></a></li>
                                         <li><a href='#'><span>-InserirDadosJogo</span></a></li>
                                     
                                 
