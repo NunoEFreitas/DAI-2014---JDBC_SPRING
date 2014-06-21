@@ -110,129 +110,125 @@ $("#popUpDivServicos input[name='class']").click(function(e) {
     <body>
         <div id="top">
             <div id="rotacaoCampo1">
-                <h3> Rotação Campo1: <label id="r">1<label> </h3>            
+                <h3> Rotação Campo 1 <label id="r">1<label> </h3>
                             </div>
-
-                            <div id="scoreboard">
-
-                                <span id="casa">
-                                    <span id="pontoCasa">
-                                        <label>Casa</label>
-                                        <input type="button" class="button" id="btncasa" value="0" />
-                                    </span>
-                                    <span id ="setCasa">
-                                        <label>Set</label>           
-                                        <input type="button" class="button" id="btnsetcasa" value="0" />
-                                    </span>
-                                </span>
-                                <span id="fora">
-                                    <span id="pontoFora">
-                                        <label>Fora</label>
-                                        <input type="button" class="button" id="btnfora" value="0"/>
-                                    </span>
-                                    <span id ="setFora">
-                                        <label>Set</label>
-                                        <input type="button" class="button" id="btnsetfora" value="0" />
-                                    </span>
-                                </span>
-                            </div>
-
-                            <div id="rotacaoCampo2" >         
-                                <h3> Rotação Campo2: <label id="r2">1<label> </h3>
+                            <div id="rotacaoCampo2" >
+                                <h3> Rotação Campo 2 <label id="r2">1<label> </h3>
                                             </div>
 
-                                            
 
-                                            
-                                            <div id="mid">
 
-                                                <div id="campo">
-                                                    <div class="elementServiceLeft" id="pos19" name="pos19" > 19 </div>
-                                                    <div class="elementOutLeft" id="pos13" name="pos13" > 13 </div>    
-                                                    <div class="elementTopLeft" id="pos14" name="pos14" > 14 </div>    
-                                                    <div class="elementBotLeft" id="pos15" name="pos15" > 15 </div>   
-                                                    <div class="element1" id="pos1" name="pos1" ><label id="p1"> 1 </label> <br> <label id="l1"> Jogador </label> <br> <label id="i1"> ID </label> </div>
-                                                    <div class="element2" id="pos2" name="pos2" ><label id="p2"> 2 </label> <br> <label id="l2"> Jogador </label> <br> <label id="i2"> ID </label> </div>
-                                                    <div class="element3" id="pos3" name="pos3" ><label id="p3"> 3 </label> <br> <label id="l3"> Jogador </label> <br> <label id="i3"> ID </label> </div>
-                                                    <div class="element6" id="pos6" name="pos6" ><label id="p6"> 6 </label> <br> <label id="l6"> Jogador </label> <br> <label id="i6"> ID </label> </div>
-                                                    <div class="element4" id="pos4" name="pos4" ><label id="p4"> 4 </label> <br> <label id="l4"> Jogador </label> <br> <label id="i4"> ID </label> </div>
-                                                    <div class="element5" id="pos5" name="pos5" ><label id="p5"> 5 </label> <br> <label id="l5"> Jogador </label> <br> <label id="i5"> ID </label></div>
-                                                    <div class="elementLinha" id="posLinha" name="linha" > L </div>
-                                                    <div class="element7" id="pos7" name="pos7" ><label id="p7">7</label> <br> <label id="l7"> ADV 7 </label> <br> <label id="i7"> ID </label> </div>
-                                                    <div class="element12" id="pos12" name="pos12" ><label id="p12">12</label> <br> <label id="l12"> ADV 12 </label> <br> <label id="i12"> ID </label></div>
-                                                    <div class="element11" id="pos11" name="pos11" ><label id="p11">11</label> <br> <label id="l11"> ADV 11</label> <br> <label id="i11"> ID </label></div>
-                                                    <div class="element10" id="pos10" name="pos10" ><label id="p10">10</label> <br> <label id="l10"> ADV 10</label> <br> <label id="i10"> ID </label></div>
-                                                    <div class="element9" id="pos9" name="pos9" ><label id="p9">9</label> <br> <label id="l9"> ADV 9</label> <br> <label id="i9"> ID </label></div>
-                                                    <div class="element8" id="pos8" name="pos8" ><label id="p8">8</label> <br> <label id="l8"> ADV 8</label> <br> <label id="i8"> ID </label></div>
-                                                    <div class="elementTopRight" id="pos16" name="pos16" > 16 </div>
-                                                    <div class="elementBotRight" id="pos17" name="pos17" > 17 </div>
-                                                    <div class="elementOutRight" id="pos18" name="pos18" > 18 </div>  
-                                                    <div class="elementServiceRight" id="pos20" name="pos20" > 20 </div> 
+                                            <span id="casa">
+                                                <span id="pontoCasa">
+                                                    <label>Casa</label>
+                                                    <input type="button" class="button" id="btncasa" value="0" />
+                                                </span>
+                                                <span id ="setCasa">
+                                                    <label>Set</label>
+                                                    <input type="button" class="button" id="btnsetcasa" value="0" />
+                                                </span>
+                                            </span>
+                                            <span id="fora">
+                                                <span id="pontoFora">
+                                                    <label>Fora</label>
+                                                    <input type="button" class="button" id="btnfora" value="0"/>
+                                                </span>
+                                                <span id ="setFora">
+                                                    <label>Set</label>
+                                                    <input type="button" class="button" id="btnsetfora" value="0" />
+                                                </span>
+                                            </span>
 
-                                                </div>
-                                                    
-                                                
-                                                
-                                                <input type="submit" onClick ="calc()" value="Calc" />
-                                                
-                                                
-                                                <div id="atribui">
-                                                    </label> Campo1 </label>
-                                                    <br>
-                                                    <label> Zona 1 </label>
-                                                    <select id="zona1" onchange="atribui1()"></select>
-                                                    <br>
-                                                    <label> Zona 2 </label>
-                                                    <select id="zona2" onchange="atribui2()"></select>
-                                                    <br>
-                                                    <label> Zona 3 </label>
-                                                    <select id="zona3" onchange="atribui3()"></select>
-                                                    <br>
-                                                    <label> Zona 4 </label>
-                                                    <select id="zona4" onchange="atribui4()"></select>
-                                                    <br>
-                                                    <label> Zona 5 </label>
-                                                    <select id="zona5" onchange="atribui5()"></select>
-                                                    <br>
-                                                    <label> Zona 6 </label>
-                                                    <select id="zona6"onchange="atribui6()"></select>
-                                                    <br>
-                                                </div>
+                                            <div id="atribui">
+                                    <br>
+                                    <label> Zona 1 </label>
+                                    <select id="zona1" onchange="atribui1()"></select>
+                                    <br>
+                                    <label> Zona 2 </label>
+                                    <select id="zona2" onchange="atribui2()"></select>
+                                    <br>
+                                    <label> Zona 3 </label>
+                                    <select id="zona3" onchange="atribui3()"></select>
+                                    <br>
+                                    <label> Zona 4 </label>
+                                    <select id="zona4" onchange="atribui4()"></select>
+                                    <br>
+                                    <label> Zona 5 </label>
+                                    <select id="zona5" onchange="atribui5()"></select>
+                                    <br>
+                                    <label> Zona 6 </label>
+                                    <select id="zona6"onchange="atribui6()"></select>
+                                    <br>
+                                    </div>
 
-                                                <div id="atribui2">
-                                                    </label> Campo2 </label>
-                                                    <br>
-                                                    <label> Zona 7 </label>
-                                                    <select id="zona7" onchange="atribui7()"></select>
-                                                    <br>
-                                                    <label> Zona 8 </label>
-                                                    <select id="zona8" onchange="atribui8()"></select>
-                                                    <br>
-                                                    <label> Zona 9 </label>
-                                                    <select id="zona9" onchange="atribui9()"></select>
-                                                    <br>
-                                                    <label> Zona 10 </label>
-                                                    <select id="zona10" onchange="atribui10()"></select>
-                                                    <br>
-                                                    <label> Zona 11 </label>
-                                                    <select id="zona11" onchange="atribui11()"></select>
-                                                    <br>
-                                                    <label> Zona 12 </label>
-                                                    <select id="zona12" onchange="atribui12()"></select>
-                                                    <br>
-                                                </div>
 
-                                                <div id="textboxes">
-                                                    <textarea readonly class="relato"id="jogadasTxt"rows = "5" cols ="30"></textarea>
-                                                </div>
 
-                                            </div>
 
-                                            <div id="btnestat">
-                                                <button onclick="getOpcao()">Try it</button>
-                                                <a href="estatisticas"><h2>Visualizar estatísticas</h2></a>
-                                                </a></div>
 
+
+
+
+                                    <div id="campo">
+                                        <div class="elementServiceLeft" id="pos19" name="pos19" > 19 </div>
+                                        <div class="elementOutLeft" id="pos13" name="pos13" > 13 </div>
+                                        <div class="elementTopLeft" id="pos14" name="pos14" > 14 </div>
+                                        <div class="elementBotLeft" id="pos15" name="pos15" > 15 </div>
+                                        <div class="element1" id="pos1" name="pos1" ><label id="p1"> 1 </label> <br> <label id="l1"> Jogador </label> <br> <label id="i1"> ID </label> </div>
+                                        <div class="element2" id="pos2" name="pos2" ><label id="p2"> 2 </label> <br> <label id="l2"> Jogador </label> <br> <label id="i2"> ID </label> </div>
+                                        <div class="element3" id="pos3" name="pos3" ><label id="p3"> 3 </label> <br> <label id="l3"> Jogador </label> <br> <label id="i3"> ID </label> </div>
+                                        <div class="element6" id="pos6" name="pos6" ><label id="p6"> 6 </label> <br> <label id="l6"> Jogador </label> <br> <label id="i6"> ID </label> </div>
+                                        <div class="element4" id="pos4" name="pos4" ><label id="p4"> 4 </label> <br> <label id="l4"> Jogador </label> <br> <label id="i4"> ID </label> </div>
+                                        <div class="element5" id="pos5" name="pos5" ><label id="p5"> 5 </label> <br> <label id="l5"> Jogador </label> <br> <label id="i5"> ID </label></div>
+                                        <div class="elementLinha" id="posLinha" name="linha" > L </div>
+                                        <div class="element7" id="pos7" name="pos7" ><label id="p7">7</label> <br> <label id="l7"> ADV 7 </label> <br> <label id="i7"> ID </label> </div>
+                                        <div class="element12" id="pos12" name="pos12" ><label id="p12">12</label> <br> <label id="l12"> ADV 12 </label> <br> <label id="i12"> ID </label></div>
+                                        <div class="element11" id="pos11" name="pos11" ><label id="p11">11</label> <br> <label id="l11"> ADV 11</label> <br> <label id="i11"> ID </label></div>
+                                        <div class="element10" id="pos10" name="pos10" ><label id="p10">10</label> <br> <label id="l10"> ADV 10</label> <br> <label id="i10"> ID </label></div>
+                                        <div class="element9" id="pos9" name="pos9" ><label id="p9">9</label> <br> <label id="l9"> ADV 9</label> <br> <label id="i9"> ID </label></div>
+                                        <div class="element8" id="pos8" name="pos8" ><label id="p8">8</label> <br> <label id="l8"> ADV 8</label> <br> <label id="i8"> ID </label></div>
+                                        <div class="elementTopRight" id="pos16" name="pos16" > 16 </div>
+                                        <div class="elementBotRight" id="pos17" name="pos17" > 17 </div>
+                                        <div class="elementOutRight" id="pos18" name="pos18" > 18 </div>
+                                        <div class="elementServiceRight" id="pos20" name="pos20" > 20 </div>
+
+                                    </div>
+
+                                    <div id="atribui2">
+                                        <br>
+                                        <label> Zona 7 </label>
+                                        <select id="zona7" onchange="atribui7()"></select>
+                                        <br>
+                                        <label> Zona 8 </label>
+                                        <select id="zona8" onchange="atribui8()"></select>
+                                        <br>
+                                        <label> Zona 9 </label>
+                                        <select id="zona9" onchange="atribui9()"></select>
+                                        <br>
+                                        <label> Zona 10 </label>
+                                        <select id="zona10" onchange="atribui10()"></select>
+                                        <br>
+                                        <label> Zona 11 </label>
+                                        <select id="zona11" onchange="atribui11()"></select>
+                                        <br>
+                                        <label> Zona 12 </label>
+                                        <select id="zona12" onchange="atribui12()"></select>
+                                        <br>
+                                    </div>
+
+
+
+
+
+                                    <div id="textboxes">
+                                        <textarea readonly class="relato"id="jogadasTxt"rows = "5" cols ="30"></textarea>
+                                        <div id="btnestat">
+                                            <a href="estatisticas"><h2>Visualizar estatísticas</h2></a>
+                                            <input type="submit" onClick ="calc()" value="Calc" />
+                                            </a></div>
+
+                                    </div>
+
+ 
  
 
     
