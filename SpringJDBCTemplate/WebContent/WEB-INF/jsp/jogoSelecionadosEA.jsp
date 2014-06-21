@@ -36,7 +36,7 @@
         <h1> Jogo ${map.jogo.get(0)}</h1>
          <div class="tabela1">
         <h2> Selecionaveis </h2>
-        <table border="1"> 
+        <table> 
         <tr>
             <td Class="heading"> Id Jogador </td>
             <td Class="heading"> Nome </td>
@@ -52,7 +52,7 @@
         </c:forEach>
         </table>
          </div> 
-          <div class="tabela1">
+          <div>
        <h2> Selecionados </h2>
         <table border="1"> 
         <tr>
