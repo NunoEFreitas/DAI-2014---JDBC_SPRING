@@ -27,8 +27,15 @@
             <label>Nome: </label>
             <form:input required="required" class="input" path="nome" />
             <br>
-            <label>Posição: </label>
-            <form:input required="required" class="input" path="posicao" />
+           
+              <label>Posição: </label>
+            <form:select class="input" path="posicao">
+            <form:option value="Defesa Esquerda">Defesa Direita</form:option>
+            <form:option value="Saida Rede">Saída Rede</form:option>
+            <form:option value="Meio Rede">Meio Rede</form:option>
+            <form:option value="Defesa Esquerda">Defesa Esquerda</form:option>
+            <form:option value="Defesa Central">Defesa Central</form:option>
+            </form:select>
             <br>
                 <label>Equipa Adversaria :</label>
                 <form:select  class="input"  path = "idEquipaAdversaria" name="idEquipaAdversaria">
