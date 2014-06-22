@@ -14,14 +14,14 @@
             <div id="rightcolumn">
                 <div id='cssmenu'>
                     <ul>
-                        <li class='active'><a href='treinador'><span>Treinador</span></a></li>
+                        <li class='active'><a href='/VoleiUM/treinador'><span>Treinador</span></a></li>
                         <li><a href='/VoleiUM/sair'><img src="<c:url value="/resources/images/logout.png" />" /></a></li>
                         <li class='has-sub'><a href='#'><span>Gerir Atletas</span></a>
                             <ul>
                                 <li class='has-sub'><a href='#'><span><p style="color: white; background-color: #b81c40; letter-spacing: 6">Visualizar Atleta</p></span></a></li>
                                     
                                         <li><a href='/VoleiUM/listarUtilizadores'><span>-VisualizarDadosAtleta</span></a></li>
-                                        <li><a href='#'><span>-VisualizarHistoricoAtleta</span></a></li>
+                                        <li><a href='/VoleiUM/historicoAtletaT'><span>-VisualizarHistoricoAtleta</span></a></li>
                                    
                                 
                             </ul>

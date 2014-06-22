@@ -32,7 +32,7 @@
             <h1>Listar Treinos<small> Escolher atletas </small>  </h1> 
         </div>
         
-        <h1> Treino ${map.treino.get(0)}</h1>
+        <h3> Treino ${map.treino.get(0)}</h3><br>
         
         <table class="table"> 
         <tr>

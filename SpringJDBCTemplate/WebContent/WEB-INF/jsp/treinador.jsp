@@ -8,12 +8,30 @@
 
     </head>
     <body>
- <div id="wrapper">
-     
-     <!-- Page content -->
+ 
+      <%
+            if (session.getAttribute("perfil") != null) {
+        %> 
+
+        <%
+                if (session.getAttribute("perfil").equals(2)) {%>
         <%@include file="/resources/include/templateTreinador.jsp" %>
+        <% } else if (session.getAttribute("perfil").equals(1)) {
+                response.sendRedirect("naoAutorizado");
+            } else if (session.getAttribute("perfil").equals(3)) {
+                response.sendRedirect("naoAutorizado");
+            } else if (session.getAttribute("perfil").equals(4)) {
+                response.sendRedirect("naoAutorizado");
+            } else if (session.getAttribute("perfil").equals(5)) {
+                response.sendRedirect("naoAutorizado");
+            } else if (session.getAttribute("perfil").equals(6)) {
+                response.sendRedirect("naoAutorizado");
+            }
+
+        %>
+    
          
-        <h1> ${resultado} </h1>
+        <h3> ${resultado} </h3>
         
 
          <%
@@ -24,7 +42,13 @@
         
         %>
 
- </div>
+          <%
+            } else {
+                response.sendRedirect("login");
+            }
+        %>	
+
+
 </body>
 
 </html>

@@ -32,8 +32,8 @@
 
 
         <!-- Page content -->
-
-        <h1> ${resultado} </h1>
+        <br>
+        <h3> ${resultado} </h3>
 
         <%
             out.print("<h4> Id:" + session.getAttribute("user") + " Perfil: " + session.getAttribute("perfil"));

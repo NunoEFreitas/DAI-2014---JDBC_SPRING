@@ -128,6 +128,41 @@ public class UtilizadorController {
                return new ModelAndView("listarUtilizadores", "lutilizador", lutilizador);
 	}
         
+        
+        
+         @RequestMapping("/listarUtilizadoresJ")
+	public ModelAndView listaUtilizadorJ(HttpServletRequest request) {
+                HttpSession session = request.getSession();
+                int id=((int)session.getAttribute("user"));
+          
+                List<Utilizador> lutilizador = null;
+            
+                         lutilizador  = utilizadorService.getListaUtilizador(id);
+          
+                  
+               return new ModelAndView("listarUtilizadoresJ", "lutilizador", lutilizador);
+	}
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
          @RequestMapping("/alterarDados")
 	public ModelAndView lista() {
 		List<Utilizador> lutilizador = utilizadorService.listarUtilizador();
@@ -356,6 +391,15 @@ public class UtilizadorController {
 		return new ModelAndView("naoAutorizado");
 	}
 
+                @RequestMapping("/historicoAtletaT")
+	public ModelAndView historicoAtletaT(HttpServletRequest request) {
+                     HttpSession session = request.getSession();
+              List<Utilizador> lutilizador = null;
+                int escalao = ((int) session.getAttribute("escalao"));
+                    lutilizador = utilizadorService.listarUtilizadorPorEscalao(escalao);
+                return new ModelAndView("historicoAtletaT", "lutilizador", lutilizador);
+	
+	}
         
         
           

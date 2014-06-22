@@ -13,7 +13,7 @@
             <div id="rightcolumn">
                 <div id='cssmenu'>
                     <ul>
-                        <li class='active'><a href=''><span>Olheiro</span></a></li>
+                        <li class='active'><a href='/VoleiUM/olheiro'><span>Olheiro</span></a></li>
                           <li><a href='/VoleiUM/sair'><img src="<c:url value="/resources/images/logout.png" />" /></a></li>
                         <li class='has-sub'><a href='#'><span>Inserir Dados em Tempo Real</span></a>
                             <ul>

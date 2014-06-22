@@ -9,12 +9,32 @@
 </head>
 <body>
   
-	 <div id="wrapper">
-    <%@include file="/resources/include/templateTreinadorAdjunto.jsp" %>
+      <%
+            if (session.getAttribute("perfil") != null) {
+        %> 
+
+        <%
+                if (session.getAttribute("perfil").equals(3)) {%>
+          <%@include file="/resources/include/templateTreinadorAdjunto.jsp" %>
+        <% } else if (session.getAttribute("perfil").equals(1)) {
+                response.sendRedirect("naoAutorizado");
+            } else if (session.getAttribute("perfil").equals(2)) {
+                response.sendRedirect("naoAutorizado");
+            } else if (session.getAttribute("perfil").equals(4)) {
+                response.sendRedirect("naoAutorizado");
+            } else if (session.getAttribute("perfil").equals(5)) {
+                response.sendRedirect("naoAutorizado");
+            } else if (session.getAttribute("perfil").equals(6)) {
+                response.sendRedirect("naoAutorizado");
+            }
+
+        %>
+    
+
        
         <!-- Page content -->
        
-        <h1> ${resultado} </h1>
+        <h3> ${resultado} </h3>
                    <% 
           out.print("<h4> Id:" + session.getAttribute("user") + " Perfil: " + session.getAttribute("perfil"));
           
@@ -22,15 +42,11 @@
        %>
              
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                </div>
+       <%
+            } else {
+                response.sendRedirect("login");
+            }
+        %>	
            
 
         </body>

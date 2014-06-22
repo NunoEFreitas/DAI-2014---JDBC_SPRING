@@ -473,6 +473,20 @@ public class JogoController {
                 
 		
 	}
+           
+            @RequestMapping("/verHistoricoAtleta/{IdUtilizador}")
+	public ModelAndView verHistoricoAtleta(@PathVariable("IdUtilizador") Integer IdUtilizador) {             
+               
+               List<Jogo> lJogos = (jogoService.listaHistoricoAtleta(IdUtilizador));
+		return new ModelAndView("historicoAtleta", "ljogos", lJogos);
+                
+		
+	}
+           
+           
+           
+         
+	
         
         
         

@@ -31,7 +31,6 @@
 
         %>
 
-        <%@include file="/resources/include/templateTreinador.jsp" %>
         <Div  class = "cabecalho da pagina" > 
             <h1>Analisar em tempo real<small> Listar jogos </small>  </h1> 
         </div><br>

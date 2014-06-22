@@ -33,6 +33,10 @@
             }
 
         %>
+        <Div  class = "cabecalho da pagina" > 
+            <h1>Listar Equipas Adversarias<small> Consultar Equipa </small>  </h1> 
+        </div>
+        
         <table class="table"> 
             <tr>
                 <td Class="heading"> ID Jogador </td>
