@@ -401,24 +401,42 @@ public class JogoController {
      }
 
          
-         @RequestMapping(value = "/getEstatistica", method = RequestMethod.GET)  
-         public @ResponseBody  
-         List<Integer> getEstatistica(@RequestParam("estatistica") String estatistica, @RequestParam("jogo") Integer jogo){
+         @RequestMapping("estatisticas/getEstatisticas/seP/{idJogo}")  
+         public ModelAndView getEstatisticaP(@PathVariable("idJogo") Integer jogo){
              List<Estatistica> dados = null;
-             if(estatistica.equals("se")){
-                 dados = eService.listaServicosP(jogo);
-             }
-             
+             dados = eService.listaServicosP(jogo);
              List<Integer> da = new ArrayList();
-             
-             Iterator<Estatistica> it = dados.iterator();
+            
+
+            Iterator<Estatistica> it = dados.iterator();
             while(it.hasNext())
                                 {
                 Estatistica obj = it.next();
                     da.add(obj.getDestino());
+                    
             }
              
-             return da;
+             
+        return new ModelAndView("estatisticasServicoP","da",da );
+     }
+         
+         @RequestMapping("estatisticas/getEstatisticas/seA/{idJogo}")  
+         public ModelAndView getEstatisticaA(@PathVariable("idJogo") Integer jogo){
+             List<Estatistica> dados = null;
+             dados = eService.listaServicosA(jogo);
+             List<Integer> da = new ArrayList();
+            
+
+            Iterator<Estatistica> it = dados.iterator();
+            while(it.hasNext())
+                                {
+                Estatistica obj = it.next();
+                    da.add(obj.getDestino());
+                    
+            }
+             
+             
+        return new ModelAndView("estatisticasServicoA","da",da );
      }
     
          

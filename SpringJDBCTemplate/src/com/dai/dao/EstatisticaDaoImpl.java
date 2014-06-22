@@ -64,6 +64,16 @@ public class EstatisticaDaoImpl implements EstatisticaDao {
 		lest = jdbcTemplate.query(sql, new EstatisticaRowMapper());
 		return lest;
     }
+    
+    @Override
+    public List<Estatistica> listaServicosA(Integer idJogo){
+        List<Estatistica> lest = new ArrayList();
+        
+        String sql = "select * from estatistica where origem = 20 and idjogo_est=" + idJogo ;
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		lest = jdbcTemplate.query(sql, new EstatisticaRowMapper());
+		return lest;
+    }
     /*
     public List<Estatistica> listaEstatisticas(){
         

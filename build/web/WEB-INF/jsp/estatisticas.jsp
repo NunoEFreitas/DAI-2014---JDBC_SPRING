@@ -18,23 +18,25 @@
     var selectBox = document.getElementById("zona1");
     var selectedValue = selectBox.options[selectBox.selectedIndex].value;
     var idJogo = ${idJogo};
-    getEstatistica(selectedValue, idJogo);
+    
+    getEstatistica(selectedValue, idJogo).success(function (data) {
+    alert(data);
+});
     
    }
    
-   function getEstatistica(selectedValue, idJogo) {
-                                                           
-                                                            
-                                                     
-                          
-                                                            $.ajax({
-                                                                url: '${pageContext.request.contextPath}/getEstatistica',
-                                                                data: {"estatistica": selectedValue, "jogo": idJogo },
-                                                                success: function(result) {
-                                                                    alert(result);
-                                                                }
-                                                            });
-                                                        }
+                                                        
+   function getEstatistica(selectedValue, idJogo){
+    return $.ajax({
+        url: '${pageContext.request.contextPath}/getEstatistica',
+        type: 'GET',
+        cache: false,
+        data: {
+           "estatistica": selectedValue, "jogo": idJogo
+        }
+    });
+}                                                     
+                                                        
 
   </script>
     </head>
@@ -48,17 +50,17 @@
 
 
 
-
+            
+            
             <div id="comboestat1">
                 <label> Escolha o tipo de estatística - Campo1 </label>
-                <br>
-                <select id="zona1" onchange="changeFunc();">
-                <option value="ae" >Ataques</option>
-                <option value="se" >Servicos</option>
-                <option value="de" >Defesas</option>
-                <option value="be" >Blocos</option>
-                
-                </select>
+               <a href="/VoleiUM/estatisticas/getEstatisticas/atP/${idJogo}">Ataques</a>
+               <br>
+            <a href="/VoleiUM/estatisticas/getEstatisticas/seP/${idJogo}">Servicos</a>
+            <br>
+            <a href="/VoleiUM/estatisticas/getEstatisticas/deP/${idJogo}">Defesas</a>
+            <br>
+            <a href="/VoleiUM/estatisticas/getEstatisticas/beP/${idJogo}">Blocos</a>
                 <br>
                  
             </div>
@@ -92,18 +94,16 @@
             </div>
 
             <div id="comboestat2">
-                </label> Escolha o tipo de estatística - Campo2 </label>
+                <label> Escolha o tipo de estatística - Campo2 </label>
                 <br>
-                <select id="zona2" onchange="()">
-                <option value="ataques">Ataques</option>
-                <option value="servicos">Servicos</option>
-                <option value="defesas">Defesas</option>   
-                </select>
+                <a href="getEstatisticas/atA/${idJogo}">Ataques Adversario</a>
+               <br>
+            <a href="getEstatisticas/seA/${idJogo}">Servicos Adversario</a>
+            <br>
+            <a href="getEstatisticas/deA/${idJogo}">Defesas Adversario</a>
             </div>
 
-            <div id="voltarCampo">
-                <a href="jogo"><h2>Voltar</h2></a>
-                </a></div>
+           
 
     </body>
    

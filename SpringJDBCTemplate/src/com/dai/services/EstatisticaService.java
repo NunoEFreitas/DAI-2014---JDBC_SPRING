@@ -21,4 +21,6 @@ public interface EstatisticaService {
     
     public List<Estatistica> listaServicosP(Integer idJogo);
     
+    public List<Estatistica> listaServicosA(Integer idJogo);
+    
 }

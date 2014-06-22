@@ -35,4 +35,9 @@ public class EstatisticaServiceImpl implements EstatisticaService{
         return estdao.listaServicosP(idJogo);
     }
     
+    @Override
+    public List<Estatistica> listaServicosA(Integer idJogo){
+        return estdao.listaServicosA(idJogo);
+    }
+    
 }

@@ -132,7 +132,7 @@ public class JogoDaoImpl implements JogoDao{
 
 		String sql = "select * from jogo where resultadoJogo is"
                         + " null and idJogo in (select jogo_idjogo from "
-                        + "selecaojogo where utilizador_idutilizador = "+ idUtilizador +")";
+                        + "selecaoJogo where utilizador_idutilizador = "+ idUtilizador +")";
 
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		utList = jdbcTemplate.query(sql, new JogoRowMapper());
