@@ -36,6 +36,8 @@ public class Utilizador {
     private boolean estado;
     private int idPerfil;
     private int idEscalao;
+    private String designacaoPerfil;
+    private String designacaoEscalao;
  
 
     public int getIdUtilizador() {
@@ -196,6 +198,22 @@ public class Utilizador {
 
     public void setIdEscalao(int idEscalao) {
         this.idEscalao = idEscalao;
+    }
+
+    public String getDesignacaoPerfil() {
+        return designacaoPerfil;
+    }
+
+    public void setDesignacaoPerfil(String designacaoPerfil) {
+        this.designacaoPerfil = designacaoPerfil;
+    }
+
+    public String getDesignacaoEscalao() {
+        return designacaoEscalao;
+    }
+
+    public void setDesignacaoEscalao(String designacaoEscalao) {
+        this.designacaoEscalao = designacaoEscalao;
     }
 
    

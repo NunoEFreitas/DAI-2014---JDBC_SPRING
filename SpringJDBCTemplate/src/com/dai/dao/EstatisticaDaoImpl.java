@@ -74,6 +74,56 @@ public class EstatisticaDaoImpl implements EstatisticaDao {
 		lest = jdbcTemplate.query(sql, new EstatisticaRowMapper());
 		return lest;
     }
+    
+    @Override
+    public List<Estatistica> listaAtaquesA(Integer idJogo){
+        List<Estatistica> lest = new ArrayList();
+        
+        String sql = "select * from estatistica where tiposEstatistica_idtiposEstatistica = 4 and idjogo_est=" + idJogo ;
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		lest = jdbcTemplate.query(sql, new EstatisticaRowMapper());
+		return lest;
+    }
+    
+    @Override
+    public List<Estatistica> listaAtaquesP(Integer idJogo){
+        List<Estatistica> lest = new ArrayList();
+        
+        String sql = "select * from estatistica where tiposEstatistica_idtiposEstatistica = 2 and idjogo_est=" + idJogo ;
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		lest = jdbcTemplate.query(sql, new EstatisticaRowMapper());
+		return lest;
+    }
+    
+    @Override
+    public List<Estatistica> listaBlocosP(Integer idJogo){
+        List<Estatistica> lest = new ArrayList();
+        
+        String sql = "select * from estatistica where tiposEstatistica_idtiposEstatistica = 3 and idjogo_est=" + idJogo ;
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		lest = jdbcTemplate.query(sql, new EstatisticaRowMapper());
+		return lest;
+    }
+    
+    @Override
+    public List<Estatistica> listaDefesasP(Integer idJogo){
+        List<Estatistica> lest = new ArrayList();
+        
+        String sql = "select * from estatistica where tiposEstatistica_idtiposEstatistica = 4 and idjogo_est=" + idJogo ;
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		lest = jdbcTemplate.query(sql, new EstatisticaRowMapper());
+		return lest;
+    }
+    
+    @Override
+    public List<Estatistica> listaDefesasA(Integer idJogo){
+        List<Estatistica> lest = new ArrayList();
+        
+        String sql = "select * from estatistica where tiposEstatistica_idtiposEstatistica = 2 and idjogo_est=" + idJogo ;
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		lest = jdbcTemplate.query(sql, new EstatisticaRowMapper());
+		return lest;
+    }
     /*
     public List<Estatistica> listaEstatisticas(){
         
