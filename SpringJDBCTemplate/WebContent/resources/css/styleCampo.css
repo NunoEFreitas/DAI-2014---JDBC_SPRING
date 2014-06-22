@@ -190,6 +190,77 @@ height: 50px;
 
 }
 
+/* -------------------------- classificacao ------------------------------*/
+
+#popUpDivAtaques{
+    z-index: 100;
+    position: absolute;
+    background-color: rgba(123, 123,123, 0.8);
+    display: none;
+    top: 40%;
+    left: 40%;
+    width: 20%;
+    height: 30%;
+}
+#popupSelectAtaques{
+    z-index: 1000;
+    position: absolute;
+    top: 130px;
+    left: 50px;
+}
+
+#popUpDivDefesas{
+    z-index: 100;
+    position: absolute;
+    background-color: rgba(123, 123,123, 0.8);
+    display: none;
+    top: 40%;
+    left: 40%;
+    width: 20%;
+    height: 30%;
+}
+#popupSelectDefesas{
+    z-index: 1000;
+    position: absolute;
+    top: 130px;
+    left: 50px;
+}
+
+#popUpDivServicos{
+    z-index: 100;
+    position: absolute;
+    background-color: rgba(123, 123,123, 0.8);
+    display: none;
+    top: 40%;
+    left: 40%;
+    width: 20%;
+    height: 30%;
+}
+#popupSelectServicos{
+    z-index: 1000;
+    position: absolute;
+    top: 130px;
+    left: 50px;
+}
+
+#popUpDivBlocos{
+    z-index: 100;
+    position: absolute;
+    background-color: rgba(123, 123,123, 0.8);
+    display: none;
+    top: 40%;
+    left: 40%;
+    width: 20%;
+    height: 30%;
+}
+#popupSelectBlocos{
+    z-index: 1000;
+    position: absolute;
+    top: 130px;
+    left: 50px;
+}
+
+
 /* -------------------------- campo ------------------------------*/
 
 .elementServiceLeft{
