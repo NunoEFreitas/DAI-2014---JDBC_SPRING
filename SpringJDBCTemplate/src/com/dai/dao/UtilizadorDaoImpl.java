@@ -104,6 +104,20 @@ public class UtilizadorDaoImpl implements UtilizadorDao {
 		return utList.get(0);
 	}
         
+        
+        @Override
+	public List<Utilizador>  getListaUtilizador(Integer id) {
+		List<Utilizador> utList = new ArrayList<Utilizador>();
+		String sql = "select * from utilizador where idutilizador= " + id;
+		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		utList = jdbcTemplate.query(sql, new UtilizadorRowMapper());
+                
+		return utList;
+	}
+        
+        
+        
+        
         @Override
         public boolean verificaUtilizador(Integer id){
             boolean existe;

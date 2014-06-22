@@ -1,4 +1,5 @@
 
+<%@page import="org.apache.jasper.tagplugins.jstl.core.Redirect"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -11,18 +12,25 @@
          <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
     </head>
     <body>
-        
-        <% 
-	if(session.getAttribute("perfil").equals(6)){ %>  
- 	    <%@include file="/resources/include/templateSeccionista.jsp"%>
+        <%  
+    if(session.getAttribute("perfil") != null) {  
+%> 
+     
 	    <% 
-	  }else if(session.getAttribute("perfil").equals(2)){ %>
+	   if(session.getAttribute("perfil").equals(2)){ %>
           <%@include file="/resources/include/templateTreinador.jsp" %>
-          <% }else if(session.getAttribute("perfil").equals(3)){ %>
-          
-	  <%@include file="/resources/include/templateTreinadorAdjunto.jsp" %>         
-	 <% 
+          <% }else if(session.getAttribute("perfil").equals(1)){ 
+	    response.sendRedirect("naoAutorizado");  
+        }else if(session.getAttribute("perfil").equals(3)){
+           response.sendRedirect("naoAutorizado");   
+        }else if(session.getAttribute("perfil").equals(4)){
+            response.sendRedirect("naoAutorizado");
+        } else if(session.getAttribute("perfil").equals(5)){
+            response.sendRedirect("naoAutorizado");
+        } else if(session.getAttribute("perfil").equals(6)){
+             response.sendRedirect("naoAutorizado");
         }
+    
          %>
          
            <Div  class = "cabecalho da pagina" > 
@@ -44,8 +52,12 @@
             <input class="button" type="submit" value="Guardar" /><br>
         </form:form>
             
-    </div>
-</div>
-</div>
+  
+
+<%  
+    } else {  
+        response.sendRedirect("login");  
+    }  
+%>
     </body>
 </html>

@@ -29,6 +29,8 @@ public interface JogoDao {
     
     public List<Jogo> listaJogosSelecionado(Integer idUtilizador);
     
+    public List<Jogo> listaHistoricoAtleta(Integer idUtilizador);
+    
     public List<Jogo> getJogo(Integer idJogo);
     
     

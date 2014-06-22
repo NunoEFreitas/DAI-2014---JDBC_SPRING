@@ -59,5 +59,11 @@ public class JogoServiceImpl implements JogoService {
         public List<Jogo> getJogo(Integer idJogo){
             return jogodao.getJogo(idJogo);
         }
+        
+          @Override
+        public List<Jogo> listaHistoricoAtleta(Integer idUtilizador){
+          return jogodao.listaHistoricoAtleta(idUtilizador);
+          
+          }
 
 }

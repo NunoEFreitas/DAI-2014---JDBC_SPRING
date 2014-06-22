@@ -3,70 +3,85 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
-<head>
-	<meta charset="UTF-8">
+    <head>
+        <meta charset="UTF-8">
         <Meta  http-equiv = "X-UA-Compatible"  content = "IE = borda" >
-	<title>Listar Jogadores - Sistema de Informação - SCB</title>
-	
-                
+        <title>Listar Jogadores - Sistema de Informação - SCB</title>
+
+
         <!-- Bootstrap core CSS -->
         <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
 
-</head>
-<body>
+    </head>
+    <body>
+        <%
+            if (session.getAttribute("perfil") != null) {
+        %> 
+
+        <%
+                if (session.getAttribute("perfil").equals(6)) {%>
+        <%@include file="/resources/include/templateSeccionista.jsp"%>
+        <% } else if (session.getAttribute("perfil").equals(1)) {
+                response.sendRedirect("naoAutorizado");
+            } else if (session.getAttribute("perfil").equals(2)) {
+                response.sendRedirect("naoAutorizado");
+            } else if (session.getAttribute("perfil").equals(3)) {
+                response.sendRedirect("naoAutorizado");
+            } else if (session.getAttribute("perfil").equals(4)) {
+                response.sendRedirect("naoAutorizado");
+            }else if(session.getAttribute("perfil").equals(5)){
+             response.sendRedirect("naoAutorizado");
+        }
+
+        %>
 
 
-    <%@include file="/resources/include/templateSeccionista.jsp"%>
-  
-
-                 
         <Div  class = "cabecalho da pagina" > 
             <h1> Recursos humanos<small> Editar Utilizadores </small>  </h1> 
         </div>
 
-                   
-                      <table class="table" >
-			<tr>
-				<td class="heading">ID de Utilizador</td>
-				<td class="heading">Nome</td>
-                                <td class="heading">Editar</td>
-				<td class="heading">Estado</td>
-                                <td class="heading">Bloquear</td>
-                                <td class="heading">Ativar</td>
-				
-                               
-				
-			</tr>
-			<c:forEach var="ul" items="${utilizadorList}">
-				<tr>
-					<td>${ul.idUtilizador}</td>
-					<td>${ul.nome}</td>
-                                        <td><a href="editar/${ul.idUtilizador}"><img src="<c:url value="/resources/images/editar.png" />" /></a></td>
-                                        <td>
-                                            <c:if test="${ul.estado.equals(false)}">
-                                             <p style="color: red">Bloqueado</p>
-                                            </c:if>
-                                            <c:if test="${ul.estado.equals(true)}">
-                                            <p style="color: green">Ativo</p>
-                                            </c:if>
-                                        </td>
-                                       <td><a href="desactivaUtilizador?id=${ul.idUtilizador}"><img src="<c:url value="/resources/images/bloquear.jpg" />" /></a></td>
-                                       <td><a href="activaUtilizador?id=${ul.idUtilizador}"><img src="<c:url value="/resources/images/ativar.jpg" />" /></a></td>
-					
-                                       
-                        </tr>
-			</c:forEach>
-		</table>
 
-        
-                    
-                    
-                </div>
-            </div>
-        </div>
+        <table class="table" >
+            <tr>
+                <td class="heading">ID de Utilizador</td>
+                <td class="heading">Nome</td>
+                <td class="heading">Editar</td>
+                <td class="heading">Estado</td>
+                <td class="heading">Bloquear</td>
+                <td class="heading">Ativar</td>
 
 
-        </body>
+
+            </tr>
+            <c:forEach var="ul" items="${utilizadorList}">
+                <tr>
+                    <td>${ul.idUtilizador}</td>
+                    <td>${ul.nome}</td>
+                    <td><a href="editar/${ul.idUtilizador}"><img src="<c:url value="/resources/images/editar.png" />" /></a></td>
+                    <td>
+                        <c:if test="${ul.estado.equals(false)}">
+                            <p style="color: red">Bloqueado</p>
+                        </c:if>
+                        <c:if test="${ul.estado.equals(true)}">
+                            <p style="color: green">Ativo</p>
+                        </c:if>
+                    </td>
+                    <td><a href="desactivaUtilizador?id=${ul.idUtilizador}"><img src="<c:url value="/resources/images/bloquear.jpg" />" /></a></td>
+                    <td><a href="activaUtilizador?id=${ul.idUtilizador}"><img src="<c:url value="/resources/images/ativar.jpg" />" /></a></td>
+
+
+                </tr>
+            </c:forEach>
+        </table>
+
+
+        <%
+            } else {
+                response.sendRedirect("login");
+            }
+        %>
+
+    </body>
 
 </html>
 

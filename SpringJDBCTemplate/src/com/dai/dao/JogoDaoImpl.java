@@ -44,6 +44,36 @@ public class JogoDaoImpl implements JogoDao{
 
 	}
         
+        
+           @Override
+         public List<Jogo> listaHistoricoAtleta(Integer idUtilizador){
+           
+           List<Jogo> utList = new ArrayList();
+
+		String sql = "select * from jogo where resultadoJogo is not null and "
+                        + "idJogo in (select jogo_idjogo from"
+                        + " selecaojogo where utilizador_idutilizador=" + idUtilizador +")";
+
+		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		utList = jdbcTemplate.query(sql, new JogoRowMapper());
+		return utList;
+           
+           
+         
+           }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         @Override
 	public List<Jogo> listaJogosPendentes() {
 		List<Jogo> utList = new ArrayList();

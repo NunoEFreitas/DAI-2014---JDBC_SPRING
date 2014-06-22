@@ -16,9 +16,28 @@
 
     </head>
     <body onload="oculta(1);" >
+  <%
+            if (session.getAttribute("perfil") != null) {
+        %> 
 
+        <%
+                if (session.getAttribute("perfil").equals(6)) {%>
+          <%@include file="/resources/include/templateSeccionista.jsp" %>
+        <% } else if (session.getAttribute("perfil").equals(1)) {
+                response.sendRedirect("naoAutorizado");
+            } else if (session.getAttribute("perfil").equals(2)) {
+                response.sendRedirect("naoAutorizado");
+            } else if (session.getAttribute("perfil").equals(3)) {
+                response.sendRedirect("naoAutorizado");
+            } else if (session.getAttribute("perfil").equals(4)) {
+                response.sendRedirect("naoAutorizado");
+            } else if (session.getAttribute("perfil").equals(5)) {
+                response.sendRedirect("naoAutorizado");
+            }
 
-        <%@include file="/resources/include/templateSeccionista.jsp" %>
+        %>
+
+      
 
         <!-- Page content -->
         
@@ -27,9 +46,8 @@
         </div>
 
         <form:form  id="contactform" class="rounded" name="register" method="post" action="/insereutilizador" modelAttribute="utilizador"  >
-          <div class="foto"> <img  src="<c:url value="/resources/images/register.jpg" />" />
-            <input type="file" name="foto" id="foto" /><br>
-            </div>
+          <img class="foto" src="<c:url value="/resources/images/register.jpg" />" />
+            
             <div class="field">
                 <label>Perfil : </label>
                 <form:select  id="perfil" path = "idPerfil" name="perfil" onchange="oculta(this.value)">
@@ -129,6 +147,11 @@
                 <input onClick="return validacao();"  class="button" type="submit" value="Guardar" />  
             </div>
         </form:form>
+                <%
+            } else {
+                response.sendRedirect("login");
+            }
+        %>	
 
     </body>
 

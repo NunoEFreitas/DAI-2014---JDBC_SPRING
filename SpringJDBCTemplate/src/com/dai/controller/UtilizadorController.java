@@ -105,11 +105,16 @@ public class UtilizadorController {
         @RequestMapping("/listarUtilizadores")
 	public ModelAndView listaUtilizador(HttpServletRequest request) {
                 HttpSession session = request.getSession();
+                int id=((int)session.getAttribute("user"));
                 int escalao = ((int) session.getAttribute("escalao"));
-                
+                                       
                 int perfil = ((int) session.getAttribute("perfil"));
                 List<Utilizador> lutilizador = null;
                 switch(perfil) {
+                       case 1:
+                         lutilizador  = utilizadorService.getListaUtilizador(id);
+                                         
+                break;
                     case 2:
                     lutilizador = utilizadorService.listarUtilizadorPorEscalao(escalao);
                 break;
@@ -344,6 +349,13 @@ public class UtilizadorController {
 
 		return new ModelAndView("login");
 	}
+          
+            @RequestMapping("/naoAutorizado")
+	public ModelAndView naoAutorizado() {
+               
+		return new ModelAndView("naoAutorizado");
+	}
+
         
         
           
