@@ -393,6 +393,21 @@ public class JogoController {
                
 		return new ModelAndView("gerarDadosGrafico");
 	}
+        
+        
+           @RequestMapping("/historicoAtleta")
+	public ModelAndView historicoAtleta(HttpServletRequest request) {
+               HttpSession session = request.getSession();
+               int id = ((int) session.getAttribute("user"));
+               
+               List<Jogo> lJogos = (jogoService.listaHistoricoAtleta(id));
+		return new ModelAndView("historicoAtleta", "ljogos", lJogos);
+                
+		
+	}
+        
+        
+        
 
 }  
         

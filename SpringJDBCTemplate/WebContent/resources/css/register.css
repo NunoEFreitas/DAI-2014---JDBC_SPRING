@@ -1,18 +1,14 @@
 
 
    .foto{
-       
-        margin: 7px 6px 15px 520px; 
+        border: 5px solid #b0b0b0; 
+        margin: 5px 6px 15px 540px; 
+   
         position: absolute;  
 	
 	}
         
-         .foto img{
-        
-        
-	width: 230px;
-        height: 150px;
-	}
+    
         
         
         

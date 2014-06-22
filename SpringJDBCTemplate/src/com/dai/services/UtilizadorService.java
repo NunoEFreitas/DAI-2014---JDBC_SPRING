@@ -14,6 +14,8 @@ public interface UtilizadorService {
 	public void apagarUtilizador(Integer id);
 
 	public Utilizador getUtilizador(Integer id);
+        
+        public List<Utilizador> getListaUtilizador(Integer id);
 
 	public void updateUtilizador(Utilizador ut);
         

@@ -1,8 +1,3 @@
-<%-- 
-    Document   : listarEscaloes
-    Created on : 7/Jun/2014, 18:01:47
-    Author     : Nuno
---%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -14,7 +9,26 @@
         <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
     </head>
     <body>
+        <%
+            if (session.getAttribute("perfil") != null) {
+        %> 
+
+        <%
+            if (session.getAttribute("perfil").equals(6)) {%>
         <%@include file="/resources/include/templateSeccionista.jsp"%>
+        <% } else if (session.getAttribute("perfil").equals(1)) {
+                response.sendRedirect("naoAutorizado");
+            } else if (session.getAttribute("perfil").equals(2)) {
+                response.sendRedirect("naoAutorizado");
+            } else if (session.getAttribute("perfil").equals(3)) {
+                response.sendRedirect("naoAutorizado");
+            } else if (session.getAttribute("perfil").equals(4)) {
+                response.sendRedirect("naoAutorizado");
+            } else if (session.getAttribute("perfil").equals(5)) {
+                response.sendRedirect("naoAutorizado");
+            }
+
+        %>
 
 
         <Div  class = "cabecalho da pagina" > 
@@ -33,6 +47,11 @@
                     <td> ${li.getDesignacao()} </td>
                 </tr>
             </c:forEach>
-        </table> 
+        </table>
+        <%
+            } else {
+                response.sendRedirect("login");
+            }
+        %> 
     </body>
 </html>

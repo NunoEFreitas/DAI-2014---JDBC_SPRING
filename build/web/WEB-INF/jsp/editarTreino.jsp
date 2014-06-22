@@ -18,19 +18,27 @@
         
     </head>
     <body>
-        
-         <% 
-	if(session.getAttribute("perfil").equals(6)){ %>  
- 	    <%@include file="/resources/include/templateSeccionista.jsp"%>
-	    <% 
-	  }else if(session.getAttribute("perfil").equals(2)){ %>
-          <%@include file="/resources/include/templateTreinador.jsp" %>
-          <% }else if(session.getAttribute("perfil").equals(3)){ %>
-          
-	  <%@include file="/resources/include/templateTreinadorAdjunto.jsp" %>         
-	 <% 
+       <%
+            if (session.getAttribute("perfil") != null) {
+        %> 
+
+        <%
+                if (session.getAttribute("perfil").equals(2)) {%>
+        <%@include file="/resources/include/templateTreinador.jsp"%>
+        <% } else if (session.getAttribute("perfil").equals(1)) {
+                response.sendRedirect("naoAutorizado");
+            } else if (session.getAttribute("perfil").equals(3)) {
+                response.sendRedirect("naoAutorizado");
+            } else if (session.getAttribute("perfil").equals(4)) {
+                response.sendRedirect("naoAutorizado");
+            } else if (session.getAttribute("perfil").equals(5)) {
+                response.sendRedirect("naoAutorizado");
+            }else if(session.getAttribute("perfil").equals(6)){
+             response.sendRedirect("naoAutorizado");
         }
-         %>
+
+        %>
+
         
          <Div  class = "cabecalho da pagina" > 
             <h1>Listar treinos<small> Editar treinos </small>  </h1> 
@@ -73,6 +81,10 @@
 
              </form:form>
 
-
+   <%
+            } else {
+                response.sendRedirect("login");
+            }
+        %>
     </body>
 </html>

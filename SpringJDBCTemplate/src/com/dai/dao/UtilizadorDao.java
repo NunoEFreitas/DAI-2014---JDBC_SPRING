@@ -7,6 +7,7 @@ public interface UtilizadorDao {
 	public void inserirUtilizador(Utilizador utilizador);
 
 	public List<Utilizador> listarUtilizador();
+        public List<Utilizador> getListaUtilizador(Integer id);
         
         public List<Utilizador> listarUtilizadorPorEscalao(int idEscalao);
 

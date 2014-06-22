@@ -57,44 +57,39 @@
 	        </script>
  	</head>
  	<body>
-            <% 
-	if(session.getAttribute("perfil").equals(1)){ %>  
- 	    <%@include file="/resources/include/templateAtleta.jsp"%>
- 	    <% 
-        }else if(session.getAttribute("perfil").equals(6)){ %>  
- 	    <%@include file="/resources/include/templateSeccionista.jsp"%>
+           <%  
+    if(session.getAttribute("perfil") != null) {  
+%> 
+     
 	    <% 
-	  }else if(session.getAttribute("perfil").equals(2)){ %>
-          <%@include file="/resources/include/templateTreinador.jsp" %>
-          <% }else if(session.getAttribute("perfil").equals(3)){ %>
-          
-	  <%@include file="/resources/include/templateTreinadorAdjunto.jsp" %>         
-	 <% 
+	   if(session.getAttribute("perfil").equals(6)){ %>
+          <%@include file="/resources/include/templateSeccionista.jsp" %>
+          <% }else if(session.getAttribute("perfil").equals(1)){ 
+	    response.sendRedirect("naoAutorizado");  
+        }else if(session.getAttribute("perfil").equals(2)){
+           response.sendRedirect("naoAutorizado");   
+        }else if(session.getAttribute("perfil").equals(3)){
+            response.sendRedirect("naoAutorizado");
+        } else if(session.getAttribute("perfil").equals(4)){
+            response.sendRedirect("naoAutorizado");
+        } else if(session.getAttribute("perfil").equals(5)){
+             response.sendRedirect("naoAutorizado");
         }
+    
          %>
 
  	                 
 
 	    <section class="container">
                 
-                 <% 
-	if(session.getAttribute("perfil").equals(1)){ %>  
- 	    <Div  class = "cabecalho da pagina" > 
-                    <h1>Visualizar Atleta<small> Visualizar Dados Atleta</small>  </h1> 
-                </div><br>
- 	    <% 
-        }else if(session.getAttribute("perfil").equals(6)){ %>  
+                 
+                
+ 	    
+        
  	   <Div  class = "cabecalho da pagina" > 
                     <h1> Recursos humanos<small> Consultar Utilizadores </small>  </h1> 
                 </div><br>
-	    <% 
-	  }else if(session.getAttribute("perfil").equals(2)){ %>
-           <Div  class = "cabecalho da pagina" > 
-                    <h1>Visualizar Atleta<small> Visualizar Dados Atleta</small>  </h1> 
-                </div><br>
-         <%
-        }
-         %>
+	
 	
                
 
@@ -146,16 +141,13 @@
  			</table>
  	        
  	                    
- 	                    
+              <%  
+    } else {  
+        response.sendRedirect("login");  
+    }  
+%>	                    
 
 	                
- 	
- 	        
-
-                    
-                    
-                
-
 
         </body>
 

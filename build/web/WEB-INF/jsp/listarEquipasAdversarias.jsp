@@ -9,7 +9,27 @@
         <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
     </head>
     <body>
-            <%@include file="/resources/include/templateSeccionista.jsp"%>
+                 
+       <%
+            if (session.getAttribute("perfil") != null) {
+        %> 
+
+        <%
+                if (session.getAttribute("perfil").equals(6)) {%>
+        <%@include file="/resources/include/templateSeccionista.jsp"%>
+        <% } else if (session.getAttribute("perfil").equals(1)) {
+                response.sendRedirect("naoAutorizado");
+            } else if (session.getAttribute("perfil").equals(2)) {
+                response.sendRedirect("naoAutorizado");
+            } else if (session.getAttribute("perfil").equals(3)) {
+                response.sendRedirect("naoAutorizado");
+            } else if (session.getAttribute("perfil").equals(4)) {
+                response.sendRedirect("naoAutorizado");
+            }else if(session.getAttribute("perfil").equals(5)){
+             response.sendRedirect("naoAutorizado");
+        }
+
+        %>
         
         <Div  class = "cabecalho da pagina" > 
             <h1>Gerir equipas adversarias<small> Listar equipas adversarias </small>  </h1> 
@@ -31,5 +51,10 @@
             </tr>
         </c:forEach>
     </table> 
+          <%  
+    }else{  
+        response.sendRedirect("login");  
+    }  
+%>    
     </body>
 </html>

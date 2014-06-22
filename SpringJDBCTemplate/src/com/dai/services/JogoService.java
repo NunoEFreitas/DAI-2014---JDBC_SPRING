@@ -30,4 +30,6 @@ public interface JogoService {
     public List<Jogo> listaJogosSelecionado(Integer idUtilizador);
     
     public List<Jogo> getJogo(Integer idJogo);
+    
+    public List<Jogo> listaHistoricoAtleta(Integer idUtilizador);
 }

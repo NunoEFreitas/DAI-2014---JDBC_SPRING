@@ -1,31 +1,52 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
-<head>
-	<meta charset="UTF-8">
+    <head>
+        <meta charset="UTF-8">
         <Meta  http-equiv = "X-UA-Compatible"  content = "IE = borda" >
-	<title>Login - Sistema de Informação - SCB</title>
-       <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
+        <title>Login - Sistema de Informação - SCB</title>
+        <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
 
-</head>
-<body>
+    </head>
+    <body>
+        <%
+            if (session.getAttribute("perfil") != null) {
+        %> 
 
-         <%@include file="/resources/include/templateOlheiros.jsp" %>
-      
-        <!-- Page content -->
-       
-         <h1> ${resultado} </h1>
-                    
-                     <%
-           out.print("<h4> Id:" + session.getAttribute("user") + " Perfil: " + session.getAttribute("perfil"));
+        <%
+                if (session.getAttribute("perfil").equals(4)) {%>
+        <%@include file="/resources/include/templateOlheiros.jsp" %>
+        <% } else if (session.getAttribute("perfil").equals(1)) {
+                response.sendRedirect("naoAutorizado");
+            } else if (session.getAttribute("perfil").equals(2)) {
+                response.sendRedirect("naoAutorizado");
+            } else if (session.getAttribute("perfil").equals(3)) {
+                response.sendRedirect("naoAutorizado");
+            } else if (session.getAttribute("perfil").equals(5)) {
+                response.sendRedirect("naoAutorizado");
+            } else if (session.getAttribute("perfil").equals(6)) {
+                response.sendRedirect("naoAutorizado");
+            }
 
         %>
-          
-                </div>
-            </div>
-        </div>
 
- 
-        </body>
+
+
+        <!-- Page content -->
+
+        <h1> ${resultado} </h1>
+
+        <%
+            out.print("<h4> Id:" + session.getAttribute("user") + " Perfil: " + session.getAttribute("perfil"));
+        %>
+
+
+        <%
+            } else {
+                response.sendRedirect("login");
+            }
+        %>	
+
+    </body>
 
 </html>
 

@@ -16,9 +16,28 @@
 
     </head>
     <body onload="oculta(1);" >
+  <%
+            if (session.getAttribute("perfil") != null) {
+        %> 
 
+        <%
+                if (session.getAttribute("perfil").equals(6)) {%>
+          <%@include file="/resources/include/templateSeccionista.jsp" %>
+        <% } else if (session.getAttribute("perfil").equals(1)) {
+                response.sendRedirect("naoAutorizado");
+            } else if (session.getAttribute("perfil").equals(2)) {
+                response.sendRedirect("naoAutorizado");
+            } else if (session.getAttribute("perfil").equals(3)) {
+                response.sendRedirect("naoAutorizado");
+            } else if (session.getAttribute("perfil").equals(4)) {
+                response.sendRedirect("naoAutorizado");
+            } else if (session.getAttribute("perfil").equals(5)) {
+                response.sendRedirect("naoAutorizado");
+            }
 
-        <%@include file="/resources/include/templateSeccionista.jsp" %>
+        %>
+
+      
 
         <!-- Page content -->
         
@@ -27,7 +46,8 @@
         </div>
 
         <form:form  id="contactform" class="rounded" name="register" method="post" action="/insereutilizador" modelAttribute="utilizador"  >
-          <img  class="foto" src="<c:url value="/resources/images/register.jpg" />" />
+          <img class="foto" src="<c:url value="/resources/images/register.jpg" />" />
+            
             <div class="field">
                 <label>Perfil : </label>
                 <form:select  id="perfil" path = "idPerfil" name="perfil" onchange="oculta(this.value)">
@@ -68,27 +88,27 @@
             </div>
             <div class="field" id="8">
                 <label>Altura :</label>
-                <form:input type="number" step="1"  class="input" name="altura" path="altura" />
+                <form:input type="number" step="1" min="1"  class="input" name="altura" path="altura" />
             </div>
             <div class="field" id="9">
                 <label>Peso :</label>
-                <form:input type="number" step="1"  name="peso"  class="input"  path="peso" />
+                <form:input type="number" step="1" min="1"  name="peso"  class="input"  path="peso" />
             </div>
             <div class="field" id="10">
                 <label>Salto Vertical :</label>
-                <form:input type="number" step="1"  name="saltoVertical" class="input"  path="saltoVertical" />
+                <form:input type="number" step="1" min="1"  name="saltoVertical" class="input"  path="saltoVertical" />
             </div>
             <div class="field" id="11">
                 <label>Velocidade Deslocamento:</label>
-                <form:input type="number" step="1"  class="input" name="velocidadeDeslocamento" path="velocidadeDeslocamento" />
+                <form:input type="number" step="1"  min="1" class="input" name="velocidadeDeslocamento" path="velocidadeDeslocamento" />
             </div>
             <div class="field" id="12">
                 <label>Alcance Ataque:</label>
-                <form:input type="number" step="1" class="input" name="alcanceAtaque" path="alcanceAtaque" />
+                <form:input type="number" step="1" min="1" class="input" name="alcanceAtaque" path="alcanceAtaque" />
             </div>
             <div class="field" id="13">
                 <label>Alcance Bloco:</label>
-                <form:input type="number" step="1"  class="input" name="alcanceBloco" path="alcanceBloco" />
+                <form:input type="number" step="1" min="1" class="input" name="alcanceBloco" path="alcanceBloco" />
             </div>          
             <div class="field" id="14">
                 <label>Exames Clinicos: </label>
@@ -107,7 +127,7 @@
             </div>
             <div class="field" id="16">
                 <label>Envergadura:</label>
-                <form:input type="number" step="1"  class="input" name="envergadura" path="envergadura" />
+                <form:input type="number" step="1" min="1" class="input" name="envergadura" path="envergadura" />
             </div>
             <div class="field" id="17">
                 <form:input  value="true"  path="estado" type="hidden"/>
@@ -127,6 +147,11 @@
                 <input onClick="return validacao();"  class="button" type="submit" value="Guardar" />  
             </div>
         </form:form>
+                <%
+            } else {
+                response.sendRedirect("login");
+            }
+        %>	
 
     </body>
 

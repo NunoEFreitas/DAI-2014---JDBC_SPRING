@@ -20,7 +20,7 @@
                                 <li class='has-sub'><a href='#'><span><p style="color: white; background-color: #b81c40; letter-spacing: 6">Visualizar Atleta</p></span></a>
                                    
                                         <li><a href='/VoleiUM/listarUtilizadores'><span>-VisualizarDadosAtleta</span></a></li>
-                                        <li><a href='#'><span>-VisualizarHistoricoAtleta</span></a></li>
+                                        <li><a href='/VoleiUM/historicoAtleta'><span>-VisualizarHistoricoAtleta</span></a></li>
                                    
                                 </li>
                             </ul>
