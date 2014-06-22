@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- Website template by freewebsitetemplates.com -->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html>
@@ -131,19 +130,14 @@
 <textarea readonly class="relato"id="jogadasTxt"rows = "5" cols ="30"></textarea>
 <div id="btnestat">
 <a href="estatisticas"><h2>Visualizar estatísticas</h2></a>
-<input type="submit" onClick ="calc()" value="Calc" />
 </a></div>
 
 </div>
 
 
-<p> ${map.jogo.get(0)} </p>
-
-
-
 
 <div id="popUpDivDefesas" name="defesas">
-<h3> Defesas</h3>
+<h2> Defesas</h2>
 <input type="radio" name="class" id="radio-mini-1" value=0  />
 <label for="class">Erro</label>
 <br>
@@ -153,36 +147,22 @@
 <input type="radio" name="class" id="radio-mini-3" value=2  />
 <label for="class">2</label>
 <br>
-<input type="radio" name="class" id="radio-mini-3" value=3  />
+<input type="radio" name="class" id="radio-mini-4" value=3  />
 <label for="class">3</label>
 <br>
-<input type="radio" name="class" id="radio-mini-3" value=4  />
+<input type="radio" name="class" id="radio-mini-5" value=4  />
 <label for="class">4</label>
 <br>
-<input type="radio" name="class" id="radio-mini-3" value=5  />
+<input type="radio" name="class" id="radio-mini-6" value=5  />
 <label for="class">Bloco</label>
 </div>
 
-<div id="popUpDivBlocos" name="blocos">
-<h3> Bloco</h3>
+
+<div id="popUpDivServicos" name="servicos">
+<h2> Serviço</h2>
 <input type="radio" name="class" id="radio-mini-1" value=0  />
 <label for="class">Erro</label>
 <br>
-<input type="radio" name="class" id="radio-mini-2" value=1  />
-<label for="class">1</label>
-<br>
-<input type="radio" name="class" id="radio-mini-3" value=2  />
-<label for="class">2</label>
-<br>
-<input type="radio" name="class" id="radio-mini-3" value=3  />
-<label for="class">3</label>
-<br>
-<input type="radio" name="class" id="radio-mini-3" value=4  />
-<label for="class">4</label>
-</div>
-
-<div id="popUpDivServicos" name="servicos">
-<h3> Servico</h3>
 <input type="radio" name="class" id="radio-mini-2" value=1  />
 <label for="class">1</label>
 <br>
@@ -200,8 +180,10 @@
 </div>
 
 <div id="popUpDivAtaques" name="ataques">
-<h3> Ataques</h3>
-
+<h2> Ataques</h2>
+<input type="radio" name="class" id="radio-mini-1" value=0  />
+<label for="class">Erro</label>
+<br>
 <input type="radio" name="class" id="radio-mini-1" value=1  />
 <label for="class">1</label>
 <br>
@@ -218,13 +200,8 @@
 <label for="class">KILL</label>
 </div>
 
-<label id="classificacao" >Classificacao</label>            
 
 <script>
-
-
-
-
 
 var campo1 = [1, 2, 3, 4, 5, 6];
 var campo2 = [7, 8, 9, 10, 11, 12];
@@ -292,8 +269,8 @@ destino = ar[nJogadas - 1] [2];
 $("#popUpDivDefesas").show();
 
 }
-} else {
-$('#jogadasTxt').html('servico para a fora');
+} else{
+$('#jogadasTxt').html('servico para fora');
 ar.length = 0;
 }
 }
@@ -880,6 +857,31 @@ document.getElementById('btnfora').value = 0;
 }
 }
 
+
+//verifica se o jogo estiver 2=2 em sets e entao poe o proximo set ate 15 pontos
+
+if(document.getElementById('btnsetcasa').value == 2 && document.getElementById('btnsetfora').value == 2){
+if (ponto == "casa"){  
+ar.length = 0;
+if(document.getElementById('btncasa').value >= 15 && (document.getElementById('btncasa').value - document.getElementById('btnfora').value >= 2)){
+document.getElementById('btnsetcasa').value++;  
+document.getElementById('btncasa').value = 0;  
+document.getElementById('btnfora').value = 0;  
+} 
+}
+if(ponto == "fora"){
+ar.length = 0;    
+if(document.getElementById('btnfora').value >= 15 && (document.getElementById('btnfora').value - document.getElementById('btncasa').value >= 2)){
+document.getElementById('btnsetfora').value++;
+document.getElementById('btncasa').value = 0;  
+document.getElementById('btnfora').value = 0;  
+}
+}
+
+}
+if(document.getElementById('btnsetcasa').value >= 3 || document.getElementById('btnsetfora').value >= 3){
+alert("Fim do jogo");
+}
 }
 
 $(window).load(function() {

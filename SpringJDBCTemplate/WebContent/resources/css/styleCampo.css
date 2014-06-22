@@ -175,8 +175,8 @@ select{
 #jogadasTxt{
     font-weight: 900;
 }
-#textboxes{
 
+#textboxes{
 position:absolute;
 margin-top: 33%;
 margin-left: 25%;
@@ -193,71 +193,39 @@ height: 50px;
 /* -------------------------- classificacao ------------------------------*/
 
 #popUpDivAtaques{
-    z-index: 100;
     position: absolute;
     background-color: rgba(123, 123,123, 0.8);
     display: none;
-    top: 40%;
+    top: 25%;
     left: 40%;
     width: 20%;
-    height: 30%;
-}
-#popupSelectAtaques{
-    z-index: 1000;
-    position: absolute;
-    top: 130px;
-    left: 50px;
+    height: 40%;
+    font-size: 20px;
+
 }
 
+
 #popUpDivDefesas{
-    z-index: 100;
     position: absolute;
     background-color: rgba(123, 123,123, 0.8);
     display: none;
-    top: 40%;
+    top: 25%;
     left: 40%;
     width: 20%;
-    height: 30%;
-}
-#popupSelectDefesas{
-    z-index: 1000;
-    position: absolute;
-    top: 130px;
-    left: 50px;
+    height: 40%;
+    font-size: 20px;
 }
 
 #popUpDivServicos{
-    z-index: 100;
     position: absolute;
     background-color: rgba(123, 123,123, 0.8);
     display: none;
-    top: 40%;
+    top: 25%;
     left: 40%;
     width: 20%;
-    height: 30%;
-}
-#popupSelectServicos{
-    z-index: 1000;
-    position: absolute;
-    top: 130px;
-    left: 50px;
-}
+    height: 40%;
+    font-size: 20px;
 
-#popUpDivBlocos{
-    z-index: 100;
-    position: absolute;
-    background-color: rgba(123, 123,123, 0.8);
-    display: none;
-    top: 40%;
-    left: 40%;
-    width: 20%;
-    height: 30%;
-}
-#popupSelectBlocos{
-    z-index: 1000;
-    position: absolute;
-    top: 130px;
-    left: 50px;
 }
 
 
@@ -535,7 +503,6 @@ height: 50px;
 
 }
 
-.elementLinha:hover { background-color: #FFC4CB; }
 
 .element7 {
     width: 9.15%;
