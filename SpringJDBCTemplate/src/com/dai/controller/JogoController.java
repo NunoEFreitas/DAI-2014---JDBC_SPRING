@@ -24,6 +24,7 @@ import com.dai.services.SelecaoJogoService;
 import com.dai.services.UtilizadorService;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
@@ -71,6 +72,8 @@ public class JogoController {
      
      @Autowired
      EstatisticaService eService;
+     
+     
     
      @RequestMapping("/criarJogo")
 	public ModelAndView novoJogo(@ModelAttribute Jogo jogo, HttpServletRequest request) {
@@ -119,11 +122,12 @@ public class JogoController {
 		return new ModelAndView("FileUploadForm");
 	}
         
-         @RequestMapping("/estatisticas")
-	public ModelAndView estatisticas(@ModelAttribute Jogo jogo) {
-          
+         @RequestMapping("/estatisticas/{idJogo}")
+	public ModelAndView estatisticas(@ModelAttribute Jogo jogo, @PathVariable("idJogo") Integer idJogo) {
+                
+                
         
-		return new ModelAndView("estatisticas");
+		return new ModelAndView("estatisticas","idJogo",idJogo);
 	}
         
         @RequestMapping("/jogoSelecionados/{idJogo}")
@@ -316,18 +320,18 @@ public class JogoController {
           public @ResponseBody  
          String insereServico(@RequestParam("rotacaoP") String rotacaoP, @RequestParam("jogadorP") Integer jogadorP,  
                  @RequestParam("origem") Integer origem,  @RequestParam("rotacaoEA") String rotacaoEA,  
-                 @RequestParam("jogadorEA") Integer jogadorEA,   @RequestParam("destino") Integer destino, @RequestParam("classificacao") Integer classificacao){  
-             String mensagem = "Servico"+ classificacao;
+                 @RequestParam("jogadorEA") Integer jogadorEA,   @RequestParam("destino") Integer destino, 
+                 @RequestParam("classificacao") Integer classificacao, @RequestParam("jogo") Integer jogo ){  
+             String mensagem = "Servico";
               Estatistica est = new Estatistica();
-             est.setDestino(origem);
+             est.setDestino(destino);
              est.setClassificacao(classificacao);
               est.setIdJea(jogadorEA);
               est.setRotacaoEA(rotacaoEA);
               est.setIdUtilizador(jogadorP);
               est.setRotacaoPropria(rotacaoP);
-             est.setOrigem(destino);
- 
-              est.setIdJogo(1);
+             est.setOrigem(origem);
+              est.setIdJogo(jogo);
               est.setIdTipoEstatistica(6);
               eService.adicionaEstatistica(est);
               return mensagem;
@@ -337,7 +341,8 @@ public class JogoController {
          public @ResponseBody  
          String insereDefesa(@RequestParam("rotacaoP") String rotacaoP, @RequestParam("jogadorP") Integer jogadorP,  
                  @RequestParam("origem") Integer origem,  @RequestParam("rotacaoEA") String rotacaoEA,  
-                 @RequestParam("jogadorEA") Integer jogadorEA,   @RequestParam("destino") Integer destino){  
+                 @RequestParam("jogadorEA") Integer jogadorEA,   @RequestParam("destino") Integer destino,
+                 @RequestParam("classificacao") Integer classificacao, @RequestParam("jogo") Integer jogo){  
              String mensagem = "DEfesa";
              Estatistica est = new Estatistica();
              est.setDestino(destino);
@@ -346,7 +351,8 @@ public class JogoController {
              est.setIdUtilizador(jogadorP);
              est.setRotacaoPropria(rotacaoP);
              est.setOrigem(origem);
-             est.setIdJogo(1);
+             est.setIdJogo(jogo);
+             est.setClassificacao(classificacao);
              est.setIdTipoEstatistica(4);
              eService.adicionaEstatistica(est);
              return mensagem;
@@ -356,7 +362,8 @@ public class JogoController {
          public @ResponseBody  
          String insereAtaque(@RequestParam("rotacaoP") String rotacaoP, @RequestParam("jogadorP") Integer jogadorP,  
                  @RequestParam("origem") Integer origem,  @RequestParam("rotacaoEA") String rotacaoEA,  
-                 @RequestParam("jogadorEA") Integer jogadorEA,   @RequestParam("destino") Integer destino){  
+                 @RequestParam("jogadorEA") Integer jogadorEA,   @RequestParam("destino") Integer destino,
+                 @RequestParam("classificacao") Integer classificacao, @RequestParam("jogo") Integer jogo){  
              String mensagem = "Ataque";
              Estatistica est = new Estatistica();
              est.setDestino(destino);
@@ -365,14 +372,57 @@ public class JogoController {
              est.setIdUtilizador(jogadorP);
              est.setRotacaoPropria(rotacaoP);
              est.setOrigem(origem);
-             est.setIdJogo(1);
+             est.setIdJogo(jogo);
+             est.setClassificacao(classificacao);
              est.setIdTipoEstatistica(2);
              eService.adicionaEstatistica(est);
              return mensagem;
      }
+         
+          @RequestMapping(value = "/bloco", method = RequestMethod.GET)  
+         public @ResponseBody  
+         String insereBloco(@RequestParam("rotacaoP") String rotacaoP, @RequestParam("jogadorP") Integer jogadorP,  
+                 @RequestParam("origem") Integer origem,  @RequestParam("rotacaoEA") String rotacaoEA,  
+                 @RequestParam("jogadorEA") Integer jogadorEA,   @RequestParam("destino") Integer destino,
+                 @RequestParam("classificacao") Integer classificacao, @RequestParam("jogo") Integer jogo){  
+             String mensagem = "Bloco";
+             Estatistica est = new Estatistica();
+             est.setDestino(destino);
+             est.setIdJea(jogadorEA);
+             est.setRotacaoEA(rotacaoEA);
+             est.setIdUtilizador(jogadorP);
+             est.setRotacaoPropria(rotacaoP);
+             est.setOrigem(origem);
+             est.setIdJogo(jogo);
+             est.setClassificacao(classificacao);
+             est.setIdTipoEstatistica(3);
+             eService.adicionaEstatistica(est);
+             return mensagem;
+     }
 
+         
+         @RequestMapping(value = "/getEstatistica", method = RequestMethod.GET)  
+         public @ResponseBody  
+         List<Integer> getEstatistica(@RequestParam("estatistica") String estatistica, @RequestParam("jogo") Integer jogo){
+             List<Estatistica> dados = null;
+             if(estatistica.equals("se")){
+                 dados = eService.listaServicosP(jogo);
+             }
+             
+             List<Integer> da = new ArrayList();
+             
+             Iterator<Estatistica> it = dados.iterator();
+            while(it.hasNext())
+                                {
+                Estatistica obj = it.next();
+                    da.add(obj.getDestino());
+            }
+             
+             return da;
+     }
     
-        
+         
+         
          @RequestMapping("/dadosGrafico")
 	public ModelAndView dadosGrafico() {
                

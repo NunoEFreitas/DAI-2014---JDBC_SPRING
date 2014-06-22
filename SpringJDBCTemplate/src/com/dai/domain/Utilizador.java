@@ -6,6 +6,7 @@
 
 package com.dai.domain;
 
+import java.sql.Blob;
 import java.util.Date;
 
 /**
@@ -35,6 +36,7 @@ public class Utilizador {
     private boolean estado;
     private int idPerfil;
     private int idEscalao;
+ 
 
     public int getIdUtilizador() {
         return idUtilizador;
@@ -195,6 +197,10 @@ public class Utilizador {
     public void setIdEscalao(int idEscalao) {
         this.idEscalao = idEscalao;
     }
+
+   
+
+  
     
     
     

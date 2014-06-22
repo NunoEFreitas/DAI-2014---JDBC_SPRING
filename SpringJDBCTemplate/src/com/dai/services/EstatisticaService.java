@@ -7,6 +7,7 @@
 package com.dai.services;
 
 import com.dai.domain.Estatistica;
+import java.util.List;
 
 /**
  *
@@ -17,5 +18,7 @@ public interface EstatisticaService {
     public void adicionaEstatistica(Estatistica est);
     
     public void removeEstatistica(Integer idEst);
+    
+    public List<Estatistica> listaServicosP(Integer idJogo);
     
 }

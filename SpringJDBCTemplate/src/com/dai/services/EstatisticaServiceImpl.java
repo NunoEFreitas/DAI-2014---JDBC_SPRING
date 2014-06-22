@@ -8,6 +8,7 @@ package com.dai.services;
 
 import com.dai.dao.EstatisticaDao;
 import com.dai.domain.Estatistica;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -27,6 +28,11 @@ public class EstatisticaServiceImpl implements EstatisticaService{
     @Override
     public void removeEstatistica(Integer idEst){
         estdao.removeEstatistica(idEst);
+    }
+    
+    @Override
+    public List<Estatistica> listaServicosP(Integer idJogo){
+        return estdao.listaServicosP(idJogo);
     }
     
 }
