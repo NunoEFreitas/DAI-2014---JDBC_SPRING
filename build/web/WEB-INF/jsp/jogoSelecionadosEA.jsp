@@ -52,9 +52,9 @@
         </c:forEach>
         </table>
          </div> 
-          <div>
+          <div class="tabela">
        <h2> Selecionados </h2>
-        <table border="1"> 
+        <table> 
         <tr>
             <td Class="heading"> Id Jogador </td>
             <td Class="heading"> Nome </td>
