@@ -7,6 +7,8 @@
 package com.dai.dao;
 
 import com.dai.domain.Estatistica;
+import com.dai.jdbc.EstatisticaRowMapper;
+import java.util.ArrayList;
 import java.util.List;
 import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +39,8 @@ public class EstatisticaDaoImpl implements EstatisticaDao {
 		template.update(
 				sql,
 				new Object[] { est.getIdUtilizador(), est.getIdJogo(), est.getIdTipoEstatistica(), 
-                                    est.getIdJea(), est.getClassificacao(), est.getOrigem(), est.getDestino(), est.getRotacaoPropria(), est.getRotacaoEA()});
+                                    est.getIdJea(), est.getClassificacao(), est.getOrigem(), est.getDestino(), 
+                                    est.getRotacaoPropria(), est.getRotacaoEA()});
 
 	}
         
@@ -50,6 +53,16 @@ public class EstatisticaDaoImpl implements EstatisticaDao {
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
                 jdbcTemplate.update(sql);
 	
+    }
+    
+    @Override
+    public List<Estatistica> listaServicosP(Integer idJogo){
+        List<Estatistica> lest = new ArrayList();
+        
+        String sql = "select * from estatistica where tiposEstatistica_idtiposEstatistica = 6 and idjogo_est=" + idJogo ;
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		lest = jdbcTemplate.query(sql, new EstatisticaRowMapper());
+		return lest;
     }
     /*
     public List<Estatistica> listaEstatisticas(){

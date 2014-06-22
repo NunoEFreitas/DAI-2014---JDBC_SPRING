@@ -31,6 +31,7 @@
             <td Class="heading"> Resultado </td>
             <td Class="heading"> Escolher Equipa Adversaria </td>
             <td Class="heading"> Editar Jogo </td>
+            <td Class="heading"> Estatisticas Tempo Real </td>
             <td Class="heading"> Iniciar Jogo </td>
         </tr>
         <c:forEach var="lj" items="${ljogos}">
@@ -44,6 +45,7 @@
                 <td> ${lj.getResultado()} </td>
                 <td><a href="jogoSelecionadosEA/${lj.getIdEquipaAdversaria()}/${lj.getIdJogo()}">Selecionar</a></td>
                 <td><a href="editarJogo/${lj.getIdJogo()}">Selecionar</a></td>
+                <td><a href="estatisticas/${lj.getIdJogo()}">Selecionar</a></td>
             </tr>
         </c:forEach>
     </table>

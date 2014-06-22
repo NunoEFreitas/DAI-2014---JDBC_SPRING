@@ -11,6 +11,32 @@
         <script src="<c:url value="/resources/js/jquery-1.11.1.js" />"></script>
         <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
         <link href="<c:url value ="/resources/css/styleestatisticas.css"/>" rel="stylesheet" type="text/css">
+        
+        <script type="text/javascript">
+            var estatistica = new Array();
+   function changeFunc() {
+    var selectBox = document.getElementById("zona1");
+    var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+    var idJogo = ${idJogo};
+    getEstatistica(selectedValue, idJogo);
+    
+   }
+   
+   function getEstatistica(selectedValue, idJogo) {
+                                                           
+                                                            
+                                                     
+                          
+                                                            $.ajax({
+                                                                url: '${pageContext.request.contextPath}/getEstatistica',
+                                                                data: {"estatistica": selectedValue, "jogo": idJogo },
+                                                                success: function(result) {
+                                                                    alert(result);
+                                                                }
+                                                            });
+                                                        }
+
+  </script>
     </head>
 
     <body>
@@ -18,27 +44,27 @@
 
 
         <div id="mid">
-            <h1>ESTATÍSTICAS</h1>
+            <h1>ESTATÍSTICAS TEMPO REAL</h1>
 
 
 
 
             <div id="comboestat1">
-                </label> Escolha o tipo de estatística - Campo1 </label>
+                <label> Escolha o tipo de estatística - Campo1 </label>
                 <br>
-                <select id="zona1" onchange="()"></select>
+                <select id="zona1" onchange="changeFunc();">
+                <option value="ae" >Ataques</option>
+                <option value="se" >Servicos</option>
+                <option value="de" >Defesas</option>
+                <option value="be" >Blocos</option>
+                
+                </select>
                 <br>
-                <select id="zona2" onchange="()"></select>
-                <br>
-                <select id="zona3" onchange="()"></select>
-                <br>
-                <select id="zona4" onchange="()"></select>
-                <br>
-                <select id="zona5" onchange="()"></select>
-                <br>
-                <select id="zona6"onchange="()"></select>
-                <br>
+                 
             </div>
+            
+           
+            
 
             <div id="campo">
                 <div class="elementServiceLeft" id="pos19" name="pos19" > % </div>
@@ -68,18 +94,11 @@
             <div id="comboestat2">
                 </label> Escolha o tipo de estatística - Campo2 </label>
                 <br>
-                <select id="zona1" onchange="()"></select>
-                <br>
-                <select id="zona2" onchange="()"></select>
-                <br>
-                <select id="zona3" onchange="()"></select>
-                <br>
-                <select id="zona4" onchange="()"></select>
-                <br>
-                <select id="zona5" onchange="()"></select>
-                <br>
-                <select id="zona6"onchange="()"></select>
-                <br>
+                <select id="zona2" onchange="()">
+                <option value="ataques">Ataques</option>
+                <option value="servicos">Servicos</option>
+                <option value="defesas">Defesas</option>   
+                </select>
             </div>
 
             <div id="voltarCampo">
@@ -87,5 +106,6 @@
                 </a></div>
 
     </body>
+   
 </html>
 

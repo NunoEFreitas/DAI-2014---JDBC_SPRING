@@ -71,6 +71,24 @@
     left: 50px;
 }
 
+#popUpDivBlocos{
+    z-index: 100;
+    position: absolute;
+    background-color: rgba(123, 123,123, 0.8);
+    display: none;
+    top: 40%;
+    left: 40%;
+    width: 20%;
+    height: 30%;
+}
+#popupSelectBlocos{
+    z-index: 1000;
+    position: absolute;
+    top: 130px;
+    left: 50px;
+}
+
+
 
 
   </style>
@@ -79,23 +97,77 @@
 
 <script type="text/javascript">
  
-$(window).load(function(){
-$("#baseDiv").click(function(e) {
-    $("#popUpDiv").show();
-});
-$("#popUpDiv input[name='class']").click(function(e) {
-	$("#baseDiv").html($('input:radio[name=class]:checked').val() + ' clicked. Click again to change.');
-    $("#popUpDiv").hide();
-});
-});
 
 $(window).load(function(){
 $("#popUpDivServicos input[name='class']").click(function(e) {
     $("#popUpDivServicos").hide();
-    //$("#classificacao").html($('input:radio[name=class]:checked').val());
     classificacao = ($('input:radio[name=class]:checked').val());
-    alert(classificacao);
-    insereServico(rotacaoP,jogadorP,origem,rotacaoEA,jogadorEA,destino,classificacao);
+    insereServico(rotacaoP,jogadorP,origem,rotacaoEA,jogadorEA,destino,classificacao,jogo);
+        if(classificacao==5){
+     document.getElementById('btncasa').value++;
+     ar.length = 0;
+     
+ }
+});
+});
+
+$(window).load(function(){
+$("#popUpDivAtaques input[name='class']").click(function(e) {
+    $("#popUpDivAtaques").hide();
+    classificacao = ($('input:radio[name=class]:checked').val());
+   
+    insereAtaque(rotacaoP,jogadorP,origem,rotacaoEA,jogadorEA,destino,classificacao,jogo);
+    if(classificacao==5){
+     document.getElementById('btncasa').value++;
+     ar.length = 0;
+     if(comeco==20){
+         rotacaoCampo1();
+     }
+ }
+});
+});
+
+$(window).load(function(){
+$("#popUpDivBlocos input[name='class']").click(function(e) {
+    $("#popUpDivBlocos").hide();
+    classificacao = ($('input:radio[name=class]:checked').val());
+    insereBloco(rotacaoP,jogadorP,origem,rotacaoEA,jogadorEA,destino,classificacao,jogo);
+    if(classificacao==5){
+     document.getElementById('btncasa').value++;
+     ar.length = 0;
+     if(comeco==20){
+         rotacaoCampo1(); 
+     } 
+    } else {
+         if(classificacao==0){
+             document.getElementById('btnfora').value++;
+             ar.length = 0;
+             if(comeco==19){
+                 rotacaoCampo2();
+         }
+     }
+ }
+});
+});
+
+$(window).load(function(){
+$("#popUpDivDefesas input[name='class']").click(function(e) {
+    $("#popUpDivDefesas").hide();
+    classificacao = ($('input:radio[name=class]:checked').val());
+    if(classificacao==5){
+        $("#popUpDivBlocos").show();
+    } else {
+        insereDefesa(rotacaoP,jogadorP,origem,rotacaoEA,jogadorEA,destino,classificacao,jogo);
+        if(classificacao==0){
+            document.getElementById('btnfora').value++;
+            ar.length = 0;
+            if(comeco==19){
+                rotacaoCampo2();
+     }
+     
+ }
+    }
+ 
 });
 });
 
@@ -229,7 +301,7 @@ $("#popUpDivServicos input[name='class']").click(function(e) {
                                     </div>
 
  
- 
+            <p> ${map.jogo.get(0)} </p>
 
     
 
@@ -250,10 +322,13 @@ $("#popUpDivServicos input[name='class']").click(function(e) {
 		<br>
     	<input type="radio" name="class" id="radio-mini-3" value=4  />
     	<label for="class">4</label>
+        	<br>
+    	<input type="radio" name="class" id="radio-mini-3" value=5  />
+    	<label for="class">Bloco</label>
 </div>
             
-<div id="popUpDivServicos" name="servico">
-    <h3> Servico</h3>
+<div id="popUpDivBlocos" name="blocos">
+    <h3> Bloco</h3>
         <input type="radio" name="class" id="radio-mini-1" value=0  />
     	<label for="class">Erro</label>
         <br>
@@ -268,24 +343,43 @@ $("#popUpDivServicos input[name='class']").click(function(e) {
 		<br>
     	<input type="radio" name="class" id="radio-mini-3" value=4  />
     	<label for="class">4</label>
+</div>
+            
+<div id="popUpDivServicos" name="servicos">
+    <h3> Servico</h3>
+	<input type="radio" name="class" id="radio-mini-2" value=1  />
+    	<label for="class">1</label>
+    	<br>
+    	<input type="radio" name="class" id="radio-mini-3" value=2  />
+    	<label for="class">2</label>
+		<br>
+    	<input type="radio" name="class" id="radio-mini-4" value=3  />
+    	<label for="class">3</label>
+		<br>
+    	<input type="radio" name="class" id="radio-mini-5" value=4  />
+    	<label for="class">4</label>
+        	<br>
+    	<input type="radio" name="class" id="radio-mini-6" value=5  />
+    	<label for="class">KILL</label>
 </div>
             
 <div id="popUpDivAtaques" name="ataques">
     <h3> Ataques</h3>
-        <input type="radio" name="class" id="radio-mini-1" value=0  />
-    	<label for="class">Erro</label>
-        <br>
-	<input type="radio" name="class" id="radio-mini-2" value=1  />
+        
+        <input type="radio" name="class" id="radio-mini-1" value=1  />
     	<label for="class">1</label>
-    	<br>
-    	<input type="radio" name="class" id="radio-mini-3" value=2  />
+        <br>
+	<input type="radio" name="class" id="radio-mini-2" value=2  />
     	<label for="class">2</label>
-		<br>
+    	<br>
     	<input type="radio" name="class" id="radio-mini-3" value=3  />
     	<label for="class">3</label>
 		<br>
-    	<input type="radio" name="class" id="radio-mini-3" value=4  />
+    	<input type="radio" name="class" id="radio-mini-4" value=4  />
     	<label for="class">4</label>
+		<br>
+    	<input type="radio" name="class" id="radio-mini-5" value=5  />
+    	<label for="class">KILL</label>
 </div>
              
             <label id="classificacao" >Classificacao</label>            
@@ -311,14 +405,19 @@ $("#popUpDivServicos input[name='class']").click(function(e) {
                                                         var jogadorEA;
                                                         var origem;
                                                         var destino;
+                                                        var jogo = ${map.jogo.get(0)};
+                                                        var nJogadas;
+                                                        var posicaoUjogada;
+                                                        var posicaoPjogada;
+                                                        var comeco;
                                                         
                                                         function controlo(){
-                                                           
-                                                            var nJogadas = ar.length;
-                                                            var posicaoUjogada = parseInt(ar[nJogadas - 1][2]);
                                                             
+                                                            nJogadas = ar.length;
+                                                            posicaoUjogada = parseInt(ar[nJogadas - 1][2]);
+                                                            comeco = parseInt(ar[0][2]);
                                                             if(nJogadas>1){
-                                                            var posicaoPjogada = parseInt(ar[nJogadas - 2][2]);
+                                                                posicaoPjogada = parseInt(ar[nJogadas - 2][2]);
                                                             }
                                                             
                                                         
@@ -351,16 +450,14 @@ $("#popUpDivServicos input[name='class']").click(function(e) {
                                                                         rotacaoEA = ar[nJogadas - 2] [0];
                                                                         jogadorP = ar[nJogadas - 1] [1];
                                                                         jogadorEA = ar[nJogadas - 2] [1];
-                                                                        origem = ar[nJogadas - 1] [2];
-                                                                        destino = ar[nJogadas - 2] [2];
-                                                                        classificacao = 0;
-                                                                        insereServico(rotacaoP,jogadorP,origem,rotacaoEA,jogadorEA,destino,classificacao);
-                                                                        insereDefesa(rotacaoP,jogadorP,destino,rotacaoEA,jogadorEA,origem,classificacao);
+                                                                        origem = ar[nJogadas - 2] [2];
+                                                                        destino = ar[nJogadas - 1] [2];
+                                                                        $("#popUpDivDefesas").show();
                                                                       
                                                                     }
                                                                 } else {
                                                                     $('#jogadasTxt').html('servico para a fora');
-
+                                                                        ar.length = 0;
                                                                 }
                                                             }
                                                             if(nJogadas > 2){
@@ -372,7 +469,9 @@ $("#popUpDivServicos input[name='class']").click(function(e) {
                                                                         jogadorEA = ar[nJogadas -1] [1];
                                                                         origem = ar[nJogadas -2] [2];
                                                                         destino = ar[nJogadas -1] [2];
-                                                                        insereAtaque(rotacaoP,jogadorP,origem,rotacaoEA,jogadorEA,destino);
+                                                                        classificacao = 0;
+                                                                       
+                                                                        $("#popUpDivAtaques").show();
                                                             } else {
                                                                 if(($.inArray(posicaoUjogada, campo1) >= 0) && ($.inArray(posicaoPjogada, campo2) >= 0)){
                                                                     rotacaoP = ar[nJogadas - 1] [0];
@@ -381,51 +480,86 @@ $("#popUpDivServicos input[name='class']").click(function(e) {
                                                                     jogadorEA = ar[nJogadas - 2] [1];
                                                                     origem = ar[nJogadas - 1] [2];
                                                                     destino = ar[nJogadas - 2] [2];
-                                                                    insereDefesa(rotacaoP,jogadorP,destino,rotacaoEA,jogadorEA,origem);
+                                                                    
+                                                                    $("#popUpDivDefesas").show();
+                                                                } else {
+                                                                    if((($.inArray(posicaoUjogada, fora1) >= 0) || ($.inArray(posicaoUjogada, fora2) >= 0)) && ($.inArray(posicaoPjogada, campo2) >= 0)){
+                                                                             document.getElementById('btncasa').value++;
+                                                                                 ar.length = 0;
+                                                                                 if(comeco==20){
+                                                                                     rotacaoCampo1();
+                                                                                 }
+                                                                             } else {
+                                                                                 if((($.inArray(posicaoUjogada, fora1) >= 0) || ($.inArray(posicaoUjogada, fora2) >= 0)) && ($.inArray(posicaoPjogada, campo1) >= 0)){
+                                                                                     document.getElementById('btnfora').value++;
+                                                                                     classificacao=0;
+                                                                                    
+                                                                                     destino = posicaoUjogada;
+                                                                                     insereAtaque(rotacaoP,jogadorP,origem,rotacaoEA,jogadorEA,destino,classificacao,jogo);
+                                                                                 ar.length = 0;
+                                                                                 if(comeco==19){
+                                                                                     rotacaoCampo2();
+                                                                                 }
+                                                                                        }
+                                                                                 
+                                                                                             }
+                                                                    }
                                                                 }
                                                             }
                                                             
                                                             
                                                         }
-                                                    }
+                                                    
 
-                                                        function insereServico(rotacaoP, jogadorP, origem, rotacaoEA,jogadorEA,destino,classificacao) {
+                                                        function insereServico(rotacaoP, jogadorP, origem, rotacaoEA,jogadorEA,destino,classificacao,jogo) {
                                                            alert(classificacao);
                                                             
                                                             $.ajax({
                                                                 url: '${pageContext.request.contextPath}/servico',
-                                                                data: {"rotacaoP": rotacaoP,  "jogadorP": jogadorP, "origem": origem, "rotacaoEA": rotacaoEA, "jogadorEA": jogadorEA, "destino": destino, "classificacao": classificacao },
+                                                                data: {"rotacaoP": rotacaoP,  "jogadorP": jogadorP, "origem": origem, "rotacaoEA": rotacaoEA, "jogadorEA": jogadorEA, "destino": destino, "classificacao": classificacao, "jogo": jogo },
                                                                 success: function(result) {
                                                                     alert(result);
                                                                 }
                                                             });
                                                         }
                                                         
-                                                        function insereDefesa(rotacaoP, jogadorP, origem, rotacaoEA,jogadorEA,destino) {
+                                                        function insereDefesa(rotacaoP, jogadorP, origem, rotacaoEA,jogadorEA,destino,classificacao,jogo) {
                                                            
-                                                            
+                                                            alert('defesa');
                                                             $.ajax({
                                                                 url: '${pageContext.request.contextPath}/defesa',
-                                                                data: {"rotacaoP": rotacaoP,  "jogadorP": jogadorP, "origem": origem, "rotacaoEA": rotacaoEA, "jogadorEA": jogadorEA, "destino": destino },
+                                                                data: {"rotacaoP": rotacaoP,  "jogadorP": jogadorP, "origem": origem, "rotacaoEA": rotacaoEA, "jogadorEA": jogadorEA, "destino": destino, "classificacao": classificacao, "jogo": jogo },
                                                                 success: function(result) {
                                                                     alert(result);
                                                                 }
                                                             });
                                                         }
                                                         
-                                                        function insereAtaque(rotacaoP, jogadorP, origem, rotacaoEA,jogadorEA,destino) {
+                                                        function insereAtaque(rotacaoP, jogadorP, origem, rotacaoEA,jogadorEA,destino,classificacao,jogo) {
                                                            
-                                                            
+                                                            alert('ataque');
+                                                     
+                          
                                                             $.ajax({
                                                                 url: '${pageContext.request.contextPath}/ataque',
-                                                                data: {"rotacaoP": rotacaoP,  "jogadorP": jogadorP, "origem": origem, "rotacaoEA": rotacaoEA, "jogadorEA": jogadorEA, "destino": destino },
+                                                                data: {"rotacaoP": rotacaoP,  "jogadorP": jogadorP, "origem": origem, "rotacaoEA": rotacaoEA, "jogadorEA": jogadorEA, "destino": destino, "classificacao": classificacao, "jogo": jogo },
                                                                 success: function(result) {
                                                                     alert(result);
                                                                 }
                                                             });
                                                         }
                                                         
-                                                        
+                                                        function insereBloco(rotacaoP, jogadorP, origem, rotacaoEA,jogadorEA,destino,classificacao,jogo) {
+                                                           
+                                                            alert('bloco');
+                                                            $.ajax({
+                                                                url: '${pageContext.request.contextPath}/bloco',
+                                                                data: {"rotacaoP": rotacaoP,  "jogadorP": jogadorP, "origem": origem, "rotacaoEA": rotacaoEA, "jogadorEA": jogadorEA, "destino": destino, "classificacao": classificacao, "jogo": jogo },
+                                                                success: function(result) {
+                                                                    alert(result);
+                                                                }
+                                                            });
+                                                        }
                                                         
                                                  
 
@@ -826,16 +960,17 @@ $("#popUpDivServicos input[name='class']").click(function(e) {
                                                             });
                                                             $('#pos13').click(function(e) {
                                                                 var rotacao = $("#r").text();
-                                                                var jogador = null;
+                                                                var jogador = jogadorP;
                                                                 var posicao = document.getElementById('pos13').innerHTML;
                                                                 jogada = [rotacao, jogador, posicao];
                                                                 ar.push(jogada);
+                                                                controlo();
                                                                
-                                                                comeco();
+                                                                
                                                             });
                                                             $('#pos14').click(function(e) {
                                                                 var rotacao = $("#r").text();
-                                                                var jogador = null;
+                                                                var jogador = jogadorP;
                                                                 var posicao = document.getElementById('pos14').innerHTML;
                                                                 jogada = [rotacao, jogador, posicao];
                                                                 ar.push(jogada);   
@@ -843,7 +978,7 @@ $("#popUpDivServicos input[name='class']").click(function(e) {
                                                             });
                                                             $('#pos15').click(function(e) {
                                                                 var rotacao = $("#r").text();
-                                                                var jogador = null;
+                                                                var jogador = jogadorP;
                                                                 var posicao = document.getElementById('pos15').innerHTML;
                                                                 jogada = [rotacao, jogador, posicao];
                                                                 ar.push(jogada);
@@ -851,16 +986,15 @@ $("#popUpDivServicos input[name='class']").click(function(e) {
                                                             });
                                                             $('#pos16').click(function(e) {
                                                                 var rotacao = $("#r2").text();
-                                                                var jogador = null;
+                                                                var jogador = jogadorEA;
                                                                 var posicao = document.getElementById('pos16').innerHTML;
                                                                 jogada = [rotacao, jogador, posicao];
                                                                 ar.push(jogada);
-                                                               
                                                                 controlo();
                                                             });
                                                             $('#pos17').click(function(e) {
                                                                 var rotacao = $("#r2").text();
-                                                                var jogador = null;
+                                                                var jogador = jogadorEA;
                                                                 var posicao = document.getElementById('pos17').innerHTML;
                                                                 jogada = [rotacao, jogador, posicao];
                                                                 ar.push(jogada);
@@ -870,7 +1004,7 @@ $("#popUpDivServicos input[name='class']").click(function(e) {
                                                             
                                                             $('#pos18').click(function(e) {
                                                                 var rotacao = $("#r2").text();
-                                                                var jogador = null;
+                                                                var jogador = jogadorEA;
                                                                 var posicao = document.getElementById('pos18').innerHTML;
                                                                 jogada = [rotacao, jogador, posicao];
                                                                 ar.push(jogada);
@@ -887,13 +1021,7 @@ $("#popUpDivServicos input[name='class']").click(function(e) {
                                                                 controlo();
                                                             });
                                                         });
-$("#baseDiv").click(function(e) {
-    $("#popUpDiv").show();
-});
-$("#popupSelect").change(function(e) {
-    $("#baseDiv").html($("#popupSelect").val() + ' clicked. Click again to change.');
-    $("#popUpDiv").hide();
-});
+
 
 
 

@@ -34,6 +34,7 @@ public class UtilizadorExtractor implements ResultSetExtractor<Utilizador> {
              
                  utilizador.setEstatura(resultSet.getString("estatura"));
                    utilizador.setEnvergadura(resultSet.getInt("envergadura"));
+            
 		return utilizador;
 	}
 
