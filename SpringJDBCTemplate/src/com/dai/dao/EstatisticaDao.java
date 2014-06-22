@@ -20,6 +20,18 @@ public interface EstatisticaDao {
     public void removeEstatistica(Integer idEst);
     
     public List<Estatistica> listaServicosP(Integer idJogo);
+    
+    public List<Estatistica> listaServicosA(Integer idJogo);
+    
+    public List<Estatistica> listaAtaquesA(Integer idJogo);
+    
+    public List<Estatistica> listaAtaquesP(Integer idJogo);
+    
+    public List<Estatistica> listaBlocosP(Integer idJogo);
+    
+    public List<Estatistica> listaDefesasP(Integer idJogo);
+    
+    public List<Estatistica> listaDefesasA(Integer idJogo);
     /*
     public List<Estatistica> listaEstatisticas();
     

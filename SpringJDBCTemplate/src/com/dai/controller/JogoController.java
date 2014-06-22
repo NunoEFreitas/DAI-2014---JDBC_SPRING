@@ -402,7 +402,7 @@ public class JogoController {
 
          
          @RequestMapping("estatisticas/getEstatisticas/seP/{idJogo}")  
-         public ModelAndView getEstatisticaP(@PathVariable("idJogo") Integer jogo){
+         public ModelAndView getEstatisticaSP(@PathVariable("idJogo") Integer jogo){
              List<Estatistica> dados = null;
              dados = eService.listaServicosP(jogo);
              List<Integer> da = new ArrayList();
@@ -421,7 +421,7 @@ public class JogoController {
      }
          
          @RequestMapping("estatisticas/getEstatisticas/seA/{idJogo}")  
-         public ModelAndView getEstatisticaA(@PathVariable("idJogo") Integer jogo){
+         public ModelAndView getEstatisticaSA(@PathVariable("idJogo") Integer jogo){
              List<Estatistica> dados = null;
              dados = eService.listaServicosA(jogo);
              List<Integer> da = new ArrayList();
@@ -438,7 +438,102 @@ public class JogoController {
              
         return new ModelAndView("estatisticasServicoA","da",da );
      }
+         
+                  @RequestMapping("estatisticas/getEstatisticas/atP/{idJogo}")  
+         public ModelAndView getEstatisticaAP(@PathVariable("idJogo") Integer jogo){
+             List<Estatistica> dados = null;
+             dados = eService.listaAtaquesP(jogo);
+             List<Integer> da = new ArrayList();
+            
+
+            Iterator<Estatistica> it = dados.iterator();
+            while(it.hasNext())
+                                {
+                Estatistica obj = it.next();
+                    da.add(obj.getDestino());
+                    
+            }
+             
+             
+        return new ModelAndView("estatisticasAtaquesP","da",da );
+     }
+         
+         
+                  @RequestMapping("estatisticas/getEstatisticas/atA/{idJogo}")  
+         public ModelAndView getEstatisticaAA(@PathVariable("idJogo") Integer jogo){
+             List<Estatistica> dados = null;
+             dados = eService.listaAtaquesA(jogo);
+             List<Integer> da = new ArrayList();
+            
+
+            Iterator<Estatistica> it = dados.iterator();
+            while(it.hasNext())
+                                {
+                Estatistica obj = it.next();
+                    da.add(obj.getOrigem());
+                    
+            }
+             
+             
+        return new ModelAndView("estatisticasAtaquesA","da",da );
+     }
     
+                        @RequestMapping("estatisticas/getEstatisticas/deA/{idJogo}")  
+         public ModelAndView getEstatisticaDA(@PathVariable("idJogo") Integer jogo){
+             List<Estatistica> dados = null;
+             dados = eService.listaDefesasA(jogo);
+             List<Integer> da = new ArrayList();
+            
+
+            Iterator<Estatistica> it = dados.iterator();
+            while(it.hasNext())
+                                {
+                Estatistica obj = it.next();
+                    da.add(obj.getDestino());
+                    
+            }
+             
+             
+        return new ModelAndView("estatisticasDefesaA","da",da );
+     }
+         
+                        @RequestMapping("estatisticas/getEstatisticas/deP/{idJogo}")  
+         public ModelAndView getEstatisticaDP(@PathVariable("idJogo") Integer jogo){
+             List<Estatistica> dados = null;
+             dados = eService.listaDefesasP(jogo);
+             List<Integer> da = new ArrayList();
+            
+
+            Iterator<Estatistica> it = dados.iterator();
+            while(it.hasNext())
+                                {
+                Estatistica obj = it.next();
+                    da.add(obj.getDestino());
+                    
+            }
+             
+             
+        return new ModelAndView("estatisticasDefesaP","da",da );
+     }
+         
+                        @RequestMapping("estatisticas/getEstatisticas/beP/{idJogo}")  
+         public ModelAndView getEstatisticaBP(@PathVariable("idJogo") Integer jogo){
+             List<Estatistica> dados = null;
+             dados = eService.listaBlocosP(jogo);
+             List<Integer> da = new ArrayList();
+            
+
+            Iterator<Estatistica> it = dados.iterator();
+            while(it.hasNext())
+                                {
+                Estatistica obj = it.next();
+                    da.add(obj.getDestino());
+                    
+            }
+             
+             
+        return new ModelAndView("estatisticasBlocoP","da",da );
+     }
          
          
          @RequestMapping("/dadosGrafico")

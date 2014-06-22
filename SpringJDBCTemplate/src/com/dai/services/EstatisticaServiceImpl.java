@@ -40,4 +40,28 @@ public class EstatisticaServiceImpl implements EstatisticaService{
         return estdao.listaServicosA(idJogo);
     }
     
+    @Override
+    public List<Estatistica> listaAtaquesA(Integer idJogo){
+        return estdao.listaAtaquesA(idJogo);
+    }
+    
+    @Override
+    public List<Estatistica> listaAtaquesP(Integer idJogo){
+        return estdao.listaAtaquesP(idJogo);
+    }
+    
+    @Override
+    public List<Estatistica> listaBlocosP(Integer idJogo){
+        return estdao.listaBlocosP(idJogo);
+    }
+    
+    @Override
+    public List<Estatistica> listaDefesasP(Integer idJogo){
+        return estdao.listaDefesasP(idJogo);
+    }
+    
+    @Override
+    public List<Estatistica> listaDefesasA(Integer idJogo){
+        return estdao.listaDefesasA(idJogo);
+    }
 }
