@@ -122,7 +122,7 @@ public class UtilizadorDaoImpl implements UtilizadorDao {
         public boolean verificaUtilizador(Integer id){
             boolean existe;
             List<Utilizador> utList = new ArrayList<Utilizador>();
-		String sql = "select * from utilizador where idutilizador= " + id;
+		String sql = "select * from utilizador where estado is true and idutilizador= " + id;
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		utList = jdbcTemplate.query(sql, new UtilizadorRowMapper());
                 if(utList.isEmpty()){

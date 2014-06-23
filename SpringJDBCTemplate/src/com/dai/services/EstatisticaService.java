@@ -33,4 +33,8 @@ public interface EstatisticaService {
     
     public List<Estatistica> listaDefesasA(Integer idJogo);
     
+    public void adicionaEstatisticaSJEA(Estatistica est);
+    
+    public void adicionaEstatisticaSJ(Estatistica est);
+    
 }

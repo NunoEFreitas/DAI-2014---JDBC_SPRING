@@ -64,4 +64,12 @@ public class EstatisticaServiceImpl implements EstatisticaService{
     public List<Estatistica> listaDefesasA(Integer idJogo){
         return estdao.listaDefesasA(idJogo);
     }
+    
+    public void adicionaEstatisticaSJEA(Estatistica est){
+         estdao.adicionaEstatisticaSJEA(est);
+    }
+    
+    public void adicionaEstatisticaSJ(Estatistica est){
+        estdao.adicionaEstatisticaSJ(est);
+    }
 }

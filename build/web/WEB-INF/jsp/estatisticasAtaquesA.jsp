@@ -20,7 +20,7 @@
 
 
         <div id="mid">
-            <h1>ESTATÍSTICAS TEMPO REAL - SERVICOS</h1>
+            <h1>ESTATÍSTICAS TEMPO REAL - ATAQUES ADVERSARIOS</h1>
             
 
 

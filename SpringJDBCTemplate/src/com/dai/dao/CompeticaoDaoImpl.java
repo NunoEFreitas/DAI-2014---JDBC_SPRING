@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.dai.dao;
 
 import com.dai.domain.Competicao;
@@ -18,58 +17,56 @@ import org.springframework.jdbc.core.JdbcTemplate;
  *
  * @author Nuno
  */
-public class CompeticaoDaoImpl implements CompeticaoDao{
-    
+public class CompeticaoDaoImpl implements CompeticaoDao {
+
     @Autowired
-	DataSource dataSource;
+    DataSource dataSource;
 
-        @Override
-	public void adicionaCompeticao(Competicao competicao) {
+    @Override
+    public void adicionaCompeticao(Competicao competicao) {
 
-		String sql = "INSERT INTO competicao "
-				+ "( designacaoCompeticao, escalao_idEscalao_c) VALUES (?,?)";
+        String sql = "INSERT INTO competicao "
+                + "( designacaoCompeticao, escalao_idEscalao_c) VALUES (?,?)";
 
-		JdbcTemplate template = new JdbcTemplate(dataSource);
-                
-                
-                
-		template.update(
-				sql,
-				new Object[] {competicao.getDesignacao(), competicao.getIdEscalao() });
+        JdbcTemplate template = new JdbcTemplate(dataSource);
 
-	}
-        
-        @Override
-	public void apagaCompeticao(int idCompeticao) {
-            
-            String sql = "delete from competicao where idCompeticao =" + idCompeticao;
-		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-		jdbcTemplate.update(sql);
-            
-        }
-        
-        @Override
-        public List<Competicao> listaCompeticao(){
-            
-            List<Competicao> slList = new ArrayList();
+        template.update(
+                sql,
+                new Object[]{competicao.getDesignacao(), competicao.getIdEscalao()});
 
-		String sql = "select * from competicao" ;
+    }
 
-		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-		slList = jdbcTemplate.query(sql, new CompeticaoRowMapper());
-		return slList;
-        }
-        
-        @Override
-        public List<Competicao> listaCompeticaoPorEscalao(Integer idEscalao){
-            
-            List<Competicao> slList = new ArrayList();
+    @Override
+    public void apagaCompeticao(int idCompeticao) {
 
-		String sql = "select * from competicao where escalao_idEscalao_c = " + idEscalao;
+        String sql = "delete from competicao where idCompeticao =" + idCompeticao;
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+        jdbcTemplate.update(sql);
 
-		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-		slList = jdbcTemplate.query(sql, new CompeticaoRowMapper());
-		return slList;
-        }
-    
+    }
+
+    @Override
+    public List<Competicao> listaCompeticao() {
+
+        List<Competicao> slList = new ArrayList();
+
+        String sql = "select * from competicao";
+
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+        slList = jdbcTemplate.query(sql, new CompeticaoRowMapper());
+        return slList;
+    }
+
+    @Override
+    public List<Competicao> listaCompeticaoPorEscalao(Integer idEscalao) {
+
+        List<Competicao> slList = new ArrayList();
+
+        String sql = "select * from competicao where escalao_idEscalao_c = " + idEscalao;
+
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+        slList = jdbcTemplate.query(sql, new CompeticaoRowMapper());
+        return slList;
+    }
+
 }

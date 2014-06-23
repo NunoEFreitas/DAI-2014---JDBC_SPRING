@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.dai.dao;
 
 import com.dai.domain.EquipaAdversaria;
@@ -18,59 +17,57 @@ import org.springframework.jdbc.core.JdbcTemplate;
  *
  * @author Nuno
  */
-public class EquipaAdversariaDaoImpl implements EquipaAdversariaDao{
-    
-        @Autowired
-	DataSource dataSource;
+public class EquipaAdversariaDaoImpl implements EquipaAdversariaDao {
 
-        @Override
-	public void adicionaEA(EquipaAdversaria ea) {
+    @Autowired
+    DataSource dataSource;
 
-		String sql = "INSERT INTO equipaAdversaria "
-				+ "( nomeEquipaAdversaria, escalao_idEscalao_ea) VALUES (?,?)";
+    @Override
+    public void adicionaEA(EquipaAdversaria ea) {
 
-		JdbcTemplate template = new JdbcTemplate(dataSource);
-                
-                
-                
-		template.update(
-				sql,
-				new Object[] {ea.getNome(), ea.getidEscalao() });
+        String sql = "INSERT INTO equipaAdversaria "
+                + "( nomeEquipaAdversaria, escalao_idEscalao_ea) VALUES (?,?)";
 
-	}
-        
-        @Override
-	public void apagaEA(int idEA) {
-            
-            String sql = "delete from equipaAdversaria where idEquipaAdversaria =" + idEA;
-		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-		jdbcTemplate.update(sql);
-            
-        }
-        
-        @Override
-        public List<EquipaAdversaria> listaEA(){
-            
-            List<EquipaAdversaria> eaList = new ArrayList();
+        JdbcTemplate template = new JdbcTemplate(dataSource);
 
-		String sql = "select * from equipaAdversaria" ;
+        template.update(
+                sql,
+                new Object[]{ea.getNome(), ea.getidEscalao()});
 
-		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-		eaList = jdbcTemplate.query(sql, new EquipaAdversariaRowMapper());
-		return eaList;
-        }
-        
-        @Override
-        public List<EquipaAdversaria> listaEAporEscalao(int idEscalao){
-            
-            List<EquipaAdversaria> eaList = new ArrayList();
+    }
 
-		String sql = "select * from equipaAdversaria where escalao_idEscalao_ea = " + idEscalao ;
+    @Override
+    public void apagaEA(int idEA) {
 
-		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-		eaList = jdbcTemplate.query(sql, new EquipaAdversariaRowMapper());
-		return eaList;
-            
-        }
-    
+        String sql = "delete from equipaAdversaria where idEquipaAdversaria =" + idEA;
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+        jdbcTemplate.update(sql);
+
+    }
+
+    @Override
+    public List<EquipaAdversaria> listaEA() {
+
+        List<EquipaAdversaria> eaList = new ArrayList();
+
+        String sql = "select * from equipaAdversaria";
+
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+        eaList = jdbcTemplate.query(sql, new EquipaAdversariaRowMapper());
+        return eaList;
+    }
+
+    @Override
+    public List<EquipaAdversaria> listaEAporEscalao(int idEscalao) {
+
+        List<EquipaAdversaria> eaList = new ArrayList();
+
+        String sql = "select * from equipaAdversaria where escalao_idEscalao_ea = " + idEscalao;
+
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+        eaList = jdbcTemplate.query(sql, new EquipaAdversariaRowMapper());
+        return eaList;
+
+    }
+
 }

@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.dai.controller;
 
 import com.dai.domain.Competicao;
@@ -45,546 +44,409 @@ import org.springframework.web.servlet.ModelAndView;
  *
  * @author Nuno
  */
-
 @Controller
 public class JogoController {
-    
+
     @Autowired
     JogoService jogoService;
-    
+
     @Autowired
     CompeticaoService competicaoService;
-    
+
     @Autowired
     EquipaAdversariaService eaService;
-    
+
     @Autowired
     UtilizadorService utilizadorService;
-    
-     @Autowired
-     SelecaoJogoService slService;
-     
-     @Autowired
-     JogadorEquipaAdversariaService jeaService;
-     
-     @Autowired
-     SelecaoJEAService sjeaService;
-     
-     @Autowired
-     EstatisticaService eService;
-     
-     
-    
-     @RequestMapping("/criarJogo")
-	public ModelAndView novoJogo(@ModelAttribute Jogo jogo, HttpServletRequest request) {
-                
-            HttpSession session = request.getSession();
-                int escalao = ((int) session.getAttribute("escalao"));
-            List<EquipaAdversaria> lea = eaService.listaEAporEscalao(escalao);
-            
-            List<Competicao> lc = competicaoService.listaCompeticaoPorEscalao(escalao);
-            
-                    Map<String, List> map = new HashMap<String, List>();
-                    map.put("lea", lea);
-                    map.put("lc", lc);
-                
-               
-		return new ModelAndView("criarJogo", "map", map);
-	}
-        @RequestMapping("/criarJogoAD")
-	public ModelAndView novoJogoAD(@ModelAttribute Jogo jogo, HttpServletRequest request) {
-                
-            HttpSession session = request.getSession();
-                int escalao = ((int) session.getAttribute("escalao"));
-            List<EquipaAdversaria> lea = eaService.listaEAporEscalao(escalao);
-            
-            List<Competicao> lc = competicaoService.listaCompeticaoPorEscalao(escalao);
-            
-                    Map<String, List> map = new HashMap<String, List>();
-                    map.put("lea", lea);
-                    map.put("lc", lc);
-                
-               
-		return new ModelAndView("criarJogoAD", "map", map);
-	}
-        
-        @RequestMapping("/inserirJogo")
-	public String insereJogo(@ModelAttribute Jogo jogo) {
-                    jogoService.novoJogo(jogo);
-        
-		return "redirect:/criarJogo";
-	}
-        
-        @RequestMapping("/criarVideo")
-	public ModelAndView criarVideo(@ModelAttribute Jogo jogo) {
-          
-        
-		return new ModelAndView("FileUploadForm");
-	}
-        
-         @RequestMapping("/estatisticas/{idJogo}")
-	public ModelAndView estatisticas(@ModelAttribute Jogo jogo, @PathVariable("idJogo") Integer idJogo) {
-                
-                
-        
-		return new ModelAndView("estatisticas","idJogo",idJogo);
-	}
-        
-        @RequestMapping("/jogoSelecionados/{idJogo}")
-	public ModelAndView selecionaJogadores(@PathVariable("idJogo") Integer jogo, HttpServletRequest request) {
-                    List<Integer> idjogo = new ArrayList();
-                    idjogo.add(jogo);
-                    HttpSession session = request.getSession();
-                    int escalao = ((int) session.getAttribute("escalao"));
-                    List<Utilizador> lutilizador = utilizadorService.listarUTparaJogo(jogo, escalao);
-                    List<Utilizador> lEscolhas = utilizadorService.listarUTselecionadosJogo(jogo, escalao);
-                    Map<String, List> map = new HashMap<String, List>();        
-                    map.put("jogo", idjogo);
-                    map.put("utilizador", lutilizador);
-                    map.put("escolhas", lEscolhas);
 
-                        
-		return new ModelAndView("jogoSelecionados","map",map );
-	}
-       
-        @RequestMapping("/jogoSelecionados/jogadorSelecionado/{idJogo}/{idUtilizador}")
-	public String selecionaJogador(@PathVariable("idJogo") Integer jogo, @PathVariable("idUtilizador") Integer ut) {
-                String nome = utilizadorService.getNome(ut);
-                SelecaoJogo sl = new SelecaoJogo();    
-                sl.setIdJogo(jogo);
-                sl.setIdUtilizador(ut);
-                sl.setNome(nome);
-                slService.adicionaSL(sl);
-		return "redirect:/jogoSelecionados/"+jogo;
-	}
-        
-        @RequestMapping("jogoSelecionados/jogadorDesSelecionado/{idJogo}/{idUtilizador}")
-	public String desSelecionaJogador(@PathVariable("idJogo") Integer jogo, @PathVariable("idUtilizador") Integer ut) {
-                  
-                slService.apagaSL(ut, jogo);
-		return "redirect:/jogoSelecionados/"+jogo;
-	}
-        
-        @RequestMapping("/jogoSelecionadosEA/{idEquipaAdversaria}/jeaSelecionado/{idJogo}/{IdJogador}")
-	public String selecionaJEA(@PathVariable("idEquipaAdversaria") Integer ea, @PathVariable("idJogo") Integer jogo, @PathVariable("IdJogador") Integer jea) {
-                SelecaoJEA sjea = new SelecaoJEA();
-                sjea.setIdJEA(jea);
-                sjea.setIdJogo(jogo);
-                String nome = jeaService.getNome(jea);
-                sjea.setNome(nome);
-                sjeaService.adicionaSJEA(sjea);
-		return "redirect:/jogoSelecionadosEA/"+ea+"/"+jogo;
-	}
-        
-        @RequestMapping("/jogoSelecionadosEA/{idEquipaAdversaria}/jeaDesSelecionado/{idJogo}/{IdJogador}")
-	public String desSelecionaJEA(@PathVariable("idEquipaAdversaria") Integer ea, @PathVariable("idJogo") Integer jogo, @PathVariable("IdJogador") Integer jea) {
-                sjeaService.apagaSJEA(jea, jogo);
-		return "redirect:/jogoSelecionadosEA/"+ea+"/"+jogo;
-	}
-       
-        
-        @RequestMapping("/inserirDados/{idJogo}")
-	public ModelAndView carregaJogo(@ModelAttribute Jogo jogo,@PathVariable("idJogo") Integer idJogo) {
-            
-            List<Integer> idjogo = new ArrayList();
-            idjogo.add(idJogo);
-            List<SelecaoJEA> ljea = sjeaService.listaSJEA(idJogo);
-            List<SelecaoJogo> lut = slService.listaSL(idJogo);
-            Map<String, List> map = new HashMap<String, List>();        
-            map.put("jogo", idjogo);
-            map.put("ljea", ljea);
-            map.put("lut", lut);
-            
-			
-            return new ModelAndView("campo","map",map);
-	}
-        
-        
-        @RequestMapping("/listarJogosT")
-	public ModelAndView listaJogosT(HttpServletRequest request) {
-            HttpSession session = request.getSession();
-                    int escalao = ((int) session.getAttribute("escalao"));
-		List<Jogo> lJogos = jogoService.listaJogosPendentesEscalao(escalao);
-		return new ModelAndView("listarJogosT", "ljogos", lJogos);
-	}
-        
-        @RequestMapping("/listarJogosTA")
-	public ModelAndView listaJogosTA(HttpServletRequest request) {
-            HttpSession session = request.getSession();
-                    int escalao = ((int) session.getAttribute("escalao"));
-		List<Jogo> lJogos = jogoService.listaJogosPendentesEscalao(escalao);
-		return new ModelAndView("listarJogosTA", "ljogos", lJogos);
-	}
-        
-        @RequestMapping("/listarJogosJ")
-	public ModelAndView listaJogosJ(HttpServletRequest request) {
-            HttpSession session = request.getSession();
-                    int utilizador = ((int) session.getAttribute("user"));
-		List<Jogo> lJogos = jogoService.listaJogosSelecionado(utilizador);
-		return new ModelAndView("listarJogosJ", "ljogos", lJogos);
-	}
-        
-        @RequestMapping("/listarJogosA")
-	public ModelAndView listaJogosA() {
-		List<Jogo> lJogos = jogoService.listaJogosPendentes();
-		return new ModelAndView("listarJogosA", "ljogos", lJogos);
-	}
-        
-        @RequestMapping("editarJogo/{idJogo}")
-	public ModelAndView editarJogo(@ModelAttribute Jogo jogo, @PathVariable("idJogo") Integer idJogo, HttpServletRequest request) {
-               
-        
-                List<Jogo> lj  = jogoService.getJogo(idJogo);
-                HttpSession session = request.getSession();
-                int escalao = ((int) session.getAttribute("escalao"));
-                List<Competicao> lc = competicaoService.listaCompeticaoPorEscalao(escalao);
-                List<EquipaAdversaria> lea = eaService.listaEAporEscalao(escalao);
-                
-                Map<String, List> map = new HashMap<String, List>();        
-                    map.put("lj", lj);
-                    map.put("competicao", lc);
-                    map.put("ea", lea);
-                
-		return new ModelAndView("editarJogo","map",map);
-	}
-        
-        @RequestMapping("/updateJogo")
-	public String updateJogo(@ModelAttribute Jogo jogo,HttpServletRequest request) {
-		jogoService.alteraJogo(jogo);
-                HttpSession session = request.getSession();
-                int perfil = ((int) session.getAttribute("perfil"));
-                String retorno="";
-                if(perfil==2){     
-		retorno="redirect:/listarJogosT";
-                } else {
-                    if(perfil==3){
-                    retorno="redirect:/listarJogosTA"; 
-                    }
-                }
-                return retorno;
-	}
-        
-        @RequestMapping("/jogoSelecionadosEA/{idEquipaAdversaria}/{idJogo}")
-	public ModelAndView selecionaJogadoresEA(@PathVariable("idEquipaAdversaria") Integer ea, @PathVariable("idJogo") Integer jogo) {
-                    List<Integer> idjogo = new ArrayList();
-                    idjogo.add(jogo);
-                    List<JogadorEquipaAdversaria> ljea = jeaService.listarJEAparaJogo(jogo, ea);
-                    List<JogadorEquipaAdversaria> lEscolhas = jeaService.listarJEAselecionadosJogo(jogo, ea);
-                    Map<String, List> map = new HashMap<String, List>();        
-                    map.put("jogo", idjogo);
-                    map.put("ljea", ljea);
-                    map.put("escolhas", lEscolhas);
+    @Autowired
+    SelecaoJogoService slService;
 
-                        
-		return new ModelAndView("jogoSelecionadosEA","map",map );
-	}
-        /*
-        @RequestMapping(value="/insere", method= RequestMethod.GET)
-        public void insere(@RequestParam(value = "idUtilizador", required = true) Integer idUtilizador, @RequestParam(value = "idJogo", required = true) Integer idJogo, HttpServletRequest request, HttpServletResponse response) throws Exception {  
-		SelecaoJogo sl = new SelecaoJogo();
-                sl.setIdUtilizador(idUtilizador);
-                sl.setIdJogo(idJogo);
-                slService.adicionaSL(sl);
-                
-	}
-        */
-        /*
-        @RequestMapping(value = "/helloajax", method = RequestMethod.GET)  
-        public @ResponseBody  
-        String insere(@RequestParam("jogador") Integer jogador,
-        @RequestParam("clube") Integer clube)  {  
-            String mensagem="llll";
-            return mensagem;
-    }  
-        */
-        
-        @RequestMapping(value = "/helloajax", method = RequestMethod.GET)  
-        public @ResponseBody  
-        String insere(@RequestParam("rotacaoP") String rotacaoP, @RequestParam("jogadorP") Integer jogadorP,  
-                @RequestParam("posicaoP") Integer posicaoP,  @RequestParam("rotacaoEA") String rotacaoEA,  
-                @RequestParam("jogadorEA") Integer jogadorEA,   @RequestParam("posicaoEA") Integer posicaoEA){  
-            String mensagem = "FCP";
-            Estatistica est = new Estatistica();
-            est.setDestino(posicaoEA);
-            est.setIdJea(jogadorEA);
-            est.setRotacaoEA(rotacaoEA);
-            est.setIdUtilizador(jogadorP);
-            est.setRotacaoPropria(rotacaoP);
-            est.setOrigem(posicaoP);
-            est.setIdJogo(1);
-            est.setIdTipoEstatistica(6);
-            eService.adicionaEstatistica(est);
-            return mensagem;
-    } 
-        @RequestMapping(value = "/servico", method = RequestMethod.GET)    
-          public @ResponseBody  
-         String insereServico(@RequestParam("rotacaoP") String rotacaoP, @RequestParam("jogadorP") Integer jogadorP,  
-                 @RequestParam("origem") Integer origem,  @RequestParam("rotacaoEA") String rotacaoEA,  
-                 @RequestParam("jogadorEA") Integer jogadorEA,   @RequestParam("destino") Integer destino, 
-                 @RequestParam("classificacao") Integer classificacao, @RequestParam("jogo") Integer jogo ){  
-             String mensagem = "Servico";
-              Estatistica est = new Estatistica();
-             est.setDestino(destino);
-             est.setClassificacao(classificacao);
-              est.setIdJea(jogadorEA);
-              est.setRotacaoEA(rotacaoEA);
-              est.setIdUtilizador(jogadorP);
-              est.setRotacaoPropria(rotacaoP);
-             est.setOrigem(origem);
-              est.setIdJogo(jogo);
-              est.setIdTipoEstatistica(6);
-              eService.adicionaEstatistica(est);
-              return mensagem;
-      } 
-         
-        @RequestMapping(value = "/defesa", method = RequestMethod.GET)  
-         public @ResponseBody  
-         String insereDefesa(@RequestParam("rotacaoP") String rotacaoP, @RequestParam("jogadorP") Integer jogadorP,  
-                 @RequestParam("origem") Integer origem,  @RequestParam("rotacaoEA") String rotacaoEA,  
-                 @RequestParam("jogadorEA") Integer jogadorEA,   @RequestParam("destino") Integer destino,
-                 @RequestParam("classificacao") Integer classificacao, @RequestParam("jogo") Integer jogo){  
-             String mensagem = "DEfesa";
-             Estatistica est = new Estatistica();
-             est.setDestino(destino);
-             est.setIdJea(jogadorEA);
-             est.setRotacaoEA(rotacaoEA);
-             est.setIdUtilizador(jogadorP);
-             est.setRotacaoPropria(rotacaoP);
-             est.setOrigem(origem);
-             est.setIdJogo(jogo);
-             est.setClassificacao(classificacao);
-             est.setIdTipoEstatistica(4);
-             eService.adicionaEstatistica(est);
-             return mensagem;
-     }
-         
-         @RequestMapping(value = "/ataque", method = RequestMethod.GET)  
-         public @ResponseBody  
-         String insereAtaque(@RequestParam("rotacaoP") String rotacaoP, @RequestParam("jogadorP") Integer jogadorP,  
-                 @RequestParam("origem") Integer origem,  @RequestParam("rotacaoEA") String rotacaoEA,  
-                 @RequestParam("jogadorEA") Integer jogadorEA,   @RequestParam("destino") Integer destino,
-                 @RequestParam("classificacao") Integer classificacao, @RequestParam("jogo") Integer jogo){  
-             String mensagem = "Ataque";
-             Estatistica est = new Estatistica();
-             est.setDestino(destino);
-             est.setIdJea(jogadorEA);
-             est.setRotacaoEA(rotacaoEA);
-             est.setIdUtilizador(jogadorP);
-             est.setRotacaoPropria(rotacaoP);
-             est.setOrigem(origem);
-             est.setIdJogo(jogo);
-             est.setClassificacao(classificacao);
-             est.setIdTipoEstatistica(2);
-             eService.adicionaEstatistica(est);
-             return mensagem;
-     }
-         
-          @RequestMapping(value = "/bloco", method = RequestMethod.GET)  
-         public @ResponseBody  
-         String insereBloco(@RequestParam("rotacaoP") String rotacaoP, @RequestParam("jogadorP") Integer jogadorP,  
-                 @RequestParam("origem") Integer origem,  @RequestParam("rotacaoEA") String rotacaoEA,  
-                 @RequestParam("jogadorEA") Integer jogadorEA,   @RequestParam("destino") Integer destino,
-                 @RequestParam("classificacao") Integer classificacao, @RequestParam("jogo") Integer jogo){  
-             String mensagem = "Bloco";
-             Estatistica est = new Estatistica();
-             est.setDestino(destino);
-             est.setIdJea(jogadorEA);
-             est.setRotacaoEA(rotacaoEA);
-             est.setIdUtilizador(jogadorP);
-             est.setRotacaoPropria(rotacaoP);
-             est.setOrigem(origem);
-             est.setIdJogo(jogo);
-             est.setClassificacao(classificacao);
-             est.setIdTipoEstatistica(3);
-             eService.adicionaEstatistica(est);
-             return mensagem;
-     }
+    @Autowired
+    JogadorEquipaAdversariaService jeaService;
 
-         
-         @RequestMapping("estatisticas/getEstatisticas/seP/{idJogo}")  
-         public ModelAndView getEstatisticaSP(@PathVariable("idJogo") Integer jogo){
-             List<Estatistica> dados = null;
-             dados = eService.listaServicosP(jogo);
-             List<Integer> da = new ArrayList();
-            
+    @Autowired
+    SelecaoJEAService sjeaService;
 
-            Iterator<Estatistica> it = dados.iterator();
-            while(it.hasNext())
-                                {
-                Estatistica obj = it.next();
-                    da.add(obj.getDestino());
-                    
+    @Autowired
+    EstatisticaService eService;
+
+    @RequestMapping("/criarJogo")
+    public ModelAndView novoJogo(@ModelAttribute Jogo jogo, HttpServletRequest request) {
+
+        HttpSession session = request.getSession();
+        int escalao = ((int) session.getAttribute("escalao"));
+        List<EquipaAdversaria> lea = eaService.listaEAporEscalao(escalao);
+
+        List<Competicao> lc = competicaoService.listaCompeticaoPorEscalao(escalao);
+
+        Map<String, List> map = new HashMap<String, List>();
+        map.put("lea", lea);
+        map.put("lc", lc);
+
+        return new ModelAndView("criarJogo", "map", map);
+    }
+
+    @RequestMapping("/criarJogoAD")
+    public ModelAndView novoJogoAD(@ModelAttribute Jogo jogo, HttpServletRequest request) {
+
+        HttpSession session = request.getSession();
+        int escalao = ((int) session.getAttribute("escalao"));
+        List<EquipaAdversaria> lea = eaService.listaEAporEscalao(escalao);
+
+        List<Competicao> lc = competicaoService.listaCompeticaoPorEscalao(escalao);
+
+        Map<String, List> map = new HashMap<String, List>();
+        map.put("lea", lea);
+        map.put("lc", lc);
+
+        return new ModelAndView("criarJogoAD", "map", map);
+    }
+
+    @RequestMapping("/inserirJogo")
+    public String insereJogo(@ModelAttribute Jogo jogo) {
+        jogoService.novoJogo(jogo);
+
+        return "redirect:/criarJogo";
+    }
+
+    @RequestMapping("/criarVideo")
+    public ModelAndView criarVideo(@ModelAttribute Jogo jogo) {
+
+        return new ModelAndView("FileUploadForm");
+    }
+
+    @RequestMapping("/estatisticas/{idJogo}")
+    public ModelAndView estatisticas(@ModelAttribute Jogo jogo, @PathVariable("idJogo") Integer idJogo) {
+
+        return new ModelAndView("estatisticas", "idJogo", idJogo);
+    }
+
+    @RequestMapping("/jogoSelecionados/{idJogo}")
+    public ModelAndView selecionaJogadores(@PathVariable("idJogo") Integer jogo, HttpServletRequest request) {
+        List<Integer> idjogo = new ArrayList();
+        idjogo.add(jogo);
+        HttpSession session = request.getSession();
+        int escalao = ((int) session.getAttribute("escalao"));
+        List<Utilizador> lutilizador = utilizadorService.listarUTparaJogo(jogo, escalao);
+        List<Utilizador> lEscolhas = utilizadorService.listarUTselecionadosJogo(jogo, escalao);
+        Map<String, List> map = new HashMap<String, List>();
+        map.put("jogo", idjogo);
+        map.put("utilizador", lutilizador);
+        map.put("escolhas", lEscolhas);
+
+        return new ModelAndView("jogoSelecionados", "map", map);
+    }
+
+    @RequestMapping("/jogoSelecionados/jogadorSelecionado/{idJogo}/{idUtilizador}")
+    public String selecionaJogador(@PathVariable("idJogo") Integer jogo, @PathVariable("idUtilizador") Integer ut) {
+        String nome = utilizadorService.getNome(ut);
+        SelecaoJogo sl = new SelecaoJogo();
+        sl.setIdJogo(jogo);
+        sl.setIdUtilizador(ut);
+        sl.setNome(nome);
+        slService.adicionaSL(sl);
+        return "redirect:/jogoSelecionados/" + jogo;
+    }
+
+    @RequestMapping("jogoSelecionados/jogadorDesSelecionado/{idJogo}/{idUtilizador}")
+    public String desSelecionaJogador(@PathVariable("idJogo") Integer jogo, @PathVariable("idUtilizador") Integer ut) {
+
+        slService.apagaSL(ut, jogo);
+        return "redirect:/jogoSelecionados/" + jogo;
+    }
+
+    @RequestMapping("/jogoSelecionadosEA/{idEquipaAdversaria}/jeaSelecionado/{idJogo}/{IdJogador}")
+    public String selecionaJEA(@PathVariable("idEquipaAdversaria") Integer ea, @PathVariable("idJogo") Integer jogo, @PathVariable("IdJogador") Integer jea) {
+        SelecaoJEA sjea = new SelecaoJEA();
+        sjea.setIdJEA(jea);
+        sjea.setIdJogo(jogo);
+        String nome = jeaService.getNome(jea);
+        sjea.setNome(nome);
+        sjeaService.adicionaSJEA(sjea);
+        return "redirect:/jogoSelecionadosEA/" + ea + "/" + jogo;
+    }
+
+    @RequestMapping("/jogoSelecionadosEA/{idEquipaAdversaria}/jeaDesSelecionado/{idJogo}/{IdJogador}")
+    public String desSelecionaJEA(@PathVariable("idEquipaAdversaria") Integer ea, @PathVariable("idJogo") Integer jogo, @PathVariable("IdJogador") Integer jea) {
+        sjeaService.apagaSJEA(jea, jogo);
+        return "redirect:/jogoSelecionadosEA/" + ea + "/" + jogo;
+    }
+
+    @RequestMapping("/inserirDados/{idJogo}")
+    public ModelAndView carregaJogo(@ModelAttribute Jogo jogo, @PathVariable("idJogo") Integer idJogo) {
+
+        List<Integer> idjogo = new ArrayList();
+        idjogo.add(idJogo);
+        List<SelecaoJEA> ljea = sjeaService.listaSJEA(idJogo);
+        List<SelecaoJogo> lut = slService.listaSL(idJogo);
+        Map<String, List> map = new HashMap<String, List>();
+        map.put("jogo", idjogo);
+        map.put("ljea", ljea);
+        map.put("lut", lut);
+
+        return new ModelAndView("campo", "map", map);
+    }
+
+    @RequestMapping("/listarJogosT")
+    public ModelAndView listaJogosT(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        int escalao = ((int) session.getAttribute("escalao"));
+        List<Jogo> lJogos = jogoService.listaJogosPendentesEscalao(escalao);
+        return new ModelAndView("listarJogosT", "ljogos", lJogos);
+    }
+
+    @RequestMapping("/listarJogosTA")
+    public ModelAndView listaJogosTA(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        int escalao = ((int) session.getAttribute("escalao"));
+        List<Jogo> lJogos = jogoService.listaJogosPendentesEscalao(escalao);
+        return new ModelAndView("listarJogosTA", "ljogos", lJogos);
+    }
+
+    @RequestMapping("/listarJogosJ")
+    public ModelAndView listaJogosJ(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        int utilizador = ((int) session.getAttribute("user"));
+        List<Jogo> lJogos = jogoService.listaJogosSelecionado(utilizador);
+        return new ModelAndView("listarJogosJ", "ljogos", lJogos);
+    }
+
+    @RequestMapping("/listarJogosA")
+    public ModelAndView listaJogosA() {
+        List<Jogo> lJogos = jogoService.listaJogosPendentes();
+        return new ModelAndView("listarJogosA", "ljogos", lJogos);
+    }
+
+    @RequestMapping("editarJogo/{idJogo}")
+    public ModelAndView editarJogo(@ModelAttribute Jogo jogo, @PathVariable("idJogo") Integer idJogo, HttpServletRequest request) {
+
+        List<Jogo> lj = jogoService.getJogo(idJogo);
+        HttpSession session = request.getSession();
+        int escalao = ((int) session.getAttribute("escalao"));
+        List<Competicao> lc = competicaoService.listaCompeticaoPorEscalao(escalao);
+        List<EquipaAdversaria> lea = eaService.listaEAporEscalao(escalao);
+
+        Map<String, List> map = new HashMap<String, List>();
+        map.put("lj", lj);
+        map.put("competicao", lc);
+        map.put("ea", lea);
+
+        return new ModelAndView("editarJogo", "map", map);
+    }
+
+    @RequestMapping("/updateJogo")
+    public String updateJogo(@ModelAttribute Jogo jogo, HttpServletRequest request) {
+        jogoService.alteraJogo(jogo);
+        HttpSession session = request.getSession();
+        int perfil = ((int) session.getAttribute("perfil"));
+        String retorno = "";
+        if (perfil == 2) {
+            retorno = "redirect:/listarJogosT";
+        } else {
+            if (perfil == 3) {
+                retorno = "redirect:/listarJogosTA";
             }
-             
-             
-        return new ModelAndView("estatisticasServicoP","da",da );
-     }
-         
-         @RequestMapping("estatisticas/getEstatisticas/seA/{idJogo}")  
-         public ModelAndView getEstatisticaSA(@PathVariable("idJogo") Integer jogo){
-             List<Estatistica> dados = null;
-             dados = eService.listaServicosA(jogo);
-             List<Integer> da = new ArrayList();
-            
+        }
+        return retorno;
+    }
 
-            Iterator<Estatistica> it = dados.iterator();
-            while(it.hasNext())
-                                {
-                Estatistica obj = it.next();
-                    da.add(obj.getDestino());
-                    
+    @RequestMapping("/jogoSelecionadosEA/{idEquipaAdversaria}/{idJogo}")
+    public ModelAndView selecionaJogadoresEA(@PathVariable("idEquipaAdversaria") Integer ea, @PathVariable("idJogo") Integer jogo) {
+        List<Integer> idjogo = new ArrayList();
+        idjogo.add(jogo);
+        List<JogadorEquipaAdversaria> ljea = jeaService.listarJEAparaJogo(jogo, ea);
+        List<JogadorEquipaAdversaria> lEscolhas = jeaService.listarJEAselecionadosJogo(jogo, ea);
+        Map<String, List> map = new HashMap<String, List>();
+        map.put("jogo", idjogo);
+        map.put("ljea", ljea);
+        map.put("escolhas", lEscolhas);
+
+        return new ModelAndView("jogoSelecionadosEA", "map", map);
+    }
+
+    @RequestMapping(value = "/insereJogada", method = RequestMethod.GET)
+    public @ResponseBody
+    String insereJogada(@RequestParam("rotacaoP") String rotacaoP, @RequestParam("jogadorP") Integer jogadorP,
+            @RequestParam("origem") Integer origem, @RequestParam("rotacaoEA") String rotacaoEA,
+            @RequestParam("jogadorEA") Integer jogadorEA, @RequestParam("destino") Integer destino,
+            @RequestParam("classificacao") Integer classificacao, @RequestParam("jogo") Integer jogo, @RequestParam("tipoEstatistica") Integer te) {
+        String mensagem = "OK";
+        Estatistica est = new Estatistica();
+        est.setIdJea(jogadorEA);
+        est.setIdUtilizador(jogadorP);     
+        est.setDestino(destino);
+        est.setClassificacao(classificacao);
+        est.setRotacaoEA(rotacaoEA);
+        est.setRotacaoPropria(rotacaoP);
+        est.setOrigem(origem);
+        est.setIdJogo(jogo);
+        est.setIdTipoEstatistica(te);
+        if(jogadorEA==0){
+            eService.adicionaEstatisticaSJEA(est);
+        }else{
+            if(jogadorP==0){
+            eService.adicionaEstatisticaSJ(est);
+        }else {
+        eService.adicionaEstatistica(est);
             }
-             
-             
-        return new ModelAndView("estatisticasServicoA","da",da );
-     }
-         
-                  @RequestMapping("estatisticas/getEstatisticas/atP/{idJogo}")  
-         public ModelAndView getEstatisticaAP(@PathVariable("idJogo") Integer jogo){
-             List<Estatistica> dados = null;
-             dados = eService.listaAtaquesP(jogo);
-             List<Integer> da = new ArrayList();
-            
-
-            Iterator<Estatistica> it = dados.iterator();
-            while(it.hasNext())
-                                {
-                Estatistica obj = it.next();
-                    da.add(obj.getDestino());
-                    
-            }
-             
-             
-        return new ModelAndView("estatisticasAtaquesP","da",da );
-     }
-         
-         
-                  @RequestMapping("estatisticas/getEstatisticas/atA/{idJogo}")  
-         public ModelAndView getEstatisticaAA(@PathVariable("idJogo") Integer jogo){
-             List<Estatistica> dados = null;
-             dados = eService.listaAtaquesA(jogo);
-             List<Integer> da = new ArrayList();
-            
-
-            Iterator<Estatistica> it = dados.iterator();
-            while(it.hasNext())
-                                {
-                Estatistica obj = it.next();
-                    da.add(obj.getOrigem());
-                    
-            }
-             
-             
-        return new ModelAndView("estatisticasAtaquesA","da",da );
-     }
-    
-                        @RequestMapping("estatisticas/getEstatisticas/deA/{idJogo}")  
-         public ModelAndView getEstatisticaDA(@PathVariable("idJogo") Integer jogo){
-             List<Estatistica> dados = null;
-             dados = eService.listaDefesasA(jogo);
-             List<Integer> da = new ArrayList();
-            
-
-            Iterator<Estatistica> it = dados.iterator();
-            while(it.hasNext())
-                                {
-                Estatistica obj = it.next();
-                    da.add(obj.getDestino());
-                    
-            }
-             
-             
-        return new ModelAndView("estatisticasDefesaA","da",da );
-     }
-         
-                        @RequestMapping("estatisticas/getEstatisticas/deP/{idJogo}")  
-         public ModelAndView getEstatisticaDP(@PathVariable("idJogo") Integer jogo){
-             List<Estatistica> dados = null;
-             dados = eService.listaDefesasP(jogo);
-             List<Integer> da = new ArrayList();
-            
-
-            Iterator<Estatistica> it = dados.iterator();
-            while(it.hasNext())
-                                {
-                Estatistica obj = it.next();
-                    da.add(obj.getDestino());
-                    
-            }
-             
-             
-        return new ModelAndView("estatisticasDefesaP","da",da );
-     }
-         
-                        @RequestMapping("estatisticas/getEstatisticas/beP/{idJogo}")  
-         public ModelAndView getEstatisticaBP(@PathVariable("idJogo") Integer jogo){
-             List<Estatistica> dados = null;
-             dados = eService.listaBlocosP(jogo);
-             List<Integer> da = new ArrayList();
-            
-
-            Iterator<Estatistica> it = dados.iterator();
-            while(it.hasNext())
-                                {
-                Estatistica obj = it.next();
-                    da.add(obj.getDestino());
-                    
-            }
-             
-             
-        return new ModelAndView("estatisticasBlocoP","da",da );
-     }
-         
-         
-         @RequestMapping("/dadosGrafico")
-	public ModelAndView dadosGrafico() {
-               
-		return new ModelAndView("dadosGrafico");
-	}
-  @RequestMapping("/dadosTabela")
-	public ModelAndView dadosTabela() {
-               
-		return new ModelAndView("dadosTabela");
-	}
-         @RequestMapping("/gerarDadosTabela")
-	public ModelAndView gerarDadosTabela() {
-               
-		return new ModelAndView("gerarDadosTabela");
-	}
-        @RequestMapping("/gerarDadosGrafico")
-	public ModelAndView gerarDadosGrafico() {
-               
-		return new ModelAndView("gerarDadosGrafico");
-	}
         
-        
-           @RequestMapping("/historicoAtleta")
-	public ModelAndView historicoAtleta(HttpServletRequest request) {
-               HttpSession session = request.getSession();
-               int id = ((int) session.getAttribute("user"));
-               
-               List<Jogo> lJogos = (jogoService.listaHistoricoAtleta(id));
-		return new ModelAndView("historicoAtleta", "ljogos", lJogos);
-                
-		
-	}
-           
-            @RequestMapping("/verHistoricoAtleta/{IdUtilizador}")
-	public ModelAndView verHistoricoAtleta(@PathVariable("IdUtilizador") Integer IdUtilizador) {             
-               
-               List<Jogo> lJogos = (jogoService.listaHistoricoAtleta(IdUtilizador));
-		return new ModelAndView("historicoAtleta", "ljogos", lJogos);
-                
-		
-	}
-           
-           
-           
-         
-	
-        
-        
-        
+    }
+        return mensagem;
+    }
 
-}  
-        
+    @RequestMapping("estatisticas/getEstatisticas/seP/{idJogo}")
+    public ModelAndView getEstatisticaSP(@PathVariable("idJogo") Integer jogo) {
+        List<Estatistica> dados = null;
+        dados = eService.listaServicosP(jogo);
+        List<Integer> da = new ArrayList();
+
+        Iterator<Estatistica> it = dados.iterator();
+        while (it.hasNext()) {
+            Estatistica obj = it.next();
+            da.add(obj.getDestino());
+
+        }
+
+        return new ModelAndView("estatisticasServicoP", "da", da);
+    }
+
+    @RequestMapping("estatisticas/getEstatisticas/seA/{idJogo}")
+    public ModelAndView getEstatisticaSA(@PathVariable("idJogo") Integer jogo) {
+        List<Estatistica> dados = null;
+        dados = eService.listaServicosA(jogo);
+        List<Integer> da = new ArrayList();
+
+        Iterator<Estatistica> it = dados.iterator();
+        while (it.hasNext()) {
+            Estatistica obj = it.next();
+            da.add(obj.getDestino());
+
+        }
+
+        return new ModelAndView("estatisticasServicoA", "da", da);
+    }
+
+    @RequestMapping("estatisticas/getEstatisticas/atP/{idJogo}")
+    public ModelAndView getEstatisticaAP(@PathVariable("idJogo") Integer jogo) {
+        List<Estatistica> dados = null;
+        dados = eService.listaAtaquesP(jogo);
+        List<Integer> da = new ArrayList();
+
+        Iterator<Estatistica> it = dados.iterator();
+        while (it.hasNext()) {
+            Estatistica obj = it.next();
+            da.add(obj.getDestino());
+
+        }
+
+        return new ModelAndView("estatisticasAtaquesP", "da", da);
+    }
+
+    @RequestMapping("estatisticas/getEstatisticas/atA/{idJogo}")
+    public ModelAndView getEstatisticaAA(@PathVariable("idJogo") Integer jogo) {
+        List<Estatistica> dados = null;
+        dados = eService.listaAtaquesA(jogo);
+        List<Integer> da = new ArrayList();
+
+        Iterator<Estatistica> it = dados.iterator();
+        while (it.hasNext()) {
+            Estatistica obj = it.next();
+            da.add(obj.getOrigem());
+
+        }
+
+        return new ModelAndView("estatisticasAtaquesA", "da", da);
+    }
+
+    @RequestMapping("estatisticas/getEstatisticas/deA/{idJogo}")
+    public ModelAndView getEstatisticaDA(@PathVariable("idJogo") Integer jogo) {
+        List<Estatistica> dados = null;
+        dados = eService.listaDefesasA(jogo);
+        List<Integer> da = new ArrayList();
+
+        Iterator<Estatistica> it = dados.iterator();
+        while (it.hasNext()) {
+            Estatistica obj = it.next();
+            da.add(obj.getDestino());
+
+        }
+
+        return new ModelAndView("estatisticasDefesaA", "da", da);
+    }
+
+    @RequestMapping("estatisticas/getEstatisticas/deP/{idJogo}")
+    public ModelAndView getEstatisticaDP(@PathVariable("idJogo") Integer jogo) {
+        List<Estatistica> dados = null;
+        dados = eService.listaDefesasP(jogo);
+        List<Integer> da = new ArrayList();
+
+        Iterator<Estatistica> it = dados.iterator();
+        while (it.hasNext()) {
+            Estatistica obj = it.next();
+            da.add(obj.getDestino());
+
+        }
+
+        return new ModelAndView("estatisticasDefesaP", "da", da);
+    }
+
+    @RequestMapping("estatisticas/getEstatisticas/beP/{idJogo}")
+    public ModelAndView getEstatisticaBP(@PathVariable("idJogo") Integer jogo) {
+        List<Estatistica> dados = null;
+        dados = eService.listaBlocosP(jogo);
+        List<Integer> da = new ArrayList();
+
+        Iterator<Estatistica> it = dados.iterator();
+        while (it.hasNext()) {
+            Estatistica obj = it.next();
+            da.add(obj.getDestino());
+
+        }
+
+        return new ModelAndView("estatisticasBlocoP", "da", da);
+    }
+
+    @RequestMapping("/dadosGrafico")
+    public ModelAndView dadosGrafico() {
+
+        return new ModelAndView("dadosGrafico");
+    }
+
+    @RequestMapping("/dadosTabela")
+    public ModelAndView dadosTabela() {
+
+        return new ModelAndView("dadosTabela");
+    }
+
+    @RequestMapping("/gerarDadosTabela")
+    public ModelAndView gerarDadosTabela() {
+
+        return new ModelAndView("gerarDadosTabela");
+    }
+
+    @RequestMapping("/gerarDadosGrafico")
+    public ModelAndView gerarDadosGrafico() {
+
+        return new ModelAndView("gerarDadosGrafico");
+    }
+
+    @RequestMapping("/historicoAtleta")
+    public ModelAndView historicoAtleta(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        int id = ((int) session.getAttribute("user"));
+
+        List<Jogo> lJogos = (jogoService.listaHistoricoAtleta(id));
+        return new ModelAndView("historicoAtleta", "ljogos", lJogos);
+
+    }
+
+    @RequestMapping("/verHistoricoAtleta/{IdUtilizador}")
+    public ModelAndView verHistoricoAtleta(@PathVariable("IdUtilizador") Integer IdUtilizador) {
+
+        List<Jogo> lJogos = (jogoService.listaHistoricoAtleta(IdUtilizador));
+        return new ModelAndView("historicoAtleta", "ljogos", lJogos);
+
+    }
+
+}

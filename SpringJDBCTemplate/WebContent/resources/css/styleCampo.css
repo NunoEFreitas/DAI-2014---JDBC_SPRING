@@ -228,6 +228,18 @@ height: 50px;
 
 }
 
+#popUpDivBlocos{
+    position: absolute;
+    background-color: rgba(123, 123,123, 0.8);
+    display: none;
+    top: 25%;
+    left: 40%;
+    width: 20%;
+    height: 40%;
+    font-size: 20px;
+
+}
+
 
 /* -------------------------- campo ------------------------------*/
 
