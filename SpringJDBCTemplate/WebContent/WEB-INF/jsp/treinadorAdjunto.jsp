@@ -40,8 +40,9 @@
           
        
        %>
-             
-                    
+       <br>
+       <img  width="600" height="400" src="<c:url value="/resources/images/volei.jpg" />" />   
+
        <%
             } else {
                 response.sendRedirect("login");

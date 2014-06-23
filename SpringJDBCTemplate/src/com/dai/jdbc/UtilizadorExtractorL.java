@@ -30,8 +30,8 @@ public class UtilizadorExtractorL {
                 utilizador.setSexo(resultSet.getString("sexo"));
                 utilizador.setTelefone(resultSet.getInt("telefone"));
                 utilizador.setEmail(resultSet.getString("email"));
-                utilizador.setAltura(resultSet.getFloat("altura"));
-                utilizador.setPeso(resultSet.getFloat("peso"));
+                utilizador.setAltura(resultSet.getInt("altura"));
+                utilizador.setPeso(resultSet.getInt("peso"));
                 utilizador.setSaltoVertical(resultSet.getInt("saltoVertical"));
                 utilizador.setVelocidadeDeslocamento(resultSet.getInt("velocidadeDeslocamento"));
                 utilizador.setAlcanceAtaque(resultSet.getInt("alcanceAtaque"));
@@ -39,10 +39,9 @@ public class UtilizadorExtractorL {
                 utilizador.setExamesClinicos(resultSet.getBoolean("examesClinicos"));
                 utilizador.setIdPerfil(resultSet.getInt("idPerfil"));
                 utilizador.setIdEscalao(resultSet.getInt("idEscalao"));
-                 utilizador.setEstado(resultSet.getBoolean("estado"));
-             
-                 utilizador.setEstatura(resultSet.getString("estatura"));
-                   utilizador.setEnvergadura(resultSet.getInt("envergadura"));
+                utilizador.setEstado(resultSet.getBoolean("estado"));           
+                utilizador.setEstatura(resultSet.getString("estatura"));
+                utilizador.setEnvergadura(resultSet.getInt("envergadura"));
             
 		return utilizador;
 	}

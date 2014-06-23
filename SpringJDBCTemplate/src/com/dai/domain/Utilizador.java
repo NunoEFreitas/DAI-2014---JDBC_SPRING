@@ -24,8 +24,8 @@ public class Utilizador {
     private String sexo;
     private int telefone;
     private String email;
-    private float altura;
-    private float peso;
+    private int altura;
+    private int peso;
     private String estatura;
     private int envergadura;
     private int saltoVertical;
@@ -108,7 +108,7 @@ public class Utilizador {
         return altura;
     }
 
-    public void setAltura(float altura) {
+    public void setAltura(int altura) {
         this.altura = altura;
     }
 
@@ -116,7 +116,7 @@ public class Utilizador {
         return peso;
     }
 
-    public void setPeso(float peso) {
+    public void setPeso(int peso) {
         this.peso = peso;
     }
 

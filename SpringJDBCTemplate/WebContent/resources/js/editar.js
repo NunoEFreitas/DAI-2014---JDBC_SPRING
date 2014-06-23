@@ -55,37 +55,37 @@
             return false;
         }
         if (document.editar.altura.value == "" || !IsNum(editar.altura.value)) {
-            document.getElementById("texto").innerHTML = "Preencha a altura correctamente. Ex: 175";
+            document.getElementById("texto").innerHTML = "Preencha a altura em cm. Ex: 175";
             document.editar.altura.focus();
             return false;
         }
-        if (document.editar.peso.value == "") {
+        if (document.editar.peso.value == "" || !IsNum(editar.altura.value)) {
             document.getElementById("texto").innerHTML = "Preencha o peso correctamente. Ex: 60";
             document.editar.peso.focus();
             return false;
         }
         if (document.editar.saltoVertical.value == "" || !IsNum(editar.saltoVertical.value)) {
-            document.getElementById("texto").innerHTML = "Preencha o Salto Vertical correctamente. Ex: 90";
+            document.getElementById("texto").innerHTML = "Preencha o Salto Vertical em cm. Ex: 90";
             document.editar.saltoVertical.focus();
             return false;
         }
         if (document.editar.velocidadeDeslocamento.value == "" || !IsNum(editar.velocidadeDeslocamento.value)) {
-            document.getElementById("texto").innerHTML = "Preencha o Velocidade Deslocamento correctamente.";
+            document.getElementById("texto").innerHTML = "Preencha o Velocidade Deslocamento em cm.";
             document.editar.velocidadeDeslocamento.focus();
             return false;
         }
         if (document.editar.alcanceAtaque.value == "" || !IsNum(editar.alcanceAtaque.value)) {
-            document.getElementById("texto").innerHTML = "Preencha o Alcance Ataque correctamente.";
+            document.getElementById("texto").innerHTML = "Preencha o Alcance Ataque em cm.";
             document.editar.alcanceAtaque.focus();
             return false;
         }
         if (document.editar.alcanceBloco.value == "" || !IsNum(editar.alcanceBloco.value)) {
-            document.getElementById("texto").innerHTML = "Preencha o Alcance Bloco correctamente.";
+            document.getElementById("texto").innerHTML = "Preencha o Alcance Bloco em cm.";
             document.editar.alcanceBloco.focus();
             return false;
         }
-        if (document.editar.envergadura.value == "" || !IsNum(editar.envergadura.value)|| editar.envergadura.value == "0") {
-            document.getElementById("texto").innerHTML = "Preencha o Envergadura correctamente.";
+        if (document.editar.envergadura.value == "" || !IsNum(editar.envergadura.value)) {
+            document.getElementById("texto").innerHTML = "Preencha o Envergadura em cm.";
             document.editar.envergadura.focus();
             return false;
         }

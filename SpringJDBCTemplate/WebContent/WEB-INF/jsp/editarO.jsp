@@ -3,10 +3,11 @@
     Created on : 21/Jun/2014, 12:03:16
     Author     : Samuel Costa
 --%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -69,7 +70,7 @@
                 
                 
                 
-            <label>Escal√£o :</label>
+            <label>Escal„o :</label>
                 <form:select class="input" path = "idEscalao" name="idEscalao">
                     <c:forEach items='${map.li}' var='li'>
                         <form:option value ="${li.getIdEscalao()}">${li.getDesignacao()}</form:option>
