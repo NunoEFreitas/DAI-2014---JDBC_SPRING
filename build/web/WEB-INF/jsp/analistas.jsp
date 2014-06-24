@@ -39,7 +39,9 @@
             out.print("<h4> Id:" + session.getAttribute("user") + " Perfil: " + session.getAttribute("perfil"));
 
         %>
-
+            
+              <br>
+        <img  width="600" height="400" src="<c:url value="/resources/images/volei.jpg" />" />
 
         <%
             }else{ 

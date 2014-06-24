@@ -27,7 +27,7 @@
                                 <li class='has-sub'><a href='#'><span><p style="color: white; background-color: #b81c40; letter-spacing: 4">Analisar em Tempo Real</p></span></a>  </li>
                                     
                                         <li><a href='/VoleiUM/listarJogosTA'><span>-Listar Jogos</span></a></li>
-                                        <li><a href='#'><span>-InserirDadosJogo</span></a></li>
+                                       
                                     
                               
                                 <li class='has-sub'><a href='#'><span><p style="color: white; background-color: #b81c40; letter-spacing: 6">Analisar à Posteriori</p></span></a></li>

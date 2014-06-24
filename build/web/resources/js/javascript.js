@@ -1,5 +1,59 @@
+function  oculta(valor) {
 
-  
+      document.getElementById("contactform").reset();
+      document.getElementById("perfil").value= valor;
+
+           if (valor == 2 || valor==3 || valor==4 || valor==5 || valor==6) {
+        
+                    document.getElementById('1').style.display = 'block';
+                    document.getElementById('2').style.display = 'block';
+                    document.getElementById('3').style.display = 'block';
+                    document.getElementById('4').style.display = 'block';
+                    document.getElementById('5').style.display = 'block';
+                    document.getElementById('6').style.display = 'block';
+                    document.getElementById('7').style.display = 'block';
+                    document.getElementById('8').style.display = 'none';
+                    document.getElementById('9').style.display = 'none';
+                    document.getElementById('10').style.display = 'none';
+                    document.getElementById('11').style.display = 'none';
+                    document.getElementById('12').style.display = 'none';
+                    document.getElementById('13').style.display = 'none';
+                    document.getElementById('14').style.display = 'none';                    
+                    document.getElementById('15').style.display = 'none';
+                    document.getElementById('16').style.display = 'none';
+                    document.getElementById('17').style.display = 'none';
+                    document.getElementById('18').style.display = 'block';
+                    document.getElementById('19').style.display = 'block';
+
+                }
+
+                else {
+                     
+                
+                    document.getElementById('1').style.display = 'block';
+                    document.getElementById('2').style.display = 'block';
+                    document.getElementById('3').style.display = 'block';
+                    document.getElementById('4').style.display = 'block';
+                    document.getElementById('5').style.display = 'block';
+                    document.getElementById('6').style.display = 'block';
+                    document.getElementById('7').style.display = 'block';
+                    document.getElementById('8').style.display = 'block';
+                    document.getElementById('9').style.display = 'block';
+                    document.getElementById('10').style.display = 'block';
+                    document.getElementById('11').style.display = 'block';
+                    document.getElementById('12').style.display = 'block';
+                    document.getElementById('13').style.display = 'block';
+                    document.getElementById('14').style.display = 'block';                    
+                    document.getElementById('15').style.display = 'block';
+                    document.getElementById('16').style.display = 'block';
+                    document.getElementById('17').style.display = 'block';
+                    document.getElementById('18').style.display = 'block';
+                    document.getElementById('19').style.display = 'block';
+
+                }
+
+  }
+   
   function IsNum(v){
    var ValidChars = "0123456789";
    var IsNumber=true;
@@ -48,35 +102,41 @@ function validacao() {
         return false;
     }
     if (document.register.altura.value == "" || !IsNum(register.altura.value)) {
-        document.getElementById("texto").innerHTML = "Preencha a altura correctamente. Ex: 175";
+        document.getElementById("texto").innerHTML = "Preencha a altura em cm. Ex: 175";
         document.register.altura.focus();
         return false;
     }  
-    if (document.register.peso.value == "") {
-        document.getElementById("texto").innerHTML = "Preencha o peso correctamente.";
+    if (document.register.peso.value == "" || !IsNum(register.peso.value)) {
+        document.getElementById("texto").innerHTML = "Preencha o peso correctamente. Ex:65";
         document.register.peso.focus();
         return false;
     }
     if (document.register.saltoVertical.value == "" || !IsNum(register.saltoVertical.value) ) {
-        document.getElementById("texto").innerHTML = "Preencha o Salto Vertical correctamente. ";
+        document.getElementById("texto").innerHTML = "Preencha o Salto Vertical em cm. ";
         document.register.saltoVertical.focus();
         return false;
     }
      if (document.register.velocidadeDeslocamento.value == "" || !IsNum(register.velocidadeDeslocamento.value) ) {
-        document.getElementById("texto").innerHTML = "Preencha o Velocidade Deslocamento correctamente.";
+        document.getElementById("texto").innerHTML = "Preencha o Velocidade Deslocamento em cm.";
         document.register.velocidadeDeslocamento.focus();
         return false;
     }
     if (document.register.alcanceAtaque.value == "" || !IsNum(register.alcanceAtaque.value) ) {
-        document.getElementById("texto").innerHTML = "Preencha o Alcance Ataque correctamente.";
+        document.getElementById("texto").innerHTML = "Preencha o Alcance Ataque em cm.";
         document.register.alcanceAtaque.focus();
         return false;
     }
         if (document.register.alcanceBloco.value == "" || !IsNum(register.alcanceBloco.value) ) {
-        document.getElementById("texto").innerHTML = "Preencha o Alcance Bloco correctamente.";
+        document.getElementById("texto").innerHTML = "Preencha o Alcance Bloco em cm.";
         document.register.alcanceBloco.focus();
         return false;
-    }
+    }      
+        if (document.editar.envergadura.value == "" || !IsNum(editar.envergadura.value) || editar.envergadura.value == "0") {
+        document.getElementById("texto").innerHTML = "Preencha o Envergadura em cm.";
+        document.editar.envergadura.focus();
+        return false;
+        }
+     
 
     
 //    validaçao para os restantes perfis
