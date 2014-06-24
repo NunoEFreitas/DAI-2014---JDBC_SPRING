@@ -15,6 +15,12 @@ alignment-baseline: central;
     font-size: 20px;
 }
 
+h3{
+        border-radius: 10px;
+    font-size: large;
+    border: 1px solid black;
+    background: lightgray;
+}
 
 a {
     color: darkblue;
@@ -28,7 +34,7 @@ a:hover {
 
 #voltarCampo{
 float: left;
-margin-top: 33%;
+margin-top: 40%;
    
 }
 
