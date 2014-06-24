@@ -52,7 +52,7 @@
                 <td Class="heading"> Escolher Equipa Adversaria </td>
                 <td Class="heading"> Editar Jogo </td>
                 <td Class="heading"> Analisar Em Tempo Real </td>
-                <td Class="heading"> Iniciar Jogo </td>
+                <td Class="heading"> Fim Jogo </td>
             </tr>
             <c:forEach var="lj" items="${ljogos}">
                 <tr>
