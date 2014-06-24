@@ -4,17 +4,17 @@
         <meta charset="UTF-8">
         <Meta  http-equiv = "X-UA-Compatible"  content = "IE = borda" >
         <title>Login - Sistema de Informação - SCB</title>
-         <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
+        <link href="<c:url value ="/resources/css/bootstrap.css"/>" rel="stylesheet" type="text/css">
 
     </head>
     <body>
-     <%
+        <%
             if (session.getAttribute("perfil") != null) {
         %> 
 
         <%
-                if (session.getAttribute("perfil").equals(6)) {%>
-         <%@include file="/resources/include/templateSeccionista.jsp"%>
+            if (session.getAttribute("perfil").equals(6)) {%>
+        <%@include file="/resources/include/templateSeccionista.jsp"%>
         <% } else if (session.getAttribute("perfil").equals(1)) {
                 response.sendRedirect("naoAutorizado");
             } else if (session.getAttribute("perfil").equals(2)) {
@@ -28,33 +28,27 @@
             }
 
         %>
-   
 
-      
-          <!-- Page content -->
-          
-          <h4> ${resultado} </h4>
-          
-          
-       
-        <%
-           out.print("<h4> Id:" + session.getAttribute("user") + " Perfil: " + session.getAttribute("perfil"));
-
-        %>
+        <!-- Page content -->
+     
+        <p class="text-success"> ${resultado} </p>
         <br>
-        <img  width="600" height="400" src="<c:url value="/resources/images/volei.jpg" />" />
-        
-        
-        
-        
-              <%
+        <%
+            out.print("<h4> Bem vindo: " + session.getAttribute("nome"));
+        %>
+
+
+        <br><br>
+        <img  width="550" height="350" class="img-rounded" src="<c:url value="/resources/images/volei.jpg" />" />
+
+        <%
             } else {
                 response.sendRedirect("login");
             }
         %>	
 
 
-</body>
+    </body>
 
 </html>
 

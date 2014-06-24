@@ -44,37 +44,28 @@
         %>
 
 
-
-
-
-
-
         <Div  class = "cabecalho da pagina" > 
-            <h1> Recursos humanos<small> Visualizar Dados Atleta </small>  </h1> 
+            <h1> Gerir atletas<small> Visualizar Dados Atleta </small>  </h1> 
         </div><br>
 
-        <table class="table">
-            <thead>
-                <tr>
+        <img src="<c:url value="/resources/images/braga.jpg" />" /> 
+        <table width="50%">
 
-                    <th>Nome</th>
-                    <td>DataNascimento</td>                              
-                    <th>Telefone</th>
+            <c:forEach var="ul" items="${lutilizador}">
+                <tr>
+                    <th>Nome:</th>
+                    <td>${ul.getNome()}</td><br>
+                </tr><br>
+                <tr>
+                    <td>DataNascimento:</td> 
+                    <td>${ul.getDataNascimento()}</td>
+                </tr>
+                <tr>
+                    <th>Telefone:</th>
+                    <td>${ul.getTelefone()}</td>
 
                 </tr>
-            </thead>
-            <c:forEach var="ul" items="${lutilizador}">
 
-               
-                    <tr>
-
-                        <td>${ul.getNome()}</td>
-                        <td>${ul.getDataNascimento()}</td>
-                        <td>${ul.getTelefone()}</td>
-
-
-                    </tr>
-               
             </c:forEach>
         </table>
 
