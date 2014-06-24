@@ -35,12 +35,7 @@
                                         <li><a href='gerarDadosTabela'><span>-GerarDadosTabela</span></a></li>
                                         <li class='last'><a href='gerarDadosGrafico'><span>-GerarDadosGráfico</span></a></li>
                                     
-                                
-                                <li class='has-sub'><a href='#'><span><p style="color: white; background-color: #b81c40; letter-spacing: 6">Manusear Vídeo</p></span></a></li>
-                                    
-                                        <li><a href='#'><span>-InserirVídeo</span></a></li>
-                                        <li class='last'><a href='#'><span>-ApagarVídeo</span></a></li>
-                                        <li class='last'><a href='#'><span>-VisualizarVídeo</span></a></li>
+                          
                                     
                                 
                             </ul>
@@ -58,12 +53,7 @@
                                         <li><a href='dadosTabela'><span>-AnalisarDadosTabela</span></a></li>
                                         <li><a href='dadosGrafico'><span>-AnalisarDadosGrafico</span></a></li>
                                     
-                                
-                                <li class='has-sub'><a href='#'><span><p style="color: white; background-color: #b81c40; letter-spacing: 6">Manusear Vídeo</p></span></a></li> 
-                                    
-                                        <li><a href='#'><span>-InserirVídeo</span></a></li>
-                                        <li><a href='#'><span>-ApagarVídeo</span></a></li>
-                                        <li><a href='#'><span>-VisualizarVídeo</span></a></li>
+                      
                                     
                                 
                             </ul>

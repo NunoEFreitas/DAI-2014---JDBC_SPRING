@@ -15,15 +15,13 @@
                     <ul>
                         <li class='active'><a href='/VoleiUM/olheiro'><span>Olheiro</span></a></li>
                           <li><a href='/VoleiUM/sair'><img src="<c:url value="/resources/images/logout.png" />" /></a></li>
-                        <li class='has-sub'><a href='#'><span>Inserir Dados em Tempo Real</span></a>
+                        <li class='has-sub'><a href='#'><span>Analisar Adversários</span></a>
                             <ul>
-                                <li class='has-sub'><a href='/VoleiUM/criarJogoAD'><span>CriarJogo</span></a></li>
-                                <li class='has-sub'><a href='#'><span><p style="color: white; background-color: #b81c40; letter-spacing: 6">Inserir Dados de Jogo</p></span></a></li>
+                               
+                                
                                     
-                                        <li><a href='#'><span>-InserirTendênciaPasse</span></a></li>
-                                        <li><a href='#'><span>-InserirTendênciaServiço</span></a></li>
-                                        <li><a href='#'><span>-InserirTendênciaAtaque</span></a></li>
-                                        <li><a href='#'><span>-InserirFalhasReceção</span></a></li>
+                                        <li><a href='#'><span>-listarJogos</span></a></li>
+                                      
                                         
                                     
                                 

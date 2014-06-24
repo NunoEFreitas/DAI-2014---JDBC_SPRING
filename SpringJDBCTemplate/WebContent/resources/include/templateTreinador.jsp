@@ -49,11 +49,7 @@
                                         <li class='last'><a href='gerarDadosGrafico'><span>-GerarDadosGráfico</span></a></li>
                                     
                               
-                                <li class='has-sub'><a href='#'><span><p style="color: white; background-color: #b81c40; letter-spacing: 6">Manusear Vídeo</p></span></a></li>
-                                    
-                                        <li><a href='/VoleiUM/criarVideo'><span>-InserirVídeo</span></a></li>
-                                        <li class='last'><a href='#'><span>-ApagarVídeo</span></a></li>
-                                        <li class='last'><a href='#'><span>-VisualizarVídeo</span></a></li>
+                               
                                     
                                 
                             </ul>
@@ -63,7 +59,7 @@
                                 <li class='has-sub'><a href='#'><span><p style="color: white; background-color: #b81c40; letter-spacing: 2">Inserir Dados em Tempo Real</p></span></a></li>
                                     
                                         <li><a href='/VoleiUM/criarJogoAD'><span>-CriarJogo</span></a></li>
-                                        <li><a href='#'><span>-InserirDadosJogo</span></a></li>
+                                    
                                     
                                 
                                 <li class='has-sub'><a href='#'><span><p style="color: white; background-color: #b81c40; letter-spacing: 6">Analisar à Posteriori</p></span></a></li>
@@ -72,11 +68,7 @@
                                         <li><a href='/VoleiUM/dadosGrafico'><span>-AnalisarDadosGrafico</span></a></li>
                                     
                                 
-                                <li class='has-sub'><a href='#'><span><p style="color: white; background-color: #b81c40; letter-spacing: 6">Manusear Vídeo</p></span></a></li>
-                                    
-                                        <li><a href='/VoleiUM/criarVideo'><span>-InserirVídeo</span></a></li>
-                                        <li><a href='#'><span>-ApagarVídeo</span></a></li>
-                                        <li><a href='#'><span>-VisualizarVídeo</span></a></li>
+                             
                                     
                                  
                             </ul>
