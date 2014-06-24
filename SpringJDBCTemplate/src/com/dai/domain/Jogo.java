@@ -44,19 +44,48 @@ public class Jogo {
         this.hora = hora;
     }
 
-    public String getResultado() {
-        return resultado;
+    public int getResultadoCasa() {
+        return resultadoCasa;
     }
 
-    public void setResultado(String resultado) {
-        this.resultado = resultado;
+    public void setResultadoCasa(int resultadoCasa) {
+        this.resultadoCasa = resultadoCasa;
     }
+
+    public int getResultadoFora() {
+        return resultadoFora;
+    }
+
+    public void setResultadoFora(int resultadoFora) {
+        this.resultadoFora = resultadoFora;
+    }
+
+    public int getSetCasa() {
+        return setCasa;
+    }
+
+    public void setSetCasa(int setCasa) {
+        this.setCasa = setCasa;
+    }
+
+    public int getSetFora() {
+        return setFora;
+    }
+
+    public void setSetFora(int setFora) {
+        this.setFora = setFora;
+    }
+
+
     
     private int idJogo;
     private String local;
     private String data;
     private String hora;
-    private String resultado;
+    private int resultadoCasa;
+    private int resultadoFora;
+    private int setCasa;
+    private int setFora;
     private int idCompeticao;
     private int idEquipaAdversaria;
     private String designacaoC;

@@ -56,7 +56,7 @@
                     <td> ${lj.getHora()} </td>
                     <td> ${lj.getIdCompeticao()} </td>
                     <td> ${lj.getIdEquipaAdversaria()} </td>
-                    <td> ${lj.getResultado()} </td>
+                    <td> ${lj.getResultadoCasa()} - ${lj.getResultadoFora()} </td>
                     <td><a href="inserirDados/${lj.getIdJogo()}">Selecionar</a></td>
                 </tr>
             </c:forEach>

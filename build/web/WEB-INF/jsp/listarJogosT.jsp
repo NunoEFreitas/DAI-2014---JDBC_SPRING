@@ -56,7 +56,7 @@
                     <td> ${lj.getHora()} </td>
                     <td> ${lj.getDesignacaoC()} </td>
                     <td> ${lj.getDesignacaoEA()} </td>
-                    <td> ${lj.getResultado()} </td>
+                    <td> ${lj.getResultadoCasa()} - ${lj.getResultadoFora()} </td>
                     <td><a href="jogoSelecionados/${lj.getIdJogo()}">Selecionar</a></td>
                     <td><a href="editarJogo/${lj.getIdJogo()}">Selecionar</a></td>
                 </tr>

@@ -50,6 +50,8 @@
                                             <br>
                                             <label> Zona 1 </label>
                                             <select id="zona1" onchange="atribui1()"></select>
+                                            
+                                            
                                             <br>
                                             <label> Zona 2 </label>
                                             <select id="zona2" onchange="atribui2()"></select>
@@ -97,7 +99,9 @@
                                             <div class="elementBotRight" id="pos17" name="pos17" > 17 </div>
                                             <div class="elementOutRight" id="pos18" name="pos18" > 18 </div>
                                             <div class="elementServiceRight" id="pos20" name="pos20" > 20 </div>
-
+                                            <div id="voltarCampo">
+                <a href="javascript:history.back()"><h2>Voltar</h2></a>
+                </div>
                                         </div>
 
                                         <div id="atribui2">
@@ -280,7 +284,7 @@
                                                         origem = ar[nJogadas - 2] [2];
                                                         destino = ar[nJogadas - 1] [2];
                                                         ponto = "fora";
-                                                        alert(tipoEstatistica);
+                                                        
                                                         pontoCum(ponto);
                                                         insereJogada(rotacaoP, jogadorP, origem, rotacaoEA, jogadorEA, destino, classificacao, jogo, tipoEstatistica);
                                                     } else if (($.inArray(posicaoUjogada, campo2) >= 0) || ($.inArray(posicaoUjogada, fora) >= 0) && (posicaoPjogada == 20)) {
@@ -307,21 +311,22 @@
                                                     } else if (($.inArray(posicaoUjogada, campo1) >= 0) && ($.inArray(posicaoPjogada, campo2) >= 0)) {
                                                             $('#jogadasTxt').html('defesa da zona '+posicaoUjogada+' a um ataque da zona' + posicaoPjogada);
                                                             $("#popUpDivDefesas").show();
-                                                        } else if (($.inArray(posicaoUjogada, fora) >= 0) && ($.inArray(posicaoPjogada, campo2) >= 0)) {
+                                                        } else if (($.inArray(posicaoUjogada, fora) >= 0) && ($.inArray(posicaoPjogada, campo1) >= 0)) {
                                                                 $('#jogadasTxt').html('erro jogada para fora, ponto para o adversario');
+                                                                    alert(posicaoPjogada);
                                                                     classificacao = 0;
                                                                     tipoEstatistica = 3;
                                                                     rotacaoP = ar[nJogadas - 2] [0];
                                                                     rotacaoEA = ar[nJogadas - 1] [0];
                                                                     jogadorP = ar[nJogadas - 2] [1];
-                                                                    jogadorEA = null;
+                                                                    jogadorEA = 0;
                                                                     origem = ar[nJogadas - 2] [2];
                                                                     destino = ar[nJogadas - 1] [2];
                                                                     ponto = "fora";
                                                                     pontoCum(ponto);
                                                                     insereJogada(rotacaoP, jogadorP, origem, rotacaoEA, jogadorEA, destino, classificacao, jogo, tipoEstatistica);
                                                                 
-                                                            }  else if (($.inArray(posicaoUjogada, fora) >= 0) && ($.inArray(posicaoPjogada, campo1) >= 0)) {
+                                                            }  else if (($.inArray(posicaoUjogada, fora) >= 0) && ($.inArray(posicaoPjogada, campo2) >= 0)) {
                                                                 $('#jogadasTxt').html('erro jogada para fora, ponto para a nossa equipa');
                                                                     classificacao = 0;
                                                                     tipoEstatistica = 4;
@@ -350,6 +355,16 @@
                                             function insereJogada(rotacaoP, jogadorP, origem, rotacaoEA, jogadorEA, destino, classificacao, jogo, tipoEstatistica) {
 
                                                 alert('ajax');
+                                                //alert(rotacaoP);
+                                                //alert(jogadorP);
+                                                //alert(origem);
+                                                //alert(rotacaoEA);
+                                                //alert(jogadorEA);
+                                                //alert(destino);
+                                                //alert(classificacao);
+                                                //alert(jogo);
+                                                //alert(tipoEstatistica);
+                                                
                                                 $.ajax({
                                                     url: '${pageContext.request.contextPath}/insereJogada',
                                                     data: {"rotacaoP": rotacaoP, "jogadorP": jogadorP, "origem": origem, "rotacaoEA": rotacaoEA, "jogadorEA": jogadorEA, "destino": destino, "classificacao": classificacao, "jogo": jogo, "tipoEstatistica": tipoEstatistica},
@@ -449,8 +464,13 @@
                                                 }
 
                                             }
-
+                                            
                                             var sel1 = document.getElementById('zona1');
+                                            var opt1 = document.createElement('option');
+                                            opt1.innerHTML = "Por favor Selecione um Jogador";
+                                            opt1.disabled = "disabled";
+                                            opt1.selected = "selected";
+                                            sel1.appendChild(opt1);
                                             <c:forEach items='${map.lut}' var='lut'>
                                             var opt1 = document.createElement('option');
                                             opt1.innerHTML = "<c:out value ="${lut.nome}"></c:out>";
@@ -459,6 +479,11 @@
                                             </c:forEach>
 
                                             var sel2 = document.getElementById('zona2');
+                                            var opt2 = document.createElement('option');
+                                            opt2.innerHTML = "Por favor Selecione um Jogador";
+                                            opt2.disabled = "disabled";
+                                            opt2.selected = "selected";
+                                            sel2.appendChild(opt2);
                                             <c:forEach items='${map.lut}' var='lut'>
                                             var opt2 = document.createElement('option');
                                             opt2.innerHTML = "<c:out value ="${lut.nome}"></c:out>";
@@ -467,6 +492,11 @@
                                             </c:forEach>
 
                                             var sel3 = document.getElementById('zona3');
+                                            var opt3 = document.createElement('option');
+                                            opt3.innerHTML = "Por favor Selecione um Jogador";
+                                            opt3.disabled = "disabled";
+                                            opt3.selected = "selected";
+                                            sel3.appendChild(opt3);
                                             <c:forEach items='${map.lut}' var='lut'>
                                             var opt3 = document.createElement('option');
                                             opt3.innerHTML = "<c:out value ="${lut.nome}"></c:out>";
@@ -475,6 +505,11 @@
                                             </c:forEach>
 
                                             var sel4 = document.getElementById('zona4');
+                                            var opt4 = document.createElement('option');
+                                            opt4.innerHTML = "Por favor Selecione um Jogador";
+                                            opt4.disabled = "disabled";
+                                            opt4.selected = "selected";
+                                            sel4.appendChild(opt4);
                                             <c:forEach items='${map.lut}' var='lut'>
                                             var opt4 = document.createElement('option');
                                             opt4.innerHTML = "<c:out value ="${lut.nome}"></c:out>";
@@ -483,6 +518,11 @@
                                             </c:forEach>
 
                                             var sel5 = document.getElementById('zona5');
+                                            var opt5 = document.createElement('option');
+                                            opt5.innerHTML = "Por favor Selecione um Jogador";
+                                            opt5.disabled = "disabled";
+                                            opt5.selected = "selected";
+                                            sel5.appendChild(opt5);
                                             <c:forEach items='${map.lut}' var='lut'>
                                             var opt5 = document.createElement('option');
                                             opt5.innerHTML = "<c:out value ="${lut.nome}"></c:out>";
@@ -491,6 +531,11 @@
                                             </c:forEach>
 
                                             var sel6 = document.getElementById('zona6');
+                                            var opt6 = document.createElement('option');
+                                            opt6.innerHTML = "Por favor Selecione um Jogador";
+                                            opt6.disabled = "disabled";
+                                            opt6.selected = "selected";
+                                            sel6.appendChild(opt6);
                                             <c:forEach items='${map.lut}' var='lut'>
                                             var opt6 = document.createElement('option');
                                             opt6.innerHTML = "<c:out value ="${lut.nome}"></c:out>";
@@ -539,6 +584,11 @@
 
 
                                             var sel7 = document.getElementById('zona7');
+                                            var opt7 = document.createElement('option');
+                                            opt7.innerHTML = "Por favor Selecione um Jogador";
+                                            opt7.disabled = "disabled";
+                                            opt7.selected = "selected";
+                                            sel7.appendChild(opt7);
                                             <c:forEach items='${map.ljea}' var='ljea'>
                                             var opt7 = document.createElement('option');
                                             opt7.innerHTML = "<c:out value ="${ljea.nome}"></c:out>";
@@ -547,6 +597,11 @@
                                             </c:forEach>
 
                                             var sel8 = document.getElementById('zona8');
+                                            var opt8 = document.createElement('option');
+                                            opt8.innerHTML = "Por favor Selecione um Jogador";
+                                            opt8.disabled = "disabled";
+                                            opt8.selected = "selected";
+                                            sel8.appendChild(opt8);
                                             <c:forEach items='${map.ljea}' var='ljea'>
                                             var opt8 = document.createElement('option');
                                             opt8.innerHTML = "<c:out value ="${ljea.nome}"></c:out>";
@@ -555,6 +610,11 @@
                                             </c:forEach>
 
                                             var sel9 = document.getElementById('zona9');
+                                            var opt9 = document.createElement('option');
+                                            opt9.innerHTML = "Por favor Selecione um Jogador";
+                                            opt9.disabled = "disabled";
+                                            opt9.selected = "selected";
+                                            sel9.appendChild(opt9);
                                             <c:forEach items='${map.ljea}' var='ljea'>
                                             var opt9 = document.createElement('option');
                                             opt9.innerHTML = "<c:out value ="${ljea.nome}"></c:out>";
@@ -563,6 +623,11 @@
                                             </c:forEach>
 
                                             var sel10 = document.getElementById('zona10');
+                                            var opt10 = document.createElement('option');
+                                            opt10.innerHTML = "Por favor Selecione um Jogador";
+                                            opt10.disabled = "disabled";
+                                            opt10.selected = "selected";
+                                            sel10.appendChild(opt10);
                                             <c:forEach items='${map.ljea}' var='ljea'>
                                             var opt10 = document.createElement('option');
                                             opt10.innerHTML = "<c:out value ="${ljea.nome}"></c:out>";
@@ -571,6 +636,11 @@
                                             </c:forEach>
 
                                             var sel11 = document.getElementById('zona11');
+                                            var opt11 = document.createElement('option');
+                                            opt11.innerHTML = "Por favor Selecione um Jogador";
+                                            opt11.disabled = "disabled";
+                                            opt11.selected = "selected";
+                                            sel11.appendChild(opt11);
                                             <c:forEach items='${map.ljea}' var='ljea'>
                                             var opt11 = document.createElement('option');
                                             opt11.innerHTML = "<c:out value ="${ljea.nome}"></c:out>";
@@ -579,6 +649,11 @@
                                             </c:forEach>
 
                                             var sel12 = document.getElementById('zona12');
+                                            var opt12 = document.createElement('option');
+                                            opt12.innerHTML = "Por favor Selecione um Jogador";
+                                            opt12.disabled = "disabled";
+                                            opt12.selected = "selected";
+                                            sel12.appendChild(opt12);
                                             <c:forEach items='${map.ljea}' var='ljea'>
                                             var opt12 = document.createElement('option');
                                             opt12.innerHTML = "<c:out value ="${ljea.nome}"></c:out>";
@@ -708,7 +783,7 @@
                                                 });
                                                 $('#pos9').click(function(e) {
                                                     var rotacao = $("#r2").text();
-                                                    var jogador = $("#l9").text();
+                                                    var jogador = $("#i9").text();
                                                     var posicao = $("#p9").text();
                                                     jogada = [rotacao, jogador, posicao];
 
@@ -717,7 +792,7 @@
                                                 });
                                                 $('#pos10').click(function(e) {
                                                     var rotacao = $("#r2").text();
-                                                    var jogador = $("#l10").text();
+                                                    var jogador = $("#i10").text();
                                                     var posicao = $("#p10").text();
                                                     jogada = [rotacao, jogador, posicao];
 
@@ -726,7 +801,7 @@
                                                 });
                                                 $('#pos11').click(function(e) {
                                                     var rotacao = $("#r2").text();
-                                                    var jogador = $("#l11").text();
+                                                    var jogador = $("#i11").text();
                                                     var posicao = $("#p11").text();
                                                     jogada = [rotacao, jogador, posicao];
 
@@ -735,10 +810,10 @@
                                                 });
                                                 $('#pos12').click(function(e) {
                                                     var rotacao = $("#r2").text();
-                                                    var jogador = $("#l12").text();
+                                                    var jogador = $("#i12").text();
                                                     var posicao = $("#p12").text();
                                                     jogada = [rotacao, jogador, posicao];
-
+                                                    
                                                     ar.push(jogada);
                                                     controlo();
 
@@ -908,14 +983,14 @@
                                                     jogadorEA = ar[nJogadas - 1] [1];
                                                     origem = ar[nJogadas - 2] [2];
                                                     destino = ar[nJogadas - 1] [2];
-                                                    insereJogadada(rotacaoP, jogadorP, origem, rotacaoEA, jogadorEA, destino, classificacao, jogo, tipoEstatistica);
+                                                    insereJogada(rotacaoP, jogadorP, origem, rotacaoEA, jogadorEA, destino, classificacao, jogo, tipoEstatistica);
                                                     if (classificacao == 5) {
                                                         ponto = "casa";
                                                         pontoCum(ponto);
                                                     }
                                                     tipoEstatistica = 6;
                                                     classificacao = 5 - classificacao;
-                                                    insereJogadada(rotacaoP, jogadorP, origem, rotacaoEA, jogadorEA, destino, classificacao, jogo, tipoEstatistica);
+                                                    insereJogada(rotacaoP, jogadorP, origem, rotacaoEA, jogadorEA, destino, classificacao, jogo, tipoEstatistica);
                                                 });
                                             });
 
@@ -939,10 +1014,11 @@
                                                             ponto = "fora";
                                                             pontoCum(ponto);
                                                         }
-                                                        tipoEstatistica = 4;
+                                                        
+                                                    }
+                                                    tipoEstatistica = 4;
                                                         classificacao = 5 - classificacao;
                                                         insereJogada(rotacaoP, jogadorP, origem, rotacaoEA, jogadorEA, destino, classificacao, jogo, tipoEstatistica);
-                                                    }
                                                 
                                                 });
                                             });
@@ -962,12 +1038,12 @@
                                                     jogadorEA = ar[nJogadas - 2] [1];
                                                     origem = ar[nJogadas - 2] [2];
                                                     destino = ar[nJogadas - 1] [2];
-                                                    alert(classificacao);
+                                                    
                                                     if (classificacao == 5) {
                                                         $("#popUpDivBlocos").show();
                                                     } else {
                                                         tipoEstatistica = 5;
-                                                        alert('defesa');
+                                                       
                                                         insereJogada(rotacaoP, jogadorP, origem, rotacaoEA, jogadorEA, destino, classificacao, jogo, tipoEstatistica);
                                                         if (classificacao == 0) {
                                                             ponto = "fora";
@@ -976,7 +1052,7 @@
                                                         }
                                                         tipoEstatistica = 4;
                                                         classificacao = 5 - classificacao;
-                                                        alert('servico');
+                                                        
                                                         insereJogada(rotacaoP, jogadorP, origem, rotacaoEA, jogadorEA, destino, classificacao, jogo, tipoEstatistica);
                                                     }
 

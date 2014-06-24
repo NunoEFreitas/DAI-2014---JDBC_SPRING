@@ -21,4 +21,6 @@ public interface SelecaoJEADao {
     
     public List<SelecaoJEA> listaSJEA(int idJogo);
     
+    
+    
 }

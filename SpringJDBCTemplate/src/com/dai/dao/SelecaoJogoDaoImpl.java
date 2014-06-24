@@ -48,6 +48,7 @@ public class SelecaoJogoDaoImpl implements SelecaoJogoDao{
             
         }
         
+        @Override
         public List<SelecaoJogo> listaSL(int idJogo){
             
             List<SelecaoJogo> slList = new ArrayList();

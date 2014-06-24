@@ -28,9 +28,9 @@ public class JogoDaoImpl implements JogoDao{
 	public void novoJogo(Jogo jogo) {
 
 		String sql = "INSERT INTO jogo "
-				+ "( localJogo, dataJogo,resultadoJogo, horaJogo,"
+				+ "( localJogo, dataJogo, horaJogo,"
                         + " competicao_idCompeticao, equipaAdversaria_idequipaAdversaria) "
-                        + "VALUES (?, ?, ?, ?, ?, ?)";
+                        + "VALUES (?, ?, ?, ?, ?)";
 
 		JdbcTemplate template = new JdbcTemplate(dataSource);
                 
@@ -39,7 +39,7 @@ public class JogoDaoImpl implements JogoDao{
 		template.update(
 				sql,
 				new Object[] { jogo.getLocal(), jogo.getData(),
-                                    jogo.getResultado(), jogo.getHora(), 
+                                    jogo.getHora(), 
                                     jogo.getIdCompeticao(), jogo.getIdEquipaAdversaria()});
 
 	}
@@ -50,7 +50,7 @@ public class JogoDaoImpl implements JogoDao{
            
            List<Jogo> utList = new ArrayList();
 
-		String sql = "select * from jogo where resultadoJogo is not null and "
+		String sql = "select * from jogo where resultadoCasa is not null and resultadoFora is not null and "
                         + "idJogo in (select jogo_idjogo from"
                         + " selecaoJogo where utilizador_idutilizador=" + idUtilizador +")";
 
@@ -78,7 +78,7 @@ public class JogoDaoImpl implements JogoDao{
 	public List<Jogo> listaJogosPendentes() {
 		List<Jogo> utList = new ArrayList();
 
-		String sql = "select * from jogo where resultadoJogo is null";
+		String sql = "select * from jogo where resultadoCasa is null and resultadoFora is null";
 
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		utList = jdbcTemplate.query(sql, new JogoRowMapper());
@@ -115,12 +115,12 @@ public class JogoDaoImpl implements JogoDao{
          @Override
         public List<Jogo> listaJogosPendentesEscalao(Integer idEscalao){
                 List<Jogo> utList = new ArrayList();
-                String sql = "select jogo.idJogo, jogo.localJogo, jogo.dataJogo, jogo.resultadoJogo, "
+                String sql = "select jogo.idJogo, jogo.localJogo, jogo.dataJogo, jogo.resultadoCasa ,jogo.resultadoFora, "
                         + "jogo.horaJogo, jogo.competicao_idCompeticao, competicao.designacaoCompeticao, "
                         + "jogo.equipaAdversaria_idequipaAdversaria, equipaAdversaria.nomeEquipaAdversaria  "
                         + "from jogo inner join competicao on jogo.competicao_idCompeticao = competicao.idCompeticao " +
                         "inner join equipaAdversaria on jogo.equipaAdversaria_idequipaAdversaria = equipaAdversaria.idEquipaAdversaria "
-                        + "where resultadoJogo is null and competicao_idCompeticao IN (select idCompeticao from competicao where escalao_idEscalao_c = " + idEscalao +  ")";
+                        + "where resultadoCasa is null and resultadoFora is null and competicao_idCompeticao IN (select idCompeticao from competicao where escalao_idEscalao_c = " + idEscalao +  ")";
                 JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		utList = jdbcTemplate.query(sql, new JogoRowMapperL());
 		return utList;
@@ -129,13 +129,16 @@ public class JogoDaoImpl implements JogoDao{
         @Override
         public void apagaJogo(Integer idJogo){
             
-            String sql = "delete from selecaoJogo where jogo_idjogo =" + idJogo;
+            String sql ="delete from estatisticas where idjogo_est =" + idJogo;
+            String sql2 = "delete from selecaoJogo where jogo_idjogo =" + idJogo;
            
-		
-            String sql2 = "delete from jogo where idJogo =" + idJogo;
+            
+            String sql3 = "delete from jogo where idJogo =" + idJogo;
+            
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
                 jdbcTemplate.update(sql);
 		jdbcTemplate.update(sql2);
+                jdbcTemplate.update(sql3);
             
         }
         
@@ -144,7 +147,7 @@ public class JogoDaoImpl implements JogoDao{
             
             List<Jogo> utList = new ArrayList();
 
-		String sql = "SELECT * FROM jogo where resultadoJogo is not null and "
+		String sql = "SELECT * FROM jogo where resultadoCasa is not null resultadoFora is not null and "
                         + "competicao_idCompeticao IN (select idCompeticao from "
                         + "competicao where escalao_idEscalao_c =" + idEscalao +  ")";
 
@@ -160,7 +163,7 @@ public class JogoDaoImpl implements JogoDao{
             
             List<Jogo> utList = new ArrayList();
 
-		String sql = "select * from jogo where resultadoJogo is"
+		String sql = "select * from jogo where resultadoCasa is null and resultadoFora is"
                         + " null and idJogo in (select jogo_idjogo from "
                         + "selecaoJogo where utilizador_idutilizador = "+ idUtilizador +")";
 
