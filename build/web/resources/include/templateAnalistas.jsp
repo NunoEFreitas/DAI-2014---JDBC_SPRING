@@ -14,24 +14,32 @@
                 <div id='cssmenu'>
                     <ul>
                         <li class='active'><a href='/VoleiUM/analistas'><span>Analista</span></a></li>
-                          <li><a href='/VoleiUM/sair'><img src="<c:url value="/resources/images/logout.png" />" /></a></li>
-                        <li class='has-sub'><a href='#'><span>Analisar em Tempo Real</span></a>
+                        <li><a href='/VoleiUM/sair'><img src="<c:url value="/resources/images/logout.png" />" /></a></li>
+                        <li class='has-sub'><a href='#'><span>Gerir Competicoes</span></a>
                             <ul>
-                                <li class='has-sub'><a href='listarJogosA'><span>Listar Jogos</span></a>
-                                   
-                                </li>
-                                
+                                <li class="titulo"><a href='#'><span><p style="color: white; background-color: #b81c40; letter-spacing: 4">Analisar em Tempo Real</p></span></a></li>
+
+
+                                <li class='last'><a href='/VoleiUM/listarJogosA'><span>-Listar Jogos</span></a></li>
+
+
+
+
+
+
                             </ul>
                         </li>
-                         <li class='has-sub'><a href='#'><span>Analisar À Posteriori</span></a>
-                            <ul>
+                        <li class='has-sub'><a href='#'><span>Analisar Adversários</span></a>
+                            <ul>    
+                                <li class="titulo"><a href='#'><span><p style="color: white; background-color: #b81c40; letter-spacing: 4">Analisar em Tempo Real</p></span></a></li>
+
                                 <li class='has-sub'><a href='#'><span>GerarDadosGráfico</span></a></li>
-                            
+
                             </ul>
                         </li>
-                       
+
                     </ul>
                     <br>
                     <br>
-    </body>
-</html> 
+              </body>
+       </html> 
