@@ -210,6 +210,7 @@ public class UtilizadorController {
 
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
+            session.setAttribute("nome", ut.getNome());
             session.setAttribute("perfil", ut.getIdPerfil());
             session.setAttribute("escalao", ut.getIdEscalao());
 

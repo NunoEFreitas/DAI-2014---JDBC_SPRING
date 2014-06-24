@@ -34,14 +34,15 @@
        
         <!-- Page content -->
        
-        <h3> ${resultado} </h3>
-                   <% 
-          out.print("<h4> Id:" + session.getAttribute("user") + " Perfil: " + session.getAttribute("perfil"));
-          
-       
-       %>
-       <br>
-       <img  width="600" height="400" src="<c:url value="/resources/images/volei.jpg" />" />   
+       <p class="text-success"> ${resultado} </p>
+        <br>
+        <%
+            out.print("<h4> Bem vindo: " + session.getAttribute("nome"));
+        %>
+
+
+        <br><br>
+        <img  width="550" height="350" class="img-rounded" src="<c:url value="/resources/images/volei.jpg" />" />
 
        <%
             } else {
