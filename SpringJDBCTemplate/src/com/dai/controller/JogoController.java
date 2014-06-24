@@ -444,7 +444,7 @@ public class JogoController {
     
    
     
-    @RequestMapping("estatisticas/getEstatisticas/seP/{idJogo}/{idUtilizador}")
+    @RequestMapping("estatisticas/getEstatisticas/sePI/{idJogo}/{idUtilizador}")
     public ModelAndView getEstatisticasePI(@PathVariable("idJogo") Integer jogo, @PathVariable("idUtilizador") Integer ut) {
         Map<String, Object> map = new HashMap<String, Object>();
         List<Estatistica> dados = null;

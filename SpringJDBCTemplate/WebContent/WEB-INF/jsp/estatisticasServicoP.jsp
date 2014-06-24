@@ -67,7 +67,7 @@
                  <div id="comboestat1">
               <c:forEach items='${map.lsj}' var='lsj'>
    
-                  <a href="/VoleiUM/estatisticas/getEstatisticas/sePI/${map.jogo}/${lsj.getIdJEA()}"><h2>${lsj.getNome()}</h2></a>     
+                  <a href="/VoleiUM/estatisticas/getEstatisticas/sePI/${map.jogo}/${lsj.getIdUtilizador()}"><h2>${lsj.getNome()}</h2></a>     
                     </c:forEach>
                  
             </div>

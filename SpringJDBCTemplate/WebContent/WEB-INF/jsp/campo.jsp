@@ -897,11 +897,12 @@
 
                                             function pontoCum(ponto) {
                                                 if (ponto == "casa") {
+                                                    ar.length = 0;
                                                     document.getElementById('btncasa').value++;
                                                     if(comeco==20){
                                                         rotacaoCampo1();
                                                     }
-                                                    ar.length = 0;
+                                                    
                                                     if (document.getElementById('btncasa').value >= 25 && (document.getElementById('btncasa').value - document.getElementById('btnfora').value >= 2)) {
                                                         document.getElementById('btnsetcasa').value++;
                                                         document.getElementById('btncasa').value = 0;
@@ -909,11 +910,12 @@
                                                     }
                                                 }
                                                 if (ponto == "fora") {
+                                                    ar.length = 0;
                                                     document.getElementById('btnfora').value++;
                                                     if(comeco==19){
                                                         rotacaoCampo2();
                                                     }
-                                                    ar.length = 0;
+                                                    
                                                     if (document.getElementById('btnfora').value >= 25 && (document.getElementById('btnfora').value - document.getElementById('btncasa').value >= 2)) {
                                                         document.getElementById('btnsetfora').value++;
                                                         document.getElementById('btncasa').value = 0;
@@ -1050,7 +1052,11 @@
                                                             pontoCum(ponto);
 
                                                         }
+                                                        if(nJogadas==2){
+                                                            tipoEstatistica = 2;
+                                                        }else {
                                                         tipoEstatistica = 4;
+                                                    }
                                                         classificacao = 5 - classificacao;
                                                         
                                                         insereJogada(rotacaoP, jogadorP, origem, rotacaoEA, jogadorEA, destino, classificacao, jogo, tipoEstatistica);
