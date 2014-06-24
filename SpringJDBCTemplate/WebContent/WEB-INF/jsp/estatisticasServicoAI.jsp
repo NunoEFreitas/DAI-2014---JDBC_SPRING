@@ -20,7 +20,7 @@
 
 
         <div id="mid">
-            <h1>ESTATÍSTICAS TEMPO REAL - SERVICOS PROPRIO</h1>
+            <h1>ESTATÍSTICAS TEMPO REAL - SERVICOS ${map.nome}</h1>
             
 
 
@@ -67,7 +67,7 @@
                  <div id="comboestat1">
               <c:forEach items='${map.lsj}' var='lsj'>
    
-                  <a href="/VoleiUM/estatisticas/getEstatisticas/sePI/${map.jogo}/${lsj.getIdJEA()}"><h2>${lsj.getNome()}</h2></a>     
+                  <a href="/VoleiUM/estatisticas/getEstatisticas/seP/${map.jogo}/${lsj.getIdUtilizador()}"><h2>${lsj.getNome()}</h2></a>     
                     </c:forEach>
                  
             </div>
@@ -78,10 +78,10 @@
             <c:forEach items='${map.da}' var='da'>
    
                 document.getElementById(${da}).innerHTML++;
-                document.getElementById('19').innerHTML++;        
+                document.getElementById('20').innerHTML++;        
                     </c:forEach>
-                       document.getElementById('19').style.display = 'none'; 
-                       var total = document.getElementById('19').innerHTML;
+                       document.getElementById('20').style.display = 'none'; 
+                       var total = document.getElementById('20').innerHTML;
                        
                        for(i = 1; i<18;i++){
                            

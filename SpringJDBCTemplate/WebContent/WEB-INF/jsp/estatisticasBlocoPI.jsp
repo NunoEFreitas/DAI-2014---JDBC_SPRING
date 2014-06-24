@@ -20,7 +20,7 @@
 
 
         <div id="mid">
-            <h1>ESTATÍSTICAS TEMPO REAL - SERVICOS PROPRIO</h1>
+            <h1>ESTATÍSTICAS TEMPO REAL - BLOCOS ${map.nome}</h1>
             
 
 
@@ -67,7 +67,7 @@
                  <div id="comboestat1">
               <c:forEach items='${map.lsj}' var='lsj'>
    
-                  <a href="/VoleiUM/estatisticas/getEstatisticas/sePI/${map.jogo}/${lsj.getIdJEA()}"><h2>${lsj.getNome()}</h2></a>     
+                  <a href="/VoleiUM/estatisticas/getEstatisticas/seP/${map.jogo}/${lsj.getIdUtilizador()}"><h2>${lsj.getNome()}</h2></a>     
                     </c:forEach>
                  
             </div>

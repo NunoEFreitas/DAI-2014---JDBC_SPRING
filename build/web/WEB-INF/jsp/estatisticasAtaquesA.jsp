@@ -23,15 +23,6 @@
             <h1>ESTATÍSTICAS TEMPO REAL - ATAQUES ADVERSARIOS</h1>
             
 
-
-
-            
-            
-            
-            
-           
-            
-
             <div id="campo">
                 <div class="elementServiceLeft" id="pos19" name="pos19" > <br> <label id="19"> </label> </div>
                 <div class="elementOutLeft" id="pos13" name="pos13" ><label id="13">  </label>  </div>    
@@ -45,8 +36,8 @@
                 <div class="element5" id="pos5" name="pos5" ><label id="5">  </label> <br> <label id="l5">  </label></div>
                 <div class="elementLinha" id="posLinha" name="linha" >  </div>
                 <div class="element7" id="pos7" name="pos7" > <br> <label id="7"> </label></div>
-                <div class="element12" id="pos12" name="pos12" > <br> <label id="8"> </label></div>
-                <div class="element11" id="pos11" name="pos11" > <br> <label id="9"> </label></div>
+                <div class="element12" id="pos12" name="pos12" > <br> <label id="12"> </label></div>
+                <div class="element11" id="pos11" name="pos11" > <br> <label id="11"> </label></div>
                 <div class="element10" id="pos10" name="pos10" > <br> <label id="10"> </label></div>
                 <div class="element9" id="pos9" name="pos9" ><br> <label id="9"> </label></div>
                 <div class="element8" id="pos8" name="pos8" ><br> <label id="8"> </label></div>
@@ -56,6 +47,13 @@
                 <div class="elementServiceRight" id="pos20" name="pos20" ><br> <label id="20"> </label>  </div> 
 
             </div>
+            
+            <div id="comboestat2">
+              <c:forEach items='${map.lsj}' var='lsj'>
+   
+                  <a href="/VoleiUM/estatisticas/getEstatisticas/atAI/${map.jogo}/${lsj.getIdJEA()}"><h2>${lsj.getNome()}</h2></a>     
+                    </c:forEach>
+            </div>
 <div id="voltarCampo">
                 <a href="javascript:history.back()"><h2>Voltar</h2></a>
                 </div>
@@ -64,12 +62,24 @@
                   
                    
                 
-            <c:forEach items='${da}' var='da'>
+            <c:forEach items='${map.da}' var='da'>
              
                 document.getElementById(${da}).innerHTML++;
                 document.getElementById('20').innerHTML++;        
                     </c:forEach>
+                       document.getElementById('20').style.display = 'none'; 
+                       var total = document.getElementById('20').innerHTML;
                        
+                       for(i = 1; i<18;i++){
+                           
+                       var a = document.getElementById(i).innerHTML;
+                       if(a != 0){
+
+                       var percentagem = (a / total) * 100;
+                       percentagem = percentagem.toFixed(2);
+                       document.getElementById(i).innerHTML = percentagem + '%';
+                   }    
+                       } 
             
             
         </script>

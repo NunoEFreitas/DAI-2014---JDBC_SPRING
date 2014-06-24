@@ -27,7 +27,10 @@ public class JogoExtractor implements ResultSetExtractor<Jogo> {
                 jogo.setLocal(resultSet.getString("localJogo"));
                 jogo.setData(resultSet.getString("dataJogo"));
                 jogo.setHora(resultSet.getString("horaJogo"));
-                jogo.setResultado(resultSet.getString("resultadoJogo"));
+                jogo.setResultadoCasa(resultSet.getInt("resultadoCasa"));
+                jogo.setResultadoFora(resultSet.getInt("resultadoFora"));
+                jogo.setSetCasa(resultSet.getInt("setCasa"));
+                jogo.setSetFora(resultSet.getInt("setFora"));
                 jogo.setIdCompeticao(resultSet.getInt("competicao_idCompeticao"));
                 jogo.setIdEquipaAdversaria(resultSet.getInt("equipaAdversaria_idequipaAdversaria"));   
                 

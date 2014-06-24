@@ -62,7 +62,7 @@
                     <td> ${lj.getHora()} </td>
                     <td> ${lj.getIdCompeticao()} </td>
                     <td> ${lj.getIdEquipaAdversaria()} </td>
-                    <td> ${lj.getResultado()} </td>
+                    <td> ${lj.getResultadoCasa()} - ${lj.getResultadoFora()} </td>
                     <td><a href="jogoSelecionadosEA/${lj.getIdEquipaAdversaria()}/${lj.getIdJogo()}">Selecionar</a></td>
                     <td><a href="editarJogo/${lj.getIdJogo()}">Selecionar</a></td>
                     <td><a href="estatisticas/${lj.getIdJogo()}">Selecionar</a></td>

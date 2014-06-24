@@ -297,6 +297,8 @@ public class JogoController {
 
     @RequestMapping("estatisticas/getEstatisticas/seP/{idJogo}")
     public ModelAndView getEstatisticaSP(@PathVariable("idJogo") Integer jogo) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        List<SelecaoJogo> lsj = slService.listaSL(jogo);
         List<Estatistica> dados = null;
         dados = eService.listaServicosP(jogo);
         List<Integer> da = new ArrayList();
@@ -307,12 +309,17 @@ public class JogoController {
             da.add(obj.getDestino());
 
         }
+        map.put("jogo",jogo);
+        map.put("da", da);
+        map.put("lsj",lsj);
 
-        return new ModelAndView("estatisticasServicoP", "da", da);
+        return new ModelAndView("estatisticasServicoP", "map", map);
     }
 
     @RequestMapping("estatisticas/getEstatisticas/seA/{idJogo}")
     public ModelAndView getEstatisticaSA(@PathVariable("idJogo") Integer jogo) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        List<SelecaoJEA> lsj = sjeaService.listaSJEA(jogo);
         List<Estatistica> dados = null;
         dados = eService.listaServicosA(jogo);
         List<Integer> da = new ArrayList();
@@ -323,12 +330,17 @@ public class JogoController {
             da.add(obj.getDestino());
 
         }
+        map.put("jogo",jogo);
+        map.put("da", da);
+        map.put("lsj",lsj);
 
-        return new ModelAndView("estatisticasServicoA", "da", da);
+        return new ModelAndView("estatisticasServicoA", "map", map);
     }
 
     @RequestMapping("estatisticas/getEstatisticas/atP/{idJogo}")
     public ModelAndView getEstatisticaAP(@PathVariable("idJogo") Integer jogo) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        List<SelecaoJogo> lsj = slService.listaSL(jogo);
         List<Estatistica> dados = null;
         dados = eService.listaAtaquesP(jogo);
         List<Integer> da = new ArrayList();
@@ -339,12 +351,17 @@ public class JogoController {
             da.add(obj.getDestino());
 
         }
+         map.put("jogo",jogo);
+        map.put("da", da);
+        map.put("lsj",lsj);
 
-        return new ModelAndView("estatisticasAtaquesP", "da", da);
+        return new ModelAndView("estatisticasAtaquesP", "map", map);
     }
 
     @RequestMapping("estatisticas/getEstatisticas/atA/{idJogo}")
     public ModelAndView getEstatisticaAA(@PathVariable("idJogo") Integer jogo) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        List<SelecaoJEA> lsj = sjeaService.listaSJEA(jogo);
         List<Estatistica> dados = null;
         dados = eService.listaAtaquesA(jogo);
         List<Integer> da = new ArrayList();
@@ -352,15 +369,20 @@ public class JogoController {
         Iterator<Estatistica> it = dados.iterator();
         while (it.hasNext()) {
             Estatistica obj = it.next();
-            da.add(obj.getOrigem());
+            da.add(obj.getDestino());
 
         }
+        map.put("jogo",jogo);
+        map.put("da", da);
+        map.put("lsj",lsj);
 
-        return new ModelAndView("estatisticasAtaquesA", "da", da);
+        return new ModelAndView("estatisticasAtaquesA", "map", map);
     }
 
     @RequestMapping("estatisticas/getEstatisticas/deA/{idJogo}")
     public ModelAndView getEstatisticaDA(@PathVariable("idJogo") Integer jogo) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        List<SelecaoJEA> lsj = sjeaService.listaSJEA(jogo);
         List<Estatistica> dados = null;
         dados = eService.listaDefesasA(jogo);
         List<Integer> da = new ArrayList();
@@ -371,12 +393,17 @@ public class JogoController {
             da.add(obj.getDestino());
 
         }
+        map.put("jogo",jogo);
+        map.put("da", da);
+        map.put("lsj",lsj);
 
-        return new ModelAndView("estatisticasDefesaA", "da", da);
+        return new ModelAndView("estatisticasDefesaA", "map", map);
     }
 
     @RequestMapping("estatisticas/getEstatisticas/deP/{idJogo}")
     public ModelAndView getEstatisticaDP(@PathVariable("idJogo") Integer jogo) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        List<SelecaoJogo> lsj = slService.listaSL(jogo);
         List<Estatistica> dados = null;
         dados = eService.listaDefesasP(jogo);
         List<Integer> da = new ArrayList();
@@ -387,12 +414,17 @@ public class JogoController {
             da.add(obj.getDestino());
 
         }
+        map.put("jogo",jogo);
+        map.put("da", da);
+        map.put("lsj",lsj);
 
-        return new ModelAndView("estatisticasDefesaP", "da", da);
+        return new ModelAndView("estatisticasDefesaP", "map", map);
     }
 
     @RequestMapping("estatisticas/getEstatisticas/beP/{idJogo}")
     public ModelAndView getEstatisticaBP(@PathVariable("idJogo") Integer jogo) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        List<SelecaoJogo> lsj = slService.listaSL(jogo);
         List<Estatistica> dados = null;
         dados = eService.listaBlocosP(jogo);
         List<Integer> da = new ArrayList();
@@ -403,9 +435,173 @@ public class JogoController {
             da.add(obj.getDestino());
 
         }
+        map.put("jogo",jogo);
+        map.put("da", da);
+        map.put("lsj",lsj);
 
-        return new ModelAndView("estatisticasBlocoP", "da", da);
+        return new ModelAndView("estatisticasBlocoP", "map", map);
     }
+    
+   
+    
+    @RequestMapping("estatisticas/getEstatisticas/seP/{idJogo}/{idUtilizador}")
+    public ModelAndView getEstatisticasePI(@PathVariable("idJogo") Integer jogo, @PathVariable("idUtilizador") Integer ut) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        List<Estatistica> dados = null;
+        dados = eService.listaServicosP(jogo);
+        List<Integer> da = new ArrayList();
+        String nome = utilizadorService.getNome(ut);
+
+        Iterator<Estatistica> it = dados.iterator();
+        while (it.hasNext()) {
+            Estatistica obj = it.next();
+            if(obj.getIdUtilizador()==ut){
+            da.add(obj.getDestino());
+
+        }
+        map.put("da", da);
+        map.put("nome", nome);
+        
+    }
+        return new ModelAndView("estatisticasServicoPI", "map", map);
+    }
+    
+    @RequestMapping("estatisticas/getEstatisticas/atP/{idJogo}/{idUtilizador}")
+    public ModelAndView getEstatisticaatPI(@PathVariable("idJogo") Integer jogo, @PathVariable("idUtilizador") Integer ut) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        List<Estatistica> dados = null;
+        dados = eService.listaAtaquesP(jogo);
+        List<Integer> da = new ArrayList();
+        String nome = utilizadorService.getNome(ut);
+
+        Iterator<Estatistica> it = dados.iterator();
+        while (it.hasNext()) {
+            Estatistica obj = it.next();
+            if(obj.getIdUtilizador()==ut){
+            da.add(obj.getDestino());
+
+        }
+        map.put("da", da);
+        map.put("nome", nome);
+        
+    }
+        return new ModelAndView("estatisticasAtaquesPI", "map", map);
+    }
+    
+    @RequestMapping("estatisticas/getEstatisticas/deP/{idJogo}/{idUtilizador}")
+    public ModelAndView getEstatisticadePI(@PathVariable("idJogo") Integer jogo, @PathVariable("idUtilizador") Integer ut) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        List<Estatistica> dados = null;
+        dados = eService.listaDefesasP(jogo);
+        List<Integer> da = new ArrayList();
+        String nome = utilizadorService.getNome(ut);
+
+        Iterator<Estatistica> it = dados.iterator();
+        while (it.hasNext()) {
+            Estatistica obj = it.next();
+            if(obj.getIdUtilizador()==ut){
+            da.add(obj.getDestino());
+
+        }
+        map.put("da", da);
+        map.put("nome", nome);
+        
+    }
+        return new ModelAndView("estatisticasDefesaPI", "map", map);
+    }
+    
+    @RequestMapping("estatisticas/getEstatisticas/beP/{idJogo}/{idUtilizador}")
+    public ModelAndView getEstatisticabePI(@PathVariable("idJogo") Integer jogo, @PathVariable("idUtilizador") Integer ut) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        List<Estatistica> dados = null;
+        dados = eService.listaBlocosP(jogo);
+        List<Integer> da = new ArrayList();
+        String nome = utilizadorService.getNome(ut);
+
+        Iterator<Estatistica> it = dados.iterator();
+        while (it.hasNext()) {
+            Estatistica obj = it.next();
+            if(obj.getIdUtilizador()==ut){
+            da.add(obj.getDestino());
+
+        }
+        map.put("da", da);
+        map.put("nome", nome);
+        
+    }
+        return new ModelAndView("estatisticasBlocoPI", "map", map);
+    }
+    
+       @RequestMapping("estatisticas/getEstatisticas/atAI/{idJogo}/{idJEA}")
+    public ModelAndView getEstatisticaatAI(@PathVariable("idJogo") Integer jogo, @PathVariable("idJEA") Integer idJEA) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        List<Estatistica> dados = null;
+        dados = eService.listaAtaquesA(jogo);
+        List<Integer> da = new ArrayList();
+        String nome = jeaService.getNome(idJEA);
+        
+
+        Iterator<Estatistica> it = dados.iterator();
+        while (it.hasNext()) {
+            Estatistica obj = it.next();
+            if(obj.getIdJea()==idJEA){
+            da.add(obj.getDestino());
+
+        }
+        map.put("da", da);
+        map.put("nome", nome);
+        
+    }
+        return new ModelAndView("estatisticasAtaquesAI", "map", map);
+    }
+    
+    @RequestMapping("estatisticas/getEstatisticas/deAI/{idJogo}/{idJEA}")
+    public ModelAndView getEstatisticadeAI(@PathVariable("idJogo") Integer jogo, @PathVariable("idJEA") Integer idJEA) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        List<Estatistica> dados = null;
+        dados = eService.listaDefesasA(jogo);
+        List<Integer> da = new ArrayList();
+        String nome = jeaService.getNome(idJEA);
+        
+
+        Iterator<Estatistica> it = dados.iterator();
+        while (it.hasNext()) {
+            Estatistica obj = it.next();
+            if(obj.getIdJea()==idJEA){
+            da.add(obj.getDestino());
+
+        }
+        map.put("da", da);
+        map.put("nome", nome);
+        
+    }
+        return new ModelAndView("estatisticasDefesaAI", "map", map);
+    }
+    
+    @RequestMapping("estatisticas/getEstatisticas/seAI/{idJogo}/{idJEA}")
+    public ModelAndView getEstatisticaseAI(@PathVariable("idJogo") Integer jogo, @PathVariable("idJEA") Integer idJEA) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        List<Estatistica> dados = null;
+        dados = eService.listaServicosA(jogo);
+        List<Integer> da = new ArrayList();
+        String nome = jeaService.getNome(idJEA);
+        
+
+        Iterator<Estatistica> it = dados.iterator();
+        while (it.hasNext()) {
+            Estatistica obj = it.next();
+            if(obj.getIdJea()==idJEA){
+            da.add(obj.getDestino());
+
+        }
+        map.put("da", da);
+        map.put("nome", nome);
+        
+    }
+        return new ModelAndView("estatisticasServicoAI", "map", map);
+    }
+        
+ 
 
     @RequestMapping("/dadosGrafico")
     public ModelAndView dadosGrafico() {

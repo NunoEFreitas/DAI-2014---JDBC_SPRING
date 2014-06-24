@@ -89,7 +89,7 @@ public class EstatisticaDaoImpl implements EstatisticaDao {
     public List<Estatistica> listaServicosP(Integer idJogo) {
         List<Estatistica> lest = new ArrayList();
 
-        String sql = "select * from estatistica where tiposEstatistica_idtiposEstatistica = 6 and idjogo_est=" + idJogo;
+        String sql = "select * from estatistica where tiposEstatistica_idtiposEstatistica = 1 and idjogo_est=" + idJogo;
         JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
         lest = jdbcTemplate.query(sql, new EstatisticaRowMapper());
         return lest;
@@ -99,7 +99,7 @@ public class EstatisticaDaoImpl implements EstatisticaDao {
     public List<Estatistica> listaServicosA(Integer idJogo) {
         List<Estatistica> lest = new ArrayList();
 
-        String sql = "select * from estatistica where origem = 20 and idjogo_est=" + idJogo;
+        String sql = "select * from estatistica where tiposEstatistica_idtiposEstatistica = 2 and idjogo_est=" + idJogo;
         JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
         lest = jdbcTemplate.query(sql, new EstatisticaRowMapper());
         return lest;
@@ -119,7 +119,7 @@ public class EstatisticaDaoImpl implements EstatisticaDao {
     public List<Estatistica> listaAtaquesP(Integer idJogo) {
         List<Estatistica> lest = new ArrayList();
 
-        String sql = "select * from estatistica where tiposEstatistica_idtiposEstatistica = 2 and idjogo_est=" + idJogo;
+        String sql = "select * from estatistica where tiposEstatistica_idtiposEstatistica = 3 and idjogo_est=" + idJogo;
         JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
         lest = jdbcTemplate.query(sql, new EstatisticaRowMapper());
         return lest;
@@ -129,7 +129,7 @@ public class EstatisticaDaoImpl implements EstatisticaDao {
     public List<Estatistica> listaBlocosP(Integer idJogo) {
         List<Estatistica> lest = new ArrayList();
 
-        String sql = "select * from estatistica where tiposEstatistica_idtiposEstatistica = 3 and idjogo_est=" + idJogo;
+        String sql = "select * from estatistica where tiposEstatistica_idtiposEstatistica = 7 and idjogo_est=" + idJogo;
         JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
         lest = jdbcTemplate.query(sql, new EstatisticaRowMapper());
         return lest;
@@ -139,7 +139,7 @@ public class EstatisticaDaoImpl implements EstatisticaDao {
     public List<Estatistica> listaDefesasP(Integer idJogo) {
         List<Estatistica> lest = new ArrayList();
 
-        String sql = "select * from estatistica where tiposEstatistica_idtiposEstatistica = 4 and idjogo_est=" + idJogo;
+        String sql = "select * from estatistica where tiposEstatistica_idtiposEstatistica = 5 and idjogo_est=" + idJogo;
         JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
         lest = jdbcTemplate.query(sql, new EstatisticaRowMapper());
         return lest;
@@ -149,7 +149,7 @@ public class EstatisticaDaoImpl implements EstatisticaDao {
     public List<Estatistica> listaDefesasA(Integer idJogo) {
         List<Estatistica> lest = new ArrayList();
 
-        String sql = "select * from estatistica where tiposEstatistica_idtiposEstatistica = 2 and idjogo_est=" + idJogo;
+        String sql = "select * from estatistica where tiposEstatistica_idtiposEstatistica = 6 and idjogo_est=" + idJogo;
         JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
         lest = jdbcTemplate.query(sql, new EstatisticaRowMapper());
         return lest;
