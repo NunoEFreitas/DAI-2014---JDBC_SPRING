@@ -20,7 +20,7 @@
         <% } else if (session.getAttribute("perfil").equals(1)) {
                 response.sendRedirect("naoAutorizado");
             } else if (session.getAttribute("perfil").equals(3)) {%>
-                <%@include file="/resources/include/templateTreinador.jsp" %>
+                <%@include file="/resources/include/templateTreinadorAdjunto.jsp" %>
            <% } else if (session.getAttribute("perfil").equals(4)) {
                 response.sendRedirect("naoAutorizado");
             } else if (session.getAttribute("perfil").equals(5)) {
