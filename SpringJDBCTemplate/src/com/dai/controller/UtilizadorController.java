@@ -369,11 +369,5 @@ public class UtilizadorController {
 
     }
     
-    @RequestMapping("/historicoAtletaT")
-    public ModelAndView graficoAtleta(HttpServletRequest request) {
-        
-        return new ModelAndView("graficoAtletas");
-
-    }
 
 }

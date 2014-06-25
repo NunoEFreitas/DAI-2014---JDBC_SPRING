@@ -11,6 +11,7 @@
         <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
         <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
         <link href="<c:url value ="/resources/css/styleCampo.css"/>" rel="stylesheet" type="text/css">
+        
 
     </head>
 
@@ -181,9 +182,7 @@
 
                                         <div id="popUpDivAtaques" name="ataques">
                                             <h2> Ataques</h2>
-                                            <input type="radio" name="class" id="radio-mini-1" value=0  />
-                                            <label for="class">Erro</label>
-                                            <br>
+                                       
                                             <input type="radio" name="class" id="radio-mini-1" value=1  />
                                             <label for="class">1</label>
                                             <br>
@@ -220,7 +219,7 @@
                                             <input type="radio" name="class" id="radio-mini-5" value=5  />
                                             <label for="class">KILL</label>
                                         </div>
-
+        
 
                                         <script>
                                             var campo1 = [1, 2, 3, 4, 5, 6];
@@ -237,14 +236,30 @@
                                             var jogadorEA;
                                             var origem;
                                             var destino;
-                                            var jogo = ${map.jogo.get(0)};
+                                            var jogo = ${map.jogo.get(0).idJogo};
                                             var nJogadas;
                                             var posicaoUjogada;
                                             var posicaoPjogada;
                                             var comeco;
                                             var ponto;
                                             var tipoEstatistica;
-                                            
+                                            var equipa;
+                                            document.getElementById('btncasa').value = ${map.jogo.get(0).setCasa};
+                                            document.getElementById('btnfora').value = ${map.jogo.get(0).setFora};
+                                            document.getElementById('btnsetcasa').value = ${map.jogo.get(0).resultadoCasa};
+                                            document.getElementById('btnsetfora').value = ${map.jogo.get(0).resultadoFora};
+                                            document.getElementById("i1").style.display = 'none';
+                                            document.getElementById("i2").style.display = 'none';
+                                            document.getElementById("i3").style.display = 'none';
+                                            document.getElementById("i4").style.display = 'none';
+                                            document.getElementById("i5").style.display = 'none';
+                                            document.getElementById("i6").style.display = 'none';
+                                            document.getElementById("i7").style.display = 'none';
+                                            document.getElementById("i8").style.display = 'none';
+                                            document.getElementById("i9").style.display = 'none';
+                                            document.getElementById("i10").style.display = 'none';
+                                            document.getElementById("i11").style.display = 'none';
+                                            document.getElementById("i12").style.display = 'none';
                                             function controlo() {
 
                                                 nJogadas = ar.length;
@@ -313,7 +328,7 @@
                                                             $("#popUpDivDefesas").show();
                                                         } else if (($.inArray(posicaoUjogada, fora) >= 0) && ($.inArray(posicaoPjogada, campo1) >= 0)) {
                                                                 $('#jogadasTxt').html('erro jogada para fora, ponto para o adversario');
-                                                                    alert(posicaoPjogada);
+                                                                   
                                                                     classificacao = 0;
                                                                     tipoEstatistica = 3;
                                                                     rotacaoP = ar[nJogadas - 2] [0];
@@ -353,23 +368,35 @@
 
 
                                             function insereJogada(rotacaoP, jogadorP, origem, rotacaoEA, jogadorEA, destino, classificacao, jogo, tipoEstatistica) {
-
-                                                alert('ajax');
-                                                //alert(rotacaoP);
-                                                //alert(jogadorP);
-                                                //alert(origem);
-                                                //alert(rotacaoEA);
-                                                //alert(jogadorEA);
-                                                //alert(destino);
-                                                //alert(classificacao);
-                                                //alert(jogo);
-                                                //alert(tipoEstatistica);
                                                 
                                                 $.ajax({
                                                     url: '${pageContext.request.contextPath}/insereJogada',
                                                     data: {"rotacaoP": rotacaoP, "jogadorP": jogadorP, "origem": origem, "rotacaoEA": rotacaoEA, "jogadorEA": jogadorEA, "destino": destino, "classificacao": classificacao, "jogo": jogo, "tipoEstatistica": tipoEstatistica},
                                                     success: function(result) {
-                                                            alert(result);
+                                                          
+                                                    }
+                                                });
+                                            }
+                                            
+                                            function inserePonto(equipa,jogo) {
+                                                
+                                                $.ajax({
+                                                    url: '${pageContext.request.contextPath}/inserePonto',
+                                                    data: {"equipa": equipa, "jogo":jogo},
+                                                    success: function(result) {
+                                                         
+                                                    }
+                                                });
+                                            }
+                                            
+                                            function insereSet(equipa,jogo) {
+                                                
+                                                $.ajax({
+                                                    url: '${pageContext.request.contextPath}/insereSet',
+                                                    data: {"equipa": equipa, "jogo":jogo},
+                                                    success: function(result) {
+                                                      
+                                                          
                                                     }
                                                 });
                                             }
@@ -899,12 +926,16 @@
                                                 if (ponto == "casa") {
                                                     ar.length = 0;
                                                     document.getElementById('btncasa').value++;
+                                                    equipa = "casa";
+                                                    inserePonto(equipa,jogo);
                                                     if(comeco==20){
                                                         rotacaoCampo1();
                                                     }
                                                     
                                                     if (document.getElementById('btncasa').value >= 25 && (document.getElementById('btncasa').value - document.getElementById('btnfora').value >= 2)) {
                                                         document.getElementById('btnsetcasa').value++;
+                                                        equipa = "casa";
+                                                        insereSet(equipa,jogo);
                                                         document.getElementById('btncasa').value = 0;
                                                         document.getElementById('btnfora').value = 0;
                                                     }
@@ -912,12 +943,16 @@
                                                 if (ponto == "fora") {
                                                     ar.length = 0;
                                                     document.getElementById('btnfora').value++;
+                                                    equipa = "fora";
+                                                    inserePonto(equipa,jogo);
                                                     if(comeco==19){
                                                         rotacaoCampo2();
                                                     }
                                                     
                                                     if (document.getElementById('btnfora').value >= 25 && (document.getElementById('btnfora').value - document.getElementById('btncasa').value >= 2)) {
                                                         document.getElementById('btnsetfora').value++;
+                                                        equipa = "fora";
+                                                        insereSet(equipa,jogo);
                                                         document.getElementById('btncasa').value = 0;
                                                         document.getElementById('btnfora').value = 0;
                                                     }
@@ -931,6 +966,8 @@
                                                         ar.length = 0;
                                                         if (document.getElementById('btncasa').value >= 15 && (document.getElementById('btncasa').value - document.getElementById('btnfora').value >= 2)) {
                                                             document.getElementById('btnsetcasa').value++;
+                                                            equipa = "casa";
+                                                        insereSet(equipa,jogo);
                                                             document.getElementById('btncasa').value = 0;
                                                             document.getElementById('btnfora').value = 0;
                                                         }
@@ -939,6 +976,8 @@
                                                         ar.length = 0;
                                                         if (document.getElementById('btnfora').value >= 15 && (document.getElementById('btnfora').value - document.getElementById('btncasa').value >= 2)) {
                                                             document.getElementById('btnsetfora').value++;
+                                                            equipa = "fora";
+                                                        insereSet(equipa,jogo);
                                                             document.getElementById('btncasa').value = 0;
                                                             document.getElementById('btnfora').value = 0;
                                                         }

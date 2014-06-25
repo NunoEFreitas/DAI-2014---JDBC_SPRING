@@ -65,11 +65,23 @@ public class EstatisticaServiceImpl implements EstatisticaService{
         return estdao.listaDefesasA(idJogo);
     }
     
+    @Override
     public void adicionaEstatisticaSJEA(Estatistica est){
          estdao.adicionaEstatisticaSJEA(est);
     }
     
+    @Override
     public void adicionaEstatisticaSJ(Estatistica est){
         estdao.adicionaEstatisticaSJ(est);
     }
+    
+    @Override
+    public List<Estatistica> listaEstatisticasPorJogador(Integer idJogo, Integer idJogador){
+        return estdao.listaEstatisticasPorJogador(idJogo, idJogador);
+    }
+    
+    @Override
+     public List<Estatistica> listaEstatisticasPorJogo(Integer idJogo){
+         return estdao.listaEstatisticasPorJogo(idJogo);
+     }
 }

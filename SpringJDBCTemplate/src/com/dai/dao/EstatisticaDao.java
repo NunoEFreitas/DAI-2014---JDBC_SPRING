@@ -35,6 +35,11 @@ public interface EstatisticaDao {
     public List<Estatistica> listaDefesasP(Integer idJogo);
 
     public List<Estatistica> listaDefesasA(Integer idJogo);
+    
+    public List<Estatistica> listaEstatisticasPorJogador(Integer idJogo, Integer idJogador);
+    
+     public List<Estatistica> listaEstatisticasPorJogo(Integer idJogo);
+     
     /*
      public List<Estatistica> listaEstatisticas();
     

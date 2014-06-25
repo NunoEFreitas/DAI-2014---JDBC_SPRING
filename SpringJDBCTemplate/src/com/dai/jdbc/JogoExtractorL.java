@@ -32,7 +32,9 @@ public class JogoExtractorL implements ResultSetExtractor<Jogo> {
                 jogo.setIdCompeticao(resultSet.getInt("competicao_idCompeticao"));
                 jogo.setIdEquipaAdversaria(resultSet.getInt("equipaAdversaria_idequipaAdversaria"));
                 jogo.setDesignacaoC(resultSet.getString("competicao.designacaoCompeticao"));
-                jogo.setDesignacaoEA(resultSet.getString("equipaadversaria.nomeEquipaAdversaria"));    
+                jogo.setDesignacaoEA(resultSet.getString("equipaadversaria.nomeEquipaAdversaria"));   
+                jogo.setStatus(resultSet.getBoolean("statusJogo"));
+
                 
                 
 

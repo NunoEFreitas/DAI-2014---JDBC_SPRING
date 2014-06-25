@@ -55,8 +55,8 @@
                     <td> ${lj.getLocal()} </td>
                     <td> ${lj.getData()} </td>
                     <td> ${lj.getHora()} </td>
-                    <td> ${lj.getIdCompeticao()} </td>
-                    <td> ${lj.getIdEquipaAdversaria()} </td>
+                    <td> ${lj.getDesignacaoC()} </td>
+                    <td> ${lj.getDesignacaoEA()} </td>
                     <td> ${lj.getResultadoCasa()} - ${lj.getResultadoFora()} </td>
                 </tr>
             </c:forEach>

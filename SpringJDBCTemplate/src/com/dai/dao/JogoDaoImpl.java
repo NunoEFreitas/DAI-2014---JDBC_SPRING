@@ -29,8 +29,8 @@ public class JogoDaoImpl implements JogoDao{
 
 		String sql = "INSERT INTO jogo "
 				+ "( localJogo, dataJogo, horaJogo,"
-                        + " competicao_idCompeticao, equipaAdversaria_idequipaAdversaria) "
-                        + "VALUES (?, ?, ?, ?, ?)";
+                        + " competicao_idCompeticao, equipaAdversaria_idequipaAdversaria, statusJogo) "
+                        + "VALUES (?, ?, ?, ?, ?, ?)";
 
 		JdbcTemplate template = new JdbcTemplate(dataSource);
                 
@@ -40,7 +40,7 @@ public class JogoDaoImpl implements JogoDao{
 				sql,
 				new Object[] { jogo.getLocal(), jogo.getData(),
                                     jogo.getHora(), 
-                                    jogo.getIdCompeticao(), jogo.getIdEquipaAdversaria()});
+                                    jogo.getIdCompeticao(), jogo.getIdEquipaAdversaria(), jogo.isStatus()});
 
 	}
         
@@ -50,9 +50,11 @@ public class JogoDaoImpl implements JogoDao{
            
            List<Jogo> utList = new ArrayList();
 
-		String sql = "select * from jogo where resultadoCasa is not null and resultadoFora is not null and "
+		String sql = "select * from jogo where statusJogo = false and "
                         + "idJogo in (select jogo_idjogo from"
                         + " selecaoJogo where utilizador_idutilizador=" + idUtilizador +")";
+                
+                
 
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		utList = jdbcTemplate.query(sql, new JogoRowMapper());
@@ -78,10 +80,17 @@ public class JogoDaoImpl implements JogoDao{
 	public List<Jogo> listaJogosPendentes() {
 		List<Jogo> utList = new ArrayList();
 
-		String sql = "select * from jogo where resultadoCasa is null and resultadoFora is null";
+		                String sql = "select jogo.idJogo, jogo.localJogo, jogo.dataJogo, jogo.resultadoCasa ,jogo.resultadoFora, "
+                        + "jogo.horaJogo, jogo.competicao_idCompeticao, competicao.designacaoCompeticao, jogo.statusJogo, "
+                        + "jogo.equipaAdversaria_idequipaAdversaria, equipaAdversaria.nomeEquipaAdversaria  "
+                        + "from jogo inner join competicao on jogo.competicao_idCompeticao = competicao.idCompeticao " 
+                        + "inner join equipaAdversaria on jogo.equipaAdversaria_idequipaAdversaria = equipaAdversaria.idEquipaAdversaria "
+                        + "where jogo.statusJogo = true";
+                            
+                                
 
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-		utList = jdbcTemplate.query(sql, new JogoRowMapper());
+		utList = jdbcTemplate.query(sql, new JogoRowMapperL());
 		return utList;
 	}
         
@@ -116,11 +125,11 @@ public class JogoDaoImpl implements JogoDao{
         public List<Jogo> listaJogosPendentesEscalao(Integer idEscalao){
                 List<Jogo> utList = new ArrayList();
                 String sql = "select jogo.idJogo, jogo.localJogo, jogo.dataJogo, jogo.resultadoCasa ,jogo.resultadoFora, "
-                        + "jogo.horaJogo, jogo.competicao_idCompeticao, competicao.designacaoCompeticao, "
+                        + "jogo.horaJogo, jogo.competicao_idCompeticao, competicao.designacaoCompeticao, jogo.statusJogo, "
                         + "jogo.equipaAdversaria_idequipaAdversaria, equipaAdversaria.nomeEquipaAdversaria  "
-                        + "from jogo inner join competicao on jogo.competicao_idCompeticao = competicao.idCompeticao " +
-                        "inner join equipaAdversaria on jogo.equipaAdversaria_idequipaAdversaria = equipaAdversaria.idEquipaAdversaria "
-                        + "where resultadoCasa is null and resultadoFora is null and competicao_idCompeticao IN (select idCompeticao from competicao where escalao_idEscalao_c = " + idEscalao +  ")";
+                        + "from jogo inner join competicao on jogo.competicao_idCompeticao = competicao.idCompeticao " 
+                        + "inner join equipaAdversaria on jogo.equipaAdversaria_idequipaAdversaria = equipaAdversaria.idEquipaAdversaria "
+                        + "where jogo.statusJogo = true and competicao_idCompeticao IN (select idCompeticao from competicao where escalao_idEscalao_c = " + idEscalao +  ")";
                 JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		utList = jdbcTemplate.query(sql, new JogoRowMapperL());
 		return utList;
@@ -147,9 +156,12 @@ public class JogoDaoImpl implements JogoDao{
             
             List<Jogo> utList = new ArrayList();
 
-		String sql = "SELECT * FROM jogo where resultadoCasa is not null resultadoFora is not null and "
-                        + "competicao_idCompeticao IN (select idCompeticao from "
-                        + "competicao where escalao_idEscalao_c =" + idEscalao +  ")";
+		String sql = "select jogo.idJogo, jogo.localJogo, jogo.dataJogo, jogo.resultadoCasa ,jogo.resultadoFora, "
+                        + "jogo.setCasa, jogo.setFora, jogo.horaJogo, jogo.competicao_idCompeticao, competicao.designacaoCompeticao, jogo.statusJogo, "
+                        + "jogo.equipaAdversaria_idequipaAdversaria, equipaAdversaria.nomeEquipaAdversaria  "
+                        + "from jogo inner join competicao on jogo.competicao_idCompeticao = competicao.idCompeticao " 
+                        + "inner join equipaAdversaria on jogo.equipaAdversaria_idequipaAdversaria = equipaAdversaria.idEquipaAdversaria "
+                        + "where jogo.statusJogo = false and competicao_idCompeticao IN (select idCompeticao from competicao where escalao_idEscalao_c = " + idEscalao +  ")";
 
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		utList = jdbcTemplate.query(sql, new JogoRowMapper());
@@ -163,12 +175,17 @@ public class JogoDaoImpl implements JogoDao{
             
             List<Jogo> utList = new ArrayList();
 
-		String sql = "select * from jogo where resultadoCasa is null and resultadoFora is"
-                        + " null and idJogo in (select jogo_idjogo from "
-                        + "selecaoJogo where utilizador_idutilizador = "+ idUtilizador +")";
+
+                
+                                String sql = "select jogo.idJogo, jogo.localJogo, jogo.dataJogo, jogo.resultadoCasa ,jogo.resultadoFora, "
+                        + "jogo.horaJogo, jogo.competicao_idCompeticao, competicao.designacaoCompeticao, jogo.statusJogo, "
+                        + "jogo.equipaAdversaria_idequipaAdversaria, equipaAdversaria.nomeEquipaAdversaria  "
+                        + "from jogo inner join competicao on jogo.competicao_idCompeticao = competicao.idCompeticao " 
+                        + "inner join equipaAdversaria on jogo.equipaAdversaria_idequipaAdversaria = equipaAdversaria.idEquipaAdversaria "
+                        + "where jogo.statusJogo = true and jogo.idJogo in (select jogo_idjogo from selecaoJogo where utilizador_idutilizador = "+ idUtilizador +")";
 
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-		utList = jdbcTemplate.query(sql, new JogoRowMapper());
+		utList = jdbcTemplate.query(sql, new JogoRowMapperL());
 		return utList;
         }
         
@@ -182,6 +199,24 @@ public class JogoDaoImpl implements JogoDao{
 		jogoList= jdbcTemplate.query(sql, new JogoRowMapper());
 		return jogoList;
         }
+        
+        @Override
+        public void finalizarJogo(Integer idJogo){
+            String sql = "update jogo set statusJogo = false where idJogo = " + idJogo;
+            JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+            jdbcTemplate.execute(sql);
+        }
       
+        @Override
+        public void updateResultado(Jogo jogo){
+            String sql = "UPDATE jogo set resultadoCasa = ?, resultadoFora = ?,"
+                    + " setCasa = ?, setFora = ? where idJogo = ?";
+            JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+
+		jdbcTemplate.update(
+				sql,
+				new Object[] { jogo.getResultadoCasa(), jogo.getResultadoFora(),
+                                               jogo.getSetCasa(), jogo.getSetFora(), jogo.getIdJogo() });
+        }
         
 }

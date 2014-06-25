@@ -17,9 +17,9 @@
         <%
             if (session.getAttribute("perfil").equals(2)) {%>
         <%@include file="/resources/include/templateTreinador.jsp" %>
-        <% } else if (session.getAttribute("perfil").equals(1)) {
-                response.sendRedirect("naoAutorizado");
-            } else if (session.getAttribute("perfil").equals(3)) {%>
+        <% } else if (session.getAttribute("perfil").equals(1)) {%>
+                 <%@include file="/resources/include/templateAtleta.jsp" %>
+           <% } else if (session.getAttribute("perfil").equals(3)) {%>
                 <%@include file="/resources/include/templateTreinadorAdjunto.jsp" %>
            <% } else if (session.getAttribute("perfil").equals(4)) {
                 response.sendRedirect("naoAutorizado");
@@ -43,7 +43,7 @@
                 <td Class="heading"> Jogador </td>
                 <td Class="heading"> Origem </td>
                 <td Class="heading"> Destino </td>
-                <td Class="heading"> Classificação </td>
+
             </tr>
             <c:forEach var="les" items="${lest}">
                 <tr>
@@ -52,7 +52,6 @@
                     <td> ${les.getNomeUtilizador()} </td>
                     <td> ${les.getOrigem()} </td>
                     <td> ${les.getDestino()} </td>
-                    <td> ${les.getClassificacao()} </td>
 
 
                 </tr>

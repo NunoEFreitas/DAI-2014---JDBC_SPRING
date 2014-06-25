@@ -20,7 +20,7 @@
         <% } else if (session.getAttribute("perfil").equals(1)) {
                 response.sendRedirect("naoAutorizado");
             } else if (session.getAttribute("perfil").equals(3)) {%>
-                <%@include file="/resources/include/templateTreinadorAdjunto.jsp" %>
+                <%@include file="/resources/include/templateTreinador.jsp" %>
            <% } else if (session.getAttribute("perfil").equals(4)) {
                 response.sendRedirect("naoAutorizado");
             } else if (session.getAttribute("perfil").equals(5)) {
@@ -32,28 +32,31 @@
         %>
 
         <Div  class = "cabecalho da pagina" > 
-            <h1>Analise a Posteriori<small> Estatisticas </small>  </h1> 
+            <h1>Analisar a Posteriori<small> Listar jogos </small>  </h1> 
         </div><br>
 
 
         <table class="table"> 
             <tr>
-                <td Class="heading"> Tipo </td>
-                <td Class="heading"> Rotacao  </td>
-                <td Class="heading"> Jogador </td>
-                <td Class="heading"> Origem </td>
-                <td Class="heading"> Destino </td>
-                <td Class="heading"> Classificação </td>
+                <td Class="heading"> ID Jogo </td>
+                <td Class="heading"> Local </td>
+                <td Class="heading"> Data </td>
+                <td Class="heading"> Hora </td>
+                <td Class="heading"> Competição </td>
+                <td Class="heading"> Equipa Adversaria </td>
+                <td Class="heading"> Resultado </td>
+                <td Class="heading"> Escolher Jogo </td>
             </tr>
-            <c:forEach var="les" items="${lest}">
+            <c:forEach var="lj" items="${ljogos}">
                 <tr>
-                    <td> ${les.getDesignacaoEstatistica()} </td>
-                    <td> ${les.getRotacaoPropria()} </td>
-                    <td> ${les.getNomeUtilizador()} </td>
-                    <td> ${les.getOrigem()} </td>
-                    <td> ${les.getDestino()} </td>
-                    <td> ${les.getClassificacao()} </td>
-
+                    <td> ${lj.getIdJogo()} </td>
+                    <td> ${lj.getLocal()} </td>
+                    <td> ${lj.getData()} </td>
+                    <td> ${lj.getHora()} </td>
+                    <td> ${lj.getDesignacaoC()} </td>
+                    <td> ${lj.getDesignacaoEA()} </td>
+                    <td> ${lj.getResultadoCasa()} - ${lj.getResultadoFora()} </td>
+                    <td><a href="estatisticaTabela/${lj.getIdJogo()}">Selecionar</a></td>
 
                 </tr>
             </c:forEach>

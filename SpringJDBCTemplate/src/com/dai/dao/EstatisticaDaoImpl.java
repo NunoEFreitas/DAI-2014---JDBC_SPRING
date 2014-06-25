@@ -7,6 +7,7 @@ package com.dai.dao;
 
 import com.dai.domain.Estatistica;
 import com.dai.jdbc.EstatisticaRowMapper;
+import com.dai.jdbc.EstatisticaRowMapperL;
 import java.util.ArrayList;
 import java.util.List;
 import javax.sql.DataSource;
@@ -154,18 +155,44 @@ public class EstatisticaDaoImpl implements EstatisticaDao {
         lest = jdbcTemplate.query(sql, new EstatisticaRowMapper());
         return lest;
     }
+
+    @Override
+     public List<Estatistica> listaEstatisticasPorJogador(Integer idJogo, Integer idJogador){
+        List<Estatistica> lest = new ArrayList();
+
+        String sql = "select DISTINCT estatistica.idEstatistica, estatistica.tiposEstatistica_idtiposEstatistica, estatistica.classificacao, " +
+                                             "estatistica.idjogo_est, estatistica.origem, estatistica.destino, estatistica.rotacaoPropria, estatistica.idutilizador_est, " +
+                                             "estatistica.idJEA_est, estatistica.rotacaoEA, tipoestatistica.designacaoEstatistica, selecaojogo.nomeSL from final.estatistica " +
+                                             "inner join tipoestatistica on estatistica.tiposEstatistica_idtiposEstatistica = tipoestatistica.idTiposEstatistica " +
+                                             "inner join selecaojogo on estatistica.idutilizador_est = selecaojogo.utilizador_idutilizador " +
+                                             "where idjogo_est= "+idJogo +" and idutilizador_est =" + idJogador +" and (tiposEstatistica_idtiposEstatistica = 1 or tiposEstatistica_idtiposEstatistica = 3 " +
+                                               "or tiposEstatistica_idtiposEstatistica = 5 or tiposEstatistica_idtiposEstatistica = 7)";
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+        lest = jdbcTemplate.query(sql, new EstatisticaRowMapperL());
+        return lest;
+     }
+    
+     @Override
+     public List<Estatistica> listaEstatisticasPorJogo(Integer idJogo){
+        List<Estatistica> lest = new ArrayList();
+
+        String sql = "select DISTINCT estatistica.idEstatistica, estatistica.tiposEstatistica_idtiposEstatistica, estatistica.classificacao, " +
+                                             "estatistica.idjogo_est, estatistica.origem, estatistica.destino, estatistica.rotacaoPropria, estatistica.idutilizador_est, " +
+                                             "estatistica.idJEA_est, estatistica.rotacaoEA, tipoestatistica.designacaoEstatistica, selecaojogo.nomeSL from final.estatistica " +
+                                             "inner join tipoestatistica on estatistica.tiposEstatistica_idtiposEstatistica = tipoestatistica.idTiposEstatistica " +
+                                             "inner join selecaojogo on estatistica.idutilizador_est = selecaojogo.utilizador_idutilizador " +
+                                             "where idjogo_est= "+idJogo +" and (tiposEstatistica_idtiposEstatistica = 1 or tiposEstatistica_idtiposEstatistica =3 " +
+                                               "or tiposEstatistica_idtiposEstatistica = 5 or tiposEstatistica_idtiposEstatistica = 7)";
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+        lest = jdbcTemplate.query(sql, new EstatisticaRowMapperL());
+        return lest;
+     }
     /*
      public List<Estatistica> listaEstatisticas(){
         
      }
     
-     public List<Estatistica> listaEstatisticasPorJogador(Integer idJogador){
-        
-     }
     
-     public List<Estatistica> listaEstatisticasPorJogo(Integer idJogo){
-        
-     }
     
      public List<Estatistica> listaEstatisticasPorEA(Integer idEa){
         

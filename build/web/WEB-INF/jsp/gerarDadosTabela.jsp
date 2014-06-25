@@ -31,7 +31,7 @@
         %>
 
         <Div  class = "cabecalho da pagina" > 
-            <h1>Gerir Competições<small>Listar jogos</small>  </h1> 
+            <h1>Gerir Competições<small>Estatisticas Proprias</small>  </h1> 
         </div><br>
         <table class="table"> 
             <tr>
@@ -42,7 +42,7 @@
                 <td Class="heading"> Competição </td>
                 <td Class="heading"> Equipa Adversaria </td>
                 <td Class="heading"> Resultado </td>
-                <td Class="heading"> Grafico </td>
+                <td Class="heading"> Selecionar Jogo </td>
             </tr>
             <c:forEach var="lj" items="${ljogos}">
                 <tr>
@@ -52,7 +52,8 @@
                     <td> ${lj.getHora()} </td>
                     <td> ${lj.getIdCompeticao()} </td>
                     <td> ${lj.getIdEquipaAdversaria()} </td>
-                    
+                    <td> ${lj.getResultadoCasa()} - ${lj.getResultadoFora()} </td>
+                    <td><a href="estatisticaTabelaJ/${lj.getIdJogo()}">Selecionar</a></td>
                     
                 </tr>
             </c:forEach>

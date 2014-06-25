@@ -14,7 +14,7 @@
                 <div id='cssmenu'>
                     <ul>
                         <li class='active'><a href='/VoleiUM/atleta'><span>Atleta</span></a></li>
-                         <li><a href='sair'><img src="<c:url value="/resources/images/logout.png" />" /></a></li>
+                         <li><a href='/VoleiUM/sair'><img src="<c:url value="/resources/images/logout.png" />" /></a></li>
                          <li class='has-sub'><a href='#'><span>Gerir Atletas</span></a>
                             <ul>
                                 <li class='has-sub'><a href='#'><span><p style="color: white; background-color: #b81c40; letter-spacing: 6">Visualizar Atleta</p></span></a>
@@ -27,12 +27,11 @@
                         </li>
                          <li class='has-sub'><a href='#'><span>Gerir Competições</span></a>
                             <ul>
-                                <li class='has-sub'><a href='listarTreinosJ'><span>Listar Treinos</span></a>
-                                <li class='has-sub'><a href='listarJogosJ'><span>Listar Jogos</span></a>
+                                <li class='has-sub'><a href='/VoleiUM/listarTreinosJ'><span>Listar Treinos</span></a>
+                                <li class='has-sub'><a href='/VoleiUM/listarJogosJ'><span>Listar Jogos</span></a>
                                 <li class='has-sub'><a href='#'><span><p style="color: white; background-color: #b81c40; letter-spacing: 6">Analisar à Posteriori</p></span></a>
                                     
-                                        <li><a href='gerarDadosTabela'><span>-GerarDadosTabela</span></a></li>
-                                        <li><a href='gerarDadosGrafico'><span>-GerarDadosGráfico</span></a></li>
+                                        <li><a href='/VoleiUM/gerarDadosTabela'><span>-GerarDadosTabela</span></a></li>
                                     
                                 </li>
                                 

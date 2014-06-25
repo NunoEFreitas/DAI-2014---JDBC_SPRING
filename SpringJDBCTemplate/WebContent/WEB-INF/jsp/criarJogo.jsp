@@ -62,6 +62,7 @@
                     <form:option value ="${lea.idEquipaAdversaria}">${lea.nome}</form:option>
                 </c:forEach>
             </form:select><br>
+            <form:input  value="true"  path="status" type="hidden"/>
             <input class="button" type="submit" value="Guardar" />
         </form:form>
             

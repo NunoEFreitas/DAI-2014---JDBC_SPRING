@@ -175,13 +175,12 @@ public class JogoController {
 
     @RequestMapping("/inserirDados/{idJogo}")
     public ModelAndView carregaJogo(@ModelAttribute Jogo jogo, @PathVariable("idJogo") Integer idJogo) {
-
-        List<Integer> idjogo = new ArrayList();
-        idjogo.add(idJogo);
+        List<Jogo> jo = jogoService.getJogo(idJogo);
+        
         List<SelecaoJEA> ljea = sjeaService.listaSJEA(idJogo);
         List<SelecaoJogo> lut = slService.listaSL(idJogo);
         Map<String, List> map = new HashMap<String, List>();
-        map.put("jogo", idjogo);
+        map.put("jogo", jo);
         map.put("ljea", ljea);
         map.put("lut", lut);
 
@@ -616,15 +615,43 @@ public class JogoController {
     }
 
     @RequestMapping("/gerarDadosTabela")
-    public ModelAndView gerarDadosTabela() {
+    public ModelAndView gerarDadosTabela(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        int user = ((int) session.getAttribute("user"));
+        List<Jogo> ljogos = jogoService.listaHistoricoAtleta(user);
 
-        return new ModelAndView("gerarDadosTabela");
+        return new ModelAndView("gerarDadosTabela","ljogos",ljogos);
     }
 
-    @RequestMapping("/gerarDadosGrafico")
-    public ModelAndView gerarDadosGrafico() {
+    @RequestMapping("/listarEstatistica")
+    public ModelAndView listaEstatisticas(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        int escalao = ((int) session.getAttribute("escalao"));
+        List<Jogo> ljogos = jogoService.listaJogosPassados(escalao);
+        
 
-        return new ModelAndView("gerarDadosGrafico");
+        return new ModelAndView("listarEstatistica","ljogos",ljogos);
+    }
+    
+   
+    
+    @RequestMapping("/estatisticaTabela/{idJogo}")
+    public ModelAndView listarEstatisticas(Estatistica est, @PathVariable("idJogo") Integer jogo) {
+
+        List<Estatistica> lest = eService.listaEstatisticasPorJogo(jogo);
+        
+
+        return new ModelAndView("dadosTabela","lest",lest);
+    }
+    
+      @RequestMapping("/estatisticaTabelaJ/{idJogo}")
+    public ModelAndView listarEstatisticasJ(Estatistica est, @PathVariable("idJogo") Integer jogo, HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        int user = ((int) session.getAttribute("user"));
+        List<Estatistica> lest = eService.listaEstatisticasPorJogador(jogo, user);
+        
+
+        return new ModelAndView("estatisticaTabelaJ","lest",lest);
     }
 
     @RequestMapping("/historicoAtleta")
@@ -644,5 +671,51 @@ public class JogoController {
         return new ModelAndView("historicoAtleta", "ljogos", lJogos);
 
     }
+    
+    @RequestMapping("finalizar/{idJogo}")
+    public String finalizarJogo(@PathVariable("idJogo") Integer jogo) {
 
+        jogoService.finalizarJogo(jogo);
+        return "redirect:/listarJogosTA";
+    }
+    
+    @RequestMapping(value = "/inserePonto", method = RequestMethod.GET)
+    public @ResponseBody
+    String inserePonto(@RequestParam("equipa") String equipa, @RequestParam("jogo") int jogo) {
+        String mensagem = "OK";
+        List<Jogo> jo = jogoService.getJogo(jogo);
+        Jogo j = jo.get(0);
+        if(equipa.equals("casa")){
+        int pc = j.getSetCasa();
+        pc++;
+        j.setSetCasa(pc);
+        } else if(equipa.equals("fora")){
+            int pc2 = j.getSetFora();
+            pc2++;
+            j.setSetFora(pc2);
+        }
+        jogoService.updateResultado(j);
+        return mensagem;
+    }
+
+    @RequestMapping(value = "/insereSet", method = RequestMethod.GET)
+    public @ResponseBody
+    String insereSet(@RequestParam("equipa") String equipa, @RequestParam("jogo") int jogo) {
+        String mensagem = "OK SET";
+        List<Jogo> jo = jogoService.getJogo(jogo);
+        Jogo j = jo.get(0);
+        if(equipa.equals("casa")){
+        int pc = j.getResultadoCasa();
+        pc++;
+        j.setResultadoCasa(pc);
+        } else if(equipa.equals("fora")){
+            int pc2 = j.getResultadoFora();
+            pc2++;
+            j.setResultadoFora(pc2);
+        }
+        jo.get(0).setSetCasa(0);
+        jo.get(0).setSetFora(0);
+        jogoService.updateResultado(j);
+        return mensagem;
+    }
 }

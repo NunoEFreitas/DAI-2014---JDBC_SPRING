@@ -22,6 +22,26 @@ public class Estatistica {
     private int classificacao;
     private String rotacaoPropria;
     private String rotacaoEA;
+    private String designacaoEstatistica;
+    private String nomeUtilizador;
+
+    public String getDesignacaoEstatistica() {
+        return designacaoEstatistica;
+    }
+
+    public void setDesignacaoEstatistica(String designacaoEstatistica) {
+        this.designacaoEstatistica = designacaoEstatistica;
+    }
+
+    public String getNomeUtilizador() {
+        return nomeUtilizador;
+    }
+
+    public void setNomeUtilizador(String nomeUtilizador) {
+        this.nomeUtilizador = nomeUtilizador;
+    }
+    
+    
 
     public int getIdEstatistica() {
         return idEstatistica;

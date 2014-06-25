@@ -56,7 +56,7 @@
                     <td> ${lj.getHora()} </td>
                     <td> ${lj.getIdCompeticao()} </td>
                     <td> ${lj.getIdEquipaAdversaria()} </td>
-                    <td> ${lj.getResultado()} </td>
+                    <td>  </td>
 
                 </tr>
             </c:forEach>

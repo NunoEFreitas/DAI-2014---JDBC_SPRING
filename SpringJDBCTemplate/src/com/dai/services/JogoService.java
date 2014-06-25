@@ -32,4 +32,8 @@ public interface JogoService {
     public List<Jogo> getJogo(Integer idJogo);
     
     public List<Jogo> listaHistoricoAtleta(Integer idUtilizador);
+    
+    public void finalizarJogo(Integer idJogo);
+    
+    public void updateResultado(Jogo jogo);
 }

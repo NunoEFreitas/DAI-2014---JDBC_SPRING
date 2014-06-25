@@ -29,14 +29,7 @@
 
                             </ul>
                         </li>
-                        <li class='has-sub'><a href='#'><span>Analisar Adversários</span></a>
-                            <ul>    
-                                <li class="titulo"><a href='#'><span><p style="color: white; background-color: #b81c40; letter-spacing: 4">Analisar em Tempo Real</p></span></a></li>
-
-                                <li class='has-sub'><a href='#'><span>GerarDadosGráfico</span></a></li>
-
-                            </ul>
-                        </li>
+                       
 
                     </ul>
                     <br>

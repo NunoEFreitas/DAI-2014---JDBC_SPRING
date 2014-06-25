@@ -90,6 +90,17 @@ public class Jogo {
     private int idEquipaAdversaria;
     private String designacaoC;
     private String designacaoEA;
+    private boolean status;
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+    
+    
 
     public String getDesignacaoC() {
         return designacaoC;

@@ -32,26 +32,17 @@
                               
                                 <li class='has-sub'><a href='#'><span><p style="color: white; background-color: #b81c40; letter-spacing: 6">Analisar à Posteriori</p></span></a></li>
                                     
-                                        <li><a href='gerarDadosTabela'><span>-GerarDadosTabela</span></a></li>
-                                        <li class='last'><a href='gerarDadosGrafico'><span>-GerarDadosGráfico</span></a></li>
+                                        <li><a href='/VoleiUM/listarEstatistica'><span>-GerarDadosTabela</span></a></li>
+                                        
                                     
                           
                                     
                                 
                             </ul>
                         </li>
-                        <li class='has-sub'><a href='#'><span>Analisar Adversários</span></a>
-                            <ul>
-                                <li class='has-sub'><a href='#'><span><p style="color: white; background-color: #b81c40; letter-spacing: 2">Inserir Dados em Tempo Real</p></span></a></li>
+                        
                                     
-                                        <li><a href='#'><span>-CriarJogo</span></a></li>
-                                        
-                                    
-                                
-                                <li class='has-sub'><a href='#'><span><p style="color: white; background-color: #b81c40; letter-spacing: 6">Analisar à Posteriori</p></span></a></li> 
-                                    
-                                        <li><a href='dadosTabela'><span>-AnalisarDadosTabela</span></a></li>
-                                        <li><a href='dadosGrafico'><span>-AnalisarDadosGrafico</span></a></li>
+                            
                                     
                       
                                     
