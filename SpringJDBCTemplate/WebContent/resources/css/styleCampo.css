@@ -265,6 +265,7 @@ height: 50px;
 }
 
 .elementServiceLeft:hover { background-color: #FFC4CB; }
+.elementServiceLeft:active { background-color: white; }
 
 .elementServiceRight{
     width: 3.6%;
@@ -283,6 +284,7 @@ height: 50px;
 }
 
 .elementServiceRight:hover { background-color: #FFC4CB; }
+.elementServiceRight:active { background-color: white; }
 
 .elementTopLeft{
     width: 18.7%;
@@ -302,6 +304,7 @@ height: 50px;
 
 }
 .elementTopLeft:hover { background-color: #ADAFFF; }
+.elementTopLeft:active { background-color: white; }
 
 .elementTopRight{
     width: 18.7%;
@@ -319,6 +322,7 @@ height: 50px;
 }
 
 .elementTopRight:hover { background-color: #ADAFFF; }
+.elementTopRight:active { background-color: white; }
 
 .elementBotLeft{
     width: 18.7%;
@@ -336,6 +340,7 @@ height: 50px;
 }
 
 .elementBotLeft:hover { background-color: #ADAFFF; }
+.elementBotLeft:active { background-color: white; }
 
 .elementBotRight{
     width: 18.7%;
@@ -353,6 +358,7 @@ height: 50px;
 }
 
 .elementBotRight:hover { background-color: #ADAFFF; }
+.elementBotRight:active { background-color: white; }
 
 .elementOutLeft{
     width: 3.6%;
@@ -370,6 +376,7 @@ height: 50px;
 }
 
 .elementOutLeft:hover { background-color: #ADAFFF; }
+.elementOutLeft:active { background-color: white; }
 
 .elementOutRight{
     width: 3.6%;
@@ -387,6 +394,7 @@ height: 50px;
 }
 
 .elementOutRight:hover { background-color: #ADAFFF; }
+.elementOutRight:active { background-color: white; }
 
 
 .element1 {
@@ -407,6 +415,7 @@ height: 50px;
 }
 
 .element1:hover { background-color: #F7C87C; }
+.element1:active { background-color: white; }
 
 .element2 {
     width: 9.15%;
@@ -426,6 +435,7 @@ height: 50px;
 
 }
 .element2:hover { background-color: #F7C87C; }
+.element2:active { background-color: white; }
 
 .element3 {
     width: 9.15%;
@@ -444,6 +454,7 @@ height: 50px;
 
 }
 .element3:hover { background-color: #F7C87C; }
+.element3:active { background-color: white; }
 
 .element6 {
     width: 9.15%;
@@ -462,7 +473,8 @@ height: 50px;
 
 }
 .element6:hover { background-color: #F7C87C; }
-.element4:hover { background-color: #F7C87C; }
+.element6:active { background-color: white; }
+
 
 
 .element4 {
@@ -483,6 +495,9 @@ height: 50px;
 
 }
 
+.element4:hover { background-color: #F7C87C; }
+.element4:active { background-color: white; }
+
 .element5 {
     width: 9.15%;
     height: 11.7%;
@@ -501,6 +516,8 @@ height: 50px;
 }
 
 .element5:hover { background-color: #F7C87C; }	
+.element5:active { background-color: white; }	
+
 
 
 .elementLinha{
@@ -537,6 +554,7 @@ height: 50px;
 
 }
 .element7:hover { background-color: #F7C87C; }	
+.element7:active { background-color: white; }	
 
 .element12 {
     width: 9.15%;
@@ -555,6 +573,7 @@ height: 50px;
 }
 
 .element12:hover { background-color: #F7C87C; }
+.element12:active { background-color: white; }
 
 .element11 {
     width: 9.15%;
@@ -573,6 +592,8 @@ height: 50px;
 }
 
 .element11:hover { background-color: #F7C87C; }
+.element11:active { background-color: white; }
+
 
 .element10 {
     width: 9.15%;
@@ -591,6 +612,7 @@ height: 50px;
 }
 
 .element10:hover { background-color: #F7C87C; }
+.element10:active { background-color: white; }
 
 .element9 {
     width: 9.15%;
@@ -609,6 +631,7 @@ height: 50px;
 }
 
 .element9:hover { background-color: #F7C87C; }
+.element9:active { background-color: white; }
 
 .element8 {
     width: 9.15%;
@@ -627,6 +650,7 @@ height: 50px;
 }
 
 .element8:hover { background-color: #F7C87C; }
+.element8:active { background-color: white; }
 
 /* --------------------------- drag and drop ------------------------------------ */
 

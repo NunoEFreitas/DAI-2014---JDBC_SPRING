@@ -1,23 +1,32 @@
 html{
-  background:url(../images/volley.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: contain;
-  background-color: black;
-  text-align: center;
-
+    background:url(../images/volley.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-color: black;
+    text-align: center;
+    
 }
 
 h1{
 alignment-baseline: central;
+    border: 1px solid black;
+    background: lightgray;
+    font-size: 20px;
 }
 
+h3{
+        border-radius: 10px;
+    font-size: large;
+    border: 1px solid black;
+    background: lightgray;
+}
 
 a {
     color: darkblue;
 
 }
+
 
 a:hover {
     color: white;
@@ -25,29 +34,26 @@ a:hover {
 
 #voltarCampo{
 float: left;
-margin-top: 490px;
-
-
-
-    
+margin-top: 40%;
+   
 }
 
 #comboestat1{
     border: 0px solid blue;
-    height: 200px;
-    width: 150px;
+    height: 15%;
+    width: 10%;
     float:left;
 }
 #comboestat2{
     border: 0px solid blue;
-    height: 200px;
-    width: 150px;
+    height: 15%;
+    width: 10%;
     float:right;
 }
 
 body{
-    margin-left:8%;
-    margin-right:8%;
+    margin-left:4%;
+    margin-right:4%;
     font-weight: bold;
 }
 
@@ -55,14 +61,13 @@ body{
 /* -------------------------- campo ------------------------------*/
 
 .elementServiceLeft{
-    width: 50px;
-    height: 195px;
+    width: 3.6%;
+    height: 25.4%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
-    top: 195px;
-    right:28%; 
-    margin-right:670px;
+    top: 25.4%;
+    right:27%; 
+    margin-right:49.05%;
     margin-top: 7%;
     background-color:red;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -73,14 +78,13 @@ body{
 
 
 .elementServiceRight{
-    width: 50px;
-    height: 195px;
+    width: 3.6%;
+    height: 25.4%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
     top: 0px;
-    right:28%; 
-    margin-right: -70px;
+    right:27%; 
+    margin-right: -5.12%;
     margin-top: 7%;
     background-color:red;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -89,15 +93,16 @@ body{
 
 }
 
+
 .elementTopLeft{
-    width: 255px;
-    height: 40px;
+    width: 18.7%;
+    height: 5.2%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
+
     position:absolute;
     top: 0px;
-    right:28%; 
-    margin-right:350px;
+    right:27%; 
+    margin-right:25.6%;
     margin-top: 7%;
     background-color:blue;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -109,14 +114,13 @@ body{
 
 
 .elementTopRight{
-    width: 255px;
-    height: 40px;
+    width: 18.7%;
+    height: 5.2%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
     top: 0px;
-    right:28%; 
-    margin-right:45px;
+    right:27%; 
+    margin-right:3.3%;
     margin-top: 7%;
     background-color:blue;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -127,84 +131,76 @@ body{
 
 
 .elementBotLeft{
-    width: 255px;
-    height: 40px;
+    width: 18.7%;
+    height: 5.2%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
-    top: 350px;
-    right:28%; 
-    margin-right:350px;
+    top: 45.6%;
+    right:27%; 
+    margin-right:25.6%;
     margin-top: 7%;
     background-color:blue;
     -moz-box-shadow:5px 5px 2px #000000;
     -webkit-box-shadow:5px 5px 2px #000000;
     box-shadow:5px 5px 2px #000000;
 }
-
 
 .elementBotRight{
-    width: 255px;
-    height: 40px;
+    width: 18.7%;
+    height: 5.2%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
-    top: 350px;
-    right:28%; 
-    margin-right:45px;
+    top: 45.6%;
+    right:27%; 
+    margin-right:3.3%;
     margin-top: 7%;
     background-color:blue;
     -moz-box-shadow:5px 5px 2px #000000;
     -webkit-box-shadow:5px 5px 2px #000000;
     box-shadow:5px 5px 2px #000000;
 }
-
 
 
 .elementOutLeft{
-    width: 50px;
-    height: 390px;
+    width: 3.6%;
+    height: 50.8%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
     top: 0px;
-    right:28%; 
-    margin-right:610px;
+    right:27%; 
+    margin-right:44.7%;
     margin-top: 7%;
     background-color:blue;
     -moz-box-shadow:5px 5px 2px #000000;
     -webkit-box-shadow:5px 5px 2px #000000;
     box-shadow:5px 5px 2px #000000;
 }
+
 
 .elementOutRight{
-    width: 50px;
-    height: 390px;
+    width: 3.6%;
+    height: 50.8%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
     top: 0px;
-    right:28%; 
-    margin-right: -10px;
+    right:27%; 
+    margin-right: -0.73%;
     margin-top: 7%;
     background-color:blue;
     -moz-box-shadow:5px 5px 2px #000000;
     -webkit-box-shadow:5px 5px 2px #000000;
     box-shadow:5px 5px 2px #000000;
 }
-
-
 
 
 .element1 {
-    width: 125px;
-    height: 90px;
+    width: 9.15%;
+    height: 11.7%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
-    top:250px;
-    right:28%; 
-    margin-right:480px;
+    top:32.6%;
+    right:27%; 
+    margin-right:35.13%;
     margin-top: 7%;
     background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -215,16 +211,15 @@ body{
 }
 
 
-
 .element2 {
-    width: 125px;
-    height: 90px;
+    width: 9.15%;
+    height: 11.7%;
     border: 1px solid #000000;
     margin:0 10px 0 0;
     position:absolute;
-    top:250px;
-    right:28%; 
-    margin-right:350px;
+    top:32.6%;
+    right:27%; 
+    margin-right:25.6%;
     margin-top: 7%;
     background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -235,14 +230,13 @@ body{
 }
 
 .element3 {
-    width: 125px;
-    height: 90px;
+    width: 9.15%;
+    height: 11.7%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
-    top:150px;
-    right:28%; 
-    margin-right:350px;
+    top:19.5%;
+    right:27%; 
+    margin-right:25.6%;
     margin-top: 7%;
     background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -251,17 +245,15 @@ body{
 
 
 }
-
 
 .element6 {
-    width: 125px;
-    height: 90px;
+    width: 9.15%;
+    height: 11.7%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
-    top:150px;
-    right:28%; 
-    margin-right:480px;
+    top:19.5%;
+    right:27%; 
+    margin-right:35.13%;
     margin-top: 7%;
     background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -270,18 +262,17 @@ body{
 
 
 }
-
 
 
 .element4 {
-    width: 125px;
-    height: 90px;
+    width: 9.15%;
+    height: 11.7%;
     border: 1px solid #000000;
     margin:0 10px 0 0;
     position:absolute;
-    top:50px;
-    right:28%; 
-    margin-right:350px;
+    top:6.5%;
+    right:27%; 
+    margin-right:25.6%;
     margin-top: 7%;
     background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -292,14 +283,13 @@ body{
 }
 
 .element5 {
-    width: 125px;
-    height: 90px;
+    width: 9.15%;
+    height: 11.7%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
-    top:50px;
-    right:28%; 
-    margin-right:480px;
+    top:6.5%;
+    right:27%; 
+    margin-right:35.13%;
     margin-top: 7%;
     background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -312,14 +302,13 @@ body{
 
 
 .elementLinha{
-    width: 20px;
-    height: 390px;
+    width: 1.46%;
+    height: 50.8%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
     top:0px;
-    right:28%; 
-    margin-right:315px;
+    right:27%; 
+    margin-right:23%;
     margin-top: 7%;
     background-color:red;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -329,15 +318,15 @@ body{
 
 }
 
+
 .element7 {
-    width: 125px;
-    height: 90px;
+    width: 9.15%;
+    height: 11.7%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
-    top:50px;
-    right:28%; 
-    margin-right:45px;
+    top:6.5%;
+    right:27%; 
+    margin-right:3.3%;
     margin-top: 7%;
     background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -348,14 +337,13 @@ body{
 
 
 .element12 {
-    width: 125px;
-    height: 90px;
+    width: 9.15%;
+    height: 11.7%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
-    top:150px;
-    right:28%; 
-    margin-right:45px;
+    top:19.5%;
+    right:27%; 
+    margin-right:3.3%;
     margin-top: 7%;
     background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -366,14 +354,13 @@ body{
 
 
 .element11 {
-    width: 125px;
-    height: 90px;
+    width: 9.15%;
+    height: 11.7%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
-    top:250px;
-    right:28%; 
-    margin-right:45px;
+    top:32.6%;
+    right:27%; 
+    margin-right:3.3%;
     margin-top: 7%;
     background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -383,15 +370,15 @@ body{
 }
 
 
+
 .element10 {
-    width: 125px;
-    height: 90px;
+    width: 9.15%;
+    height: 11.7%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
-    top:250px;
-    right:28%; 
-    margin-right:175px;
+    top:32.6%;
+    right:27%; 
+    margin-right:12.8%;
     margin-top: 7%;
     background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -402,14 +389,13 @@ body{
 
 
 .element9 {
-    width: 125px;
-    height: 90px;
+    width: 9.15%;
+    height: 11.7%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
-    top:150px;
-    right:28%; 
-    margin-right:175px;
+    top:19.5%;
+    right:27%; 
+    margin-right:12.8%;
     margin-top: 7%;
     background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -417,18 +403,16 @@ body{
     box-shadow:5px 5px 2px #000000;
 
 }
-
 
 
 .element8 {
-    width: 125px;
-    height: 90px;
+    width: 9.15%;
+    height: 11.7%;
     border: 1px solid #000000;
-    margin:0 10px 0 0;
     position:absolute;
-    top:50px;
-    right:28%; 
-    margin-right:175px;
+    top:6.5%;
+    right:27%; 
+    margin-right:12.8%;
     margin-top: 7%;
     background-color:#FAAF37;
     -moz-box-shadow:5px 5px 2px #000000;
@@ -436,5 +420,3 @@ body{
     box-shadow:5px 5px 2px #000000;
 
 }
-
-
