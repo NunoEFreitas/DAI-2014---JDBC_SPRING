@@ -323,6 +323,7 @@
                                                     if (($.inArray(posicaoUjogada, campo2) >= 0) && ($.inArray(posicaoPjogada, campo1) >= 0)) {
                                                         $('#jogadasTxt').html('ataque da zona '+posicaoPjogada+' para a zona' + posicaoUjogada);
                                                         $("#popUpDivAtaques").show();
+                                                       
                                                     } else if (($.inArray(posicaoUjogada, campo1) >= 0) && ($.inArray(posicaoPjogada, campo2) >= 0)) {
                                                             $('#jogadasTxt').html('defesa da zona '+posicaoUjogada+' a um ataque da zona' + posicaoPjogada);
                                                             $("#popUpDivDefesas").show();
