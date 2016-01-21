@@ -18,17 +18,29 @@
 			<div class="logo">
                             
                             <a href="login" >Login</a>
+                            <br>
+                            
 				<span> <a href="main"><img src="<c:url value="/resources/images/logotipo.jpg" />" /></a> </span>
 			</div>
 			<div class="sidebar">
 				<ul>
 					
+                                        
                                         <li>
-						<a href="#">Pesquisar</a>
+						<a href="listaJogos">Lista Jogos</a>
 					</li>
-					<li>
-						<a href="getList">listar</a>
+                                        
+                                        <li>
+						<a href="jogo">Campo</a>
 					</li>
+                                        
+                                        <li>
+						<a href="gestaoDeTreinos">Gerir Treinos</a>
+					</li>
+                                        
+                                        <li> 
+                                            <a href="gestaoDeEquipasAdversarias"> Gerir Equipas Adversarias </a>
+                                        </li>    
 				</ul>
 				<div class="connect">
 					*
